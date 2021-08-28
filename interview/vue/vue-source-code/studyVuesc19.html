@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Vue.js v2.6.11 生啃一万行源码（19/24） |  </title>
+    <meta name="generator" content="VuePress 1.8.2">
+    <link rel="icon" href="/favicon.ico">
+    <meta name="description" content=" ">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    
+    <link rel="preload" href="/assets/css/0.styles.239719ad.css" as="style"><link rel="preload" href="/assets/js/app.fab4b134.js" as="script"><link rel="preload" href="/assets/js/3.92bb3b86.js" as="script"><link rel="preload" href="/assets/js/1.60a6a467.js" as="script"><link rel="preload" href="/assets/js/40.330182e7.js" as="script"><link rel="prefetch" href="/assets/js/10.7205dd61.js"><link rel="prefetch" href="/assets/js/100.da353333.js"><link rel="prefetch" href="/assets/js/101.89d3a3f6.js"><link rel="prefetch" href="/assets/js/102.606c8738.js"><link rel="prefetch" href="/assets/js/103.82c7ef5d.js"><link rel="prefetch" href="/assets/js/104.7a379b5b.js"><link rel="prefetch" href="/assets/js/105.dde174ec.js"><link rel="prefetch" href="/assets/js/106.b49cb691.js"><link rel="prefetch" href="/assets/js/107.55640b4a.js"><link rel="prefetch" href="/assets/js/108.ca1e57ec.js"><link rel="prefetch" href="/assets/js/109.cae2fb6c.js"><link rel="prefetch" href="/assets/js/11.9ef136f8.js"><link rel="prefetch" href="/assets/js/110.dce6cd70.js"><link rel="prefetch" href="/assets/js/111.bc26f011.js"><link rel="prefetch" href="/assets/js/112.02d017e0.js"><link rel="prefetch" href="/assets/js/113.3a9d147a.js"><link rel="prefetch" href="/assets/js/114.513ead96.js"><link rel="prefetch" href="/assets/js/115.dbc8b4c6.js"><link rel="prefetch" href="/assets/js/116.4be66573.js"><link rel="prefetch" href="/assets/js/117.ac331dd8.js"><link rel="prefetch" href="/assets/js/118.1097a6ae.js"><link rel="prefetch" href="/assets/js/119.ef959438.js"><link rel="prefetch" href="/assets/js/12.9ec44250.js"><link rel="prefetch" href="/assets/js/120.800897df.js"><link rel="prefetch" href="/assets/js/121.2615d650.js"><link rel="prefetch" href="/assets/js/122.28bc372e.js"><link rel="prefetch" href="/assets/js/123.db59fa01.js"><link rel="prefetch" href="/assets/js/124.71fb2bc3.js"><link rel="prefetch" href="/assets/js/125.9ba7bde8.js"><link rel="prefetch" href="/assets/js/126.5011ffc7.js"><link rel="prefetch" href="/assets/js/127.00ec4e11.js"><link rel="prefetch" href="/assets/js/128.d69785d3.js"><link rel="prefetch" href="/assets/js/129.2d60d0c0.js"><link rel="prefetch" href="/assets/js/13.5d1c6dd7.js"><link rel="prefetch" href="/assets/js/130.3277be91.js"><link rel="prefetch" href="/assets/js/131.02bf6804.js"><link rel="prefetch" href="/assets/js/132.37bff282.js"><link rel="prefetch" href="/assets/js/133.563a969a.js"><link rel="prefetch" href="/assets/js/134.d93234cf.js"><link rel="prefetch" href="/assets/js/135.f8fd617e.js"><link rel="prefetch" href="/assets/js/136.1e5a06df.js"><link rel="prefetch" href="/assets/js/137.ecbfb342.js"><link rel="prefetch" href="/assets/js/138.05ecccc5.js"><link rel="prefetch" href="/assets/js/139.437ff598.js"><link rel="prefetch" href="/assets/js/14.863c3fbd.js"><link rel="prefetch" href="/assets/js/140.de491c6a.js"><link rel="prefetch" href="/assets/js/141.b9fbbe2b.js"><link rel="prefetch" href="/assets/js/142.be2289e8.js"><link rel="prefetch" href="/assets/js/143.07f9c0dc.js"><link rel="prefetch" href="/assets/js/144.dda4602f.js"><link rel="prefetch" href="/assets/js/145.b59d8720.js"><link rel="prefetch" href="/assets/js/146.27926d55.js"><link rel="prefetch" href="/assets/js/147.6a3ed374.js"><link rel="prefetch" href="/assets/js/148.e4a7b7d5.js"><link rel="prefetch" href="/assets/js/149.b2ab0604.js"><link rel="prefetch" href="/assets/js/15.e5429768.js"><link rel="prefetch" href="/assets/js/150.bc0291a5.js"><link rel="prefetch" href="/assets/js/151.10b604bb.js"><link rel="prefetch" href="/assets/js/152.4a128b0c.js"><link rel="prefetch" href="/assets/js/153.8770725a.js"><link rel="prefetch" href="/assets/js/154.86ad8999.js"><link rel="prefetch" href="/assets/js/155.72dc781a.js"><link rel="prefetch" href="/assets/js/156.a112a1a7.js"><link rel="prefetch" href="/assets/js/157.92f38ae5.js"><link rel="prefetch" href="/assets/js/16.f26e0e20.js"><link rel="prefetch" href="/assets/js/17.daf297c5.js"><link rel="prefetch" href="/assets/js/18.e822d656.js"><link rel="prefetch" href="/assets/js/19.bf0bf0cb.js"><link rel="prefetch" href="/assets/js/20.eb139300.js"><link rel="prefetch" href="/assets/js/21.20191b6a.js"><link rel="prefetch" href="/assets/js/22.f72031f1.js"><link rel="prefetch" href="/assets/js/23.b044ccdc.js"><link rel="prefetch" href="/assets/js/24.e9c68a5f.js"><link rel="prefetch" href="/assets/js/25.0e7a2fa2.js"><link rel="prefetch" href="/assets/js/26.c17b8b08.js"><link rel="prefetch" href="/assets/js/27.439a8273.js"><link rel="prefetch" href="/assets/js/28.b2227968.js"><link rel="prefetch" href="/assets/js/29.d3065b94.js"><link rel="prefetch" href="/assets/js/30.e199c77c.js"><link rel="prefetch" href="/assets/js/31.0916bb89.js"><link rel="prefetch" href="/assets/js/32.4207f934.js"><link rel="prefetch" href="/assets/js/33.02fbf977.js"><link rel="prefetch" href="/assets/js/34.07368bb6.js"><link rel="prefetch" href="/assets/js/35.39ece046.js"><link rel="prefetch" href="/assets/js/36.7eea3db8.js"><link rel="prefetch" href="/assets/js/37.c5f1d6dc.js"><link rel="prefetch" href="/assets/js/38.f7803ab4.js"><link rel="prefetch" href="/assets/js/39.9603525d.js"><link rel="prefetch" href="/assets/js/4.47b13c96.js"><link rel="prefetch" href="/assets/js/41.0a14c88d.js"><link rel="prefetch" href="/assets/js/42.a5f1dd9f.js"><link rel="prefetch" href="/assets/js/43.16b8093b.js"><link rel="prefetch" href="/assets/js/44.66f3a36d.js"><link rel="prefetch" href="/assets/js/45.c3108a50.js"><link rel="prefetch" href="/assets/js/46.943eee46.js"><link rel="prefetch" href="/assets/js/47.06aee283.js"><link rel="prefetch" href="/assets/js/48.f0e39815.js"><link rel="prefetch" href="/assets/js/49.bf563f07.js"><link rel="prefetch" href="/assets/js/5.1229e70a.js"><link rel="prefetch" href="/assets/js/50.b85d639e.js"><link rel="prefetch" href="/assets/js/51.0d5bfdfe.js"><link rel="prefetch" href="/assets/js/52.72c662ad.js"><link rel="prefetch" href="/assets/js/53.486320d0.js"><link rel="prefetch" href="/assets/js/54.2d00490a.js"><link rel="prefetch" href="/assets/js/55.000434b7.js"><link rel="prefetch" href="/assets/js/56.23a68476.js"><link rel="prefetch" href="/assets/js/57.27efbb94.js"><link rel="prefetch" href="/assets/js/58.29c2aa40.js"><link rel="prefetch" href="/assets/js/59.0998d8d0.js"><link rel="prefetch" href="/assets/js/6.66b78701.js"><link rel="prefetch" href="/assets/js/60.469b6695.js"><link rel="prefetch" href="/assets/js/61.363f9cdf.js"><link rel="prefetch" href="/assets/js/62.02fdc0f6.js"><link rel="prefetch" href="/assets/js/63.0bb27acd.js"><link rel="prefetch" href="/assets/js/64.4e245675.js"><link rel="prefetch" href="/assets/js/65.b7388a80.js"><link rel="prefetch" href="/assets/js/66.a7039d42.js"><link rel="prefetch" href="/assets/js/67.e4ea8787.js"><link rel="prefetch" href="/assets/js/68.afb030af.js"><link rel="prefetch" href="/assets/js/69.51f88ebc.js"><link rel="prefetch" href="/assets/js/7.ef0b2ca0.js"><link rel="prefetch" href="/assets/js/70.6d81ed0b.js"><link rel="prefetch" href="/assets/js/71.03583f55.js"><link rel="prefetch" href="/assets/js/72.b5458ba0.js"><link rel="prefetch" href="/assets/js/73.999b2a2c.js"><link rel="prefetch" href="/assets/js/74.b76ba44a.js"><link rel="prefetch" href="/assets/js/75.d4dc64de.js"><link rel="prefetch" href="/assets/js/76.21c6cab2.js"><link rel="prefetch" href="/assets/js/77.5043ef10.js"><link rel="prefetch" href="/assets/js/78.f6521325.js"><link rel="prefetch" href="/assets/js/79.4d2f4d9a.js"><link rel="prefetch" href="/assets/js/8.6f8326b1.js"><link rel="prefetch" href="/assets/js/80.e5685697.js"><link rel="prefetch" href="/assets/js/81.8d39d031.js"><link rel="prefetch" href="/assets/js/82.0f7bc3b8.js"><link rel="prefetch" href="/assets/js/83.235eb8dd.js"><link rel="prefetch" href="/assets/js/84.90306cdc.js"><link rel="prefetch" href="/assets/js/85.68cc66dc.js"><link rel="prefetch" href="/assets/js/86.6c2adfb2.js"><link rel="prefetch" href="/assets/js/87.88fc5007.js"><link rel="prefetch" href="/assets/js/88.1b737c4a.js"><link rel="prefetch" href="/assets/js/89.e2ce6b1b.js"><link rel="prefetch" href="/assets/js/9.55c363c9.js"><link rel="prefetch" href="/assets/js/90.3646f652.js"><link rel="prefetch" href="/assets/js/91.59e1c2ef.js"><link rel="prefetch" href="/assets/js/92.724f7a6f.js"><link rel="prefetch" href="/assets/js/93.10c93d70.js"><link rel="prefetch" href="/assets/js/94.a1246b1c.js"><link rel="prefetch" href="/assets/js/95.d16afd5b.js"><link rel="prefetch" href="/assets/js/96.d1b13da5.js"><link rel="prefetch" href="/assets/js/97.7746bfa6.js"><link rel="prefetch" href="/assets/js/98.0bae3e21.js"><link rel="prefetch" href="/assets/js/99.51058bd7.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.239719ad.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div><div class="theme-container" data-v-319dd33c><div data-v-319dd33c><div id="loader-wrapper" class="loading-wrapper" data-v-1c4f0192 data-v-319dd33c data-v-319dd33c><div class="loader-main" data-v-1c4f0192><div data-v-1c4f0192></div><div data-v-1c4f0192></div><div data-v-1c4f0192></div><div data-v-1c4f0192></div></div> <!----> <!----></div> <div class="password-shadow password-wrapper-out" style="display:none;" data-v-1e2a0cc0 data-v-319dd33c data-v-319dd33c><h3 class="title" style="display:none;" data-v-1e2a0cc0 data-v-1e2a0cc0> </h3> <!----> <label id="box" class="inputBox" style="display:none;" data-v-1e2a0cc0 data-v-1e2a0cc0><input type="password" value="" data-v-1e2a0cc0> <span data-v-1e2a0cc0>Konck! Knock!</span> <button data-v-1e2a0cc0>OK</button></label> <div class="footer" style="display:none;" data-v-1e2a0cc0 data-v-1e2a0cc0><span data-v-1e2a0cc0><i class="iconfont reco-theme" data-v-1e2a0cc0></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-1e2a0cc0>vuePress-theme-reco</a></span> <span data-v-1e2a0cc0><i class="iconfont reco-copyright" data-v-1e2a0cc0></i> <a data-v-1e2a0cc0><span data-v-1e2a0cc0>掘金安东尼</span>
+            
+          <span data-v-1e2a0cc0>2019 - </span>
+          2021
+        </a></span></div></div> <div class="hide" data-v-319dd33c><header class="navbar" data-v-319dd33c><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/logo.png" alt=" " class="logo"> <span class="site-name"> </span></a> <div class="links"><div class="color-picker"><a class="color-button"><i class="iconfont reco-color"></i></a> <div class="color-picker-menu" style="display:none;"><div class="mode-options"><h4 class="title">Choose mode</h4> <ul class="color-mode-options"><li class="dark">dark</li><li class="auto active">auto</li><li class="light">light</li></ul></div></div></div> <div class="search-box"><i class="iconfont reco-search"></i> <input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link"><i class="iconfont reco-home"></i>
+  主页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-category"></i>
+      年复一年
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/2019/" class="nav-link"><i class="iconfont undefined"></i>
+  2019
+</a></li><li class="dropdown-item"><!----> <a href="/categories/2020/" class="nav-link"><i class="iconfont undefined"></i>
+  2020
+</a></li><li class="dropdown-item"><!----> <a href="/categories/2021/" class="nav-link"><i class="iconfont undefined"></i>
+  2021
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-other"></i>
+      以面代练
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/series/fe-weekly/index.html" class="nav-link"><i class="iconfont undefined"></i>
+  前端周记
+</a></li><li class="dropdown-item"><!----> <a href="/interview/vue/core.html" class="nav-link"><i class="iconfont undefined"></i>
+  源码生啃
+</a></li><li class="dropdown-item"><!----> <a href="/interview/read/index.html" class="nav-link"><i class="iconfont undefined"></i>
+  读书笔记
+</a></li><li class="dropdown-item"><!----> <a href="/interview/cacl/index.html" class="nav-link"><i class="iconfont undefined"></i>
+  算法
+</a></li><li class="dropdown-item"><!----> <a href="/interview/log/index.html" class="nav-link"><i class="iconfont undefined"></i>
+  面经
+</a></li></ul></div></div><div class="nav-item"><a href="/tag/" class="nav-link"><i class="iconfont reco-tag"></i>
+  标签
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-three"></i>
+      创作写作
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>创作</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/create/multimedia/poems.html" class="nav-link"><i class="iconfont undefined"></i>
+  诗与歌
+</a></li><li class="dropdown-subitem"><a href="/create/multimedia/movie.html" class="nav-link"><i class="iconfont undefined"></i>
+  电影解说
+</a></li></ul></li><li class="dropdown-item"><h4>写作</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/create/neverforget/mostsoft.html" class="nav-link"><i class="iconfont undefined"></i>
+  最柔软处
+</a></li><li class="dropdown-subitem"><a href="/create/neverforget/iamedog.html" class="nav-link"><i class="iconfont undefined"></i>
+  瘸腿的狗
+</a></li><li class="dropdown-subitem"><a href="/create/neverforget/allformoney.html" class="nav-link"><i class="iconfont undefined"></i>
+  赏金猎人
+</a></li></ul></li></ul></div></div><div class="nav-item"><a href="/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  时间线
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-message"></i>
+      关于我
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/about/starthere.html" class="nav-link"><i class="iconfont undefined"></i>
+  不忘初心
+</a></li><li class="dropdown-item"><!----> <a href="https://github.com/tuaran" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont undefined"></i>
+  GitHub
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://tuaran.github.io" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont undefined"></i>
+  GitHubPage
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask" data-v-319dd33c></div> <aside class="sidebar" data-v-319dd33c><div class="personal-info-wrapper" data-v-6c8ffc9c><img src="/avatar.png" alt="author-avatar" class="personal-img" data-v-6c8ffc9c> <h3 class="name" data-v-6c8ffc9c>
+    掘金安东尼
+  </h3> <div class="num" data-v-6c8ffc9c><div data-v-6c8ffc9c><h3 data-v-6c8ffc9c>83</h3> <h6 data-v-6c8ffc9c>文章</h6></div> <div data-v-6c8ffc9c><h3 data-v-6c8ffc9c>46</h3> <h6 data-v-6c8ffc9c>标签</h6></div></div> <hr data-v-6c8ffc9c></div> <nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link"><i class="iconfont reco-home"></i>
+  主页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-category"></i>
+      年复一年
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/2019/" class="nav-link"><i class="iconfont undefined"></i>
+  2019
+</a></li><li class="dropdown-item"><!----> <a href="/categories/2020/" class="nav-link"><i class="iconfont undefined"></i>
+  2020
+</a></li><li class="dropdown-item"><!----> <a href="/categories/2021/" class="nav-link"><i class="iconfont undefined"></i>
+  2021
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-other"></i>
+      以面代练
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/series/fe-weekly/index.html" class="nav-link"><i class="iconfont undefined"></i>
+  前端周记
+</a></li><li class="dropdown-item"><!----> <a href="/interview/vue/core.html" class="nav-link"><i class="iconfont undefined"></i>
+  源码生啃
+</a></li><li class="dropdown-item"><!----> <a href="/interview/read/index.html" class="nav-link"><i class="iconfont undefined"></i>
+  读书笔记
+</a></li><li class="dropdown-item"><!----> <a href="/interview/cacl/index.html" class="nav-link"><i class="iconfont undefined"></i>
+  算法
+</a></li><li class="dropdown-item"><!----> <a href="/interview/log/index.html" class="nav-link"><i class="iconfont undefined"></i>
+  面经
+</a></li></ul></div></div><div class="nav-item"><a href="/tag/" class="nav-link"><i class="iconfont reco-tag"></i>
+  标签
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-three"></i>
+      创作写作
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>创作</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/create/multimedia/poems.html" class="nav-link"><i class="iconfont undefined"></i>
+  诗与歌
+</a></li><li class="dropdown-subitem"><a href="/create/multimedia/movie.html" class="nav-link"><i class="iconfont undefined"></i>
+  电影解说
+</a></li></ul></li><li class="dropdown-item"><h4>写作</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/create/neverforget/mostsoft.html" class="nav-link"><i class="iconfont undefined"></i>
+  最柔软处
+</a></li><li class="dropdown-subitem"><a href="/create/neverforget/iamedog.html" class="nav-link"><i class="iconfont undefined"></i>
+  瘸腿的狗
+</a></li><li class="dropdown-subitem"><a href="/create/neverforget/allformoney.html" class="nav-link"><i class="iconfont undefined"></i>
+  赏金猎人
+</a></li></ul></li></ul></div></div><div class="nav-item"><a href="/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  时间线
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-message"></i>
+      关于我
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/about/starthere.html" class="nav-link"><i class="iconfont undefined"></i>
+  不忘初心
+</a></li><li class="dropdown-item"><!----> <a href="https://github.com/tuaran" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont undefined"></i>
+  GitHub
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://tuaran.github.io" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont undefined"></i>
+  GitHubPage
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>Vue.js v2.6.11 生啃一万行源码（19/24）</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/interview/vue/vue-source-code/studyVuesc19.html#前言" class="sidebar-link">前言</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/interview/vue/vue-source-code/studyVuesc19.html#正文" class="sidebar-link">正文</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/interview/vue/vue-source-code/studyVuesc19.html#第-9024-行至第-9207-行" class="sidebar-link">第 9024 行至第 9207 行</a></li><li class="sidebar-sub-header"><a href="/interview/vue/vue-source-code/studyVuesc19.html#第-9211-行至第-9537-行" class="sidebar-link">第 9211 行至第 9537 行</a></li></ul></li></ul></section></li></ul> </aside> <div class="password-shadow password-wrapper-in" style="display:none;" data-v-1e2a0cc0 data-v-319dd33c><h3 class="title" style="display:none;" data-v-1e2a0cc0 data-v-1e2a0cc0>Vue.js v2.6.11 生啃一万行源码（19/24）</h3> <!----> <label id="box" class="inputBox" style="display:none;" data-v-1e2a0cc0 data-v-1e2a0cc0><input type="password" value="" data-v-1e2a0cc0> <span data-v-1e2a0cc0>Konck! Knock!</span> <button data-v-1e2a0cc0>OK</button></label> <div class="footer" style="display:none;" data-v-1e2a0cc0 data-v-1e2a0cc0><span data-v-1e2a0cc0><i class="iconfont reco-theme" data-v-1e2a0cc0></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-1e2a0cc0>vuePress-theme-reco</a></span> <span data-v-1e2a0cc0><i class="iconfont reco-copyright" data-v-1e2a0cc0></i> <a data-v-1e2a0cc0><span data-v-1e2a0cc0>掘金安东尼</span>
+            
+          <span data-v-1e2a0cc0>2019 - </span>
+          2021
+        </a></span></div></div> <div data-v-319dd33c><main class="page"><div class="page-title" style="display:none;"><h1>Vue.js v2.6.11 生啃一万行源码（19/24）</h1> <hr> <div data-v-484a899e><i class="iconfont reco-account" data-v-484a899e><span data-v-484a899e>掘金安东尼</span></i> <i class="iconfont reco-date" data-v-484a899e><span data-v-484a899e>2020-06-10</span></i> <!----> <i class="iconfont reco-tag tags" data-v-484a899e><span class="tag-item" data-v-484a899e>
+      Vue
+    </span></i></div></div> <div class="theme-reco-content content__default" style="display:none;"><h2 id="前言"><a href="#前言" class="header-anchor">#</a> 前言</h2> <p>源码阅读可能会迟到，但是一定不会缺席！</p> <p>众所周知，以下代码就是 vue 的一种直接上手方式。通过 cdn 可以在线打开 vue.js。一个文件，一万行源码，能让万千开发者赖以生存，它究竟做了什么？让人品味。</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>&lt;html&gt;
+&lt;head&gt;&lt;/head&gt;
+&lt;body&gt;
+    &lt;div id=&quot;app&quot;&gt;
+        {{ message }}
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;script src=&quot;https://cdn.jsdelivr.net/npm/vue/dist/vue.js&quot;&gt;&lt;/script&gt;
+&lt;script&gt;
+    var app = new Vue({
+        el: '#app',
+        data: {
+            message: 'See Vue again!'
+        },
+    })
+&lt;/script&gt;
+&lt;/html&gt;
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br></div></div><p>源码cdn地址：<a href="https://cdn.jsdelivr.net/npm/vue/dist/vue.js" target="_blank" rel="noopener noreferrer">https://cdn.jsdelivr.net/npm/vue/dist/vue.js<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>，当下版本：v2.6.11</p> <p>选择生啃的原因是，自认为已经有一定的基础，且可以更自主地选择代码段分轻重来阅读，一方面测试自己的掌握程度，一方面追求更直观的源码阅读。</p> <p>当然你也可以选择在 <a href="https://github.com/vuejs/vue/tree/dev/src" target="_blank" rel="noopener noreferrer">https://github.com/vuejs/vue/tree/dev/src<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> 分模块的阅读，也可以看各路大神的归类整理。</p> <p>笔者尽量按 500 行作为一个模块来形成一个 md 文件，结合注释、自己的理解、以及附上对应查询链接来逐行细读源码。</p> <p>目的：自我梳理，分享交流。</p> <ul><li><a href="https://tuaran.github.io/views/2020/studyVuesc1.html" target="_blank" rel="noopener noreferrer">Vue.js v2.6.11 生啃一万行源码（1/24）<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://tuaran.github.io/views/2020/studyVuesc2.html" target="_blank" rel="noopener noreferrer">Vue.js v2.6.11 生啃一万行源码（2/24）<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://tuaran.github.io/views/2020/studyVuesc3.html" target="_blank" rel="noopener noreferrer">Vue.js v2.6.11 生啃一万行源码（3/24）<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://tuaran.github.io/views/2020/studyVuesc4.html" target="_blank" rel="noopener noreferrer">Vue.js v2.6.11 生啃一万行源码（4/24）<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://tuaran.github.io/views/2020/studyVuesc5.html" target="_blank" rel="noopener noreferrer">Vue.js v2.6.11 生啃一万行源码（5/24）<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://tuaran.github.io/views/2020/studyVuesc6.html" target="_blank" rel="noopener noreferrer">Vue.js v2.6.11 生啃一万行源码（6/24）<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://tuaran.github.io/views/2020/studyVuesc7.html" target="_blank" rel="noopener noreferrer">Vue.js v2.6.11 生啃一万行源码（7/24）<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://tuaran.github.io/views/2020/studyVuesc8.html" target="_blank" rel="noopener noreferrer">Vue.js v2.6.11 生啃一万行源码（8/24）<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://tuaran.github.io/views/2020/studyVuesc9.html" target="_blank" rel="noopener noreferrer">Vue.js v2.6.11 生啃一万行源码（9/24）<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://tuaran.github.io/views/2020/studyVuesc10.html" target="_blank" rel="noopener noreferrer">Vue.js v2.6.11 生啃一万行源码（10/24）<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://tuaran.github.io/views/2020/studyVuesc11.html" target="_blank" rel="noopener noreferrer">Vue.js v2.6.11 生啃一万行源码（11/24）<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://tuaran.github.io/views/2020/studyVuesc12.html" target="_blank" rel="noopener noreferrer">Vue.js v2.6.11 生啃一万行源码（12/24）<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://tuaran.github.io/views/2020/studyVuesc13.html" target="_blank" rel="noopener noreferrer">Vue.js v2.6.11 生啃一万行源码（13/24）<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://tuaran.github.io/views/2020/studyVuesc14.html" target="_blank" rel="noopener noreferrer">Vue.js v2.6.11 生啃一万行源码（14/24）<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://tuaran.github.io/views/2020/studyVuesc15.html" target="_blank" rel="noopener noreferrer">Vue.js v2.6.11 生啃一万行源码（15/24）<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://tuaran.github.io/views/2020/studyVuesc16.html" target="_blank" rel="noopener noreferrer">Vue.js v2.6.11 生啃一万行源码（16/24）<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://tuaran.github.io/views/2020/studyVuesc17.html" target="_blank" rel="noopener noreferrer">Vue.js v2.6.11 生啃一万行源码（17/24）<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://tuaran.github.io/views/2020/studyVuesc18.html" target="_blank" rel="noopener noreferrer">Vue.js v2.6.11 生啃一万行源码（18/24）<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://tuaran.github.io/views/2020/studyVuesc19.html" target="_blank" rel="noopener noreferrer">Vue.js v2.6.11 生啃一万行源码（19/24）<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://tuaran.github.io/views/2020/studyVuesc20.html" target="_blank" rel="noopener noreferrer">Vue.js v2.6.11 生啃一万行源码（20/24）<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://tuaran.github.io/views/2020/studyVuesc20.html" target="_blank" rel="noopener noreferrer">Vue.js v2.6.11 生啃一万行源码（21/24）<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://tuaran.github.io/views/2020/studyVuesc20.html" target="_blank" rel="noopener noreferrer">Vue.js v2.6.11 生啃一万行源码（22/24）<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://tuaran.github.io/views/2020/studyVuesc20.html" target="_blank" rel="noopener noreferrer">Vue.js v2.6.11 生啃一万行源码（23/24）<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://tuaran.github.io/views/2020/studyVuesc20.html" target="_blank" rel="noopener noreferrer">Vue.js v2.6.11 生啃一万行源码（24/24）<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul> <h2 id="正文"><a href="#正文" class="header-anchor">#</a> 正文</h2> <h3 id="第-9024-行至第-9207-行"><a href="#第-9024-行至第-9207-行" class="header-anchor">#</a> 第 9024 行至第 9207 行</h3> <p>// install platform specific utils
+// 安装平台特定的工具</p> <ul><li>Vue.config.x</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>Vue.config.mustUseProp = mustUseProp;
+Vue.config.isReservedTag = isReservedTag;
+Vue.config.isReservedAttr = isReservedAttr;
+Vue.config.getTagNamespace = getTagNamespace;
+Vue.config.isUnknownElement = isUnknownElement;
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><ul><li>Vue.prototype.$mount
+// public mount method 安装方法 实例方法挂载 vm</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>// public mount method
+Vue.prototype.$mount = function (
+    el, // 真实dom 或者是 string
+    hydrating //新的虚拟dom vonde
+) {
+    el = el &amp;&amp; inBrowser ? query(el) : undefined;
+    return mountComponent(this, el, hydrating)
+};
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div><p><strong>devtools global hook</strong> // 开发环境全局 hook Tip</p> <ul><li>buildRegex // 构建的正则匹配</li> <li>parseText // 匹配view 指令，并且把他转换成 虚拟dom vonde 需要渲染的函数,比如指令转换成 _s(name)</li> <li>transformNode // 获取 class 属性和:class或者v-bind的动态属性值，并且转化成字符串 添加到staticClass和classBinding 属性中</li> <li>genData // 初始化扩展指令 baseDirectives，on,bind,cloak方法，dataGenFns 获取到一个数组，数组中有两个函数 genData（转换 class） 和 genData$1（转换 style）,</li> <li>transformNode$1 // transformNode$1 获取 style属性和:style或者v-bind的动态属性值，并且转化成字符串 添加到staticStyle和styleBinding属性中</li> <li>genData$1 // 参见 genData</li> <li>style$1 // 包含 staticKeys、transformNode、genData 属性</li></ul> <h3 id="第-9211-行至第-9537-行"><a href="#第-9211-行至第-9537-行" class="header-anchor">#</a> 第 9211 行至第 9537 行</h3> <ul><li>he</li> <li>isUnaryTag // 工具函数</li> <li>canBeLeftOpenTag // 工具函数</li> <li>isNonPhrasingTag // 工具函数
+<strong>Regular Expressions</strong> // 相关正则</li> <li>parseHTML // 解析成 HTML !important</li></ul> <p>parseHTML 这个函数实现大概两百多行，是一个比较大的函数体了。</p> <p>parseHTML 中的方法用于处理HTML开始和结束标签。</p> <p>parseHTML 方法的整体逻辑是用正则判断各种情况，进行不同的处理。其中调用到了 options 中的自定义方法。</p> <p>options 中的自定义方法用于处理AST语法树，最终返回出整个AST语法树对象。</p> <p>贴一下源码，有兴趣可自行感受一二。附一篇详解<a href="https://segmentfault.com/a/1190000013592119" target="_blank" rel="noopener noreferrer">Vue.js HTML解析细节学习<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p> <div class="language- line-numbers-mode"><pre class="language-text"><code>function parseHTML(html, options) {
+    var stack = [];
+    var expectHTML = options.expectHTML;
+    var isUnaryTag$$1 = options.isUnaryTag || no;
+    var canBeLeftOpenTag$$1 = options.canBeLeftOpenTag || no;
+    var index = 0;
+    var last, lastTag;
+    while (html) {
+        last = html;
+        // Make sure we're not in a plaintext content element like script/style
+        // 确保我们不在像脚本/样式这样的纯文本内容元素中
+        if (!lastTag || !isPlainTextElement(lastTag)) {
+            var textEnd = html.indexOf('&lt;');
+            if (textEnd === 0) {
+                // Comment:
+                if (comment.test(html)) {
+                    var commentEnd = html.indexOf('--&gt;');
+
+                    if (commentEnd &gt;= 0) {
+                        if (options.shouldKeepComment) {
+                            options.comment(html.substring(4, commentEnd), index, index + commentEnd + 3);
+                        }
+                        advance(commentEnd + 3);
+                        continue
+                    }
+                }
+
+                // http://en.wikipedia.org/wiki/Conditional_comment#Downlevel-revealed_conditional_comment
+                if (conditionalComment.test(html)) {
+                    var conditionalEnd = html.indexOf(']&gt;');
+
+                    if (conditionalEnd &gt;= 0) {
+                        advance(conditionalEnd + 2);
+                        continue
+                    }
+                }
+
+                // Doctype:
+                // 匹配 html 的头文件
+                var doctypeMatch = html.match(doctype);
+                if (doctypeMatch) {
+                    advance(doctypeMatch[0].length);
+                    continue
+                }
+
+                // End tag:
+                var endTagMatch = html.match(endTag);
+                if (endTagMatch) {
+                    var curIndex = index;
+                    advance(endTagMatch[0].length);
+                    parseEndTag(endTagMatch[1], curIndex, index);
+                    continue
+                }
+
+                // Start tag:
+                // 解析开始标记
+                var startTagMatch = parseStartTag();
+                if (startTagMatch) {
+                    handleStartTag(startTagMatch);
+                    if (shouldIgnoreFirstNewline(startTagMatch.tagName, html)) {
+                        advance(1);
+                    }
+                    continue
+                }
+            }
+
+            var text = (void 0),
+                rest = (void 0),
+                next = (void 0);
+            if (textEnd &gt;= 0) {
+                rest = html.slice(textEnd);
+                while (
+                    !endTag.test(rest) &amp;&amp;
+                    !startTagOpen.test(rest) &amp;&amp;
+                    !comment.test(rest) &amp;&amp;
+                    !conditionalComment.test(rest)
+                ) {
+                    // &lt; in plain text, be forgiving and treat it as text
+                    next = rest.indexOf('&lt;', 1);
+                    if (next &lt; 0) {
+                        break
+                    }
+                    textEnd += next;
+                    rest = html.slice(textEnd);
+                }
+                text = html.substring(0, textEnd);
+            }
+
+            if (textEnd &lt; 0) {
+                text = html;
+            }
+
+            if (text) {
+                advance(text.length);
+            }
+
+            if (options.chars &amp;&amp; text) {
+                options.chars(text, index - text.length, index);
+            }
+        } else {
+            //  处理是script,style,textarea
+            var endTagLength = 0;
+            var stackedTag = lastTag.toLowerCase();
+            var reStackedTag = reCache[stackedTag] || (reCache[stackedTag] = new RegExp('([\\s\\S]*?)(&lt;/' + stackedTag + '[^&gt;]*&gt;)', 'i'));
+            var rest$1 = html.replace(reStackedTag, function (all, text, endTag) {
+                endTagLength = endTag.length;
+                if (!isPlainTextElement(stackedTag) &amp;&amp; stackedTag !== 'noscript') {
+                    text = text
+                        .replace(/&lt;!\--([\s\S]*?)--&gt;/g, '$1') // #7298
+                        .replace(/&lt;!\[CDATA\[([\s\S]*?)]]&gt;/g, '$1');
+                }
+                if (shouldIgnoreFirstNewline(stackedTag, text)) {
+                    text = text.slice(1);
+                }
+                if (options.chars) {
+                    options.chars(text);
+                }
+                return ''
+            });
+            index += html.length - rest$1.length;
+            html = rest$1;
+            parseEndTag(stackedTag, index - endTagLength, index);
+        }
+
+        if (html === last) {
+            options.chars &amp;&amp; options.chars(html);
+            if (!stack.length &amp;&amp; options.warn) {
+                options.warn((&quot;Mal-formatted tag at end of template: \&quot;&quot; + html + &quot;\&quot;&quot;), {
+                    start: index + html.length
+                });
+            }
+            break
+        }
+    }
+
+    // Clean up any remaining tags
+    parseEndTag();
+
+    function advance(n) {
+        index += n;
+        html = html.substring(n);
+    }
+
+    function parseStartTag() {
+        var start = html.match(startTagOpen);
+        if (start) {
+            var match = {
+                tagName: start[1],
+                attrs: [],
+                start: index
+            };
+            advance(start[0].length);
+            var end, attr;
+            while (!(end = html.match(startTagClose)) &amp;&amp; (attr = html.match(dynamicArgAttribute) || html.match(attribute))) {
+                attr.start = index;
+                advance(attr[0].length);
+                attr.end = index;
+                match.attrs.push(attr);
+            }
+            if (end) {
+                match.unarySlash = end[1];
+                advance(end[0].length);
+                match.end = index;
+                return match
+            }
+        }
+    }
+
+    function handleStartTag(match) {
+        var tagName = match.tagName;
+        var unarySlash = match.unarySlash;
+
+        if (expectHTML) {
+            if (lastTag === 'p' &amp;&amp; isNonPhrasingTag(tagName)) {
+                parseEndTag(lastTag);
+            }
+            if (canBeLeftOpenTag$$1(tagName) &amp;&amp; lastTag === tagName) {
+                parseEndTag(tagName);
+            }
+        }
+
+        var unary = isUnaryTag$$1(tagName) || !!unarySlash;
+
+        var l = match.attrs.length;
+        var attrs = new Array(l);
+        for (var i = 0; i &lt; l; i++) {
+            var args = match.attrs[i];
+            var value = args[3] || args[4] || args[5] || '';
+            var shouldDecodeNewlines = tagName === 'a' &amp;&amp; args[1] === 'href' ?
+                options.shouldDecodeNewlinesForHref :
+                options.shouldDecodeNewlines;
+            attrs[i] = {
+                name: args[1],
+                value: decodeAttr(value, shouldDecodeNewlines)
+            };
+            if (options.outputSourceRange) {
+                attrs[i].start = args.start + args[0].match(/^\s*/).length;
+                attrs[i].end = args.end;
+            }
+        }
+
+        if (!unary) {
+            stack.push({
+                tag: tagName,
+                lowerCasedTag: tagName.toLowerCase(),
+                attrs: attrs,
+                start: match.start,
+                end: match.end
+            });
+            lastTag = tagName;
+        }
+
+        if (options.start) {
+            options.start(tagName, attrs, unary, match.start, match.end);
+        }
+    }
+
+    function parseEndTag(tagName, start, end) {
+        var pos, lowerCasedTagName;
+        if (start == null) {
+            start = index;
+        }
+        if (end == null) {
+            end = index;
+        }
+
+        // Find the closest opened tag of the same type
+        if (tagName) {
+            lowerCasedTagName = tagName.toLowerCase();
+            for (pos = stack.length - 1; pos &gt;= 0; pos--) {
+                if (stack[pos].lowerCasedTag === lowerCasedTagName) {
+                    break
+                }
+            }
+        } else {
+            // If no tag name is provided, clean shop
+            pos = 0;
+        }
+
+        if (pos &gt;= 0) {
+            // Close all the open elements, up the stack
+            for (var i = stack.length - 1; i &gt;= pos; i--) {
+                if (i &gt; pos || !tagName &amp;&amp;
+                    options.warn
+                ) {
+                    options.warn(
+                        (&quot;tag &lt;&quot; + (stack[i].tag) + &quot;&gt; has no matching end tag.&quot;), {
+                            start: stack[i].start,
+                            end: stack[i].end
+                        }
+                    );
+                }
+                if (options.end) {
+                    options.end(stack[i].tag, start, end);
+                }
+            }
+
+            // Remove the open elements from the stack
+            stack.length = pos;
+            lastTag = pos &amp;&amp; stack[pos - 1].tag;
+        } else if (lowerCasedTagName === 'br') {
+            if (options.start) {
+                options.start(tagName, [], true, start, end);
+            }
+        } else if (lowerCasedTagName === 'p') {
+            if (options.start) {
+                options.start(tagName, [], false, start, end);
+            }
+            if (options.end) {
+                options.end(tagName, start, end);
+            }
+        }
+    }
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br><span class="line-number">59</span><br><span class="line-number">60</span><br><span class="line-number">61</span><br><span class="line-number">62</span><br><span class="line-number">63</span><br><span class="line-number">64</span><br><span class="line-number">65</span><br><span class="line-number">66</span><br><span class="line-number">67</span><br><span class="line-number">68</span><br><span class="line-number">69</span><br><span class="line-number">70</span><br><span class="line-number">71</span><br><span class="line-number">72</span><br><span class="line-number">73</span><br><span class="line-number">74</span><br><span class="line-number">75</span><br><span class="line-number">76</span><br><span class="line-number">77</span><br><span class="line-number">78</span><br><span class="line-number">79</span><br><span class="line-number">80</span><br><span class="line-number">81</span><br><span class="line-number">82</span><br><span class="line-number">83</span><br><span class="line-number">84</span><br><span class="line-number">85</span><br><span class="line-number">86</span><br><span class="line-number">87</span><br><span class="line-number">88</span><br><span class="line-number">89</span><br><span class="line-number">90</span><br><span class="line-number">91</span><br><span class="line-number">92</span><br><span class="line-number">93</span><br><span class="line-number">94</span><br><span class="line-number">95</span><br><span class="line-number">96</span><br><span class="line-number">97</span><br><span class="line-number">98</span><br><span class="line-number">99</span><br><span class="line-number">100</span><br><span class="line-number">101</span><br><span class="line-number">102</span><br><span class="line-number">103</span><br><span class="line-number">104</span><br><span class="line-number">105</span><br><span class="line-number">106</span><br><span class="line-number">107</span><br><span class="line-number">108</span><br><span class="line-number">109</span><br><span class="line-number">110</span><br><span class="line-number">111</span><br><span class="line-number">112</span><br><span class="line-number">113</span><br><span class="line-number">114</span><br><span class="line-number">115</span><br><span class="line-number">116</span><br><span class="line-number">117</span><br><span class="line-number">118</span><br><span class="line-number">119</span><br><span class="line-number">120</span><br><span class="line-number">121</span><br><span class="line-number">122</span><br><span class="line-number">123</span><br><span class="line-number">124</span><br><span class="line-number">125</span><br><span class="line-number">126</span><br><span class="line-number">127</span><br><span class="line-number">128</span><br><span class="line-number">129</span><br><span class="line-number">130</span><br><span class="line-number">131</span><br><span class="line-number">132</span><br><span class="line-number">133</span><br><span class="line-number">134</span><br><span class="line-number">135</span><br><span class="line-number">136</span><br><span class="line-number">137</span><br><span class="line-number">138</span><br><span class="line-number">139</span><br><span class="line-number">140</span><br><span class="line-number">141</span><br><span class="line-number">142</span><br><span class="line-number">143</span><br><span class="line-number">144</span><br><span class="line-number">145</span><br><span class="line-number">146</span><br><span class="line-number">147</span><br><span class="line-number">148</span><br><span class="line-number">149</span><br><span class="line-number">150</span><br><span class="line-number">151</span><br><span class="line-number">152</span><br><span class="line-number">153</span><br><span class="line-number">154</span><br><span class="line-number">155</span><br><span class="line-number">156</span><br><span class="line-number">157</span><br><span class="line-number">158</span><br><span class="line-number">159</span><br><span class="line-number">160</span><br><span class="line-number">161</span><br><span class="line-number">162</span><br><span class="line-number">163</span><br><span class="line-number">164</span><br><span class="line-number">165</span><br><span class="line-number">166</span><br><span class="line-number">167</span><br><span class="line-number">168</span><br><span class="line-number">169</span><br><span class="line-number">170</span><br><span class="line-number">171</span><br><span class="line-number">172</span><br><span class="line-number">173</span><br><span class="line-number">174</span><br><span class="line-number">175</span><br><span class="line-number">176</span><br><span class="line-number">177</span><br><span class="line-number">178</span><br><span class="line-number">179</span><br><span class="line-number">180</span><br><span class="line-number">181</span><br><span class="line-number">182</span><br><span class="line-number">183</span><br><span class="line-number">184</span><br><span class="line-number">185</span><br><span class="line-number">186</span><br><span class="line-number">187</span><br><span class="line-number">188</span><br><span class="line-number">189</span><br><span class="line-number">190</span><br><span class="line-number">191</span><br><span class="line-number">192</span><br><span class="line-number">193</span><br><span class="line-number">194</span><br><span class="line-number">195</span><br><span class="line-number">196</span><br><span class="line-number">197</span><br><span class="line-number">198</span><br><span class="line-number">199</span><br><span class="line-number">200</span><br><span class="line-number">201</span><br><span class="line-number">202</span><br><span class="line-number">203</span><br><span class="line-number">204</span><br><span class="line-number">205</span><br><span class="line-number">206</span><br><span class="line-number">207</span><br><span class="line-number">208</span><br><span class="line-number">209</span><br><span class="line-number">210</span><br><span class="line-number">211</span><br><span class="line-number">212</span><br><span class="line-number">213</span><br><span class="line-number">214</span><br><span class="line-number">215</span><br><span class="line-number">216</span><br><span class="line-number">217</span><br><span class="line-number">218</span><br><span class="line-number">219</span><br><span class="line-number">220</span><br><span class="line-number">221</span><br><span class="line-number">222</span><br><span class="line-number">223</span><br><span class="line-number">224</span><br><span class="line-number">225</span><br><span class="line-number">226</span><br><span class="line-number">227</span><br><span class="line-number">228</span><br><span class="line-number">229</span><br><span class="line-number">230</span><br><span class="line-number">231</span><br><span class="line-number">232</span><br><span class="line-number">233</span><br><span class="line-number">234</span><br><span class="line-number">235</span><br><span class="line-number">236</span><br><span class="line-number">237</span><br><span class="line-number">238</span><br><span class="line-number">239</span><br><span class="line-number">240</span><br><span class="line-number">241</span><br><span class="line-number">242</span><br><span class="line-number">243</span><br><span class="line-number">244</span><br><span class="line-number">245</span><br><span class="line-number">246</span><br><span class="line-number">247</span><br><span class="line-number">248</span><br><span class="line-number">249</span><br><span class="line-number">250</span><br><span class="line-number">251</span><br><span class="line-number">252</span><br><span class="line-number">253</span><br><span class="line-number">254</span><br><span class="line-number">255</span><br><span class="line-number">256</span><br><span class="line-number">257</span><br><span class="line-number">258</span><br><span class="line-number">259</span><br><span class="line-number">260</span><br><span class="line-number">261</span><br><span class="line-number">262</span><br><span class="line-number">263</span><br><span class="line-number">264</span><br><span class="line-number">265</span><br><span class="line-number">266</span><br><span class="line-number">267</span><br><span class="line-number">268</span><br><span class="line-number">269</span><br><span class="line-number">270</span><br><span class="line-number">271</span><br><span class="line-number">272</span><br><span class="line-number">273</span><br><span class="line-number">274</span><br></div></div></div> <footer class="page-edit" style="display:none;"><!----> <div class="last-updated"><span class="prefix">Last Updated: </span> <span class="time">11/24/2020, 4:09:13 PM</span></div></footer> <!----></main> <!----> <div style="display:none;" data-v-319dd33c data-v-319dd33c><div class="comments-wrapper" data-v-319dd33c><!----></div></div></div></div></div></div></div><div class="global-ui"><div class="back-to-ceiling" style="right:1rem;bottom:6rem;width:2.5rem;height:2.5rem;border-radius:.25rem;line-height:2.5rem;display:none;" data-v-c6073ba8 data-v-c6073ba8><svg t="1574745035067" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5404" class="icon" data-v-c6073ba8><path d="M526.60727968 10.90185116a27.675 27.675 0 0 0-29.21455937 0c-131.36607665 82.28402758-218.69155461 228.01873535-218.69155402 394.07834331a462.20625001 462.20625001 0 0 0 5.36959153 69.94390903c1.00431239 6.55289093-0.34802892 13.13561351-3.76865779 18.80351572-32.63518765 54.11355614-51.75690182 118.55860487-51.7569018 187.94566865a371.06718723 371.06718723 0 0 0 11.50484808 91.98906777c6.53300375 25.50556257 41.68394495 28.14064038 52.69160883 4.22606766 17.37162448-37.73630017 42.14135425-72.50938081 72.80769204-103.21549295 2.18761121 3.04276886 4.15646224 6.24463696 6.40373557 9.22774369a1871.4375 1871.4375 0 0 0 140.04691725 5.34970492 1866.36093723 1866.36093723 0 0 0 140.04691723-5.34970492c2.24727335-2.98310674 4.21612437-6.18497483 6.3937923-9.2178004 30.66633723 30.70611158 55.4360664 65.4791928 72.80769147 103.21549355 11.00766384 23.91457269 46.15860503 21.27949489 52.69160879-4.22606768a371.15156223 371.15156223 0 0 0 11.514792-91.99901164c0-69.36717486-19.13165746-133.82216804-51.75690182-187.92578088-3.42062944-5.66790279-4.76302748-12.26056868-3.76865837-18.80351632a462.20625001 462.20625001 0 0 0 5.36959269-69.943909c-0.00994388-166.08943902-87.32547796-311.81420293-218.6915546-394.09823051zM605.93803103 357.87693858a93.93749974 93.93749974 0 1 1-187.89594924 6.1e-7 93.93749974 93.93749974 0 0 1 187.89594924-6.1e-7z" p-id="5405" data-v-c6073ba8></path><path d="M429.50777625 765.63860547C429.50777625 803.39355007 466.44236686 1000.39046097 512.00932183 1000.39046097c45.56695499 0 82.4922232-197.00623328 82.5015456-234.7518555 0-37.75494459-36.9345906-68.35043303-82.4922232-68.34111062-45.57627738-0.00932239-82.52019037 30.59548842-82.51086798 68.34111062z" p-id="5406" data-v-c6073ba8></path></svg></div><div class="reco-bgm-panel" data-v-39f9e6e0><audio id="bgm" src="/bgm/comebacktome.mp3" data-v-39f9e6e0></audio> <div class="reco-float-box" style="bottom:200px;z-index:999999;display:none;" data-v-39f9e6e0 data-v-41bcba48 data-v-39f9e6e0><img src="/bgm/comebacktome.jpg" data-v-39f9e6e0></div> <div class="reco-bgm-box" style="left:10px;bottom:10px;z-index:999999;" data-v-39f9e6e0 data-v-41bcba48 data-v-39f9e6e0><div class="reco-bgm-cover" style="background-image:url(/bgm/comebacktome.jpg);" data-v-39f9e6e0><div class="mini-operation" style="display:none;" data-v-39f9e6e0><i class="reco-bgm reco-bgm-pause" style="display:none;" data-v-39f9e6e0></i> <i class="reco-bgm reco-bgm-play" style="display:none;" data-v-39f9e6e0></i></div> <div class="falut-message" style="display:none;" data-v-39f9e6e0>
+          播放失败
+        </div></div> <div class="reco-bgm-info" data-v-39f9e6e0 data-v-41bcba48 data-v-39f9e6e0><div class="info-box" data-v-39f9e6e0><i class="reco-bgm reco-bgm-music music" data-v-39f9e6e0></i>Come Back To Me</div> <div class="info-box" data-v-39f9e6e0><i class="reco-bgm reco-bgm-artist" data-v-39f9e6e0></i>宇多田ヒカル</div> <div class="reco-bgm-progress" data-v-39f9e6e0><div class="progress-bar" data-v-39f9e6e0><div class="bar" data-v-39f9e6e0></div></div></div> <div class="reco-bgm-operation" data-v-39f9e6e0><i class="reco-bgm reco-bgm-last last" data-v-39f9e6e0></i> <i class="reco-bgm reco-bgm-pause pause" style="display:none;" data-v-39f9e6e0></i> <i class="reco-bgm reco-bgm-play play" data-v-39f9e6e0></i> <i class="reco-bgm reco-bgm-next next" data-v-39f9e6e0></i> <i class="reco-bgm reco-bgm-volume1 volume" data-v-39f9e6e0></i> <i class="reco-bgm reco-bgm-mute mute" style="display:none;" data-v-39f9e6e0></i> <div class="volume-bar" data-v-39f9e6e0><div class="bar" data-v-39f9e6e0></div></div></div></div> <div class="reco-bgm-left-box" data-v-39f9e6e0 data-v-41bcba48 data-v-39f9e6e0><i class="reco-bgm reco-bgm-left" data-v-39f9e6e0></i></div></div></div><div class="kanbanniang" data-v-5775ee02><div class="banniang-container" style="display:;" data-v-5775ee02><div class="messageBox" style="right:68px;bottom:190px;display:none;" data-v-5775ee02>
+      欢迎来到  
+    </div> <div class="operation" style="right:90px;bottom:40px;display:none;" data-v-5775ee02><i class="kbnfont kbn-ban-home ban-home" data-v-5775ee02></i> <i class="kbnfont kbn-ban-message message" data-v-5775ee02></i> <i class="kbnfont kbn-ban-close close" data-v-5775ee02></i> <a target="_blank" href="https://vuepress-theme-reco.recoluan.com/views/plugins/kanbanniang.html" data-v-5775ee02><i class="kbnfont kbn-ban-info info" data-v-5775ee02></i></a> <i class="kbnfont kbn-ban-theme skin" style="display:none;" data-v-5775ee02></i></div> <canvas id="banniang" width="150" height="220" class="live2d" style="right:90px;bottom:-20px;opacity:0.9;" data-v-5775ee02></canvas></div> <div class="showBanNiang" style="display:none;" data-v-5775ee02>
+    看板娘
+  </div></div></div></div>
+    <script src="/assets/js/app.fab4b134.js" defer></script><script src="/assets/js/3.92bb3b86.js" defer></script><script src="/assets/js/1.60a6a467.js" defer></script><script src="/assets/js/40.330182e7.js" defer></script>
+  </body>
+</html>

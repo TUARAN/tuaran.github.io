@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>10 个超强 Vue3 实战指南，由此突破新特性！ |  </title>
+    <meta name="generator" content="VuePress 1.8.2">
+    <link rel="icon" href="/favicon.ico">
+    <meta name="description" content=" ">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    
+    <link rel="preload" href="/assets/css/0.styles.239719ad.css" as="style"><link rel="preload" href="/assets/js/app.fab4b134.js" as="script"><link rel="preload" href="/assets/js/3.92bb3b86.js" as="script"><link rel="preload" href="/assets/js/1.60a6a467.js" as="script"><link rel="preload" href="/assets/js/153.8770725a.js" as="script"><link rel="prefetch" href="/assets/js/10.7205dd61.js"><link rel="prefetch" href="/assets/js/100.da353333.js"><link rel="prefetch" href="/assets/js/101.89d3a3f6.js"><link rel="prefetch" href="/assets/js/102.606c8738.js"><link rel="prefetch" href="/assets/js/103.82c7ef5d.js"><link rel="prefetch" href="/assets/js/104.7a379b5b.js"><link rel="prefetch" href="/assets/js/105.dde174ec.js"><link rel="prefetch" href="/assets/js/106.b49cb691.js"><link rel="prefetch" href="/assets/js/107.55640b4a.js"><link rel="prefetch" href="/assets/js/108.ca1e57ec.js"><link rel="prefetch" href="/assets/js/109.cae2fb6c.js"><link rel="prefetch" href="/assets/js/11.9ef136f8.js"><link rel="prefetch" href="/assets/js/110.dce6cd70.js"><link rel="prefetch" href="/assets/js/111.bc26f011.js"><link rel="prefetch" href="/assets/js/112.02d017e0.js"><link rel="prefetch" href="/assets/js/113.3a9d147a.js"><link rel="prefetch" href="/assets/js/114.513ead96.js"><link rel="prefetch" href="/assets/js/115.dbc8b4c6.js"><link rel="prefetch" href="/assets/js/116.4be66573.js"><link rel="prefetch" href="/assets/js/117.ac331dd8.js"><link rel="prefetch" href="/assets/js/118.1097a6ae.js"><link rel="prefetch" href="/assets/js/119.ef959438.js"><link rel="prefetch" href="/assets/js/12.9ec44250.js"><link rel="prefetch" href="/assets/js/120.800897df.js"><link rel="prefetch" href="/assets/js/121.2615d650.js"><link rel="prefetch" href="/assets/js/122.28bc372e.js"><link rel="prefetch" href="/assets/js/123.db59fa01.js"><link rel="prefetch" href="/assets/js/124.71fb2bc3.js"><link rel="prefetch" href="/assets/js/125.9ba7bde8.js"><link rel="prefetch" href="/assets/js/126.5011ffc7.js"><link rel="prefetch" href="/assets/js/127.00ec4e11.js"><link rel="prefetch" href="/assets/js/128.d69785d3.js"><link rel="prefetch" href="/assets/js/129.2d60d0c0.js"><link rel="prefetch" href="/assets/js/13.5d1c6dd7.js"><link rel="prefetch" href="/assets/js/130.3277be91.js"><link rel="prefetch" href="/assets/js/131.02bf6804.js"><link rel="prefetch" href="/assets/js/132.37bff282.js"><link rel="prefetch" href="/assets/js/133.563a969a.js"><link rel="prefetch" href="/assets/js/134.d93234cf.js"><link rel="prefetch" href="/assets/js/135.f8fd617e.js"><link rel="prefetch" href="/assets/js/136.1e5a06df.js"><link rel="prefetch" href="/assets/js/137.ecbfb342.js"><link rel="prefetch" href="/assets/js/138.05ecccc5.js"><link rel="prefetch" href="/assets/js/139.437ff598.js"><link rel="prefetch" href="/assets/js/14.863c3fbd.js"><link rel="prefetch" href="/assets/js/140.de491c6a.js"><link rel="prefetch" href="/assets/js/141.b9fbbe2b.js"><link rel="prefetch" href="/assets/js/142.be2289e8.js"><link rel="prefetch" href="/assets/js/143.07f9c0dc.js"><link rel="prefetch" href="/assets/js/144.dda4602f.js"><link rel="prefetch" href="/assets/js/145.b59d8720.js"><link rel="prefetch" href="/assets/js/146.27926d55.js"><link rel="prefetch" href="/assets/js/147.6a3ed374.js"><link rel="prefetch" href="/assets/js/148.e4a7b7d5.js"><link rel="prefetch" href="/assets/js/149.b2ab0604.js"><link rel="prefetch" href="/assets/js/15.e5429768.js"><link rel="prefetch" href="/assets/js/150.bc0291a5.js"><link rel="prefetch" href="/assets/js/151.10b604bb.js"><link rel="prefetch" href="/assets/js/152.4a128b0c.js"><link rel="prefetch" href="/assets/js/154.86ad8999.js"><link rel="prefetch" href="/assets/js/155.72dc781a.js"><link rel="prefetch" href="/assets/js/156.a112a1a7.js"><link rel="prefetch" href="/assets/js/157.92f38ae5.js"><link rel="prefetch" href="/assets/js/16.f26e0e20.js"><link rel="prefetch" href="/assets/js/17.daf297c5.js"><link rel="prefetch" href="/assets/js/18.e822d656.js"><link rel="prefetch" href="/assets/js/19.bf0bf0cb.js"><link rel="prefetch" href="/assets/js/20.eb139300.js"><link rel="prefetch" href="/assets/js/21.20191b6a.js"><link rel="prefetch" href="/assets/js/22.f72031f1.js"><link rel="prefetch" href="/assets/js/23.b044ccdc.js"><link rel="prefetch" href="/assets/js/24.e9c68a5f.js"><link rel="prefetch" href="/assets/js/25.0e7a2fa2.js"><link rel="prefetch" href="/assets/js/26.c17b8b08.js"><link rel="prefetch" href="/assets/js/27.439a8273.js"><link rel="prefetch" href="/assets/js/28.b2227968.js"><link rel="prefetch" href="/assets/js/29.d3065b94.js"><link rel="prefetch" href="/assets/js/30.e199c77c.js"><link rel="prefetch" href="/assets/js/31.0916bb89.js"><link rel="prefetch" href="/assets/js/32.4207f934.js"><link rel="prefetch" href="/assets/js/33.02fbf977.js"><link rel="prefetch" href="/assets/js/34.07368bb6.js"><link rel="prefetch" href="/assets/js/35.39ece046.js"><link rel="prefetch" href="/assets/js/36.7eea3db8.js"><link rel="prefetch" href="/assets/js/37.c5f1d6dc.js"><link rel="prefetch" href="/assets/js/38.f7803ab4.js"><link rel="prefetch" href="/assets/js/39.9603525d.js"><link rel="prefetch" href="/assets/js/4.47b13c96.js"><link rel="prefetch" href="/assets/js/40.330182e7.js"><link rel="prefetch" href="/assets/js/41.0a14c88d.js"><link rel="prefetch" href="/assets/js/42.a5f1dd9f.js"><link rel="prefetch" href="/assets/js/43.16b8093b.js"><link rel="prefetch" href="/assets/js/44.66f3a36d.js"><link rel="prefetch" href="/assets/js/45.c3108a50.js"><link rel="prefetch" href="/assets/js/46.943eee46.js"><link rel="prefetch" href="/assets/js/47.06aee283.js"><link rel="prefetch" href="/assets/js/48.f0e39815.js"><link rel="prefetch" href="/assets/js/49.bf563f07.js"><link rel="prefetch" href="/assets/js/5.1229e70a.js"><link rel="prefetch" href="/assets/js/50.b85d639e.js"><link rel="prefetch" href="/assets/js/51.0d5bfdfe.js"><link rel="prefetch" href="/assets/js/52.72c662ad.js"><link rel="prefetch" href="/assets/js/53.486320d0.js"><link rel="prefetch" href="/assets/js/54.2d00490a.js"><link rel="prefetch" href="/assets/js/55.000434b7.js"><link rel="prefetch" href="/assets/js/56.23a68476.js"><link rel="prefetch" href="/assets/js/57.27efbb94.js"><link rel="prefetch" href="/assets/js/58.29c2aa40.js"><link rel="prefetch" href="/assets/js/59.0998d8d0.js"><link rel="prefetch" href="/assets/js/6.66b78701.js"><link rel="prefetch" href="/assets/js/60.469b6695.js"><link rel="prefetch" href="/assets/js/61.363f9cdf.js"><link rel="prefetch" href="/assets/js/62.02fdc0f6.js"><link rel="prefetch" href="/assets/js/63.0bb27acd.js"><link rel="prefetch" href="/assets/js/64.4e245675.js"><link rel="prefetch" href="/assets/js/65.b7388a80.js"><link rel="prefetch" href="/assets/js/66.a7039d42.js"><link rel="prefetch" href="/assets/js/67.e4ea8787.js"><link rel="prefetch" href="/assets/js/68.afb030af.js"><link rel="prefetch" href="/assets/js/69.51f88ebc.js"><link rel="prefetch" href="/assets/js/7.ef0b2ca0.js"><link rel="prefetch" href="/assets/js/70.6d81ed0b.js"><link rel="prefetch" href="/assets/js/71.03583f55.js"><link rel="prefetch" href="/assets/js/72.b5458ba0.js"><link rel="prefetch" href="/assets/js/73.999b2a2c.js"><link rel="prefetch" href="/assets/js/74.b76ba44a.js"><link rel="prefetch" href="/assets/js/75.d4dc64de.js"><link rel="prefetch" href="/assets/js/76.21c6cab2.js"><link rel="prefetch" href="/assets/js/77.5043ef10.js"><link rel="prefetch" href="/assets/js/78.f6521325.js"><link rel="prefetch" href="/assets/js/79.4d2f4d9a.js"><link rel="prefetch" href="/assets/js/8.6f8326b1.js"><link rel="prefetch" href="/assets/js/80.e5685697.js"><link rel="prefetch" href="/assets/js/81.8d39d031.js"><link rel="prefetch" href="/assets/js/82.0f7bc3b8.js"><link rel="prefetch" href="/assets/js/83.235eb8dd.js"><link rel="prefetch" href="/assets/js/84.90306cdc.js"><link rel="prefetch" href="/assets/js/85.68cc66dc.js"><link rel="prefetch" href="/assets/js/86.6c2adfb2.js"><link rel="prefetch" href="/assets/js/87.88fc5007.js"><link rel="prefetch" href="/assets/js/88.1b737c4a.js"><link rel="prefetch" href="/assets/js/89.e2ce6b1b.js"><link rel="prefetch" href="/assets/js/9.55c363c9.js"><link rel="prefetch" href="/assets/js/90.3646f652.js"><link rel="prefetch" href="/assets/js/91.59e1c2ef.js"><link rel="prefetch" href="/assets/js/92.724f7a6f.js"><link rel="prefetch" href="/assets/js/93.10c93d70.js"><link rel="prefetch" href="/assets/js/94.a1246b1c.js"><link rel="prefetch" href="/assets/js/95.d16afd5b.js"><link rel="prefetch" href="/assets/js/96.d1b13da5.js"><link rel="prefetch" href="/assets/js/97.7746bfa6.js"><link rel="prefetch" href="/assets/js/98.0bae3e21.js"><link rel="prefetch" href="/assets/js/99.51058bd7.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.239719ad.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div><div class="theme-container" data-v-319dd33c><div data-v-319dd33c><div id="loader-wrapper" class="loading-wrapper" data-v-1c4f0192 data-v-319dd33c data-v-319dd33c><div class="loader-main" data-v-1c4f0192><div data-v-1c4f0192></div><div data-v-1c4f0192></div><div data-v-1c4f0192></div><div data-v-1c4f0192></div></div> <!----> <!----></div> <div class="password-shadow password-wrapper-out" style="display:none;" data-v-1e2a0cc0 data-v-319dd33c data-v-319dd33c><h3 class="title" style="display:none;" data-v-1e2a0cc0 data-v-1e2a0cc0> </h3> <!----> <label id="box" class="inputBox" style="display:none;" data-v-1e2a0cc0 data-v-1e2a0cc0><input type="password" value="" data-v-1e2a0cc0> <span data-v-1e2a0cc0>Konck! Knock!</span> <button data-v-1e2a0cc0>OK</button></label> <div class="footer" style="display:none;" data-v-1e2a0cc0 data-v-1e2a0cc0><span data-v-1e2a0cc0><i class="iconfont reco-theme" data-v-1e2a0cc0></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-1e2a0cc0>vuePress-theme-reco</a></span> <span data-v-1e2a0cc0><i class="iconfont reco-copyright" data-v-1e2a0cc0></i> <a data-v-1e2a0cc0><span data-v-1e2a0cc0>掘金安东尼</span>
+            
+          <span data-v-1e2a0cc0>2019 - </span>
+          2021
+        </a></span></div></div> <div class="hide" data-v-319dd33c><header class="navbar" data-v-319dd33c><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/logo.png" alt=" " class="logo"> <span class="site-name"> </span></a> <div class="links"><div class="color-picker"><a class="color-button"><i class="iconfont reco-color"></i></a> <div class="color-picker-menu" style="display:none;"><div class="mode-options"><h4 class="title">Choose mode</h4> <ul class="color-mode-options"><li class="dark">dark</li><li class="auto active">auto</li><li class="light">light</li></ul></div></div></div> <div class="search-box"><i class="iconfont reco-search"></i> <input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link"><i class="iconfont reco-home"></i>
+  主页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-category"></i>
+      年复一年
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/2019/" class="nav-link"><i class="iconfont undefined"></i>
+  2019
+</a></li><li class="dropdown-item"><!----> <a href="/categories/2020/" class="nav-link"><i class="iconfont undefined"></i>
+  2020
+</a></li><li class="dropdown-item"><!----> <a href="/categories/2021/" class="nav-link"><i class="iconfont undefined"></i>
+  2021
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-other"></i>
+      以面代练
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/series/fe-weekly/index.html" class="nav-link"><i class="iconfont undefined"></i>
+  前端周记
+</a></li><li class="dropdown-item"><!----> <a href="/interview/vue/core.html" class="nav-link"><i class="iconfont undefined"></i>
+  源码生啃
+</a></li><li class="dropdown-item"><!----> <a href="/interview/read/index.html" class="nav-link"><i class="iconfont undefined"></i>
+  读书笔记
+</a></li><li class="dropdown-item"><!----> <a href="/interview/cacl/index.html" class="nav-link"><i class="iconfont undefined"></i>
+  算法
+</a></li><li class="dropdown-item"><!----> <a href="/interview/log/index.html" class="nav-link"><i class="iconfont undefined"></i>
+  面经
+</a></li></ul></div></div><div class="nav-item"><a href="/tag/" class="nav-link"><i class="iconfont reco-tag"></i>
+  标签
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-three"></i>
+      创作写作
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>创作</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/create/multimedia/poems.html" class="nav-link"><i class="iconfont undefined"></i>
+  诗与歌
+</a></li><li class="dropdown-subitem"><a href="/create/multimedia/movie.html" class="nav-link"><i class="iconfont undefined"></i>
+  电影解说
+</a></li></ul></li><li class="dropdown-item"><h4>写作</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/create/neverforget/mostsoft.html" class="nav-link"><i class="iconfont undefined"></i>
+  最柔软处
+</a></li><li class="dropdown-subitem"><a href="/create/neverforget/iamedog.html" class="nav-link"><i class="iconfont undefined"></i>
+  瘸腿的狗
+</a></li><li class="dropdown-subitem"><a href="/create/neverforget/allformoney.html" class="nav-link"><i class="iconfont undefined"></i>
+  赏金猎人
+</a></li></ul></li></ul></div></div><div class="nav-item"><a href="/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  时间线
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-message"></i>
+      关于我
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/about/starthere.html" class="nav-link"><i class="iconfont undefined"></i>
+  不忘初心
+</a></li><li class="dropdown-item"><!----> <a href="https://github.com/tuaran" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont undefined"></i>
+  GitHub
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://tuaran.github.io" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont undefined"></i>
+  GitHubPage
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask" data-v-319dd33c></div> <aside class="sidebar" data-v-319dd33c><div class="personal-info-wrapper" data-v-6c8ffc9c><img src="/avatar.png" alt="author-avatar" class="personal-img" data-v-6c8ffc9c> <h3 class="name" data-v-6c8ffc9c>
+    掘金安东尼
+  </h3> <div class="num" data-v-6c8ffc9c><div data-v-6c8ffc9c><h3 data-v-6c8ffc9c>83</h3> <h6 data-v-6c8ffc9c>文章</h6></div> <div data-v-6c8ffc9c><h3 data-v-6c8ffc9c>46</h3> <h6 data-v-6c8ffc9c>标签</h6></div></div> <hr data-v-6c8ffc9c></div> <nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link"><i class="iconfont reco-home"></i>
+  主页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-category"></i>
+      年复一年
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/2019/" class="nav-link"><i class="iconfont undefined"></i>
+  2019
+</a></li><li class="dropdown-item"><!----> <a href="/categories/2020/" class="nav-link"><i class="iconfont undefined"></i>
+  2020
+</a></li><li class="dropdown-item"><!----> <a href="/categories/2021/" class="nav-link"><i class="iconfont undefined"></i>
+  2021
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-other"></i>
+      以面代练
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/series/fe-weekly/index.html" class="nav-link"><i class="iconfont undefined"></i>
+  前端周记
+</a></li><li class="dropdown-item"><!----> <a href="/interview/vue/core.html" class="nav-link"><i class="iconfont undefined"></i>
+  源码生啃
+</a></li><li class="dropdown-item"><!----> <a href="/interview/read/index.html" class="nav-link"><i class="iconfont undefined"></i>
+  读书笔记
+</a></li><li class="dropdown-item"><!----> <a href="/interview/cacl/index.html" class="nav-link"><i class="iconfont undefined"></i>
+  算法
+</a></li><li class="dropdown-item"><!----> <a href="/interview/log/index.html" class="nav-link"><i class="iconfont undefined"></i>
+  面经
+</a></li></ul></div></div><div class="nav-item"><a href="/tag/" class="nav-link"><i class="iconfont reco-tag"></i>
+  标签
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-three"></i>
+      创作写作
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>创作</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/create/multimedia/poems.html" class="nav-link"><i class="iconfont undefined"></i>
+  诗与歌
+</a></li><li class="dropdown-subitem"><a href="/create/multimedia/movie.html" class="nav-link"><i class="iconfont undefined"></i>
+  电影解说
+</a></li></ul></li><li class="dropdown-item"><h4>写作</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/create/neverforget/mostsoft.html" class="nav-link"><i class="iconfont undefined"></i>
+  最柔软处
+</a></li><li class="dropdown-subitem"><a href="/create/neverforget/iamedog.html" class="nav-link"><i class="iconfont undefined"></i>
+  瘸腿的狗
+</a></li><li class="dropdown-subitem"><a href="/create/neverforget/allformoney.html" class="nav-link"><i class="iconfont undefined"></i>
+  赏金猎人
+</a></li></ul></li></ul></div></div><div class="nav-item"><a href="/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  时间线
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-message"></i>
+      关于我
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/about/starthere.html" class="nav-link"><i class="iconfont undefined"></i>
+  不忘初心
+</a></li><li class="dropdown-item"><!----> <a href="https://github.com/tuaran" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont undefined"></i>
+  GitHub
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://tuaran.github.io" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont undefined"></i>
+  GitHubPage
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>10 个超强 Vue3 实战指南，由此突破新特性！</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/views/2021/vue3practice.html#初始化挂载" class="sidebar-link">初始化挂载</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/views/2021/vue3practice.html#composition-api" class="sidebar-link">Composition API</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/views/2021/vue3practice.html#data-选项" class="sidebar-link">Data 选项</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/views/2021/vue3practice.html#filters-被移除" class="sidebar-link">Filters 被移除</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/views/2021/vue3practice.html#多个根标签" class="sidebar-link">多个根标签</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/views/2021/vue3practice.html#suspense" class="sidebar-link">Suspense</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/views/2021/vue3practice.html#响应式" class="sidebar-link">响应式</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/views/2021/vue3practice.html#多个-v-model" class="sidebar-link">多个 v-model</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/views/2021/vue3practice.html#teleport" class="sidebar-link">Teleport</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/views/2021/vue3practice.html#vue-router" class="sidebar-link">Vue Router</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/views/2021/vue3practice.html#小结" class="sidebar-link">小结</a><ul class="sidebar-sub-headers"></ul></li></ul></section></li></ul> </aside> <div class="password-shadow password-wrapper-in" style="display:none;" data-v-1e2a0cc0 data-v-319dd33c><h3 class="title" style="display:none;" data-v-1e2a0cc0 data-v-1e2a0cc0>10 个超强 Vue3 实战指南，由此突破新特性！</h3> <!----> <label id="box" class="inputBox" style="display:none;" data-v-1e2a0cc0 data-v-1e2a0cc0><input type="password" value="" data-v-1e2a0cc0> <span data-v-1e2a0cc0>Konck! Knock!</span> <button data-v-1e2a0cc0>OK</button></label> <div class="footer" style="display:none;" data-v-1e2a0cc0 data-v-1e2a0cc0><span data-v-1e2a0cc0><i class="iconfont reco-theme" data-v-1e2a0cc0></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-1e2a0cc0>vuePress-theme-reco</a></span> <span data-v-1e2a0cc0><i class="iconfont reco-copyright" data-v-1e2a0cc0></i> <a data-v-1e2a0cc0><span data-v-1e2a0cc0>掘金安东尼</span>
+            
+          <span data-v-1e2a0cc0>2019 - </span>
+          2021
+        </a></span></div></div> <div data-v-319dd33c><main class="page"><div class="page-title" style="display:none;"><h1>10 个超强 Vue3 实战指南，由此突破新特性！</h1> <hr> <div data-v-484a899e><i class="iconfont reco-account" data-v-484a899e><span data-v-484a899e>掘金安东尼</span></i> <i class="iconfont reco-date" data-v-484a899e><span data-v-484a899e>2021-01-24</span></i> <!----> <i class="iconfont reco-tag tags" data-v-484a899e><span class="tag-item" data-v-484a899e>
+      vue
+    </span></i></div></div> <div class="theme-reco-content content__default" style="display:none;"><p><strong>本篇介绍 10 点如何从实战中学习突破 Vue JS 3 的新特性，细细看完，一定会有收获~</strong></p> <p>主体译自：<a href="https://codeburst.io/vue-js-3-the-practical-guide-e82c429113e1" target="_blank" rel="noopener noreferrer">【Vue JS 3 — The Practical Guide】<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p> <p>更多学习资料:<a href="https://github.com/Jerga99/vue-3-updates" target="_blank" rel="noopener noreferrer">【https://github.com/Jerga99/vue-3-updates】<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p> <p>目录：</p> <ol><li><a href="https://juejin.cn/post/6921255904675872776#heading-0" target="_blank" rel="noopener noreferrer">初始化挂载<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://juejin.cn/post/6921255904675872776#heading-1" target="_blank" rel="noopener noreferrer">Composition<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://juejin.cn/post/6921255904675872776#heading-2" target="_blank" rel="noopener noreferrer">Data 选项<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://juejin.cn/post/6921255904675872776#heading-3" target="_blank" rel="noopener noreferrer">Filters 被移除<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://juejin.cn/post/6921255904675872776#heading-4" target="_blank" rel="noopener noreferrer">多个根标签<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://juejin.cn/post/6921255904675872776#heading-5" target="_blank" rel="noopener noreferrer">Suspense<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://juejin.cn/post/6921255904675872776#heading-6" target="_blank" rel="noopener noreferrer">响应式<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://juejin.cn/post/6921255904675872776#heading-7" target="_blank" rel="noopener noreferrer">多个 v-model<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://juejin.cn/post/6921255904675872776#heading-8" target="_blank" rel="noopener noreferrer">Teleport<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://juejin.cn/post/6921255904675872776#heading-9" target="_blank" rel="noopener noreferrer">Vue Router<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ol> <p><strong>另：最近本瓜在参加 <a href="https://rank.juejin.cn/?utm_campaign=annual_2020&amp;utm_medium=web_entrance&amp;utm_source=nav" target="_blank" rel="noopener noreferrer">【掘金 2020 人气创作者榜单打榜活动】<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>，赶快来为我 ——<a href="https://rank.juejin.cn/?u=%E6%8E%98%E9%87%91%E5%AE%89%E4%B8%9C%E5%B0%BC&amp;t=user" target="_blank" rel="noopener noreferrer">【掘金安东尼】<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>投票吧！！！支持创作者！！！支持掘金！！！掘掘掘！！！</strong></p> <p><img src="https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/e3891702d75543e4a6bea5ce5303ae15~tplv-k3u1fbpfcp-watermark.image" alt=""></p> <p>你的点赞投票是我最大的动力，关注走一波，【2021】有更多好看~!😀😀😀</p> <h2 id="初始化挂载"><a href="#初始化挂载" class="header-anchor">#</a> 初始化挂载</h2> <p>在 Vue2 中，我们在 main.js 通常这样进行初始化挂载：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>new Vue({
+  render: h =&gt; h(App),
+  components: { App }
+}).$mount('#app')
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><p>在 Vue3 中，调整为这样：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>import { createApp } from 'vue'
+import App from './App.vue'
+
+const app = createApp(App)
+
+app.mount('#app')
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div><p>为什么发生这样的变化？原因是：如果我们在 Vue2 中创建多个 Vue 实例，那么所有应用（#app）都会共享全局相同的配置。</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>// 全局共享、相互影响
+Vue.mixin({
+  /* ... */
+})
+
+Vue.directive('...', {
+  ...
+})
+const app1 = new Vue({ el: '#app-1' })
+const app2 = new Vue({ el: '#app-2' })
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br></div></div><p>显然，这并不是我们想要的。在 Vue3 中，你可以创建多个实例，且每个实例都可以拥有单独的配置。</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>import { createApp } from 'vue'
+import App1 from './App1.vue'
+import App2 from './App2.vue'
+
+const app1 = createApp(App1)
+const app2 = createApp(App2)
+
+app1.mount('#app-1')
+app2.mount('#app-2')
+
+app1.directive('...', {
+  ...
+})
+app2.directive('...', {
+  ...
+})
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br></div></div><p>但是，这也并不影响我们设置共享全局配置，我们可以通过如下工厂函数方式实现：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>import { createApp } from 'vue';
+import App1 from './App1.vue';
+import App2 from './App2.vue';
+
+const createApp = (Instance) =&gt; {
+    const App = createApp(Instance);
+  App.directive('i-am-cool', {
+      inserted: () =&gt; {
+      console.log('I am cool!');
+    },
+  });
+}
+
+createIdolApp(App1).mount('#app-1');
+createIdolApp(App2).mount('#app-2');
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br></div></div><h2 id="composition-api"><a href="#composition-api" class="header-anchor">#</a> Composition API</h2> <p>受到 React 的启发，Vue3 引入 Composition API 和 “hook” 函数。有了它，Vue 组件的使用变得更加灵活，也变得更加强大。特别是针对大型应用，以下会给出示例。</p> <p>以前在 Vue2 中我们是这样写组件的：获取数据，设置数据。</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>&lt;script&gt;
+import { fetchResources } from '@/actions'
+import ResourceDetail from '@/components/ResourceDetail'
+import ResourceList from '@/components/ResourceList'
+export default {
+  components: {
+    ResourceDetail,
+    ResourceList,
+  },
+  data() {
+    return {
+      title: 'Your resources',
+      selectedResource: null,
+      resources: []
+    }
+  },
+  async created() {
+    this.resources = await fetchResources()
+  },
+  computed: {
+    hasResources() {
+      return this.resourceCount &gt; 0
+    },
+    activeResource() {
+      return this.selectedResource || (this.hasResources &amp;&amp; this.resources[0]) || null
+    },
+    resourceCount(){
+      return this.resources.length
+    }
+  },
+  methods: {
+    selectResource(resource) {
+      this.selectedResource = {...resource}
+    }
+  }
+}
+&lt;/script&gt;
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br></div></div><p>完整代码在<a href="https://github.com/Jerga99/vue-3-updates/blob/3e94f1bc8ae1d8032cc82f5be6100a446a4d3d04/src/ResourceApp.vue" target="_blank" rel="noopener noreferrer">这里<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>。</p> <p>如果我们使用 composition API，会是这样写：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>import { ref, onMounted, computed } from 'vue'
+import { fetchResources } from '@/actions'
+
+export default function useResources() {
+  const resources = ref([])
+  const getResources = async () =&gt; resources.value = await fetchResources()
+
+  onMounted(getResources);
+
+  const resourceCount = computed(() =&gt; resources.value.length)
+  const hasResources = computed(() =&gt; resourceCount.value &gt; 0 )
+
+  return {
+    resources,
+    resourceCount,
+    hasResources
+  }
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br></div></div><p>这是一个非常简单的 Composition function 实现了获取 resources 数据的功能。</p> <p>Composition 函数通常用 <strong>use</strong> 开头作为关键字，比如此处的 <strong>“useResources”</strong>，以此区别于普通函数。</p> <p>下面针对以上代码关键点进行一一释义：</p> <p><strong>1.</strong> <strong>ref</strong> 会创建一个动态对象。如果你要从 ref 获取原始值，则需要取 “value” 属性，比如 —— resources.value</p> <p>看以下示例：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>var a = 7;
+var b = a;
+b = 10;
+// a = 7
+// b = 10
+
+var a = ref(7);
+var b = a;
+b.value = 100;
+// a = 100
+// b = 100
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br></div></div><p>我们将返回的 resoure 数组设置为 ref。是因为如果数组有新增项或移除项，这样做能在程序中有所表现。</p> <p>一图胜万言：</p> <p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/f7e4c24c2cee46b585ecd5b18f877ee1~tplv-k3u1fbpfcp-watermark.image" alt=""></p> <p><strong>2.</strong> <strong>getResources</strong> 函数用于获取数据。</p> <p><strong>3.</strong> <strong>onMounted</strong> 生命周期函数会在组件添加到 Dom 时调用。</p> <p><strong>4.</strong> <strong>computed</strong> 属性会随着它的依赖（resources or resourceCount）变化而重新计算。</p> <p><strong>5.</strong> <strong>return</strong> 最后一步我们将返回 data/function，我们再向组件暴露 useResource hook 函数以供使用。</p> <p>最终 hook-in：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>&lt;script&gt;
+import ResourceDetail from '@/components/ResourceDetail'
+import ResourceList from '@/components/ResourceList'
+import useResources from '@/composition/useResources';
+export default {
+  components: {
+    ResourceDetail,
+    ResourceList,
+  },
+  data() {
+    return {
+      title: 'Your resources',
+      selectedResource: null
+    }
+  },
+  setup() {
+    return {
+      ...useResources() // 在 setup 里
+    }
+  },
+  computed: {
+    activeResource() {
+      return this.selectedResource || (this.hasResources &amp;&amp; this.resources[0]) || null
+    }
+  },
+  methods: {
+    selectResource(resource) {
+      this.selectedResource = {...resource}
+    }
+  }
+}
+&lt;/script&gt;
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br></div></div><p>我们再 setup 中进行引用，返回值都可以再通过 this 进行调用。</p> <p>我们在 computed 和 methods 也能同样进行调用 Composition 函数的返回。</p> <blockquote><p>注意：setup 钩子函数执行在组件实例创建（created）之前。</p></blockquote> <p>在组件创建前 setup 中 hook 被执行，只要 props 被解析，服务就会以 composition API 作为入口。因为此时当 setup 执行时，组件实例还未生成，没有 this 对象。</p> <p>神奇吗？我们就这样将获取数据进行封装然后应用到了 hook 调用中。</p> <p>再写一个对 resources 资源进行搜索过滤的功能：</p> <ul><li>useSearchResource</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>import { ref, computed } from 'vue'
+
+export default function useSearchResource(resources) {
+  const searchQuery = ref('')
+
+  const setSearchQuery = searched =&gt; {
+    searchQuery.value = searched
+  }
+
+  const searchedResources = computed(() =&gt; {
+    if (!searchQuery.value) {
+      return resources.value
+    }
+
+    const lcSearch = searchQuery.value.toLocaleLowerCase();
+
+    return resources.value.filter(r =&gt; {
+      const title = r?.title.toLocaleLowerCase()
+      return title.includes(lcSearch)
+    })
+  })
+
+  return {
+    setSearchQuery,
+    searchedResources
+  }
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br></div></div><ul><li>useResources</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>export default function useResources() {
+  const resources = ref([])
+  const getResources = async () =&gt; resources.value = await fetchResources()
+
+  onMounted(getResources);
+
+  const resourceCount = computed(() =&gt; resources.value.length)
+  const hasResources = computed(() =&gt; resourceCount.value &gt; 0 )
+
+  const { searchedResources, setSearchQuery } = useSearchResources(resources)
+
+  return {
+    resources: searchedResources,
+    resourceCount,
+    hasResources,
+    setSearchQuery
+  }
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br></div></div><p>拆解分析：</p> <ol><li><strong>searchQuery</strong> 包含一个空字符串，使用了 ref，computed searchedResources 可以检测 searchQuery 的变化值。</li> <li><strong>setSearchQuery</strong> 是一个简单的赋值给 searchQuery 的函数。</li> <li><strong>searchedResources</strong>会在 searchQuery 或 resources 变化的时候触发。</li> <li><strong>searchedResources</strong> 负责过滤 resources。每个 resource 包含一个 title，如果 title 包含 searchedQuery 字符串，那么 resource 就会被加入到 searchedResources 数组中。</li> <li>最后函数返回 <strong>setSearchQuery</strong> 和 <strong>searchedResourced</strong>，再在 useResources 中进行引用及返回。</li></ol> <p>再看下在组件中使用它到底有多简单：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>&lt;template&gt;
+...
+&lt;input
+  @keyup=&quot;handleSearch&quot;
+  type=&quot;text&quot;
+  class=&quot;form-control&quot;
+  placeholder=&quot;Some title&quot; /&gt;
+...
+&lt;/template&gt;
+&lt;script&gt;
+...
+methods: {
+  ...
+  handleSearch(e) {
+    this.setSearchQuery(e.target.value)
+  }
+}
+...
+&lt;/script&gt;
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br></div></div><p><strong>真有你的！</strong> 无论何时执行 setSearchQuery 更改 searchQuery 的值，都将重新执行 searchedResources 将其进行过滤操作并返回结果。</p> <p>以上便是超重要的新特性 composition API 的实战介绍。</p> <h2 id="data-选项"><a href="#data-选项" class="header-anchor">#</a> Data 选项</h2> <p>在 Vue2 中，data选项不是对象就函数，但是在 Vue3 中将只能是函数。这将被统一成标准。</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>&lt;script&gt;
+  export default {
+    data() {
+      return {
+        someData: '1234'
+      }
+    }
+  }
+&lt;/script&gt;
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br></div></div><h2 id="filters-被移除"><a href="#filters-被移除" class="header-anchor">#</a> Filters 被移除</h2> <p>不会再出现这样的写法：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>&lt;h1&gt;{{title | capitalized }} &lt;/h1&gt;
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>这样的表达式不是合法有效的 Javascript，在 Vue 中实现这样的写法需要额外的成本。它可以很容易被转化为计算属性或函数。</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>computed: {
+ capitalizedTitle() {
+   return title[0].toUpperCase + title.slice(1);
+  }
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><h2 id="多个根标签"><a href="#多个根标签" class="header-anchor">#</a> 多个根标签</h2> <p>在 Vue2 中我们经常这样包裹我们的根标签：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>&lt;template&gt;
+  &lt;div&gt;
+    &lt;h1&gt;...&lt;/h1&gt;
+    &lt;div class=&quot;container&quot;&gt;...&lt;/div&gt;
+    ...
+  &lt;/div&gt;
+&lt;/template&gt;
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br></div></div><p>在 Vue3 中将不再有此限制：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>&lt;template&gt;
+  &lt;h1&gt;...&lt;/h1&gt;
+  &lt;div class=&quot;container&quot;&gt;...&lt;/div&gt;
+  ...
+&lt;/template&gt;
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><h2 id="suspense"><a href="#suspense" class="header-anchor">#</a> Suspense</h2> <p>Suspense 是一种特殊的 Vue 组件，用于解析有异步数据的组件。</p> <p>比如：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>&lt;Suspense&gt;
+  &lt;template #default&gt;
+    &lt;AsyncComponent&gt;
+  &lt;/template&gt;
+  &lt;template #fallback&gt;
+    Loading Data...
+  &lt;/template&gt;
+&lt;/Suspense&gt;
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div><p>使用新的 Composition API，setup 可设置异步函数。Suspense 可以展示异步的模板直到 setup 被解析完。</p> <p>实战代码：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>&lt;template&gt;
+  Welcome, {{user.name}}
+&lt;/template&gt;
+&lt;script&gt;
+  import { fetchUser } from '@/actions';
+  export default {
+    async setup() {
+      const user = await fetchUser();
+      return { user }
+    }
+  }
+&lt;/script&gt;
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br></div></div><div class="language- line-numbers-mode"><pre class="language-text"><code>&lt;Suspense&gt;
+  &lt;template #default&gt;
+    &lt;UserPanel/&gt;
+  &lt;/template&gt;
+  &lt;template #fallback&gt;
+    Loading user ...
+  &lt;/template&gt;
+&lt;/Suspense&gt;
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div><h2 id="响应式"><a href="#响应式" class="header-anchor">#</a> 响应式</h2> <p>妇孺皆知，Vue3 的响应式也有很大变化（proxy），不再需要使用 Vue.set 或 Vue.delete。你可以使用简单的原生函数来操作数组或对象。</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>// in composition API
+const resources = ref([])
+const addResource = newResource =&gt;      resources.value.unshift(newResource)
+const removeResource = atIndex =&gt; resources.value.splice(atIndex ,1)
+const reactiveUser = ref({name: 'Filip'})
+const changeName = () =&gt; reactiveUser.value.name = 'John'
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div><p>以前则是需要这样：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>&lt;script&gt;
+export default {
+  data() {
+    return {
+      resources: [1,2,3],
+      person: { name: 'Filip' }
+    }
+  }
+  methods: {
+    addResource(newResource) {
+      this.resources.unshift(newResource)
+    },
+    removeResource(atIndex) {
+      this.resources.splice(atIndex ,1)
+    },
+    changeName(newResource) {
+      this.person.name = 'John'
+    }
+  }
+}
+&lt;/script&gt;
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br></div></div><p>在 composition API 中，所有的更改都是响应式的。</p> <h2 id="多个-v-model"><a href="#多个-v-model" class="header-anchor">#</a> 多个 v-model</h2> <p>在 Vue3 中，你可以使用多个 v-model，比如这样：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>&lt;ChildComponent v-model:prop1=&quot;prop1&quot; v-model:prop2=&quot;prop2&quot;/&gt;
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>可以实现以下代码逻辑：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>&lt;ChildComponent
+  :prop1=&quot;prop1&quot;
+  @update:prop1=&quot;prop1 = $event&quot;
+  :prop2=&quot;prop2&quot;
+  @update:prop2=&quot;prop2 = $event&quot;
+/&gt;
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div><p>看一个具体的例子：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>&lt;resource-form
+  v-model:title=&quot;title&quot;
+  v-model:description=&quot;description&quot;
+  v-model:type=&quot;type&quot;
+  v-model:link=&quot;link&quot;
+  @on-form-submit=&quot;submitForm&quot;
+/&gt;
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br></div></div><p>form 组件是这样：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>&lt;template&gt;
+  &lt;form&gt;
+    &lt;div class=&quot;mb-3&quot;&gt;
+      &lt;label htmlFor=&quot;title&quot;&gt;Title&lt;/label&gt;
+      &lt;input
+        :value=&quot;title&quot;
+        @input=&quot;changeTitle($event.target.value)&quot;
+        type=&quot;text&quot; /&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;mb-3&quot;&gt;
+      &lt;select
+        :value=&quot;type&quot;
+        @change=&quot;changeType($event.target.value)&quot;&gt;
+        &lt;option
+          v-for=&quot;type in types&quot;
+          :key=&quot;type&quot;
+          :value=&quot;type&quot;&gt;{{type}}&lt;/option&gt;
+      &lt;/select&gt;
+    &lt;/div&gt;
+    &lt;button
+      @click=&quot;submitForm&quot;
+      class=&quot;btn btn-primary btn-lg btn-block&quot;
+      type=&quot;button&quot;&gt;
+      Submit
+    &lt;/button&gt;
+  &lt;/form&gt;
+&lt;/template&gt;
+export default {
+  props: {
+    title: String,
+    description: String,
+    link: String,
+    type: String,
+  },
+  data() {
+    return {
+      types: ['blog', 'book', 'video']
+    }
+  },
+  methods: {
+    submitForm() {
+      this.$emit('on-form-submit');
+    },
+    changeTitle(title) {
+      this.$emit('update:title', title)
+    },
+    changeType(type) {
+      this.$emit('update:type', type)
+    }
+    ...
+  }
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br></div></div><p>我们绑定多个 input 值，监听变化，再emit 来更新值父组件的值。注意这里写法的格式。</p> <h2 id="teleport"><a href="#teleport" class="header-anchor">#</a> Teleport</h2> <p>提供如何在当前上下文之外只呈现模板的一部分的方法。</p> <p>要“teleport”内容，我们需要使用 teleport 组件并把内容包在里面，如下：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>&lt;teleport to=&quot;#teleportContent&quot;&gt;
+  &lt;div class=&quot;teleport-body&quot;&gt;I am Teleported!&lt;/div&gt;
+&lt;/teleport&gt;
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><p>此内容将被传送到 id 为 teleportContent 的节点中</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>&lt;div id=&quot;teleportContent&quot;&gt;&lt;/div&gt;
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>唯一的条件是：在定义传送内容之前，传送到的目标节点需已经存在。</p> <p>我们可以绑定 id，类，[data-xx]。</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>&lt;!-- ok --&gt;
+&lt;teleport to=&quot;#some-id&quot; /&gt;
+&lt;teleport to=&quot;.some-class&quot; /&gt;
+&lt;teleport to=&quot;[data-teleport]&quot; /&gt;
+
+&lt;!-- Wrong --&gt;
+&lt;teleport to=&quot;h1&quot; /&gt;
+&lt;teleport to=&quot;some-string&quot; /&gt;
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div><h2 id="vue-router"><a href="#vue-router" class="header-anchor">#</a> Vue Router</h2> <p>Vue2 中我们这样设置及绑定路由：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>import Vue from 'vue'
+import VueRouter from 'vue-router';
+
+import SomePage1 from './pages/SomePage1';
+import SomePage2 from './pages/SomePage2';
+
+Vue.use(VueRouter);
+
+const routes = [
+  { path: '/', redirect: '/path' },
+  { path: '/path', name: 'HomePage', component: SomePage1 },
+  { path: '/some/path', component: SomePage2 }
+]
+
+const router = new VueRouter({
+  mode: 'history',
+  linkExactActiveClass: 'active',
+  routes
+})
+
+export default router;
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br></div></div><p>main.js</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>import router from './router'; 
+new Vue({render: h =&gt; h(App),  
+  router,  
+  components: { App }})
+.$mount('#app')
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><p>在 Vue3 中：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>import { createRouter, createWebHistory } from 'vue-router'
+import SomePage1 from './pages/SomePage1'
+import SomePage2 from './pages/SomePage2'
+
+const routes = [
+  { path: '/', redirect: {name: 'HomePage'}},
+  { path: '/path', name: 'HomePage', component: SomePage1 },
+  { path: '/some/path', component: SomePage2 }
+]
+
+const router = createRouter({
+  history: createWebHistory(),
+  linkExactActiveClass: 'active',
+  routes
+})
+
+export default router;
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br></div></div><p>main.js</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>import router from './router'
+const app = createApp(App)
+app.use(router)
+app.mount('#app')
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><h2 id="小结"><a href="#小结" class="header-anchor">#</a> 小结</h2> <p>此篇总结了 Vue3 的一些主要功能，都是从实战出发来突破 Vue3 的新特性。实践是检验真理的唯一标准！Vue3 究竟强不强？有多强？市场和时间会告诉我们答案！从现阶段看，早学早享受QAQ~如果想要了解更多，请查阅 <a href="https://v3.vuejs.org/guide/introduction.html" target="_blank" rel="noopener noreferrer">官方文档<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>。</p> <p>我是掘金安东尼，持续输出ING......点赞👍 + 收藏📕 + 关注👀，我们下期再会~</p></div> <footer class="page-edit" style="display:none;"><!----> <div class="last-updated"><span class="prefix">Last Updated: </span> <span class="time">1/25/2021, 4:04:15 PM</span></div></footer> <!----></main> <!----> <div style="display:none;" data-v-319dd33c data-v-319dd33c><div class="comments-wrapper" data-v-319dd33c><!----></div></div></div></div></div></div></div><div class="global-ui"><div class="back-to-ceiling" style="right:1rem;bottom:6rem;width:2.5rem;height:2.5rem;border-radius:.25rem;line-height:2.5rem;display:none;" data-v-c6073ba8 data-v-c6073ba8><svg t="1574745035067" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5404" class="icon" data-v-c6073ba8><path d="M526.60727968 10.90185116a27.675 27.675 0 0 0-29.21455937 0c-131.36607665 82.28402758-218.69155461 228.01873535-218.69155402 394.07834331a462.20625001 462.20625001 0 0 0 5.36959153 69.94390903c1.00431239 6.55289093-0.34802892 13.13561351-3.76865779 18.80351572-32.63518765 54.11355614-51.75690182 118.55860487-51.7569018 187.94566865a371.06718723 371.06718723 0 0 0 11.50484808 91.98906777c6.53300375 25.50556257 41.68394495 28.14064038 52.69160883 4.22606766 17.37162448-37.73630017 42.14135425-72.50938081 72.80769204-103.21549295 2.18761121 3.04276886 4.15646224 6.24463696 6.40373557 9.22774369a1871.4375 1871.4375 0 0 0 140.04691725 5.34970492 1866.36093723 1866.36093723 0 0 0 140.04691723-5.34970492c2.24727335-2.98310674 4.21612437-6.18497483 6.3937923-9.2178004 30.66633723 30.70611158 55.4360664 65.4791928 72.80769147 103.21549355 11.00766384 23.91457269 46.15860503 21.27949489 52.69160879-4.22606768a371.15156223 371.15156223 0 0 0 11.514792-91.99901164c0-69.36717486-19.13165746-133.82216804-51.75690182-187.92578088-3.42062944-5.66790279-4.76302748-12.26056868-3.76865837-18.80351632a462.20625001 462.20625001 0 0 0 5.36959269-69.943909c-0.00994388-166.08943902-87.32547796-311.81420293-218.6915546-394.09823051zM605.93803103 357.87693858a93.93749974 93.93749974 0 1 1-187.89594924 6.1e-7 93.93749974 93.93749974 0 0 1 187.89594924-6.1e-7z" p-id="5405" data-v-c6073ba8></path><path d="M429.50777625 765.63860547C429.50777625 803.39355007 466.44236686 1000.39046097 512.00932183 1000.39046097c45.56695499 0 82.4922232-197.00623328 82.5015456-234.7518555 0-37.75494459-36.9345906-68.35043303-82.4922232-68.34111062-45.57627738-0.00932239-82.52019037 30.59548842-82.51086798 68.34111062z" p-id="5406" data-v-c6073ba8></path></svg></div><div class="reco-bgm-panel" data-v-39f9e6e0><audio id="bgm" src="/bgm/comebacktome.mp3" data-v-39f9e6e0></audio> <div class="reco-float-box" style="bottom:200px;z-index:999999;display:none;" data-v-39f9e6e0 data-v-41bcba48 data-v-39f9e6e0><img src="/bgm/comebacktome.jpg" data-v-39f9e6e0></div> <div class="reco-bgm-box" style="left:10px;bottom:10px;z-index:999999;" data-v-39f9e6e0 data-v-41bcba48 data-v-39f9e6e0><div class="reco-bgm-cover" style="background-image:url(/bgm/comebacktome.jpg);" data-v-39f9e6e0><div class="mini-operation" style="display:none;" data-v-39f9e6e0><i class="reco-bgm reco-bgm-pause" style="display:none;" data-v-39f9e6e0></i> <i class="reco-bgm reco-bgm-play" style="display:none;" data-v-39f9e6e0></i></div> <div class="falut-message" style="display:none;" data-v-39f9e6e0>
+          播放失败
+        </div></div> <div class="reco-bgm-info" data-v-39f9e6e0 data-v-41bcba48 data-v-39f9e6e0><div class="info-box" data-v-39f9e6e0><i class="reco-bgm reco-bgm-music music" data-v-39f9e6e0></i>Come Back To Me</div> <div class="info-box" data-v-39f9e6e0><i class="reco-bgm reco-bgm-artist" data-v-39f9e6e0></i>宇多田ヒカル</div> <div class="reco-bgm-progress" data-v-39f9e6e0><div class="progress-bar" data-v-39f9e6e0><div class="bar" data-v-39f9e6e0></div></div></div> <div class="reco-bgm-operation" data-v-39f9e6e0><i class="reco-bgm reco-bgm-last last" data-v-39f9e6e0></i> <i class="reco-bgm reco-bgm-pause pause" style="display:none;" data-v-39f9e6e0></i> <i class="reco-bgm reco-bgm-play play" data-v-39f9e6e0></i> <i class="reco-bgm reco-bgm-next next" data-v-39f9e6e0></i> <i class="reco-bgm reco-bgm-volume1 volume" data-v-39f9e6e0></i> <i class="reco-bgm reco-bgm-mute mute" style="display:none;" data-v-39f9e6e0></i> <div class="volume-bar" data-v-39f9e6e0><div class="bar" data-v-39f9e6e0></div></div></div></div> <div class="reco-bgm-left-box" data-v-39f9e6e0 data-v-41bcba48 data-v-39f9e6e0><i class="reco-bgm reco-bgm-left" data-v-39f9e6e0></i></div></div></div><div class="kanbanniang" data-v-5775ee02><div class="banniang-container" style="display:;" data-v-5775ee02><div class="messageBox" style="right:68px;bottom:190px;display:none;" data-v-5775ee02>
+      欢迎来到  
+    </div> <div class="operation" style="right:90px;bottom:40px;display:none;" data-v-5775ee02><i class="kbnfont kbn-ban-home ban-home" data-v-5775ee02></i> <i class="kbnfont kbn-ban-message message" data-v-5775ee02></i> <i class="kbnfont kbn-ban-close close" data-v-5775ee02></i> <a target="_blank" href="https://vuepress-theme-reco.recoluan.com/views/plugins/kanbanniang.html" data-v-5775ee02><i class="kbnfont kbn-ban-info info" data-v-5775ee02></i></a> <i class="kbnfont kbn-ban-theme skin" style="display:none;" data-v-5775ee02></i></div> <canvas id="banniang" width="150" height="220" class="live2d" style="right:90px;bottom:-20px;opacity:0.9;" data-v-5775ee02></canvas></div> <div class="showBanNiang" style="display:none;" data-v-5775ee02>
+    看板娘
+  </div></div></div></div>
+    <script src="/assets/js/app.fab4b134.js" defer></script><script src="/assets/js/3.92bb3b86.js" defer></script><script src="/assets/js/1.60a6a467.js" defer></script><script src="/assets/js/153.8770725a.js" defer></script>
+  </body>
+</html>

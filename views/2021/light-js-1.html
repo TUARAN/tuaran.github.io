@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>XDM，JS如何函数式编程？看这就够了！（一） |  </title>
+    <meta name="generator" content="VuePress 1.8.2">
+    <link rel="icon" href="/favicon.ico">
+    <meta name="description" content=" ">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    
+    <link rel="preload" href="/assets/css/0.styles.239719ad.css" as="style"><link rel="preload" href="/assets/js/app.fab4b134.js" as="script"><link rel="preload" href="/assets/js/3.92bb3b86.js" as="script"><link rel="preload" href="/assets/js/1.60a6a467.js" as="script"><link rel="preload" href="/assets/js/136.1e5a06df.js" as="script"><link rel="prefetch" href="/assets/js/10.7205dd61.js"><link rel="prefetch" href="/assets/js/100.da353333.js"><link rel="prefetch" href="/assets/js/101.89d3a3f6.js"><link rel="prefetch" href="/assets/js/102.606c8738.js"><link rel="prefetch" href="/assets/js/103.82c7ef5d.js"><link rel="prefetch" href="/assets/js/104.7a379b5b.js"><link rel="prefetch" href="/assets/js/105.dde174ec.js"><link rel="prefetch" href="/assets/js/106.b49cb691.js"><link rel="prefetch" href="/assets/js/107.55640b4a.js"><link rel="prefetch" href="/assets/js/108.ca1e57ec.js"><link rel="prefetch" href="/assets/js/109.cae2fb6c.js"><link rel="prefetch" href="/assets/js/11.9ef136f8.js"><link rel="prefetch" href="/assets/js/110.dce6cd70.js"><link rel="prefetch" href="/assets/js/111.bc26f011.js"><link rel="prefetch" href="/assets/js/112.02d017e0.js"><link rel="prefetch" href="/assets/js/113.3a9d147a.js"><link rel="prefetch" href="/assets/js/114.513ead96.js"><link rel="prefetch" href="/assets/js/115.dbc8b4c6.js"><link rel="prefetch" href="/assets/js/116.4be66573.js"><link rel="prefetch" href="/assets/js/117.ac331dd8.js"><link rel="prefetch" href="/assets/js/118.1097a6ae.js"><link rel="prefetch" href="/assets/js/119.ef959438.js"><link rel="prefetch" href="/assets/js/12.9ec44250.js"><link rel="prefetch" href="/assets/js/120.800897df.js"><link rel="prefetch" href="/assets/js/121.2615d650.js"><link rel="prefetch" href="/assets/js/122.28bc372e.js"><link rel="prefetch" href="/assets/js/123.db59fa01.js"><link rel="prefetch" href="/assets/js/124.71fb2bc3.js"><link rel="prefetch" href="/assets/js/125.9ba7bde8.js"><link rel="prefetch" href="/assets/js/126.5011ffc7.js"><link rel="prefetch" href="/assets/js/127.00ec4e11.js"><link rel="prefetch" href="/assets/js/128.d69785d3.js"><link rel="prefetch" href="/assets/js/129.2d60d0c0.js"><link rel="prefetch" href="/assets/js/13.5d1c6dd7.js"><link rel="prefetch" href="/assets/js/130.3277be91.js"><link rel="prefetch" href="/assets/js/131.02bf6804.js"><link rel="prefetch" href="/assets/js/132.37bff282.js"><link rel="prefetch" href="/assets/js/133.563a969a.js"><link rel="prefetch" href="/assets/js/134.d93234cf.js"><link rel="prefetch" href="/assets/js/135.f8fd617e.js"><link rel="prefetch" href="/assets/js/137.ecbfb342.js"><link rel="prefetch" href="/assets/js/138.05ecccc5.js"><link rel="prefetch" href="/assets/js/139.437ff598.js"><link rel="prefetch" href="/assets/js/14.863c3fbd.js"><link rel="prefetch" href="/assets/js/140.de491c6a.js"><link rel="prefetch" href="/assets/js/141.b9fbbe2b.js"><link rel="prefetch" href="/assets/js/142.be2289e8.js"><link rel="prefetch" href="/assets/js/143.07f9c0dc.js"><link rel="prefetch" href="/assets/js/144.dda4602f.js"><link rel="prefetch" href="/assets/js/145.b59d8720.js"><link rel="prefetch" href="/assets/js/146.27926d55.js"><link rel="prefetch" href="/assets/js/147.6a3ed374.js"><link rel="prefetch" href="/assets/js/148.e4a7b7d5.js"><link rel="prefetch" href="/assets/js/149.b2ab0604.js"><link rel="prefetch" href="/assets/js/15.e5429768.js"><link rel="prefetch" href="/assets/js/150.bc0291a5.js"><link rel="prefetch" href="/assets/js/151.10b604bb.js"><link rel="prefetch" href="/assets/js/152.4a128b0c.js"><link rel="prefetch" href="/assets/js/153.8770725a.js"><link rel="prefetch" href="/assets/js/154.86ad8999.js"><link rel="prefetch" href="/assets/js/155.72dc781a.js"><link rel="prefetch" href="/assets/js/156.a112a1a7.js"><link rel="prefetch" href="/assets/js/157.92f38ae5.js"><link rel="prefetch" href="/assets/js/16.f26e0e20.js"><link rel="prefetch" href="/assets/js/17.daf297c5.js"><link rel="prefetch" href="/assets/js/18.e822d656.js"><link rel="prefetch" href="/assets/js/19.bf0bf0cb.js"><link rel="prefetch" href="/assets/js/20.eb139300.js"><link rel="prefetch" href="/assets/js/21.20191b6a.js"><link rel="prefetch" href="/assets/js/22.f72031f1.js"><link rel="prefetch" href="/assets/js/23.b044ccdc.js"><link rel="prefetch" href="/assets/js/24.e9c68a5f.js"><link rel="prefetch" href="/assets/js/25.0e7a2fa2.js"><link rel="prefetch" href="/assets/js/26.c17b8b08.js"><link rel="prefetch" href="/assets/js/27.439a8273.js"><link rel="prefetch" href="/assets/js/28.b2227968.js"><link rel="prefetch" href="/assets/js/29.d3065b94.js"><link rel="prefetch" href="/assets/js/30.e199c77c.js"><link rel="prefetch" href="/assets/js/31.0916bb89.js"><link rel="prefetch" href="/assets/js/32.4207f934.js"><link rel="prefetch" href="/assets/js/33.02fbf977.js"><link rel="prefetch" href="/assets/js/34.07368bb6.js"><link rel="prefetch" href="/assets/js/35.39ece046.js"><link rel="prefetch" href="/assets/js/36.7eea3db8.js"><link rel="prefetch" href="/assets/js/37.c5f1d6dc.js"><link rel="prefetch" href="/assets/js/38.f7803ab4.js"><link rel="prefetch" href="/assets/js/39.9603525d.js"><link rel="prefetch" href="/assets/js/4.47b13c96.js"><link rel="prefetch" href="/assets/js/40.330182e7.js"><link rel="prefetch" href="/assets/js/41.0a14c88d.js"><link rel="prefetch" href="/assets/js/42.a5f1dd9f.js"><link rel="prefetch" href="/assets/js/43.16b8093b.js"><link rel="prefetch" href="/assets/js/44.66f3a36d.js"><link rel="prefetch" href="/assets/js/45.c3108a50.js"><link rel="prefetch" href="/assets/js/46.943eee46.js"><link rel="prefetch" href="/assets/js/47.06aee283.js"><link rel="prefetch" href="/assets/js/48.f0e39815.js"><link rel="prefetch" href="/assets/js/49.bf563f07.js"><link rel="prefetch" href="/assets/js/5.1229e70a.js"><link rel="prefetch" href="/assets/js/50.b85d639e.js"><link rel="prefetch" href="/assets/js/51.0d5bfdfe.js"><link rel="prefetch" href="/assets/js/52.72c662ad.js"><link rel="prefetch" href="/assets/js/53.486320d0.js"><link rel="prefetch" href="/assets/js/54.2d00490a.js"><link rel="prefetch" href="/assets/js/55.000434b7.js"><link rel="prefetch" href="/assets/js/56.23a68476.js"><link rel="prefetch" href="/assets/js/57.27efbb94.js"><link rel="prefetch" href="/assets/js/58.29c2aa40.js"><link rel="prefetch" href="/assets/js/59.0998d8d0.js"><link rel="prefetch" href="/assets/js/6.66b78701.js"><link rel="prefetch" href="/assets/js/60.469b6695.js"><link rel="prefetch" href="/assets/js/61.363f9cdf.js"><link rel="prefetch" href="/assets/js/62.02fdc0f6.js"><link rel="prefetch" href="/assets/js/63.0bb27acd.js"><link rel="prefetch" href="/assets/js/64.4e245675.js"><link rel="prefetch" href="/assets/js/65.b7388a80.js"><link rel="prefetch" href="/assets/js/66.a7039d42.js"><link rel="prefetch" href="/assets/js/67.e4ea8787.js"><link rel="prefetch" href="/assets/js/68.afb030af.js"><link rel="prefetch" href="/assets/js/69.51f88ebc.js"><link rel="prefetch" href="/assets/js/7.ef0b2ca0.js"><link rel="prefetch" href="/assets/js/70.6d81ed0b.js"><link rel="prefetch" href="/assets/js/71.03583f55.js"><link rel="prefetch" href="/assets/js/72.b5458ba0.js"><link rel="prefetch" href="/assets/js/73.999b2a2c.js"><link rel="prefetch" href="/assets/js/74.b76ba44a.js"><link rel="prefetch" href="/assets/js/75.d4dc64de.js"><link rel="prefetch" href="/assets/js/76.21c6cab2.js"><link rel="prefetch" href="/assets/js/77.5043ef10.js"><link rel="prefetch" href="/assets/js/78.f6521325.js"><link rel="prefetch" href="/assets/js/79.4d2f4d9a.js"><link rel="prefetch" href="/assets/js/8.6f8326b1.js"><link rel="prefetch" href="/assets/js/80.e5685697.js"><link rel="prefetch" href="/assets/js/81.8d39d031.js"><link rel="prefetch" href="/assets/js/82.0f7bc3b8.js"><link rel="prefetch" href="/assets/js/83.235eb8dd.js"><link rel="prefetch" href="/assets/js/84.90306cdc.js"><link rel="prefetch" href="/assets/js/85.68cc66dc.js"><link rel="prefetch" href="/assets/js/86.6c2adfb2.js"><link rel="prefetch" href="/assets/js/87.88fc5007.js"><link rel="prefetch" href="/assets/js/88.1b737c4a.js"><link rel="prefetch" href="/assets/js/89.e2ce6b1b.js"><link rel="prefetch" href="/assets/js/9.55c363c9.js"><link rel="prefetch" href="/assets/js/90.3646f652.js"><link rel="prefetch" href="/assets/js/91.59e1c2ef.js"><link rel="prefetch" href="/assets/js/92.724f7a6f.js"><link rel="prefetch" href="/assets/js/93.10c93d70.js"><link rel="prefetch" href="/assets/js/94.a1246b1c.js"><link rel="prefetch" href="/assets/js/95.d16afd5b.js"><link rel="prefetch" href="/assets/js/96.d1b13da5.js"><link rel="prefetch" href="/assets/js/97.7746bfa6.js"><link rel="prefetch" href="/assets/js/98.0bae3e21.js"><link rel="prefetch" href="/assets/js/99.51058bd7.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.239719ad.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div><div class="theme-container" data-v-319dd33c><div data-v-319dd33c><div id="loader-wrapper" class="loading-wrapper" data-v-1c4f0192 data-v-319dd33c data-v-319dd33c><div class="loader-main" data-v-1c4f0192><div data-v-1c4f0192></div><div data-v-1c4f0192></div><div data-v-1c4f0192></div><div data-v-1c4f0192></div></div> <!----> <!----></div> <div class="password-shadow password-wrapper-out" style="display:none;" data-v-1e2a0cc0 data-v-319dd33c data-v-319dd33c><h3 class="title" style="display:none;" data-v-1e2a0cc0 data-v-1e2a0cc0> </h3> <!----> <label id="box" class="inputBox" style="display:none;" data-v-1e2a0cc0 data-v-1e2a0cc0><input type="password" value="" data-v-1e2a0cc0> <span data-v-1e2a0cc0>Konck! Knock!</span> <button data-v-1e2a0cc0>OK</button></label> <div class="footer" style="display:none;" data-v-1e2a0cc0 data-v-1e2a0cc0><span data-v-1e2a0cc0><i class="iconfont reco-theme" data-v-1e2a0cc0></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-1e2a0cc0>vuePress-theme-reco</a></span> <span data-v-1e2a0cc0><i class="iconfont reco-copyright" data-v-1e2a0cc0></i> <a data-v-1e2a0cc0><span data-v-1e2a0cc0>掘金安东尼</span>
+            
+          <span data-v-1e2a0cc0>2019 - </span>
+          2021
+        </a></span></div></div> <div class="hide" data-v-319dd33c><header class="navbar" data-v-319dd33c><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/logo.png" alt=" " class="logo"> <span class="site-name"> </span></a> <div class="links"><div class="color-picker"><a class="color-button"><i class="iconfont reco-color"></i></a> <div class="color-picker-menu" style="display:none;"><div class="mode-options"><h4 class="title">Choose mode</h4> <ul class="color-mode-options"><li class="dark">dark</li><li class="auto active">auto</li><li class="light">light</li></ul></div></div></div> <div class="search-box"><i class="iconfont reco-search"></i> <input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link"><i class="iconfont reco-home"></i>
+  主页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-category"></i>
+      年复一年
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/2019/" class="nav-link"><i class="iconfont undefined"></i>
+  2019
+</a></li><li class="dropdown-item"><!----> <a href="/categories/2020/" class="nav-link"><i class="iconfont undefined"></i>
+  2020
+</a></li><li class="dropdown-item"><!----> <a href="/categories/2021/" class="nav-link"><i class="iconfont undefined"></i>
+  2021
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-other"></i>
+      以面代练
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/series/fe-weekly/index.html" class="nav-link"><i class="iconfont undefined"></i>
+  前端周记
+</a></li><li class="dropdown-item"><!----> <a href="/interview/vue/core.html" class="nav-link"><i class="iconfont undefined"></i>
+  源码生啃
+</a></li><li class="dropdown-item"><!----> <a href="/interview/read/index.html" class="nav-link"><i class="iconfont undefined"></i>
+  读书笔记
+</a></li><li class="dropdown-item"><!----> <a href="/interview/cacl/index.html" class="nav-link"><i class="iconfont undefined"></i>
+  算法
+</a></li><li class="dropdown-item"><!----> <a href="/interview/log/index.html" class="nav-link"><i class="iconfont undefined"></i>
+  面经
+</a></li></ul></div></div><div class="nav-item"><a href="/tag/" class="nav-link"><i class="iconfont reco-tag"></i>
+  标签
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-three"></i>
+      创作写作
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>创作</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/create/multimedia/poems.html" class="nav-link"><i class="iconfont undefined"></i>
+  诗与歌
+</a></li><li class="dropdown-subitem"><a href="/create/multimedia/movie.html" class="nav-link"><i class="iconfont undefined"></i>
+  电影解说
+</a></li></ul></li><li class="dropdown-item"><h4>写作</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/create/neverforget/mostsoft.html" class="nav-link"><i class="iconfont undefined"></i>
+  最柔软处
+</a></li><li class="dropdown-subitem"><a href="/create/neverforget/iamedog.html" class="nav-link"><i class="iconfont undefined"></i>
+  瘸腿的狗
+</a></li><li class="dropdown-subitem"><a href="/create/neverforget/allformoney.html" class="nav-link"><i class="iconfont undefined"></i>
+  赏金猎人
+</a></li></ul></li></ul></div></div><div class="nav-item"><a href="/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  时间线
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-message"></i>
+      关于我
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/about/starthere.html" class="nav-link"><i class="iconfont undefined"></i>
+  不忘初心
+</a></li><li class="dropdown-item"><!----> <a href="https://github.com/tuaran" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont undefined"></i>
+  GitHub
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://tuaran.github.io" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont undefined"></i>
+  GitHubPage
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask" data-v-319dd33c></div> <aside class="sidebar" data-v-319dd33c><div class="personal-info-wrapper" data-v-6c8ffc9c><img src="/avatar.png" alt="author-avatar" class="personal-img" data-v-6c8ffc9c> <h3 class="name" data-v-6c8ffc9c>
+    掘金安东尼
+  </h3> <div class="num" data-v-6c8ffc9c><div data-v-6c8ffc9c><h3 data-v-6c8ffc9c>83</h3> <h6 data-v-6c8ffc9c>文章</h6></div> <div data-v-6c8ffc9c><h3 data-v-6c8ffc9c>46</h3> <h6 data-v-6c8ffc9c>标签</h6></div></div> <hr data-v-6c8ffc9c></div> <nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link"><i class="iconfont reco-home"></i>
+  主页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-category"></i>
+      年复一年
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/2019/" class="nav-link"><i class="iconfont undefined"></i>
+  2019
+</a></li><li class="dropdown-item"><!----> <a href="/categories/2020/" class="nav-link"><i class="iconfont undefined"></i>
+  2020
+</a></li><li class="dropdown-item"><!----> <a href="/categories/2021/" class="nav-link"><i class="iconfont undefined"></i>
+  2021
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-other"></i>
+      以面代练
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/series/fe-weekly/index.html" class="nav-link"><i class="iconfont undefined"></i>
+  前端周记
+</a></li><li class="dropdown-item"><!----> <a href="/interview/vue/core.html" class="nav-link"><i class="iconfont undefined"></i>
+  源码生啃
+</a></li><li class="dropdown-item"><!----> <a href="/interview/read/index.html" class="nav-link"><i class="iconfont undefined"></i>
+  读书笔记
+</a></li><li class="dropdown-item"><!----> <a href="/interview/cacl/index.html" class="nav-link"><i class="iconfont undefined"></i>
+  算法
+</a></li><li class="dropdown-item"><!----> <a href="/interview/log/index.html" class="nav-link"><i class="iconfont undefined"></i>
+  面经
+</a></li></ul></div></div><div class="nav-item"><a href="/tag/" class="nav-link"><i class="iconfont reco-tag"></i>
+  标签
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-three"></i>
+      创作写作
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>创作</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/create/multimedia/poems.html" class="nav-link"><i class="iconfont undefined"></i>
+  诗与歌
+</a></li><li class="dropdown-subitem"><a href="/create/multimedia/movie.html" class="nav-link"><i class="iconfont undefined"></i>
+  电影解说
+</a></li></ul></li><li class="dropdown-item"><h4>写作</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/create/neverforget/mostsoft.html" class="nav-link"><i class="iconfont undefined"></i>
+  最柔软处
+</a></li><li class="dropdown-subitem"><a href="/create/neverforget/iamedog.html" class="nav-link"><i class="iconfont undefined"></i>
+  瘸腿的狗
+</a></li><li class="dropdown-subitem"><a href="/create/neverforget/allformoney.html" class="nav-link"><i class="iconfont undefined"></i>
+  赏金猎人
+</a></li></ul></li></ul></div></div><div class="nav-item"><a href="/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  时间线
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-message"></i>
+      关于我
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/about/starthere.html" class="nav-link"><i class="iconfont undefined"></i>
+  不忘初心
+</a></li><li class="dropdown-item"><!----> <a href="https://github.com/tuaran" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont undefined"></i>
+  GitHub
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://tuaran.github.io" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont undefined"></i>
+  GitHubPage
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>XDM，JS如何函数式编程？看这就够了！（一）</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/views/2021/light-js-1.html#函数式编程概览" class="sidebar-link">函数式编程概览</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/views/2021/light-js-1.html#fp-很重要" class="sidebar-link">FP 很重要</a></li><li class="sidebar-sub-header"><a href="/views/2021/light-js-1.html#fp-打基础" class="sidebar-link">FP 打基础</a></li><li class="sidebar-sub-header"><a href="/views/2021/light-js-1.html#return-思考" class="sidebar-link">return 思考</a></li><li class="sidebar-sub-header"><a href="/views/2021/light-js-1.html#高阶函数" class="sidebar-link">高阶函数</a></li><li class="sidebar-sub-header"><a href="/views/2021/light-js-1.html#丢掉-this" class="sidebar-link">丢掉 this</a></li><li class="sidebar-sub-header"><a href="/views/2021/light-js-1.html#具名函数" class="sidebar-link">具名函数</a></li></ul></li><li><a href="/views/2021/light-js-1.html#阶段小结" class="sidebar-link">阶段小结</a><ul class="sidebar-sub-headers"></ul></li></ul></section></li></ul> </aside> <div class="password-shadow password-wrapper-in" style="display:none;" data-v-1e2a0cc0 data-v-319dd33c><h3 class="title" style="display:none;" data-v-1e2a0cc0 data-v-1e2a0cc0>XDM，JS如何函数式编程？看这就够了！（一）</h3> <!----> <label id="box" class="inputBox" style="display:none;" data-v-1e2a0cc0 data-v-1e2a0cc0><input type="password" value="" data-v-1e2a0cc0> <span data-v-1e2a0cc0>Konck! Knock!</span> <button data-v-1e2a0cc0>OK</button></label> <div class="footer" style="display:none;" data-v-1e2a0cc0 data-v-1e2a0cc0><span data-v-1e2a0cc0><i class="iconfont reco-theme" data-v-1e2a0cc0></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-1e2a0cc0>vuePress-theme-reco</a></span> <span data-v-1e2a0cc0><i class="iconfont reco-copyright" data-v-1e2a0cc0></i> <a data-v-1e2a0cc0><span data-v-1e2a0cc0>掘金安东尼</span>
+            
+          <span data-v-1e2a0cc0>2019 - </span>
+          2021
+        </a></span></div></div> <div data-v-319dd33c><main class="page"><div class="page-title" style="display:none;"><h1>XDM，JS如何函数式编程？看这就够了！（一）</h1> <hr> <div data-v-484a899e><i class="iconfont reco-account" data-v-484a899e><span data-v-484a899e>掘金安东尼</span></i> <i class="iconfont reco-date" data-v-484a899e><span data-v-484a899e>2021-05-28</span></i> <!----> <i class="iconfont reco-tag tags" data-v-484a899e><span class="tag-item" data-v-484a899e>
+      JS
+    </span></i></div></div> <div class="theme-reco-content content__default" style="display:none;"><p>盲猜一个：如果你有看过</p> <ul><li><p><a href="https://juejin.cn/post/6950878916135354398" target="_blank" rel="noopener noreferrer">《medium 五万赞好文-《我永远不懂 JS 闭包》》<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p></li> <li><p><a href="https://juejin.cn/post/6964649946238681125" target="_blank" rel="noopener noreferrer">《“类”设计模式和“原型”设计模式——“复制”和“委托”的差异》<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p></li></ul> <p>这两篇文章，你一定会对 JS 的【函数】有更多兴趣！</p> <p>如果你没兴趣？那我走？</p> <p><img src="https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/0c45763f72d14667ad62f595bd1d22f9~tplv-k3u1fbpfcp-watermark.image" alt="image.png"></p> <p><img src="https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/83fac8015c7b401fa0aa24eba04c2128~tplv-k3u1fbpfcp-watermark.image" alt="image.png"></p> <p>皮一下，很舒服~ 没错！<strong>JS 就是轻量级的函数式编程！</strong></p> <p>拆解一下这句话，品味一下~</p> <p>本瓜将借助<a href="https://github.com/Simingchen/Functional-Light-JS" target="_blank" rel="noopener noreferrer">《JavaScript 轻量级函数式编程》<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>一书带领你先透析它的落脚点<strong>函数式编程</strong>，然后再看看 JS 为什么被称为是 <strong>“轻量的”</strong>！</p> <p>此篇是《JS如何函数式编程？看这就够了！》系列的<strong>第一篇</strong>，点赞👍关注👀持续追踪！</p> <h2 id="函数式编程概览"><a href="#函数式编程概览" class="header-anchor">#</a> 函数式编程概览</h2> <h3 id="fp-很重要"><a href="#fp-很重要" class="header-anchor">#</a> FP 很重要</h3> <p>函数式编程（FP），不是一个新的概念，它几乎贯穿了整个编程史。直到最近几年，函数式编程才成为整个开发界的主流观念。</p> <p>函数式编程有完善且清晰的原则，一旦我们知道这些原则，我们将能更加快速地读懂代码，定位问题。这是为什么函数式编程重要的原因！</p> <p>比如：你可能写过一些<strong>命令式的代码</strong>，像 if 语句和 for 循环这样的语句。这些语句旨在精确地指导计算机如何完成一件事情。而<strong>声明式代码</strong>，以及我们努力遵循函数式编程原则所写出的代码，更专注于描述最终的结果。</p> <p>函数式编程以另一种方式来思考代码应该如何组织才能<strong>使数据流更加明显</strong>，并能让读者很快理解你的思想。</p> <blockquote><p>记住，你编写的每一行代码之后都要有人来维护，这个人可能是你的团队成员，也可能是未来的你。</p></blockquote> <h3 id="fp-打基础"><a href="#fp-打基础" class="header-anchor">#</a> FP 打基础</h3> <p>函数式编程不是仅仅用 function 这个关键词来编程，就像面向对象编程不仅仅是用了对象就算是。</p> <p>函数的真正意义是什么？</p> <p>回到最初的起点，我们心中的函数一定是这样的：</p> <p><img src="https://s3.jpg.cm/2021/05/28/IIPD2z.png" alt=""></p> <p><code>f(x) = 2x2 + 3</code>，这是数学上真正的函数。那这和函数式编程有什么关系呢？</p> <p>函数的本质是【映射】。以一个优雅的方式来描述一组值和另一组值的映射关系，即函数的输入值与输出值之间的关联关系。</p> <p>在编程中，它或许有许多个输入值，或许没有。它或许有一个输出值（ return 值），或许没有。</p> <blockquote><p>如果你计划使用函数式编程，你应该尽可能多地使用函数，而不是程序。你所有编写的 function 应该接收输入值，并且返回输出值。（这么做的原因是多方面的，后续会一一介绍）</p></blockquote> <p>这里，输入值就是函数传参，输出值就是<code>return</code>的东西。（如果你没有 return 值，或者你使用 return;，那么则会隐式地返回 undefined 值。）</p> <h3 id="return-思考"><a href="#return-思考" class="header-anchor">#</a> return 思考</h3> <ul><li>思考以下代码：</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>function foo(x) {
+    if (x &gt; 10) return x + 1;
+
+    var y = x / 2;
+
+    if (y &gt; 3) {
+        if (x % 2 == 0) return x;
+    }
+
+    if (y &gt; 1) return y;
+
+    return x;
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br></div></div><p>foo(2) 返回什么？ foo(4) 返回什么？ foo(8)， foo(12) 呢？</p> <ul><li>将上述代码变形，请思考:</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>function foo(x) {
+    var retValue;
+
+    if (retValue == undefined &amp;&amp; x &gt; 10) {
+        retValue = x + 1;
+    }
+
+    var y = x / 2;
+
+    if (y &gt; 3) {
+        if (retValue == undefined &amp;&amp; x % 2 == 0) {
+            retValue = x;
+        }
+    }
+
+    if (retValue == undefined &amp;&amp; y &gt; 1) {
+        retValue = y;
+    }
+
+    if (retValue == undefined) {
+        retValue = x;
+    }
+
+    return retValue;
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br></div></div><p>这样写会更容易理解吗？</p> <p>在每个 retValue 可以被设置的分支， 这里都有个<strong>守护者</strong>以确保 retValue 没有被设置过才执行。（？）</p> <p>相比在函数中提早使用 return，我们更应该用常用的流控制（ if 逻辑 ）来控制 retValue 的赋值。到最后，我们 return retValue。</p> <p>用 return 来实现流控制，会创造更多的隐含意义。</p> <ul><li>再来思考以下代码：</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>// 通过一个函数修改变量 y 的值
+var y;
+
+function foo(x) {
+    y = (2 * Math.pow( x, 2 )) + 3;
+}
+
+foo( 2 );
+
+y;    
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br></div></div><p>但是我们也可以这样写：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>function foo(x) {
+    return (2 * Math.pow( x, 2 )) + 3;
+}
+
+var y = foo( 2 );
+
+y; 
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br></div></div><p>后一个版本更有优势吗？</p> <p>答案是肯定的：有！</p> <p>后一个版本中的 return 表示一个显式输出，而前者的 y 赋值是一个隐式输出。</p> <p><strong>通常，开发人员喜欢显式模式而不是隐式模式。</strong></p> <p>为什么说后者 return 出来的就是显式的？而前者的 y 赋值是隐式的？</p> <p>这个例子可以给你答案：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>function sum(list) {
+    var total = 0;
+    for (let i = 0; i &lt; list.length; i++) {
+        if (!list[i]) list[i] = 0; // list 使用了 nums 的引用，不是对 [1,3,9,..] 的值复制，而是引用复制。
+
+        total = total + list[i];
+    }
+
+    return total;
+}
+
+var nums = [ 1, 3, 9, 27, , 84 ];
+
+sum( nums );            // 124
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br></div></div><p>这段代码，除了 return 的输出，还有没有其它输出可能改变到函数外部参数 nums 的值？</p> <p>是有的！就是在注释的一行，我们无意中改变了 nums 。</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>console.log(nums) // [1, 3, 9, 27, 0, 84]
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>JS 对数组、对象和函数都使用引用和引用复制，我们可以很容易地从函数中创建输出，即使是无心的。</p> <p><strong>这个隐式函数输出在函数式编程中有一个特殊的名称：副作用。</strong></p> <p>没有副作用的函数也有一个特殊的名称：<strong>纯函数</strong>，这个概念十分重要，后面对有更多讨论！</p> <h3 id="高阶函数"><a href="#高阶函数" class="header-anchor">#</a> 高阶函数</h3> <p>一个函数如果可以接受或返回一个甚至多个函数，它被叫做高阶函数。</p> <p>其中最强大的就是：【闭包】。</p> <p>我们将在的后续举例中大量使用闭包。它可能是所有函数式编程中最重要的基础。</p> <p>此处举一小例：</p> <p>假设你需要将两个值相加，一个你已经知道，另一个还需要后面才能知道，你可以使用闭包来<strong>记录</strong>第一个输入值：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>function makeAdder(x) {
+    return function sum(y){
+        return x + y;
+    };
+}
+
+//我们已经分别知道作为第一个输入的 10 和 37
+var addTo10 = makeAdder( 10 );
+var addTo37 = makeAdder( 37 );
+
+// 紧接着，我们指定第二个参数
+addTo10( 3 );            // 13
+addTo10( 90 );            // 100
+
+addTo37( 13 );            // 50
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br></div></div><p>这种在连续函数调用中指定输入，是函数式编程中非常普遍的形式。</p> <p>它可分为两类：<strong>偏函数应用</strong>和<strong>柯里化</strong>。后续会展开。</p> <h3 id="丢掉-this"><a href="#丢掉-this" class="header-anchor">#</a> 丢掉 this</h3> <p>JavaScript 中的 this 绑定规则是真的难记，好消息是我们将把 this 丢弃掉，不去理会它。</p> <p>这样做的内核原因是：this 是函数的一个隐式的输入参数。前面我们提到<strong>通常，开发人员喜欢显式模式而不是隐式模式。</strong>，这样的隐式输入违背了我们的原则。</p> <h3 id="具名函数"><a href="#具名函数" class="header-anchor">#</a> 具名函数</h3> <p>我们提倡要用具名函数，而不是匿名函数，这更有利于我们语义化代码，比如<code>getPreferredName(..)</code>，操作意图很明确，并且可以很好的回溯问题，防止出现 <code>(anonymous function)</code> 。</p> <p>但是 =&gt; 箭头函数除外，箭头函数还是得有效利用。</p> <p>=&gt; 箭头函数令人兴奋的地方在于它几乎完全遵循函数的数学符号，特别是像 Haskell 这样的函数式编程语言。它能简化、优化代码片段中的空间。</p> <h2 id="阶段小结"><a href="#阶段小结" class="header-anchor">#</a> 阶段小结</h2> <p>函数是强大的！</p> <ol><li><p>我们学习函数式编程的全部理由是为了书写更具可读性的代码。</p></li> <li><p>程序中，函数不仅仅是一个语句或者操作的集合，而是需要一个或多个输入（理想情况下只需一个！）和一个输出。开发人员喜欢显式输入输出而不是隐式输入输出。</p></li> <li><p>函数内部的函数可以取到闭包外部变量，并记住它们以备日后使用。这是所有程序设计中最重要的概念之一，也是函数式编程的基础。</p></li> <li><p>要警惕匿名函数，特别是 =&gt; 箭头函数。虽然在编程时用起来很方便，但是会对增加代码阅读的负担。</p></li> <li><p>别用 this 敏感的函数。这不需要理由。</p></li></ol></div> <footer class="page-edit" style="display:none;"><!----> <div class="last-updated"><span class="prefix">Last Updated: </span> <span class="time">6/4/2021, 5:29:46 PM</span></div></footer> <!----></main> <!----> <div style="display:none;" data-v-319dd33c data-v-319dd33c><div class="comments-wrapper" data-v-319dd33c><!----></div></div></div></div></div></div></div><div class="global-ui"><div class="back-to-ceiling" style="right:1rem;bottom:6rem;width:2.5rem;height:2.5rem;border-radius:.25rem;line-height:2.5rem;display:none;" data-v-c6073ba8 data-v-c6073ba8><svg t="1574745035067" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5404" class="icon" data-v-c6073ba8><path d="M526.60727968 10.90185116a27.675 27.675 0 0 0-29.21455937 0c-131.36607665 82.28402758-218.69155461 228.01873535-218.69155402 394.07834331a462.20625001 462.20625001 0 0 0 5.36959153 69.94390903c1.00431239 6.55289093-0.34802892 13.13561351-3.76865779 18.80351572-32.63518765 54.11355614-51.75690182 118.55860487-51.7569018 187.94566865a371.06718723 371.06718723 0 0 0 11.50484808 91.98906777c6.53300375 25.50556257 41.68394495 28.14064038 52.69160883 4.22606766 17.37162448-37.73630017 42.14135425-72.50938081 72.80769204-103.21549295 2.18761121 3.04276886 4.15646224 6.24463696 6.40373557 9.22774369a1871.4375 1871.4375 0 0 0 140.04691725 5.34970492 1866.36093723 1866.36093723 0 0 0 140.04691723-5.34970492c2.24727335-2.98310674 4.21612437-6.18497483 6.3937923-9.2178004 30.66633723 30.70611158 55.4360664 65.4791928 72.80769147 103.21549355 11.00766384 23.91457269 46.15860503 21.27949489 52.69160879-4.22606768a371.15156223 371.15156223 0 0 0 11.514792-91.99901164c0-69.36717486-19.13165746-133.82216804-51.75690182-187.92578088-3.42062944-5.66790279-4.76302748-12.26056868-3.76865837-18.80351632a462.20625001 462.20625001 0 0 0 5.36959269-69.943909c-0.00994388-166.08943902-87.32547796-311.81420293-218.6915546-394.09823051zM605.93803103 357.87693858a93.93749974 93.93749974 0 1 1-187.89594924 6.1e-7 93.93749974 93.93749974 0 0 1 187.89594924-6.1e-7z" p-id="5405" data-v-c6073ba8></path><path d="M429.50777625 765.63860547C429.50777625 803.39355007 466.44236686 1000.39046097 512.00932183 1000.39046097c45.56695499 0 82.4922232-197.00623328 82.5015456-234.7518555 0-37.75494459-36.9345906-68.35043303-82.4922232-68.34111062-45.57627738-0.00932239-82.52019037 30.59548842-82.51086798 68.34111062z" p-id="5406" data-v-c6073ba8></path></svg></div><div class="reco-bgm-panel" data-v-39f9e6e0><audio id="bgm" src="/bgm/comebacktome.mp3" data-v-39f9e6e0></audio> <div class="reco-float-box" style="bottom:200px;z-index:999999;display:none;" data-v-39f9e6e0 data-v-41bcba48 data-v-39f9e6e0><img src="/bgm/comebacktome.jpg" data-v-39f9e6e0></div> <div class="reco-bgm-box" style="left:10px;bottom:10px;z-index:999999;" data-v-39f9e6e0 data-v-41bcba48 data-v-39f9e6e0><div class="reco-bgm-cover" style="background-image:url(/bgm/comebacktome.jpg);" data-v-39f9e6e0><div class="mini-operation" style="display:none;" data-v-39f9e6e0><i class="reco-bgm reco-bgm-pause" style="display:none;" data-v-39f9e6e0></i> <i class="reco-bgm reco-bgm-play" style="display:none;" data-v-39f9e6e0></i></div> <div class="falut-message" style="display:none;" data-v-39f9e6e0>
+          播放失败
+        </div></div> <div class="reco-bgm-info" data-v-39f9e6e0 data-v-41bcba48 data-v-39f9e6e0><div class="info-box" data-v-39f9e6e0><i class="reco-bgm reco-bgm-music music" data-v-39f9e6e0></i>Come Back To Me</div> <div class="info-box" data-v-39f9e6e0><i class="reco-bgm reco-bgm-artist" data-v-39f9e6e0></i>宇多田ヒカル</div> <div class="reco-bgm-progress" data-v-39f9e6e0><div class="progress-bar" data-v-39f9e6e0><div class="bar" data-v-39f9e6e0></div></div></div> <div class="reco-bgm-operation" data-v-39f9e6e0><i class="reco-bgm reco-bgm-last last" data-v-39f9e6e0></i> <i class="reco-bgm reco-bgm-pause pause" style="display:none;" data-v-39f9e6e0></i> <i class="reco-bgm reco-bgm-play play" data-v-39f9e6e0></i> <i class="reco-bgm reco-bgm-next next" data-v-39f9e6e0></i> <i class="reco-bgm reco-bgm-volume1 volume" data-v-39f9e6e0></i> <i class="reco-bgm reco-bgm-mute mute" style="display:none;" data-v-39f9e6e0></i> <div class="volume-bar" data-v-39f9e6e0><div class="bar" data-v-39f9e6e0></div></div></div></div> <div class="reco-bgm-left-box" data-v-39f9e6e0 data-v-41bcba48 data-v-39f9e6e0><i class="reco-bgm reco-bgm-left" data-v-39f9e6e0></i></div></div></div><div class="kanbanniang" data-v-5775ee02><div class="banniang-container" style="display:;" data-v-5775ee02><div class="messageBox" style="right:68px;bottom:190px;display:none;" data-v-5775ee02>
+      欢迎来到  
+    </div> <div class="operation" style="right:90px;bottom:40px;display:none;" data-v-5775ee02><i class="kbnfont kbn-ban-home ban-home" data-v-5775ee02></i> <i class="kbnfont kbn-ban-message message" data-v-5775ee02></i> <i class="kbnfont kbn-ban-close close" data-v-5775ee02></i> <a target="_blank" href="https://vuepress-theme-reco.recoluan.com/views/plugins/kanbanniang.html" data-v-5775ee02><i class="kbnfont kbn-ban-info info" data-v-5775ee02></i></a> <i class="kbnfont kbn-ban-theme skin" style="display:none;" data-v-5775ee02></i></div> <canvas id="banniang" width="150" height="220" class="live2d" style="right:90px;bottom:-20px;opacity:0.9;" data-v-5775ee02></canvas></div> <div class="showBanNiang" style="display:none;" data-v-5775ee02>
+    看板娘
+  </div></div></div></div>
+    <script src="/assets/js/app.fab4b134.js" defer></script><script src="/assets/js/3.92bb3b86.js" defer></script><script src="/assets/js/1.60a6a467.js" defer></script><script src="/assets/js/136.1e5a06df.js" defer></script>
+  </body>
+</html>

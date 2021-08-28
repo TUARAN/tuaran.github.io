@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>关于 JS 原型你必须要知道的二三 |  </title>
+    <meta name="generator" content="VuePress 1.8.2">
+    <link rel="icon" href="/favicon.ico">
+    <meta name="description" content=" ">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    
+    <link rel="preload" href="/assets/css/0.styles.239719ad.css" as="style"><link rel="preload" href="/assets/js/app.fab4b134.js" as="script"><link rel="preload" href="/assets/js/3.92bb3b86.js" as="script"><link rel="preload" href="/assets/js/1.60a6a467.js" as="script"><link rel="preload" href="/assets/js/97.7746bfa6.js" as="script"><link rel="prefetch" href="/assets/js/10.7205dd61.js"><link rel="prefetch" href="/assets/js/100.da353333.js"><link rel="prefetch" href="/assets/js/101.89d3a3f6.js"><link rel="prefetch" href="/assets/js/102.606c8738.js"><link rel="prefetch" href="/assets/js/103.82c7ef5d.js"><link rel="prefetch" href="/assets/js/104.7a379b5b.js"><link rel="prefetch" href="/assets/js/105.dde174ec.js"><link rel="prefetch" href="/assets/js/106.b49cb691.js"><link rel="prefetch" href="/assets/js/107.55640b4a.js"><link rel="prefetch" href="/assets/js/108.ca1e57ec.js"><link rel="prefetch" href="/assets/js/109.cae2fb6c.js"><link rel="prefetch" href="/assets/js/11.9ef136f8.js"><link rel="prefetch" href="/assets/js/110.dce6cd70.js"><link rel="prefetch" href="/assets/js/111.bc26f011.js"><link rel="prefetch" href="/assets/js/112.02d017e0.js"><link rel="prefetch" href="/assets/js/113.3a9d147a.js"><link rel="prefetch" href="/assets/js/114.513ead96.js"><link rel="prefetch" href="/assets/js/115.dbc8b4c6.js"><link rel="prefetch" href="/assets/js/116.4be66573.js"><link rel="prefetch" href="/assets/js/117.ac331dd8.js"><link rel="prefetch" href="/assets/js/118.1097a6ae.js"><link rel="prefetch" href="/assets/js/119.ef959438.js"><link rel="prefetch" href="/assets/js/12.9ec44250.js"><link rel="prefetch" href="/assets/js/120.800897df.js"><link rel="prefetch" href="/assets/js/121.2615d650.js"><link rel="prefetch" href="/assets/js/122.28bc372e.js"><link rel="prefetch" href="/assets/js/123.db59fa01.js"><link rel="prefetch" href="/assets/js/124.71fb2bc3.js"><link rel="prefetch" href="/assets/js/125.9ba7bde8.js"><link rel="prefetch" href="/assets/js/126.5011ffc7.js"><link rel="prefetch" href="/assets/js/127.00ec4e11.js"><link rel="prefetch" href="/assets/js/128.d69785d3.js"><link rel="prefetch" href="/assets/js/129.2d60d0c0.js"><link rel="prefetch" href="/assets/js/13.5d1c6dd7.js"><link rel="prefetch" href="/assets/js/130.3277be91.js"><link rel="prefetch" href="/assets/js/131.02bf6804.js"><link rel="prefetch" href="/assets/js/132.37bff282.js"><link rel="prefetch" href="/assets/js/133.563a969a.js"><link rel="prefetch" href="/assets/js/134.d93234cf.js"><link rel="prefetch" href="/assets/js/135.f8fd617e.js"><link rel="prefetch" href="/assets/js/136.1e5a06df.js"><link rel="prefetch" href="/assets/js/137.ecbfb342.js"><link rel="prefetch" href="/assets/js/138.05ecccc5.js"><link rel="prefetch" href="/assets/js/139.437ff598.js"><link rel="prefetch" href="/assets/js/14.863c3fbd.js"><link rel="prefetch" href="/assets/js/140.de491c6a.js"><link rel="prefetch" href="/assets/js/141.b9fbbe2b.js"><link rel="prefetch" href="/assets/js/142.be2289e8.js"><link rel="prefetch" href="/assets/js/143.07f9c0dc.js"><link rel="prefetch" href="/assets/js/144.dda4602f.js"><link rel="prefetch" href="/assets/js/145.b59d8720.js"><link rel="prefetch" href="/assets/js/146.27926d55.js"><link rel="prefetch" href="/assets/js/147.6a3ed374.js"><link rel="prefetch" href="/assets/js/148.e4a7b7d5.js"><link rel="prefetch" href="/assets/js/149.b2ab0604.js"><link rel="prefetch" href="/assets/js/15.e5429768.js"><link rel="prefetch" href="/assets/js/150.bc0291a5.js"><link rel="prefetch" href="/assets/js/151.10b604bb.js"><link rel="prefetch" href="/assets/js/152.4a128b0c.js"><link rel="prefetch" href="/assets/js/153.8770725a.js"><link rel="prefetch" href="/assets/js/154.86ad8999.js"><link rel="prefetch" href="/assets/js/155.72dc781a.js"><link rel="prefetch" href="/assets/js/156.a112a1a7.js"><link rel="prefetch" href="/assets/js/157.92f38ae5.js"><link rel="prefetch" href="/assets/js/16.f26e0e20.js"><link rel="prefetch" href="/assets/js/17.daf297c5.js"><link rel="prefetch" href="/assets/js/18.e822d656.js"><link rel="prefetch" href="/assets/js/19.bf0bf0cb.js"><link rel="prefetch" href="/assets/js/20.eb139300.js"><link rel="prefetch" href="/assets/js/21.20191b6a.js"><link rel="prefetch" href="/assets/js/22.f72031f1.js"><link rel="prefetch" href="/assets/js/23.b044ccdc.js"><link rel="prefetch" href="/assets/js/24.e9c68a5f.js"><link rel="prefetch" href="/assets/js/25.0e7a2fa2.js"><link rel="prefetch" href="/assets/js/26.c17b8b08.js"><link rel="prefetch" href="/assets/js/27.439a8273.js"><link rel="prefetch" href="/assets/js/28.b2227968.js"><link rel="prefetch" href="/assets/js/29.d3065b94.js"><link rel="prefetch" href="/assets/js/30.e199c77c.js"><link rel="prefetch" href="/assets/js/31.0916bb89.js"><link rel="prefetch" href="/assets/js/32.4207f934.js"><link rel="prefetch" href="/assets/js/33.02fbf977.js"><link rel="prefetch" href="/assets/js/34.07368bb6.js"><link rel="prefetch" href="/assets/js/35.39ece046.js"><link rel="prefetch" href="/assets/js/36.7eea3db8.js"><link rel="prefetch" href="/assets/js/37.c5f1d6dc.js"><link rel="prefetch" href="/assets/js/38.f7803ab4.js"><link rel="prefetch" href="/assets/js/39.9603525d.js"><link rel="prefetch" href="/assets/js/4.47b13c96.js"><link rel="prefetch" href="/assets/js/40.330182e7.js"><link rel="prefetch" href="/assets/js/41.0a14c88d.js"><link rel="prefetch" href="/assets/js/42.a5f1dd9f.js"><link rel="prefetch" href="/assets/js/43.16b8093b.js"><link rel="prefetch" href="/assets/js/44.66f3a36d.js"><link rel="prefetch" href="/assets/js/45.c3108a50.js"><link rel="prefetch" href="/assets/js/46.943eee46.js"><link rel="prefetch" href="/assets/js/47.06aee283.js"><link rel="prefetch" href="/assets/js/48.f0e39815.js"><link rel="prefetch" href="/assets/js/49.bf563f07.js"><link rel="prefetch" href="/assets/js/5.1229e70a.js"><link rel="prefetch" href="/assets/js/50.b85d639e.js"><link rel="prefetch" href="/assets/js/51.0d5bfdfe.js"><link rel="prefetch" href="/assets/js/52.72c662ad.js"><link rel="prefetch" href="/assets/js/53.486320d0.js"><link rel="prefetch" href="/assets/js/54.2d00490a.js"><link rel="prefetch" href="/assets/js/55.000434b7.js"><link rel="prefetch" href="/assets/js/56.23a68476.js"><link rel="prefetch" href="/assets/js/57.27efbb94.js"><link rel="prefetch" href="/assets/js/58.29c2aa40.js"><link rel="prefetch" href="/assets/js/59.0998d8d0.js"><link rel="prefetch" href="/assets/js/6.66b78701.js"><link rel="prefetch" href="/assets/js/60.469b6695.js"><link rel="prefetch" href="/assets/js/61.363f9cdf.js"><link rel="prefetch" href="/assets/js/62.02fdc0f6.js"><link rel="prefetch" href="/assets/js/63.0bb27acd.js"><link rel="prefetch" href="/assets/js/64.4e245675.js"><link rel="prefetch" href="/assets/js/65.b7388a80.js"><link rel="prefetch" href="/assets/js/66.a7039d42.js"><link rel="prefetch" href="/assets/js/67.e4ea8787.js"><link rel="prefetch" href="/assets/js/68.afb030af.js"><link rel="prefetch" href="/assets/js/69.51f88ebc.js"><link rel="prefetch" href="/assets/js/7.ef0b2ca0.js"><link rel="prefetch" href="/assets/js/70.6d81ed0b.js"><link rel="prefetch" href="/assets/js/71.03583f55.js"><link rel="prefetch" href="/assets/js/72.b5458ba0.js"><link rel="prefetch" href="/assets/js/73.999b2a2c.js"><link rel="prefetch" href="/assets/js/74.b76ba44a.js"><link rel="prefetch" href="/assets/js/75.d4dc64de.js"><link rel="prefetch" href="/assets/js/76.21c6cab2.js"><link rel="prefetch" href="/assets/js/77.5043ef10.js"><link rel="prefetch" href="/assets/js/78.f6521325.js"><link rel="prefetch" href="/assets/js/79.4d2f4d9a.js"><link rel="prefetch" href="/assets/js/8.6f8326b1.js"><link rel="prefetch" href="/assets/js/80.e5685697.js"><link rel="prefetch" href="/assets/js/81.8d39d031.js"><link rel="prefetch" href="/assets/js/82.0f7bc3b8.js"><link rel="prefetch" href="/assets/js/83.235eb8dd.js"><link rel="prefetch" href="/assets/js/84.90306cdc.js"><link rel="prefetch" href="/assets/js/85.68cc66dc.js"><link rel="prefetch" href="/assets/js/86.6c2adfb2.js"><link rel="prefetch" href="/assets/js/87.88fc5007.js"><link rel="prefetch" href="/assets/js/88.1b737c4a.js"><link rel="prefetch" href="/assets/js/89.e2ce6b1b.js"><link rel="prefetch" href="/assets/js/9.55c363c9.js"><link rel="prefetch" href="/assets/js/90.3646f652.js"><link rel="prefetch" href="/assets/js/91.59e1c2ef.js"><link rel="prefetch" href="/assets/js/92.724f7a6f.js"><link rel="prefetch" href="/assets/js/93.10c93d70.js"><link rel="prefetch" href="/assets/js/94.a1246b1c.js"><link rel="prefetch" href="/assets/js/95.d16afd5b.js"><link rel="prefetch" href="/assets/js/96.d1b13da5.js"><link rel="prefetch" href="/assets/js/98.0bae3e21.js"><link rel="prefetch" href="/assets/js/99.51058bd7.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.239719ad.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div><div class="theme-container" data-v-319dd33c><div data-v-319dd33c><div id="loader-wrapper" class="loading-wrapper" data-v-1c4f0192 data-v-319dd33c data-v-319dd33c><div class="loader-main" data-v-1c4f0192><div data-v-1c4f0192></div><div data-v-1c4f0192></div><div data-v-1c4f0192></div><div data-v-1c4f0192></div></div> <!----> <!----></div> <div class="password-shadow password-wrapper-out" style="display:none;" data-v-1e2a0cc0 data-v-319dd33c data-v-319dd33c><h3 class="title" style="display:none;" data-v-1e2a0cc0 data-v-1e2a0cc0> </h3> <!----> <label id="box" class="inputBox" style="display:none;" data-v-1e2a0cc0 data-v-1e2a0cc0><input type="password" value="" data-v-1e2a0cc0> <span data-v-1e2a0cc0>Konck! Knock!</span> <button data-v-1e2a0cc0>OK</button></label> <div class="footer" style="display:none;" data-v-1e2a0cc0 data-v-1e2a0cc0><span data-v-1e2a0cc0><i class="iconfont reco-theme" data-v-1e2a0cc0></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-1e2a0cc0>vuePress-theme-reco</a></span> <span data-v-1e2a0cc0><i class="iconfont reco-copyright" data-v-1e2a0cc0></i> <a data-v-1e2a0cc0><span data-v-1e2a0cc0>掘金安东尼</span>
+            
+          <span data-v-1e2a0cc0>2019 - </span>
+          2021
+        </a></span></div></div> <div class="hide" data-v-319dd33c><header class="navbar" data-v-319dd33c><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/logo.png" alt=" " class="logo"> <span class="site-name"> </span></a> <div class="links"><div class="color-picker"><a class="color-button"><i class="iconfont reco-color"></i></a> <div class="color-picker-menu" style="display:none;"><div class="mode-options"><h4 class="title">Choose mode</h4> <ul class="color-mode-options"><li class="dark">dark</li><li class="auto active">auto</li><li class="light">light</li></ul></div></div></div> <div class="search-box"><i class="iconfont reco-search"></i> <input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link"><i class="iconfont reco-home"></i>
+  主页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-category"></i>
+      年复一年
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/2019/" class="nav-link"><i class="iconfont undefined"></i>
+  2019
+</a></li><li class="dropdown-item"><!----> <a href="/categories/2020/" class="nav-link"><i class="iconfont undefined"></i>
+  2020
+</a></li><li class="dropdown-item"><!----> <a href="/categories/2021/" class="nav-link"><i class="iconfont undefined"></i>
+  2021
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-other"></i>
+      以面代练
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/series/fe-weekly/index.html" class="nav-link"><i class="iconfont undefined"></i>
+  前端周记
+</a></li><li class="dropdown-item"><!----> <a href="/interview/vue/core.html" class="nav-link"><i class="iconfont undefined"></i>
+  源码生啃
+</a></li><li class="dropdown-item"><!----> <a href="/interview/read/index.html" class="nav-link"><i class="iconfont undefined"></i>
+  读书笔记
+</a></li><li class="dropdown-item"><!----> <a href="/interview/cacl/index.html" class="nav-link"><i class="iconfont undefined"></i>
+  算法
+</a></li><li class="dropdown-item"><!----> <a href="/interview/log/index.html" class="nav-link"><i class="iconfont undefined"></i>
+  面经
+</a></li></ul></div></div><div class="nav-item"><a href="/tag/" class="nav-link"><i class="iconfont reco-tag"></i>
+  标签
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-three"></i>
+      创作写作
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>创作</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/create/multimedia/poems.html" class="nav-link"><i class="iconfont undefined"></i>
+  诗与歌
+</a></li><li class="dropdown-subitem"><a href="/create/multimedia/movie.html" class="nav-link"><i class="iconfont undefined"></i>
+  电影解说
+</a></li></ul></li><li class="dropdown-item"><h4>写作</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/create/neverforget/mostsoft.html" class="nav-link"><i class="iconfont undefined"></i>
+  最柔软处
+</a></li><li class="dropdown-subitem"><a href="/create/neverforget/iamedog.html" class="nav-link"><i class="iconfont undefined"></i>
+  瘸腿的狗
+</a></li><li class="dropdown-subitem"><a href="/create/neverforget/allformoney.html" class="nav-link"><i class="iconfont undefined"></i>
+  赏金猎人
+</a></li></ul></li></ul></div></div><div class="nav-item"><a href="/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  时间线
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-message"></i>
+      关于我
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/about/starthere.html" class="nav-link"><i class="iconfont undefined"></i>
+  不忘初心
+</a></li><li class="dropdown-item"><!----> <a href="https://github.com/tuaran" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont undefined"></i>
+  GitHub
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://tuaran.github.io" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont undefined"></i>
+  GitHubPage
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask" data-v-319dd33c></div> <aside class="sidebar" data-v-319dd33c><div class="personal-info-wrapper" data-v-6c8ffc9c><img src="/avatar.png" alt="author-avatar" class="personal-img" data-v-6c8ffc9c> <h3 class="name" data-v-6c8ffc9c>
+    掘金安东尼
+  </h3> <div class="num" data-v-6c8ffc9c><div data-v-6c8ffc9c><h3 data-v-6c8ffc9c>83</h3> <h6 data-v-6c8ffc9c>文章</h6></div> <div data-v-6c8ffc9c><h3 data-v-6c8ffc9c>46</h3> <h6 data-v-6c8ffc9c>标签</h6></div></div> <hr data-v-6c8ffc9c></div> <nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link"><i class="iconfont reco-home"></i>
+  主页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-category"></i>
+      年复一年
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/2019/" class="nav-link"><i class="iconfont undefined"></i>
+  2019
+</a></li><li class="dropdown-item"><!----> <a href="/categories/2020/" class="nav-link"><i class="iconfont undefined"></i>
+  2020
+</a></li><li class="dropdown-item"><!----> <a href="/categories/2021/" class="nav-link"><i class="iconfont undefined"></i>
+  2021
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-other"></i>
+      以面代练
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/series/fe-weekly/index.html" class="nav-link"><i class="iconfont undefined"></i>
+  前端周记
+</a></li><li class="dropdown-item"><!----> <a href="/interview/vue/core.html" class="nav-link"><i class="iconfont undefined"></i>
+  源码生啃
+</a></li><li class="dropdown-item"><!----> <a href="/interview/read/index.html" class="nav-link"><i class="iconfont undefined"></i>
+  读书笔记
+</a></li><li class="dropdown-item"><!----> <a href="/interview/cacl/index.html" class="nav-link"><i class="iconfont undefined"></i>
+  算法
+</a></li><li class="dropdown-item"><!----> <a href="/interview/log/index.html" class="nav-link"><i class="iconfont undefined"></i>
+  面经
+</a></li></ul></div></div><div class="nav-item"><a href="/tag/" class="nav-link"><i class="iconfont reco-tag"></i>
+  标签
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-three"></i>
+      创作写作
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>创作</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/create/multimedia/poems.html" class="nav-link"><i class="iconfont undefined"></i>
+  诗与歌
+</a></li><li class="dropdown-subitem"><a href="/create/multimedia/movie.html" class="nav-link"><i class="iconfont undefined"></i>
+  电影解说
+</a></li></ul></li><li class="dropdown-item"><h4>写作</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/create/neverforget/mostsoft.html" class="nav-link"><i class="iconfont undefined"></i>
+  最柔软处
+</a></li><li class="dropdown-subitem"><a href="/create/neverforget/iamedog.html" class="nav-link"><i class="iconfont undefined"></i>
+  瘸腿的狗
+</a></li><li class="dropdown-subitem"><a href="/create/neverforget/allformoney.html" class="nav-link"><i class="iconfont undefined"></i>
+  赏金猎人
+</a></li></ul></li></ul></div></div><div class="nav-item"><a href="/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  时间线
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-message"></i>
+      关于我
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/about/starthere.html" class="nav-link"><i class="iconfont undefined"></i>
+  不忘初心
+</a></li><li class="dropdown-item"><!----> <a href="https://github.com/tuaran" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont undefined"></i>
+  GitHub
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://tuaran.github.io" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont undefined"></i>
+  GitHubPage
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>关于 JS 原型你必须要知道的二三</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/views/2020/refuseCV.html#小引" class="sidebar-link">小引</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/views/2020/refuseCV.html#原型的本意" class="sidebar-link">原型的本意</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/views/2020/refuseCV.html#原型概念" class="sidebar-link">原型概念</a></li><li class="sidebar-sub-header"><a href="/views/2020/refuseCV.html#原型和类" class="sidebar-link">原型和类</a></li><li class="sidebar-sub-header"><a href="/views/2020/refuseCV.html#typescript-大法好" class="sidebar-link">TypeScript 大法好</a></li></ul></li><li><a href="/views/2020/refuseCV.html#call、apply、bind" class="sidebar-link">call、apply、bind</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/views/2020/refuseCV.html#call、apply" class="sidebar-link">call、apply</a></li><li class="sidebar-sub-header"><a href="/views/2020/refuseCV.html#bind" class="sidebar-link">bind</a></li></ul></li><li><a href="/views/2020/refuseCV.html#继承" class="sidebar-link">继承</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/views/2020/refuseCV.html#原型链继承" class="sidebar-link">原型链继承</a></li><li class="sidebar-sub-header"><a href="/views/2020/refuseCV.html#构造继承" class="sidebar-link">构造继承</a></li><li class="sidebar-sub-header"><a href="/views/2020/refuseCV.html#组合继承" class="sidebar-link">组合继承</a></li><li class="sidebar-sub-header"><a href="/views/2020/refuseCV.html#寄生组合继承" class="sidebar-link">寄生组合继承</a></li><li class="sidebar-sub-header"><a href="/views/2020/refuseCV.html#es6-继承" class="sidebar-link">ES6 继承</a></li></ul></li><li><a href="/views/2020/refuseCV.html#发布订阅模式" class="sidebar-link">发布订阅模式</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/views/2020/refuseCV.html#小结" class="sidebar-link">小结</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/views/2020/refuseCV.html#参考" class="sidebar-link">参考</a><ul class="sidebar-sub-headers"></ul></li></ul></section></li></ul> </aside> <div class="password-shadow password-wrapper-in" style="display:none;" data-v-1e2a0cc0 data-v-319dd33c><h3 class="title" style="display:none;" data-v-1e2a0cc0 data-v-1e2a0cc0>关于 JS 原型你必须要知道的二三</h3> <!----> <label id="box" class="inputBox" style="display:none;" data-v-1e2a0cc0 data-v-1e2a0cc0><input type="password" value="" data-v-1e2a0cc0> <span data-v-1e2a0cc0>Konck! Knock!</span> <button data-v-1e2a0cc0>OK</button></label> <div class="footer" style="display:none;" data-v-1e2a0cc0 data-v-1e2a0cc0><span data-v-1e2a0cc0><i class="iconfont reco-theme" data-v-1e2a0cc0></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-1e2a0cc0>vuePress-theme-reco</a></span> <span data-v-1e2a0cc0><i class="iconfont reco-copyright" data-v-1e2a0cc0></i> <a data-v-1e2a0cc0><span data-v-1e2a0cc0>掘金安东尼</span>
+            
+          <span data-v-1e2a0cc0>2019 - </span>
+          2021
+        </a></span></div></div> <div data-v-319dd33c><main class="page"><div class="page-title" style="display:none;"><h1>关于 JS 原型你必须要知道的二三</h1> <hr> <div data-v-484a899e><i class="iconfont reco-account" data-v-484a899e><span data-v-484a899e>掘金安东尼</span></i> <i class="iconfont reco-date" data-v-484a899e><span data-v-484a899e>2020-08-05</span></i> <!----> <i class="iconfont reco-tag tags" data-v-484a899e><span class="tag-item" data-v-484a899e>
+      JS
+    </span></i></div></div> <div class="theme-reco-content content__default" style="display:none;"><p>本文首发在掘金<a href="https://juejin.im/post/6857455079130464263" target="_blank" rel="noopener noreferrer">关于 JS 原型你必须要知道的二三<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p> <h2 id="小引"><a href="#小引" class="header-anchor">#</a> 小引</h2> <p>本瓜一向认为：学习不是一蹴而就的事情。一定是要求学习者对知识点进行反复咀嚼拿捏、不断打破重塑，长此以往，才以期达到融会贯通、为我所用的程度。所谓：<strong>温故知新，不亦乐乎？</strong></p> <p>对于 JS 技能拥有者这来说，<strong>原型</strong>这个概念一定是值得刻在心里去反复玩味的。此篇且暂让本瓜带你再看 JS 原型二三，也许会有新收获，何乐不为？</p> <blockquote><p>撰文不易✍ 还需鼓励💪 小手一点👍 好运连连🤞</p></blockquote> <h2 id="原型的本意"><a href="#原型的本意" class="header-anchor">#</a> 原型的本意</h2> <h3 id="原型概念"><a href="#原型概念" class="header-anchor">#</a> 原型概念</h3> <p>JavaScript 常被描述为一种<strong>基于原型</strong>的语言 (prototype-based language) —— 每个对象拥有一个原型对象，对象以其原型为模板、从原型继承方法和属性。（MDN）</p> <p>几乎所有 JavaScript 中的对象都是位于原型链顶端的 Object 的实例，这便是“万物皆对象”的一种解释。</p> <p>原型是我们自然思维的产物。常言道：“照葫芦画瓢”、“照猫画虎”，这里的“葫芦”就是瓢的原型，“猫”就是“虎”的原型。（ps:上周末看了电影《多力特的奇幻冒险》，老虎也喜欢去抓动的光点，太搞笑了，原型继承实锤了！）</p> <h3 id="原型和类"><a href="#原型和类" class="header-anchor">#</a> 原型和类</h3> <p>既然万物皆对象？那你肯定产生过这样的疑问：JavaScript 是面向对象语言（OOP）吗？它为什么没有像 Java 中<strong>类</strong>的概念？</p> <p>JavaScript 作者 Brendan Eich（布兰登·艾奇）曾说过：“JavaScript 是 C 语言和 Self 语言一夜情的产物。”（os:的确一夜情，谁能想到，有着百万学习者的语言地创造只花了 10 天？）</p> <p>他的设计思路是这样的：</p> <ol><li>借鉴 C 语言的基本语法；</li> <li>借鉴 Java 语言的数据类型和内存管理；</li> <li>借鉴 Scheme 语言，将函数提升到&quot;第一等公民&quot;（first class）的地位；</li> <li>借鉴 Self 语言，使用基于原型（prototype）的继承机制。</li></ol> <p>所以，JavaScript 非严格意义上的面向对象（它没有封装成类），<strong>基于原型的继承机制</strong>是 JS 深入骨髓、嵌入灵魂的特性。</p> <ul><li>注：ECMAScript 2015（ES6） 中引入的 JavaScript 类实质上是 JavaScript 现有的基于原型的继承的语法糖。类语法不会为JavaScript 引入新的面向对象的继承模型。</li></ul> <h3 id="typescript-大法好"><a href="#typescript-大法好" class="header-anchor">#</a> TypeScript 大法好</h3> <p>小广告:本瓜最近在浅入深出 TypeScript，已撰文部分，不如点个关注呗，后续更新。</p> <p>TypeScript 是 JavaScript 的超集，支持面向对象的所有特性，比如 类、接口等。</p> <p>此处列一小例：</p> <p>// TypeScript</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>class Car { 
+    // 字段 
+    engine:string; 
+ 
+    // 构造函数 
+    constructor(engine:string) { 
+        this.engine = engine 
+    }  
+ 
+    // 方法 
+    disp():void { 
+        console.log(&quot;发动机为 :   &quot;+this.engine) 
+    } 
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br></div></div><p>// 编译成 JavaScript（亲测）</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>var Car = /** @class */ (function () {
+    // 构造函数 
+    function Car(engine) {
+        this.engine = engine;
+    }
+    // 方法 
+    Car.prototype.disp = function () {
+        console.log(&quot;发动机为 :   &quot; + this.engine);
+    };
+    return Car;
+}());
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br></div></div><p>可以看到 TypeScript 类的定义像极了 Java，编译成 JavaScript 后依然是转成了在原型链上进行操作。</p> <p>此处本瓜抛一个小问题：基于类一定比基于原型要好吗？它们各自的优势是什么？欢迎讨论~</p> <h2 id="call、apply、bind"><a href="#call、apply、bind" class="header-anchor">#</a> call、apply、bind</h2> <p>在讲基于原型的继承方式之前，要先知道这三位。我想你一定不会陌生，它们可是手中利器。</p> <h3 id="call、apply"><a href="#call、apply" class="header-anchor">#</a> call、apply</h3> <p>call 和 apply 是为了动态改变 this 而出现的，当一个 object 没有某个方法，但是其他函数的有，我们可以借助 call 或apply 用其它对象的方法来操作。</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>function Free() {
+    this.free=&quot;free&quot;
+}
+
+function Food(name1,name2) {// call 接收的是单独的参数
+    Free.call(this, name1,name2);
+}
+console.log(new Food('banana','apple').free);
+
+function Foods(arr){ // apply 接收的是数组
+    Free.apply(this, arr);
+}
+
+console.log(new Food(['banana','apple']).free);
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br></div></div><h3 id="bind"><a href="#bind" class="header-anchor">#</a> bind</h3> <p>bind 用法和 call 类似，只不过调用 bind 后方法不能立即执行（因为其返回的是函数），需要再次调用，其实就是柯里化的一个语法糖。</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>var food={name:&quot;apple&quot;,func:function(val){console.log(this.name + val)}}
+
+var banana=food.func.bind({name:'banana'},'good taste')
+
+banana()
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><p>这里为<strong>函数柯里化</strong>挖一个坑，待填。</p> <h2 id="继承"><a href="#继承" class="header-anchor">#</a> 继承</h2> <p>重点来啦！如果你想掌握好 JS 原型基础，以下的五种继承方式，请一定烂熟于心。自己动动小手，F12 在控制台上调一下吧？</p> <h3 id="原型链继承"><a href="#原型链继承" class="header-anchor">#</a> 原型链继承</h3> <ul><li>原型链</li></ul> <p>原型链？不要那些繁琐的官方解释。</p> <p>本瓜只记住一个：当查找某一个对象的属性/方法的时候，如果自己没有这个属性/方法，则去找创建这个对象的构造函数里面去找，还找不到，就继续向上找，直到查到 <code>Object.prototype.<strong>proto</strong></code>，这样一个链式查找的过程，就是原型链。</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>let obj = new Object()
+obj.__proto__ === Object.prototype // true
+
+Object.prototype.__proto__=null // 万物皆空有木有
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><ul><li>原型链继承</li></ul> <p>优点：能够继承父类的原型方法。（示例一）</p> <p>缺点：原型上的所有属性都是共享的，所以任何一个子类实例修改了原型中的属性（引用类型），其他实例获取到的属性值也会引起变化。（示例二）</p> <p><strong>示例一:</strong></p> <p>// 你父母有房，你就有房</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>function Parent(){
+    this.house='我有房'
+}
+function Son(){
+    
+}
+
+Son.prototype = new Parent()
+Son.prototype.constructor=Son // 为了更严谨，更改默认指回
+var son1=new Son()
+console.log(son1.house) // 我有房
+Son.prototype.constructor
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br></div></div><p>舒服啦，《我的区长父亲》系列。</p> <p><strong>示例二:</strong></p> <p>// 如果有两个儿子，父母只一套房，他们各自想刷不同颜色的墙</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>function Parent(){
+    this.houseColor=[]
+}
+function Son(){
+    
+}
+Son.prototype = new Parent()
+Son.prototype.constructor=Son
+
+var son1=new Son()
+son1.houseColor.push('刷白墙')
+
+var son2=new Son()
+son2.houseColor.push('刷红墙')
+
+console.log(son1.houseColor) // [&quot;刷白墙&quot;, &quot;刷红墙&quot;]
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br></div></div><p>这下估计就要干仗了！老大刚刷的白墙，被老二又给刷红了。。。</p> <h3 id="构造继承"><a href="#构造继承" class="header-anchor">#</a> 构造继承</h3> <p>优点：解决父类属性是引用类型被所有实例共享的问题和给子类传参的问题。（示例三）</p> <p>缺点：不能继承父类超类型的原型方法。（示例四）</p> <p><strong>示例三：</strong></p> <p>// 解决两个儿子刷墙问题</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>function Parent(){
+    this.houseColor=[]
+}
+function Son(){
+    Parent.call(this) // 更改 this 指向
+}
+var son1 = new Son()
+son1.houseColor.push('刷白墙')
+
+var son2 = new Son()
+son2.houseColor.push('刷红墙')
+
+console.log(son1.houseColor) // [&quot;刷白墙&quot;]
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br></div></div><p>这下大儿子不会生气了，他刷的白墙还是白墙。</p> <p><strong>示例四：</strong></p> <p>// 一波刚平，一波又起。这下没有继承原型对象。</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>function Parent(){
+}
+function Son(){
+    Parent.call(this) // 更改 this 指向
+}
+
+Parent.prototype.getCar = function(){
+    return '我有车'
+}
+
+var son1 = new Son()
+son1.getCar() // getCar is not a function
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br></div></div><h3 id="组合继承"><a href="#组合继承" class="header-anchor">#</a> 组合继承</h3> <p>组合继承 == 原型链继承 + 构造继承</p> <p>优点：二者优点</p> <p>缺点：父类构造函数执行两次的问题。（示例五）</p> <p><strong>示例五：</strong></p> <p>// 组合继承：我全都要。（os:全都要，开销就大。。。）</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>function Parent(){
+    this.houseColor=[]
+}
+function Son(){
+    Parent.call(this) // 更改 this 指向
+}
+
+Parent.prototype.getCar = function(){
+    return '我有车'
+}
+
+Son.prototype = new Parent()
+Son.prototype.constructor = Son
+
+var son1 = new Son()
+son1.houseColor.push('刷白墙')
+
+var son2 = new Son()
+son2.houseColor.push('刷红墙')
+
+console.log(son1.houseColor,son1.getCar()) // [&quot;刷白墙&quot;] &quot;我有车&quot;
+console.log(son2.houseColor,son2.getCar()) // [&quot;刷红墙&quot;] &quot;我有车&quot;
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br></div></div><p>这样又刷了墙，又获得了车。一家人其乐融融，就是父母的压力有点大。</p> <h3 id="寄生组合继承"><a href="#寄生组合继承" class="header-anchor">#</a> 寄生组合继承</h3> <p>为了解决组合继承的缺点，于是有了寄生组合继承。</p> <p>实质是：通过Object.create(obj)创建一个原型是 obj 的空对象赋值给子类的原型。</p> <p><strong>示例六：</strong></p> <div class="language- line-numbers-mode"><pre class="language-text"><code>function Parent(){
+    this.houseColor=[]
+}
+function Son(){
+    Parent.call(this) // 更改 this 指向
+}
+
+Parent.prototype.getCar = function(){
+    return '我有车'
+}
+
+Son.prototype =  Object.create(Parent.prototype)
+Son.prototype.constructor = Son
+
+var son1 = new Son()
+son1.houseColor.push('刷白墙')
+
+var son2 = new Son()
+son2.houseColor.push('刷红墙')
+
+console.log(son1.houseColor,son1.getCar()) // [&quot;刷白墙&quot;] &quot;我有车&quot;
+console.log(son2.houseColor,son2.getCar()) // [&quot;刷红墙&quot;] &quot;我有车&quot;
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br></div></div><h3 id="es6-继承"><a href="#es6-继承" class="header-anchor">#</a> ES6 继承</h3> <p>通过 class,extends 关键字实现继承。需要清楚的是：ES6 中的类是一个语法糖，本质上还是由 ES5 的语法实现的。</p> <p><strong>示例七：</strong></p> <div class="language- line-numbers-mode"><pre class="language-text"><code>class Parent{
+    constructor(){
+        this.houseColor = []
+    }
+    getCar(){
+        return '我有旧车'
+    }
+}
+
+class Son extends Parent{
+    constructor(color){
+        super()
+        this.houseColor = color
+    }
+    getCar(){
+        return &quot;我有新车&quot;
+    }
+}
+const son1 = new Son(&quot;刷白墙&quot;)
+const son2 = new Son(&quot;刷红墙&quot;)
+console.log(son1.houseColor,son1.getCar()) // [&quot;刷白墙&quot;] &quot;我有车&quot;
+console.log(son2.houseColor,son2.getCar()) // [&quot;刷红墙&quot;] &quot;我有车&quot;
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br></div></div><h2 id="发布订阅模式"><a href="#发布订阅模式" class="header-anchor">#</a> 发布订阅模式</h2> <p>这里为什么要把发布订阅模式点出来呢？</p> <p>因为它也涉及多种情况。</p> <ol><li>多人订阅一个发布。</li> <li>多人订阅多个发布。</li> <li>一人订阅一个发布（示例八）。</li> <li>一人订阅多个发布。</li></ol> <p>每一种都值得动手去写一些，玩一玩。</p> <p><strong>示例八：</strong></p> <div class="language- line-numbers-mode"><pre class="language-text"><code>/*paper*/     
+var paper={
+    listen:'',
+    addlisten:function(fn){//增加订阅者
+        this.listenList=fn;
+    },
+    trigger:function(){//发布消息
+        this.listenList.apply(this,arguments);
+    }
+}
+
+/*订阅*/
+paper.addlisten(function(val){
+    console.log(&quot;小王订阅消息：&quot;+val); 
+}); 
+
+/*发布*/
+paper.trigger(&quot;新闻周刊到了&quot;);
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br></div></div><p>这里为<strong>24 种设计模式</strong>挖一个坑，待填。</p> <h2 id="小结"><a href="#小结" class="header-anchor">#</a> 小结</h2> <p>本篇是本瓜<strong>浅入深出</strong> TS 过程中的衍生篇，这些老生常谈的东西偶尔拿出来再看看，其实感觉真的还不错！（还有比如this、作用域这些没细说）最重要的是自己能在控制台写一写。旧的知识点和新的知识点产生碰撞的时候，便是收获的时候。</p> <p>进一寸有进一寸的欢喜，如是而已。</p> <blockquote><p>我是掘金安东尼，与你同行！</p></blockquote> <h2 id="参考"><a href="#参考" class="header-anchor">#</a> 参考</h2> <ul><li><a href="https://developer.mozilla.org/zh-CN/docs/Learn/JavaScript/Objects/Object_prototypes" target="_blank" rel="noopener noreferrer">对象原型<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Inheritance_and_the_prototype_chain" target="_blank" rel="noopener noreferrer">继承与原型链<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://www.infoq.cn/article/3*8POPcRSClQh1Cp9Sqg" target="_blank" rel="noopener noreferrer">JavaScript 到底是面向对象还是基于对象？-winter<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://www.ruanyifeng.com/blog/2011/06/birth_of_javascript.html" target="_blank" rel="noopener noreferrer">Javascript 诞生记<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://laixiazheteng.com/article/page/id/omIoPb1AIBPu" target="_blank" rel="noopener noreferrer">JavaScript 实现继承的方式<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div> <footer class="page-edit" style="display:none;"><!----> <div class="last-updated"><span class="prefix">Last Updated: </span> <span class="time">8/7/2020, 11:47:42 AM</span></div></footer> <!----></main> <!----> <div style="display:none;" data-v-319dd33c data-v-319dd33c><div class="comments-wrapper" data-v-319dd33c><!----></div></div></div></div></div></div></div><div class="global-ui"><div class="back-to-ceiling" style="right:1rem;bottom:6rem;width:2.5rem;height:2.5rem;border-radius:.25rem;line-height:2.5rem;display:none;" data-v-c6073ba8 data-v-c6073ba8><svg t="1574745035067" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5404" class="icon" data-v-c6073ba8><path d="M526.60727968 10.90185116a27.675 27.675 0 0 0-29.21455937 0c-131.36607665 82.28402758-218.69155461 228.01873535-218.69155402 394.07834331a462.20625001 462.20625001 0 0 0 5.36959153 69.94390903c1.00431239 6.55289093-0.34802892 13.13561351-3.76865779 18.80351572-32.63518765 54.11355614-51.75690182 118.55860487-51.7569018 187.94566865a371.06718723 371.06718723 0 0 0 11.50484808 91.98906777c6.53300375 25.50556257 41.68394495 28.14064038 52.69160883 4.22606766 17.37162448-37.73630017 42.14135425-72.50938081 72.80769204-103.21549295 2.18761121 3.04276886 4.15646224 6.24463696 6.40373557 9.22774369a1871.4375 1871.4375 0 0 0 140.04691725 5.34970492 1866.36093723 1866.36093723 0 0 0 140.04691723-5.34970492c2.24727335-2.98310674 4.21612437-6.18497483 6.3937923-9.2178004 30.66633723 30.70611158 55.4360664 65.4791928 72.80769147 103.21549355 11.00766384 23.91457269 46.15860503 21.27949489 52.69160879-4.22606768a371.15156223 371.15156223 0 0 0 11.514792-91.99901164c0-69.36717486-19.13165746-133.82216804-51.75690182-187.92578088-3.42062944-5.66790279-4.76302748-12.26056868-3.76865837-18.80351632a462.20625001 462.20625001 0 0 0 5.36959269-69.943909c-0.00994388-166.08943902-87.32547796-311.81420293-218.6915546-394.09823051zM605.93803103 357.87693858a93.93749974 93.93749974 0 1 1-187.89594924 6.1e-7 93.93749974 93.93749974 0 0 1 187.89594924-6.1e-7z" p-id="5405" data-v-c6073ba8></path><path d="M429.50777625 765.63860547C429.50777625 803.39355007 466.44236686 1000.39046097 512.00932183 1000.39046097c45.56695499 0 82.4922232-197.00623328 82.5015456-234.7518555 0-37.75494459-36.9345906-68.35043303-82.4922232-68.34111062-45.57627738-0.00932239-82.52019037 30.59548842-82.51086798 68.34111062z" p-id="5406" data-v-c6073ba8></path></svg></div><div class="reco-bgm-panel" data-v-39f9e6e0><audio id="bgm" src="/bgm/comebacktome.mp3" data-v-39f9e6e0></audio> <div class="reco-float-box" style="bottom:200px;z-index:999999;display:none;" data-v-39f9e6e0 data-v-41bcba48 data-v-39f9e6e0><img src="/bgm/comebacktome.jpg" data-v-39f9e6e0></div> <div class="reco-bgm-box" style="left:10px;bottom:10px;z-index:999999;" data-v-39f9e6e0 data-v-41bcba48 data-v-39f9e6e0><div class="reco-bgm-cover" style="background-image:url(/bgm/comebacktome.jpg);" data-v-39f9e6e0><div class="mini-operation" style="display:none;" data-v-39f9e6e0><i class="reco-bgm reco-bgm-pause" style="display:none;" data-v-39f9e6e0></i> <i class="reco-bgm reco-bgm-play" style="display:none;" data-v-39f9e6e0></i></div> <div class="falut-message" style="display:none;" data-v-39f9e6e0>
+          播放失败
+        </div></div> <div class="reco-bgm-info" data-v-39f9e6e0 data-v-41bcba48 data-v-39f9e6e0><div class="info-box" data-v-39f9e6e0><i class="reco-bgm reco-bgm-music music" data-v-39f9e6e0></i>Come Back To Me</div> <div class="info-box" data-v-39f9e6e0><i class="reco-bgm reco-bgm-artist" data-v-39f9e6e0></i>宇多田ヒカル</div> <div class="reco-bgm-progress" data-v-39f9e6e0><div class="progress-bar" data-v-39f9e6e0><div class="bar" data-v-39f9e6e0></div></div></div> <div class="reco-bgm-operation" data-v-39f9e6e0><i class="reco-bgm reco-bgm-last last" data-v-39f9e6e0></i> <i class="reco-bgm reco-bgm-pause pause" style="display:none;" data-v-39f9e6e0></i> <i class="reco-bgm reco-bgm-play play" data-v-39f9e6e0></i> <i class="reco-bgm reco-bgm-next next" data-v-39f9e6e0></i> <i class="reco-bgm reco-bgm-volume1 volume" data-v-39f9e6e0></i> <i class="reco-bgm reco-bgm-mute mute" style="display:none;" data-v-39f9e6e0></i> <div class="volume-bar" data-v-39f9e6e0><div class="bar" data-v-39f9e6e0></div></div></div></div> <div class="reco-bgm-left-box" data-v-39f9e6e0 data-v-41bcba48 data-v-39f9e6e0><i class="reco-bgm reco-bgm-left" data-v-39f9e6e0></i></div></div></div><div class="kanbanniang" data-v-5775ee02><div class="banniang-container" style="display:;" data-v-5775ee02><div class="messageBox" style="right:68px;bottom:190px;display:none;" data-v-5775ee02>
+      欢迎来到  
+    </div> <div class="operation" style="right:90px;bottom:40px;display:none;" data-v-5775ee02><i class="kbnfont kbn-ban-home ban-home" data-v-5775ee02></i> <i class="kbnfont kbn-ban-message message" data-v-5775ee02></i> <i class="kbnfont kbn-ban-close close" data-v-5775ee02></i> <a target="_blank" href="https://vuepress-theme-reco.recoluan.com/views/plugins/kanbanniang.html" data-v-5775ee02><i class="kbnfont kbn-ban-info info" data-v-5775ee02></i></a> <i class="kbnfont kbn-ban-theme skin" style="display:none;" data-v-5775ee02></i></div> <canvas id="banniang" width="150" height="220" class="live2d" style="right:90px;bottom:-20px;opacity:0.9;" data-v-5775ee02></canvas></div> <div class="showBanNiang" style="display:none;" data-v-5775ee02>
+    看板娘
+  </div></div></div></div>
+    <script src="/assets/js/app.fab4b134.js" defer></script><script src="/assets/js/3.92bb3b86.js" defer></script><script src="/assets/js/1.60a6a467.js" defer></script><script src="/assets/js/97.7746bfa6.js" defer></script>
+  </body>
+</html>

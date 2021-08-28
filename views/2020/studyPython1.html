@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Python 知识储备（一） |  </title>
+    <meta name="generator" content="VuePress 1.8.2">
+    <link rel="icon" href="/favicon.ico">
+    <meta name="description" content=" ">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    
+    <link rel="preload" href="/assets/css/0.styles.239719ad.css" as="style"><link rel="preload" href="/assets/js/app.fab4b134.js" as="script"><link rel="preload" href="/assets/js/3.92bb3b86.js" as="script"><link rel="preload" href="/assets/js/1.60a6a467.js" as="script"><link rel="preload" href="/assets/js/102.606c8738.js" as="script"><link rel="prefetch" href="/assets/js/10.7205dd61.js"><link rel="prefetch" href="/assets/js/100.da353333.js"><link rel="prefetch" href="/assets/js/101.89d3a3f6.js"><link rel="prefetch" href="/assets/js/103.82c7ef5d.js"><link rel="prefetch" href="/assets/js/104.7a379b5b.js"><link rel="prefetch" href="/assets/js/105.dde174ec.js"><link rel="prefetch" href="/assets/js/106.b49cb691.js"><link rel="prefetch" href="/assets/js/107.55640b4a.js"><link rel="prefetch" href="/assets/js/108.ca1e57ec.js"><link rel="prefetch" href="/assets/js/109.cae2fb6c.js"><link rel="prefetch" href="/assets/js/11.9ef136f8.js"><link rel="prefetch" href="/assets/js/110.dce6cd70.js"><link rel="prefetch" href="/assets/js/111.bc26f011.js"><link rel="prefetch" href="/assets/js/112.02d017e0.js"><link rel="prefetch" href="/assets/js/113.3a9d147a.js"><link rel="prefetch" href="/assets/js/114.513ead96.js"><link rel="prefetch" href="/assets/js/115.dbc8b4c6.js"><link rel="prefetch" href="/assets/js/116.4be66573.js"><link rel="prefetch" href="/assets/js/117.ac331dd8.js"><link rel="prefetch" href="/assets/js/118.1097a6ae.js"><link rel="prefetch" href="/assets/js/119.ef959438.js"><link rel="prefetch" href="/assets/js/12.9ec44250.js"><link rel="prefetch" href="/assets/js/120.800897df.js"><link rel="prefetch" href="/assets/js/121.2615d650.js"><link rel="prefetch" href="/assets/js/122.28bc372e.js"><link rel="prefetch" href="/assets/js/123.db59fa01.js"><link rel="prefetch" href="/assets/js/124.71fb2bc3.js"><link rel="prefetch" href="/assets/js/125.9ba7bde8.js"><link rel="prefetch" href="/assets/js/126.5011ffc7.js"><link rel="prefetch" href="/assets/js/127.00ec4e11.js"><link rel="prefetch" href="/assets/js/128.d69785d3.js"><link rel="prefetch" href="/assets/js/129.2d60d0c0.js"><link rel="prefetch" href="/assets/js/13.5d1c6dd7.js"><link rel="prefetch" href="/assets/js/130.3277be91.js"><link rel="prefetch" href="/assets/js/131.02bf6804.js"><link rel="prefetch" href="/assets/js/132.37bff282.js"><link rel="prefetch" href="/assets/js/133.563a969a.js"><link rel="prefetch" href="/assets/js/134.d93234cf.js"><link rel="prefetch" href="/assets/js/135.f8fd617e.js"><link rel="prefetch" href="/assets/js/136.1e5a06df.js"><link rel="prefetch" href="/assets/js/137.ecbfb342.js"><link rel="prefetch" href="/assets/js/138.05ecccc5.js"><link rel="prefetch" href="/assets/js/139.437ff598.js"><link rel="prefetch" href="/assets/js/14.863c3fbd.js"><link rel="prefetch" href="/assets/js/140.de491c6a.js"><link rel="prefetch" href="/assets/js/141.b9fbbe2b.js"><link rel="prefetch" href="/assets/js/142.be2289e8.js"><link rel="prefetch" href="/assets/js/143.07f9c0dc.js"><link rel="prefetch" href="/assets/js/144.dda4602f.js"><link rel="prefetch" href="/assets/js/145.b59d8720.js"><link rel="prefetch" href="/assets/js/146.27926d55.js"><link rel="prefetch" href="/assets/js/147.6a3ed374.js"><link rel="prefetch" href="/assets/js/148.e4a7b7d5.js"><link rel="prefetch" href="/assets/js/149.b2ab0604.js"><link rel="prefetch" href="/assets/js/15.e5429768.js"><link rel="prefetch" href="/assets/js/150.bc0291a5.js"><link rel="prefetch" href="/assets/js/151.10b604bb.js"><link rel="prefetch" href="/assets/js/152.4a128b0c.js"><link rel="prefetch" href="/assets/js/153.8770725a.js"><link rel="prefetch" href="/assets/js/154.86ad8999.js"><link rel="prefetch" href="/assets/js/155.72dc781a.js"><link rel="prefetch" href="/assets/js/156.a112a1a7.js"><link rel="prefetch" href="/assets/js/157.92f38ae5.js"><link rel="prefetch" href="/assets/js/16.f26e0e20.js"><link rel="prefetch" href="/assets/js/17.daf297c5.js"><link rel="prefetch" href="/assets/js/18.e822d656.js"><link rel="prefetch" href="/assets/js/19.bf0bf0cb.js"><link rel="prefetch" href="/assets/js/20.eb139300.js"><link rel="prefetch" href="/assets/js/21.20191b6a.js"><link rel="prefetch" href="/assets/js/22.f72031f1.js"><link rel="prefetch" href="/assets/js/23.b044ccdc.js"><link rel="prefetch" href="/assets/js/24.e9c68a5f.js"><link rel="prefetch" href="/assets/js/25.0e7a2fa2.js"><link rel="prefetch" href="/assets/js/26.c17b8b08.js"><link rel="prefetch" href="/assets/js/27.439a8273.js"><link rel="prefetch" href="/assets/js/28.b2227968.js"><link rel="prefetch" href="/assets/js/29.d3065b94.js"><link rel="prefetch" href="/assets/js/30.e199c77c.js"><link rel="prefetch" href="/assets/js/31.0916bb89.js"><link rel="prefetch" href="/assets/js/32.4207f934.js"><link rel="prefetch" href="/assets/js/33.02fbf977.js"><link rel="prefetch" href="/assets/js/34.07368bb6.js"><link rel="prefetch" href="/assets/js/35.39ece046.js"><link rel="prefetch" href="/assets/js/36.7eea3db8.js"><link rel="prefetch" href="/assets/js/37.c5f1d6dc.js"><link rel="prefetch" href="/assets/js/38.f7803ab4.js"><link rel="prefetch" href="/assets/js/39.9603525d.js"><link rel="prefetch" href="/assets/js/4.47b13c96.js"><link rel="prefetch" href="/assets/js/40.330182e7.js"><link rel="prefetch" href="/assets/js/41.0a14c88d.js"><link rel="prefetch" href="/assets/js/42.a5f1dd9f.js"><link rel="prefetch" href="/assets/js/43.16b8093b.js"><link rel="prefetch" href="/assets/js/44.66f3a36d.js"><link rel="prefetch" href="/assets/js/45.c3108a50.js"><link rel="prefetch" href="/assets/js/46.943eee46.js"><link rel="prefetch" href="/assets/js/47.06aee283.js"><link rel="prefetch" href="/assets/js/48.f0e39815.js"><link rel="prefetch" href="/assets/js/49.bf563f07.js"><link rel="prefetch" href="/assets/js/5.1229e70a.js"><link rel="prefetch" href="/assets/js/50.b85d639e.js"><link rel="prefetch" href="/assets/js/51.0d5bfdfe.js"><link rel="prefetch" href="/assets/js/52.72c662ad.js"><link rel="prefetch" href="/assets/js/53.486320d0.js"><link rel="prefetch" href="/assets/js/54.2d00490a.js"><link rel="prefetch" href="/assets/js/55.000434b7.js"><link rel="prefetch" href="/assets/js/56.23a68476.js"><link rel="prefetch" href="/assets/js/57.27efbb94.js"><link rel="prefetch" href="/assets/js/58.29c2aa40.js"><link rel="prefetch" href="/assets/js/59.0998d8d0.js"><link rel="prefetch" href="/assets/js/6.66b78701.js"><link rel="prefetch" href="/assets/js/60.469b6695.js"><link rel="prefetch" href="/assets/js/61.363f9cdf.js"><link rel="prefetch" href="/assets/js/62.02fdc0f6.js"><link rel="prefetch" href="/assets/js/63.0bb27acd.js"><link rel="prefetch" href="/assets/js/64.4e245675.js"><link rel="prefetch" href="/assets/js/65.b7388a80.js"><link rel="prefetch" href="/assets/js/66.a7039d42.js"><link rel="prefetch" href="/assets/js/67.e4ea8787.js"><link rel="prefetch" href="/assets/js/68.afb030af.js"><link rel="prefetch" href="/assets/js/69.51f88ebc.js"><link rel="prefetch" href="/assets/js/7.ef0b2ca0.js"><link rel="prefetch" href="/assets/js/70.6d81ed0b.js"><link rel="prefetch" href="/assets/js/71.03583f55.js"><link rel="prefetch" href="/assets/js/72.b5458ba0.js"><link rel="prefetch" href="/assets/js/73.999b2a2c.js"><link rel="prefetch" href="/assets/js/74.b76ba44a.js"><link rel="prefetch" href="/assets/js/75.d4dc64de.js"><link rel="prefetch" href="/assets/js/76.21c6cab2.js"><link rel="prefetch" href="/assets/js/77.5043ef10.js"><link rel="prefetch" href="/assets/js/78.f6521325.js"><link rel="prefetch" href="/assets/js/79.4d2f4d9a.js"><link rel="prefetch" href="/assets/js/8.6f8326b1.js"><link rel="prefetch" href="/assets/js/80.e5685697.js"><link rel="prefetch" href="/assets/js/81.8d39d031.js"><link rel="prefetch" href="/assets/js/82.0f7bc3b8.js"><link rel="prefetch" href="/assets/js/83.235eb8dd.js"><link rel="prefetch" href="/assets/js/84.90306cdc.js"><link rel="prefetch" href="/assets/js/85.68cc66dc.js"><link rel="prefetch" href="/assets/js/86.6c2adfb2.js"><link rel="prefetch" href="/assets/js/87.88fc5007.js"><link rel="prefetch" href="/assets/js/88.1b737c4a.js"><link rel="prefetch" href="/assets/js/89.e2ce6b1b.js"><link rel="prefetch" href="/assets/js/9.55c363c9.js"><link rel="prefetch" href="/assets/js/90.3646f652.js"><link rel="prefetch" href="/assets/js/91.59e1c2ef.js"><link rel="prefetch" href="/assets/js/92.724f7a6f.js"><link rel="prefetch" href="/assets/js/93.10c93d70.js"><link rel="prefetch" href="/assets/js/94.a1246b1c.js"><link rel="prefetch" href="/assets/js/95.d16afd5b.js"><link rel="prefetch" href="/assets/js/96.d1b13da5.js"><link rel="prefetch" href="/assets/js/97.7746bfa6.js"><link rel="prefetch" href="/assets/js/98.0bae3e21.js"><link rel="prefetch" href="/assets/js/99.51058bd7.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.239719ad.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div><div class="theme-container" data-v-319dd33c><div data-v-319dd33c><div id="loader-wrapper" class="loading-wrapper" data-v-1c4f0192 data-v-319dd33c data-v-319dd33c><div class="loader-main" data-v-1c4f0192><div data-v-1c4f0192></div><div data-v-1c4f0192></div><div data-v-1c4f0192></div><div data-v-1c4f0192></div></div> <!----> <!----></div> <div class="password-shadow password-wrapper-out" style="display:none;" data-v-1e2a0cc0 data-v-319dd33c data-v-319dd33c><h3 class="title" style="display:none;" data-v-1e2a0cc0 data-v-1e2a0cc0> </h3> <!----> <label id="box" class="inputBox" style="display:none;" data-v-1e2a0cc0 data-v-1e2a0cc0><input type="password" value="" data-v-1e2a0cc0> <span data-v-1e2a0cc0>Konck! Knock!</span> <button data-v-1e2a0cc0>OK</button></label> <div class="footer" style="display:none;" data-v-1e2a0cc0 data-v-1e2a0cc0><span data-v-1e2a0cc0><i class="iconfont reco-theme" data-v-1e2a0cc0></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-1e2a0cc0>vuePress-theme-reco</a></span> <span data-v-1e2a0cc0><i class="iconfont reco-copyright" data-v-1e2a0cc0></i> <a data-v-1e2a0cc0><span data-v-1e2a0cc0>掘金安东尼</span>
+            
+          <span data-v-1e2a0cc0>2019 - </span>
+          2021
+        </a></span></div></div> <div class="hide" data-v-319dd33c><header class="navbar" data-v-319dd33c><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/logo.png" alt=" " class="logo"> <span class="site-name"> </span></a> <div class="links"><div class="color-picker"><a class="color-button"><i class="iconfont reco-color"></i></a> <div class="color-picker-menu" style="display:none;"><div class="mode-options"><h4 class="title">Choose mode</h4> <ul class="color-mode-options"><li class="dark">dark</li><li class="auto active">auto</li><li class="light">light</li></ul></div></div></div> <div class="search-box"><i class="iconfont reco-search"></i> <input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link"><i class="iconfont reco-home"></i>
+  主页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-category"></i>
+      年复一年
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/2019/" class="nav-link"><i class="iconfont undefined"></i>
+  2019
+</a></li><li class="dropdown-item"><!----> <a href="/categories/2020/" class="nav-link"><i class="iconfont undefined"></i>
+  2020
+</a></li><li class="dropdown-item"><!----> <a href="/categories/2021/" class="nav-link"><i class="iconfont undefined"></i>
+  2021
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-other"></i>
+      以面代练
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/series/fe-weekly/index.html" class="nav-link"><i class="iconfont undefined"></i>
+  前端周记
+</a></li><li class="dropdown-item"><!----> <a href="/interview/vue/core.html" class="nav-link"><i class="iconfont undefined"></i>
+  源码生啃
+</a></li><li class="dropdown-item"><!----> <a href="/interview/read/index.html" class="nav-link"><i class="iconfont undefined"></i>
+  读书笔记
+</a></li><li class="dropdown-item"><!----> <a href="/interview/cacl/index.html" class="nav-link"><i class="iconfont undefined"></i>
+  算法
+</a></li><li class="dropdown-item"><!----> <a href="/interview/log/index.html" class="nav-link"><i class="iconfont undefined"></i>
+  面经
+</a></li></ul></div></div><div class="nav-item"><a href="/tag/" class="nav-link"><i class="iconfont reco-tag"></i>
+  标签
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-three"></i>
+      创作写作
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>创作</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/create/multimedia/poems.html" class="nav-link"><i class="iconfont undefined"></i>
+  诗与歌
+</a></li><li class="dropdown-subitem"><a href="/create/multimedia/movie.html" class="nav-link"><i class="iconfont undefined"></i>
+  电影解说
+</a></li></ul></li><li class="dropdown-item"><h4>写作</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/create/neverforget/mostsoft.html" class="nav-link"><i class="iconfont undefined"></i>
+  最柔软处
+</a></li><li class="dropdown-subitem"><a href="/create/neverforget/iamedog.html" class="nav-link"><i class="iconfont undefined"></i>
+  瘸腿的狗
+</a></li><li class="dropdown-subitem"><a href="/create/neverforget/allformoney.html" class="nav-link"><i class="iconfont undefined"></i>
+  赏金猎人
+</a></li></ul></li></ul></div></div><div class="nav-item"><a href="/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  时间线
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-message"></i>
+      关于我
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/about/starthere.html" class="nav-link"><i class="iconfont undefined"></i>
+  不忘初心
+</a></li><li class="dropdown-item"><!----> <a href="https://github.com/tuaran" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont undefined"></i>
+  GitHub
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://tuaran.github.io" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont undefined"></i>
+  GitHubPage
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask" data-v-319dd33c></div> <aside class="sidebar" data-v-319dd33c><div class="personal-info-wrapper" data-v-6c8ffc9c><img src="/avatar.png" alt="author-avatar" class="personal-img" data-v-6c8ffc9c> <h3 class="name" data-v-6c8ffc9c>
+    掘金安东尼
+  </h3> <div class="num" data-v-6c8ffc9c><div data-v-6c8ffc9c><h3 data-v-6c8ffc9c>83</h3> <h6 data-v-6c8ffc9c>文章</h6></div> <div data-v-6c8ffc9c><h3 data-v-6c8ffc9c>46</h3> <h6 data-v-6c8ffc9c>标签</h6></div></div> <hr data-v-6c8ffc9c></div> <nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link"><i class="iconfont reco-home"></i>
+  主页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-category"></i>
+      年复一年
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/2019/" class="nav-link"><i class="iconfont undefined"></i>
+  2019
+</a></li><li class="dropdown-item"><!----> <a href="/categories/2020/" class="nav-link"><i class="iconfont undefined"></i>
+  2020
+</a></li><li class="dropdown-item"><!----> <a href="/categories/2021/" class="nav-link"><i class="iconfont undefined"></i>
+  2021
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-other"></i>
+      以面代练
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/series/fe-weekly/index.html" class="nav-link"><i class="iconfont undefined"></i>
+  前端周记
+</a></li><li class="dropdown-item"><!----> <a href="/interview/vue/core.html" class="nav-link"><i class="iconfont undefined"></i>
+  源码生啃
+</a></li><li class="dropdown-item"><!----> <a href="/interview/read/index.html" class="nav-link"><i class="iconfont undefined"></i>
+  读书笔记
+</a></li><li class="dropdown-item"><!----> <a href="/interview/cacl/index.html" class="nav-link"><i class="iconfont undefined"></i>
+  算法
+</a></li><li class="dropdown-item"><!----> <a href="/interview/log/index.html" class="nav-link"><i class="iconfont undefined"></i>
+  面经
+</a></li></ul></div></div><div class="nav-item"><a href="/tag/" class="nav-link"><i class="iconfont reco-tag"></i>
+  标签
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-three"></i>
+      创作写作
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>创作</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/create/multimedia/poems.html" class="nav-link"><i class="iconfont undefined"></i>
+  诗与歌
+</a></li><li class="dropdown-subitem"><a href="/create/multimedia/movie.html" class="nav-link"><i class="iconfont undefined"></i>
+  电影解说
+</a></li></ul></li><li class="dropdown-item"><h4>写作</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/create/neverforget/mostsoft.html" class="nav-link"><i class="iconfont undefined"></i>
+  最柔软处
+</a></li><li class="dropdown-subitem"><a href="/create/neverforget/iamedog.html" class="nav-link"><i class="iconfont undefined"></i>
+  瘸腿的狗
+</a></li><li class="dropdown-subitem"><a href="/create/neverforget/allformoney.html" class="nav-link"><i class="iconfont undefined"></i>
+  赏金猎人
+</a></li></ul></li></ul></div></div><div class="nav-item"><a href="/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  时间线
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-message"></i>
+      关于我
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/about/starthere.html" class="nav-link"><i class="iconfont undefined"></i>
+  不忘初心
+</a></li><li class="dropdown-item"><!----> <a href="https://github.com/tuaran" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont undefined"></i>
+  GitHub
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://tuaran.github.io" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont undefined"></i>
+  GitHubPage
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>Python 知识储备（一）</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/views/2020/studyPython1.html#环境安装" class="sidebar-link">环境安装</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/views/2020/studyPython1.html#pip-install" class="sidebar-link">pip install</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/views/2020/studyPython1.html#demo-运行" class="sidebar-link">demo 运行</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/views/2020/studyPython1.html#代码要点" class="sidebar-link">代码要点</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/views/2020/studyPython1.html#python的面向对象" class="sidebar-link">Python的面向对象</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/views/2020/studyPython1.html#类class" class="sidebar-link">类Class</a></li><li class="sidebar-sub-header"><a href="/views/2020/studyPython1.html#类继承与方法重写" class="sidebar-link">类继承与方法重写</a></li><li class="sidebar-sub-header"><a href="/views/2020/studyPython1.html#类属性与方法" class="sidebar-link">类属性与方法</a></li></ul></li></ul></section></li></ul> </aside> <div class="password-shadow password-wrapper-in" style="display:none;" data-v-1e2a0cc0 data-v-319dd33c><h3 class="title" style="display:none;" data-v-1e2a0cc0 data-v-1e2a0cc0>Python 知识储备（一）</h3> <!----> <label id="box" class="inputBox" style="display:none;" data-v-1e2a0cc0 data-v-1e2a0cc0><input type="password" value="" data-v-1e2a0cc0> <span data-v-1e2a0cc0>Konck! Knock!</span> <button data-v-1e2a0cc0>OK</button></label> <div class="footer" style="display:none;" data-v-1e2a0cc0 data-v-1e2a0cc0><span data-v-1e2a0cc0><i class="iconfont reco-theme" data-v-1e2a0cc0></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-1e2a0cc0>vuePress-theme-reco</a></span> <span data-v-1e2a0cc0><i class="iconfont reco-copyright" data-v-1e2a0cc0></i> <a data-v-1e2a0cc0><span data-v-1e2a0cc0>掘金安东尼</span>
+            
+          <span data-v-1e2a0cc0>2019 - </span>
+          2021
+        </a></span></div></div> <div data-v-319dd33c><main class="page"><div class="page-title" style="display:none;"><h1>Python 知识储备（一）</h1> <hr> <div data-v-484a899e><i class="iconfont reco-account" data-v-484a899e><span data-v-484a899e>掘金安东尼</span></i> <i class="iconfont reco-date" data-v-484a899e><span data-v-484a899e>2020-04-20</span></i> <!----> <i class="iconfont reco-tag tags" data-v-484a899e><span class="tag-item" data-v-484a899e>
+      Python
+    </span><span class="tag-item" data-v-484a899e>
+      爬虫
+    </span></i></div></div> <div class="theme-reco-content content__default" style="display:none;"><h1 id="爬虫上手"><a href="#爬虫上手" class="header-anchor">#</a> 爬虫上手</h1> <p>爬虫作用之强大毋庸置疑，无论是用Python写，java写，还是node.js是写，总之殊途同归：爬它！</p> <h2 id="环境安装"><a href="#环境安装" class="header-anchor">#</a> 环境安装</h2> <p>如果有其他计算机语言的基础，可以直接上手边做边看。懂的都懂，一通百通。</p> <ol><li>安装 Python 环境</li></ol> <p>可选 Python 2.7/Python 3+，也可同时安装。</p> <p>官方建议直接学Python3，因为 Python2 只维护到 2020 年，即将成为历史。</p> <p>不过网上的很多 demo 还是 Python2，且 Python3 <strong>不兼容</strong> Python2, <strong>初学的话请都安装吧!</strong></p> <ul><li>ps:</li></ul> <p>使用Python 2，不要使用Python 2.7以前的版本</p> <p>使用Python 3，不要使用Python 3.4以前的版本</p> <ol start="2"><li>系统环境变量配置</li></ol> <p><a href="https://blog.csdn.net/weixin_39986952/article/details/84794537" target="_blank" rel="noopener noreferrer">Windows下python2和python3的共存设置<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p> <h2 id="pip-install"><a href="#pip-install" class="header-anchor">#</a> pip install</h2> <p>pip 相当于js的npm，缺少什么包，直接安装什么包即可：pip install xxx</p> <ul><li>ps:</li></ul> <p>Python2 和 Python3 同时安装的情况下：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code> python2 -m pip install
+ 
+ python3 -m pip install
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><h2 id="demo-运行"><a href="#demo-运行" class="header-anchor">#</a> demo 运行</h2> <p>来源：<a href="https://github.com/kong36088/BaiduImageSpider" target="_blank" rel="noopener noreferrer">https://github.com/kong36088/BaiduImageSpider<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p> <div class="language- line-numbers-mode"><pre class="language-text"><code>#!/usr/bin/env python
+# -*- coding:utf-8 -*-
+
+import os
+import re
+import urllib
+import json
+import socket
+import urllib.request
+import urllib.parse
+import urllib.error
+# 设置超时
+import time
+
+timeout = 5
+socket.setdefaulttimeout(timeout)
+
+
+class Crawler:
+    # 睡眠时长
+    __time_sleep = 0.1
+    __amount = 0
+    __start_amount = 0
+    __counter = 0
+    headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:23.0) Gecko/20100101 Firefox/23.0'}
+
+    # 获取图片url内容等
+    # t 下载图片时间间隔
+    def __init__(self, t=0.1):
+        self.time_sleep = t
+
+    # 获取后缀名
+    def get_suffix(self, name):
+        m = re.search(r'\.[^\.]*$', name)
+        if m.group(0) and len(m.group(0)) &lt;= 5:
+            return m.group(0)
+        else:
+            return '.jpeg'
+
+    # 获取referrer，用于生成referrer
+    def get_referrer(self, url):
+        par = urllib.parse.urlparse(url)
+        if par.scheme:
+            return par.scheme + '://' + par.netloc
+        else:
+            return par.netloc
+
+        # 保存图片
+    def save_image(self, rsp_data, word):
+        if not os.path.exists(&quot;./&quot; + word):
+            os.mkdir(&quot;./&quot; + word)
+        # 判断名字是否重复，获取图片长度
+        self.__counter = len(os.listdir('./' + word)) + 1
+        for image_info in rsp_data['imgs']:
+
+            try:
+                time.sleep(self.time_sleep)
+                suffix = self.get_suffix(image_info['objURL'])
+                # 指定UA和referrer，减少403
+                refer = self.get_referrer(image_info['objURL'])
+                opener = urllib.request.build_opener()
+                opener.addheaders = [
+                    ('User-agent', 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:55.0) Gecko/20100101 Firefox/55.0'),
+                    ('Referer', refer)
+                ]
+                urllib.request.install_opener(opener)
+                # 保存图片
+                urllib.request.urlretrieve(image_info['objURL'], './' + word + '/' + str(self.__counter) + str(suffix))
+            except urllib.error.HTTPError as urllib_err:
+                print(urllib_err)
+                continue
+            except Exception as err:
+                time.sleep(1)
+                print(err)
+                print(&quot;产生未知错误，放弃保存&quot;)
+                continue
+            else:
+                print(&quot;小黄图+1,已有&quot; + str(self.__counter) + &quot;张小黄图&quot;)
+                self.__counter += 1
+        return
+
+    # 开始获取
+    def get_images(self, word='美女'):
+        search = urllib.parse.quote(word)
+        # pn int 图片数
+        pn = self.__start_amount
+        while pn &lt; self.__amount:
+
+            url = 'http://image.baidu.com/search/avatarjson?tn=resultjsonavatarnew&amp;ie=utf-8&amp;word=' + search + '&amp;cg=girl&amp;pn=' + str(
+                pn) + '&amp;rn=60&amp;itg=0&amp;z=0&amp;fr=&amp;width=&amp;height=&amp;lm=-1&amp;ic=0&amp;s=0&amp;st=-1&amp;gsm=1e0000001e'
+            # 设置header防ban
+            try:
+                time.sleep(self.time_sleep)
+                req = urllib.request.Request(url=url, headers=self.headers)
+                page = urllib.request.urlopen(req)
+                rsp = page.read().decode('unicode_escape')
+            except UnicodeDecodeError as e:
+                print(e)
+                print('-----UnicodeDecodeErrorurl:', url)
+            except urllib.error.URLError as e:
+                print(e)
+                print(&quot;-----urlErrorurl:&quot;, url)
+            except socket.timeout as e:
+                print(e)
+                print(&quot;-----socket timout:&quot;, url)
+            else:
+                # 解析json
+                rsp_data = json.loads(rsp)
+                self.save_image(rsp_data, word)
+                # 读取下一页
+                print(&quot;下载下一页&quot;)
+                pn += 60
+            finally:
+                page.close()
+        print(&quot;下载任务结束&quot;)
+        return
+
+    def start(self, word, spider_page_num=1, start_page=1):
+        &quot;&quot;&quot;
+        爬虫入口
+        :param word: 抓取的关键词
+        :param spider_page_num: 需要抓取数据页数 总抓取图片数量为 页数x60
+        :param start_page:起始页数
+        :return:
+        &quot;&quot;&quot;
+        self.__start_amount = (start_page - 1) * 60
+        self.__amount = spider_page_num * 60 + self.__start_amount
+        self.get_images(word)
+
+
+if __name__ == '__main__':
+    crawler = Crawler(0.05)  # 抓取延迟为 0.05
+
+    # crawler.start('美女', 10, 2)  # 抓取关键词为 “美女”，总数为 1 页（即总共 1*60=60 张），开始页码为 2
+    crawler.start('二次元 美女', 10, 1)  # 抓取关键词为 “二次元 美女”，总数为 10 页（即总共 10*60=600 张），起始抓取的页码为 1
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br><span class="line-number">59</span><br><span class="line-number">60</span><br><span class="line-number">61</span><br><span class="line-number">62</span><br><span class="line-number">63</span><br><span class="line-number">64</span><br><span class="line-number">65</span><br><span class="line-number">66</span><br><span class="line-number">67</span><br><span class="line-number">68</span><br><span class="line-number">69</span><br><span class="line-number">70</span><br><span class="line-number">71</span><br><span class="line-number">72</span><br><span class="line-number">73</span><br><span class="line-number">74</span><br><span class="line-number">75</span><br><span class="line-number">76</span><br><span class="line-number">77</span><br><span class="line-number">78</span><br><span class="line-number">79</span><br><span class="line-number">80</span><br><span class="line-number">81</span><br><span class="line-number">82</span><br><span class="line-number">83</span><br><span class="line-number">84</span><br><span class="line-number">85</span><br><span class="line-number">86</span><br><span class="line-number">87</span><br><span class="line-number">88</span><br><span class="line-number">89</span><br><span class="line-number">90</span><br><span class="line-number">91</span><br><span class="line-number">92</span><br><span class="line-number">93</span><br><span class="line-number">94</span><br><span class="line-number">95</span><br><span class="line-number">96</span><br><span class="line-number">97</span><br><span class="line-number">98</span><br><span class="line-number">99</span><br><span class="line-number">100</span><br><span class="line-number">101</span><br><span class="line-number">102</span><br><span class="line-number">103</span><br><span class="line-number">104</span><br><span class="line-number">105</span><br><span class="line-number">106</span><br><span class="line-number">107</span><br><span class="line-number">108</span><br><span class="line-number">109</span><br><span class="line-number">110</span><br><span class="line-number">111</span><br><span class="line-number">112</span><br><span class="line-number">113</span><br><span class="line-number">114</span><br><span class="line-number">115</span><br><span class="line-number">116</span><br><span class="line-number">117</span><br><span class="line-number">118</span><br><span class="line-number">119</span><br><span class="line-number">120</span><br><span class="line-number">121</span><br><span class="line-number">122</span><br><span class="line-number">123</span><br><span class="line-number">124</span><br><span class="line-number">125</span><br><span class="line-number">126</span><br><span class="line-number">127</span><br><span class="line-number">128</span><br><span class="line-number">129</span><br><span class="line-number">130</span><br><span class="line-number">131</span><br><span class="line-number">132</span><br><span class="line-number">133</span><br><span class="line-number">134</span><br><span class="line-number">135</span><br></div></div><p>如果能正常运行，下载到图片，那么恭喜，这就算简单入门了。</p> <h2 id="代码要点"><a href="#代码要点" class="header-anchor">#</a> 代码要点</h2> <ol><li>使用 class 语句来创建一个新类，class 之后为类的名称并以冒号结尾:</li></ol> <div class="language- line-numbers-mode"><pre class="language-text"><code>class ClassName:
+   '类的帮助信息'   #类文档字符串
+   class_suite  #类体  由类成员，方法，数据属性组成。
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><ol start="2"><li>def 定义的即是方法</li></ol> <p>第一种方法__init__()方法是一种特殊的方法，被称为类的构造函数或初始化方法，当创建了这个类的实例时就会调用该方法</p> <p><strong>self</strong> 代表类的实例，self 在定义类的方法时是必须有的，虽然在调用时不必传入相应的参数。</p> <ol start="3"><li>调用</li></ol> <div class="language- line-numbers-mode"><pre class="language-text"><code>crawler = Crawler(0.05)//创建实例对象
+
+crawler.start('二次元 美女', 10, 1)//调用某个方法
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><h2 id="python的面向对象"><a href="#python的面向对象" class="header-anchor">#</a> Python的面向对象</h2> <ul><li>面向对象核心：</li></ul> <blockquote><p>一切事物皆对象（tips: javaScript 中除了两个特殊值undefined 和 null.）<br>
+对象具有封装和继承特性（javaScript语言是通过一种叫做原型（prototype）的方式来实现面向对象编程的）<br>
+对象与对象之间使用消息通信，各自存在信息隐藏。</p></blockquote> <p>不必全记住，先有个印象，记忆注定是个反复的过程。</p> <h3 id="类class"><a href="#类class" class="header-anchor">#</a> 类Class</h3> <p>类(Class): 用来描述具有相同的属性和方法的对象的集合。它定义了该集合中每个对象所共有的属性和方法。对象是类的实例。</p> <p><strong>dict</strong> : 类的属性（包含一个字典，由类的数据属性组成）</p> <p><strong>doc</strong> :类的文档字符串</p> <p><strong>name</strong>: 类名</p> <p><strong>module</strong>: 类定义所在的模块（类的全名是'<strong>main</strong>.className'，如果类位于一个导入模块mymod中，那么className.<strong>module</strong> 等于 mymod）</p> <p><strong>bases</strong> : 类的所有父类构成元素（包含了一个由所有父类组成的元组）</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>#!/usr/bin/python
+# -*- coding: UTF-8 -*-
+ 
+class Employee:
+   '所有员工的基类'
+   empCount = 0
+ 
+   def __init__(self, name, salary):
+      self.name = name
+      self.salary = salary
+      Employee.empCount += 1
+   
+   def displayCount(self):
+     print &quot;Total Employee %d&quot; % Employee.empCount
+ 
+   def displayEmployee(self):
+      print &quot;Name : &quot;, self.name,  &quot;, Salary: &quot;, self.salary
+ 
+print &quot;Employee.__doc__:&quot;, Employee.__doc__
+print &quot;Employee.__name__:&quot;, Employee.__name__
+print &quot;Employee.__module__:&quot;, Employee.__module__
+print &quot;Employee.__bases__:&quot;, Employee.__bases__
+print &quot;Employee.__dict__:&quot;, Employee.__dict__
+
+输出：
+
+Employee.__doc__: 所有员工的基类
+Employee.__name__: Employee
+Employee.__module__: __main__
+Employee.__bases__: ()
+Employee.__dict__: {'__module__': '__main__', 'displayCount': &lt;function displayCount at 0x10a939c80&gt;, 'empCount': 0, 'displayEmployee': &lt;function displayEmployee at 0x10a93caa0&gt;, '__doc__': '\xe6\x89\x80\xe6\x9c\x89\xe5\x91\x98\xe5\xb7\xa5\xe7\x9a\x84\xe5\x9f\xba\xe7\xb1\xbb', '__init__': &lt;function __init__ at 0x10a939578&gt;}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br></div></div><p>析构函数 <strong>del</strong> ，__del__在对象销毁的时候被调用，当对象不再被使用时，__del__方法运行：</p> <h3 id="类继承与方法重写"><a href="#类继承与方法重写" class="header-anchor">#</a> 类继承与方法重写</h3> <div class="language- line-numbers-mode"><pre class="language-text"><code>#!/usr/bin/python
+# -*- coding: UTF-8 -*-
+ 
+class Parent:        # 定义父类
+   def myMethod(self):
+      print '调用父类方法'
+ 
+class Child(Parent): # 定义子类
+   def myMethod(self):
+      print '调用子类方法'
+ 
+c = Child()          # 子类实例
+c.myMethod()         # 子类调用重写方法
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br></div></div><h3 id="类属性与方法"><a href="#类属性与方法" class="header-anchor">#</a> 类属性与方法</h3> <ul><li><p>类的私有属性
+__private_attrs：两个下划线开头，声明该属性为私有，不能在类的外部被使用或直接访问。在类内部的方法中使用时 self.__private_attrs。</p></li> <li><p>类的方法
+在类的内部，使用 def 关键字可以为类定义一个方法，与一般函数定义不同，类方法必须包含参数 self,且为第一个参数</p></li> <li><p>类的私有方法
+__private_method：两个下划线开头，声明该方法为私有方法，不能在类的外部调用。在类的内部调用 self.__private_methods</p></li></ul> <p>附：</p> <p>单下划线、双下划线、头尾双下划线说明：</p> <p><strong>foo</strong>: 定义的是特殊方法，一般是系统定义名字 ，类似 <strong>init</strong>() 之类的。</p> <p>_foo: 以单下划线开头的表示的是 protected 类型的变量，即保护类型只能允许其本身与子类进行访问，不能用于 from module import *</p> <p>__foo: 双下划线的表示的是私有类型(private)的变量, 只能是允许这个类本身进行访问了。</p></div> <footer class="page-edit" style="display:none;"><!----> <div class="last-updated"><span class="prefix">Last Updated: </span> <span class="time">5/16/2020, 9:58:02 PM</span></div></footer> <!----></main> <!----> <div style="display:none;" data-v-319dd33c data-v-319dd33c><div class="comments-wrapper" data-v-319dd33c><!----></div></div></div></div></div></div></div><div class="global-ui"><div class="back-to-ceiling" style="right:1rem;bottom:6rem;width:2.5rem;height:2.5rem;border-radius:.25rem;line-height:2.5rem;display:none;" data-v-c6073ba8 data-v-c6073ba8><svg t="1574745035067" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5404" class="icon" data-v-c6073ba8><path d="M526.60727968 10.90185116a27.675 27.675 0 0 0-29.21455937 0c-131.36607665 82.28402758-218.69155461 228.01873535-218.69155402 394.07834331a462.20625001 462.20625001 0 0 0 5.36959153 69.94390903c1.00431239 6.55289093-0.34802892 13.13561351-3.76865779 18.80351572-32.63518765 54.11355614-51.75690182 118.55860487-51.7569018 187.94566865a371.06718723 371.06718723 0 0 0 11.50484808 91.98906777c6.53300375 25.50556257 41.68394495 28.14064038 52.69160883 4.22606766 17.37162448-37.73630017 42.14135425-72.50938081 72.80769204-103.21549295 2.18761121 3.04276886 4.15646224 6.24463696 6.40373557 9.22774369a1871.4375 1871.4375 0 0 0 140.04691725 5.34970492 1866.36093723 1866.36093723 0 0 0 140.04691723-5.34970492c2.24727335-2.98310674 4.21612437-6.18497483 6.3937923-9.2178004 30.66633723 30.70611158 55.4360664 65.4791928 72.80769147 103.21549355 11.00766384 23.91457269 46.15860503 21.27949489 52.69160879-4.22606768a371.15156223 371.15156223 0 0 0 11.514792-91.99901164c0-69.36717486-19.13165746-133.82216804-51.75690182-187.92578088-3.42062944-5.66790279-4.76302748-12.26056868-3.76865837-18.80351632a462.20625001 462.20625001 0 0 0 5.36959269-69.943909c-0.00994388-166.08943902-87.32547796-311.81420293-218.6915546-394.09823051zM605.93803103 357.87693858a93.93749974 93.93749974 0 1 1-187.89594924 6.1e-7 93.93749974 93.93749974 0 0 1 187.89594924-6.1e-7z" p-id="5405" data-v-c6073ba8></path><path d="M429.50777625 765.63860547C429.50777625 803.39355007 466.44236686 1000.39046097 512.00932183 1000.39046097c45.56695499 0 82.4922232-197.00623328 82.5015456-234.7518555 0-37.75494459-36.9345906-68.35043303-82.4922232-68.34111062-45.57627738-0.00932239-82.52019037 30.59548842-82.51086798 68.34111062z" p-id="5406" data-v-c6073ba8></path></svg></div><div class="reco-bgm-panel" data-v-39f9e6e0><audio id="bgm" src="/bgm/comebacktome.mp3" data-v-39f9e6e0></audio> <div class="reco-float-box" style="bottom:200px;z-index:999999;display:none;" data-v-39f9e6e0 data-v-41bcba48 data-v-39f9e6e0><img src="/bgm/comebacktome.jpg" data-v-39f9e6e0></div> <div class="reco-bgm-box" style="left:10px;bottom:10px;z-index:999999;" data-v-39f9e6e0 data-v-41bcba48 data-v-39f9e6e0><div class="reco-bgm-cover" style="background-image:url(/bgm/comebacktome.jpg);" data-v-39f9e6e0><div class="mini-operation" style="display:none;" data-v-39f9e6e0><i class="reco-bgm reco-bgm-pause" style="display:none;" data-v-39f9e6e0></i> <i class="reco-bgm reco-bgm-play" style="display:none;" data-v-39f9e6e0></i></div> <div class="falut-message" style="display:none;" data-v-39f9e6e0>
+          播放失败
+        </div></div> <div class="reco-bgm-info" data-v-39f9e6e0 data-v-41bcba48 data-v-39f9e6e0><div class="info-box" data-v-39f9e6e0><i class="reco-bgm reco-bgm-music music" data-v-39f9e6e0></i>Come Back To Me</div> <div class="info-box" data-v-39f9e6e0><i class="reco-bgm reco-bgm-artist" data-v-39f9e6e0></i>宇多田ヒカル</div> <div class="reco-bgm-progress" data-v-39f9e6e0><div class="progress-bar" data-v-39f9e6e0><div class="bar" data-v-39f9e6e0></div></div></div> <div class="reco-bgm-operation" data-v-39f9e6e0><i class="reco-bgm reco-bgm-last last" data-v-39f9e6e0></i> <i class="reco-bgm reco-bgm-pause pause" style="display:none;" data-v-39f9e6e0></i> <i class="reco-bgm reco-bgm-play play" data-v-39f9e6e0></i> <i class="reco-bgm reco-bgm-next next" data-v-39f9e6e0></i> <i class="reco-bgm reco-bgm-volume1 volume" data-v-39f9e6e0></i> <i class="reco-bgm reco-bgm-mute mute" style="display:none;" data-v-39f9e6e0></i> <div class="volume-bar" data-v-39f9e6e0><div class="bar" data-v-39f9e6e0></div></div></div></div> <div class="reco-bgm-left-box" data-v-39f9e6e0 data-v-41bcba48 data-v-39f9e6e0><i class="reco-bgm reco-bgm-left" data-v-39f9e6e0></i></div></div></div><div class="kanbanniang" data-v-5775ee02><div class="banniang-container" style="display:;" data-v-5775ee02><div class="messageBox" style="right:68px;bottom:190px;display:none;" data-v-5775ee02>
+      欢迎来到  
+    </div> <div class="operation" style="right:90px;bottom:40px;display:none;" data-v-5775ee02><i class="kbnfont kbn-ban-home ban-home" data-v-5775ee02></i> <i class="kbnfont kbn-ban-message message" data-v-5775ee02></i> <i class="kbnfont kbn-ban-close close" data-v-5775ee02></i> <a target="_blank" href="https://vuepress-theme-reco.recoluan.com/views/plugins/kanbanniang.html" data-v-5775ee02><i class="kbnfont kbn-ban-info info" data-v-5775ee02></i></a> <i class="kbnfont kbn-ban-theme skin" style="display:none;" data-v-5775ee02></i></div> <canvas id="banniang" width="150" height="220" class="live2d" style="right:90px;bottom:-20px;opacity:0.9;" data-v-5775ee02></canvas></div> <div class="showBanNiang" style="display:none;" data-v-5775ee02>
+    看板娘
+  </div></div></div></div>
+    <script src="/assets/js/app.fab4b134.js" defer></script><script src="/assets/js/3.92bb3b86.js" defer></script><script src="/assets/js/1.60a6a467.js" defer></script><script src="/assets/js/102.606c8738.js" defer></script>
+  </body>
+</html>

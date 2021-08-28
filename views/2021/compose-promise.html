@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>感谢 compose 函数，让我的代码屎山💩逐渐美丽了起来~ |  </title>
+    <meta name="generator" content="VuePress 1.8.2">
+    <link rel="icon" href="/favicon.ico">
+    <meta name="description" content=" ">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    
+    <link rel="preload" href="/assets/css/0.styles.239719ad.css" as="style"><link rel="preload" href="/assets/js/app.fab4b134.js" as="script"><link rel="preload" href="/assets/js/3.92bb3b86.js" as="script"><link rel="preload" href="/assets/js/1.60a6a467.js" as="script"><link rel="preload" href="/assets/js/131.02bf6804.js" as="script"><link rel="prefetch" href="/assets/js/10.7205dd61.js"><link rel="prefetch" href="/assets/js/100.da353333.js"><link rel="prefetch" href="/assets/js/101.89d3a3f6.js"><link rel="prefetch" href="/assets/js/102.606c8738.js"><link rel="prefetch" href="/assets/js/103.82c7ef5d.js"><link rel="prefetch" href="/assets/js/104.7a379b5b.js"><link rel="prefetch" href="/assets/js/105.dde174ec.js"><link rel="prefetch" href="/assets/js/106.b49cb691.js"><link rel="prefetch" href="/assets/js/107.55640b4a.js"><link rel="prefetch" href="/assets/js/108.ca1e57ec.js"><link rel="prefetch" href="/assets/js/109.cae2fb6c.js"><link rel="prefetch" href="/assets/js/11.9ef136f8.js"><link rel="prefetch" href="/assets/js/110.dce6cd70.js"><link rel="prefetch" href="/assets/js/111.bc26f011.js"><link rel="prefetch" href="/assets/js/112.02d017e0.js"><link rel="prefetch" href="/assets/js/113.3a9d147a.js"><link rel="prefetch" href="/assets/js/114.513ead96.js"><link rel="prefetch" href="/assets/js/115.dbc8b4c6.js"><link rel="prefetch" href="/assets/js/116.4be66573.js"><link rel="prefetch" href="/assets/js/117.ac331dd8.js"><link rel="prefetch" href="/assets/js/118.1097a6ae.js"><link rel="prefetch" href="/assets/js/119.ef959438.js"><link rel="prefetch" href="/assets/js/12.9ec44250.js"><link rel="prefetch" href="/assets/js/120.800897df.js"><link rel="prefetch" href="/assets/js/121.2615d650.js"><link rel="prefetch" href="/assets/js/122.28bc372e.js"><link rel="prefetch" href="/assets/js/123.db59fa01.js"><link rel="prefetch" href="/assets/js/124.71fb2bc3.js"><link rel="prefetch" href="/assets/js/125.9ba7bde8.js"><link rel="prefetch" href="/assets/js/126.5011ffc7.js"><link rel="prefetch" href="/assets/js/127.00ec4e11.js"><link rel="prefetch" href="/assets/js/128.d69785d3.js"><link rel="prefetch" href="/assets/js/129.2d60d0c0.js"><link rel="prefetch" href="/assets/js/13.5d1c6dd7.js"><link rel="prefetch" href="/assets/js/130.3277be91.js"><link rel="prefetch" href="/assets/js/132.37bff282.js"><link rel="prefetch" href="/assets/js/133.563a969a.js"><link rel="prefetch" href="/assets/js/134.d93234cf.js"><link rel="prefetch" href="/assets/js/135.f8fd617e.js"><link rel="prefetch" href="/assets/js/136.1e5a06df.js"><link rel="prefetch" href="/assets/js/137.ecbfb342.js"><link rel="prefetch" href="/assets/js/138.05ecccc5.js"><link rel="prefetch" href="/assets/js/139.437ff598.js"><link rel="prefetch" href="/assets/js/14.863c3fbd.js"><link rel="prefetch" href="/assets/js/140.de491c6a.js"><link rel="prefetch" href="/assets/js/141.b9fbbe2b.js"><link rel="prefetch" href="/assets/js/142.be2289e8.js"><link rel="prefetch" href="/assets/js/143.07f9c0dc.js"><link rel="prefetch" href="/assets/js/144.dda4602f.js"><link rel="prefetch" href="/assets/js/145.b59d8720.js"><link rel="prefetch" href="/assets/js/146.27926d55.js"><link rel="prefetch" href="/assets/js/147.6a3ed374.js"><link rel="prefetch" href="/assets/js/148.e4a7b7d5.js"><link rel="prefetch" href="/assets/js/149.b2ab0604.js"><link rel="prefetch" href="/assets/js/15.e5429768.js"><link rel="prefetch" href="/assets/js/150.bc0291a5.js"><link rel="prefetch" href="/assets/js/151.10b604bb.js"><link rel="prefetch" href="/assets/js/152.4a128b0c.js"><link rel="prefetch" href="/assets/js/153.8770725a.js"><link rel="prefetch" href="/assets/js/154.86ad8999.js"><link rel="prefetch" href="/assets/js/155.72dc781a.js"><link rel="prefetch" href="/assets/js/156.a112a1a7.js"><link rel="prefetch" href="/assets/js/157.92f38ae5.js"><link rel="prefetch" href="/assets/js/16.f26e0e20.js"><link rel="prefetch" href="/assets/js/17.daf297c5.js"><link rel="prefetch" href="/assets/js/18.e822d656.js"><link rel="prefetch" href="/assets/js/19.bf0bf0cb.js"><link rel="prefetch" href="/assets/js/20.eb139300.js"><link rel="prefetch" href="/assets/js/21.20191b6a.js"><link rel="prefetch" href="/assets/js/22.f72031f1.js"><link rel="prefetch" href="/assets/js/23.b044ccdc.js"><link rel="prefetch" href="/assets/js/24.e9c68a5f.js"><link rel="prefetch" href="/assets/js/25.0e7a2fa2.js"><link rel="prefetch" href="/assets/js/26.c17b8b08.js"><link rel="prefetch" href="/assets/js/27.439a8273.js"><link rel="prefetch" href="/assets/js/28.b2227968.js"><link rel="prefetch" href="/assets/js/29.d3065b94.js"><link rel="prefetch" href="/assets/js/30.e199c77c.js"><link rel="prefetch" href="/assets/js/31.0916bb89.js"><link rel="prefetch" href="/assets/js/32.4207f934.js"><link rel="prefetch" href="/assets/js/33.02fbf977.js"><link rel="prefetch" href="/assets/js/34.07368bb6.js"><link rel="prefetch" href="/assets/js/35.39ece046.js"><link rel="prefetch" href="/assets/js/36.7eea3db8.js"><link rel="prefetch" href="/assets/js/37.c5f1d6dc.js"><link rel="prefetch" href="/assets/js/38.f7803ab4.js"><link rel="prefetch" href="/assets/js/39.9603525d.js"><link rel="prefetch" href="/assets/js/4.47b13c96.js"><link rel="prefetch" href="/assets/js/40.330182e7.js"><link rel="prefetch" href="/assets/js/41.0a14c88d.js"><link rel="prefetch" href="/assets/js/42.a5f1dd9f.js"><link rel="prefetch" href="/assets/js/43.16b8093b.js"><link rel="prefetch" href="/assets/js/44.66f3a36d.js"><link rel="prefetch" href="/assets/js/45.c3108a50.js"><link rel="prefetch" href="/assets/js/46.943eee46.js"><link rel="prefetch" href="/assets/js/47.06aee283.js"><link rel="prefetch" href="/assets/js/48.f0e39815.js"><link rel="prefetch" href="/assets/js/49.bf563f07.js"><link rel="prefetch" href="/assets/js/5.1229e70a.js"><link rel="prefetch" href="/assets/js/50.b85d639e.js"><link rel="prefetch" href="/assets/js/51.0d5bfdfe.js"><link rel="prefetch" href="/assets/js/52.72c662ad.js"><link rel="prefetch" href="/assets/js/53.486320d0.js"><link rel="prefetch" href="/assets/js/54.2d00490a.js"><link rel="prefetch" href="/assets/js/55.000434b7.js"><link rel="prefetch" href="/assets/js/56.23a68476.js"><link rel="prefetch" href="/assets/js/57.27efbb94.js"><link rel="prefetch" href="/assets/js/58.29c2aa40.js"><link rel="prefetch" href="/assets/js/59.0998d8d0.js"><link rel="prefetch" href="/assets/js/6.66b78701.js"><link rel="prefetch" href="/assets/js/60.469b6695.js"><link rel="prefetch" href="/assets/js/61.363f9cdf.js"><link rel="prefetch" href="/assets/js/62.02fdc0f6.js"><link rel="prefetch" href="/assets/js/63.0bb27acd.js"><link rel="prefetch" href="/assets/js/64.4e245675.js"><link rel="prefetch" href="/assets/js/65.b7388a80.js"><link rel="prefetch" href="/assets/js/66.a7039d42.js"><link rel="prefetch" href="/assets/js/67.e4ea8787.js"><link rel="prefetch" href="/assets/js/68.afb030af.js"><link rel="prefetch" href="/assets/js/69.51f88ebc.js"><link rel="prefetch" href="/assets/js/7.ef0b2ca0.js"><link rel="prefetch" href="/assets/js/70.6d81ed0b.js"><link rel="prefetch" href="/assets/js/71.03583f55.js"><link rel="prefetch" href="/assets/js/72.b5458ba0.js"><link rel="prefetch" href="/assets/js/73.999b2a2c.js"><link rel="prefetch" href="/assets/js/74.b76ba44a.js"><link rel="prefetch" href="/assets/js/75.d4dc64de.js"><link rel="prefetch" href="/assets/js/76.21c6cab2.js"><link rel="prefetch" href="/assets/js/77.5043ef10.js"><link rel="prefetch" href="/assets/js/78.f6521325.js"><link rel="prefetch" href="/assets/js/79.4d2f4d9a.js"><link rel="prefetch" href="/assets/js/8.6f8326b1.js"><link rel="prefetch" href="/assets/js/80.e5685697.js"><link rel="prefetch" href="/assets/js/81.8d39d031.js"><link rel="prefetch" href="/assets/js/82.0f7bc3b8.js"><link rel="prefetch" href="/assets/js/83.235eb8dd.js"><link rel="prefetch" href="/assets/js/84.90306cdc.js"><link rel="prefetch" href="/assets/js/85.68cc66dc.js"><link rel="prefetch" href="/assets/js/86.6c2adfb2.js"><link rel="prefetch" href="/assets/js/87.88fc5007.js"><link rel="prefetch" href="/assets/js/88.1b737c4a.js"><link rel="prefetch" href="/assets/js/89.e2ce6b1b.js"><link rel="prefetch" href="/assets/js/9.55c363c9.js"><link rel="prefetch" href="/assets/js/90.3646f652.js"><link rel="prefetch" href="/assets/js/91.59e1c2ef.js"><link rel="prefetch" href="/assets/js/92.724f7a6f.js"><link rel="prefetch" href="/assets/js/93.10c93d70.js"><link rel="prefetch" href="/assets/js/94.a1246b1c.js"><link rel="prefetch" href="/assets/js/95.d16afd5b.js"><link rel="prefetch" href="/assets/js/96.d1b13da5.js"><link rel="prefetch" href="/assets/js/97.7746bfa6.js"><link rel="prefetch" href="/assets/js/98.0bae3e21.js"><link rel="prefetch" href="/assets/js/99.51058bd7.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.239719ad.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div><div class="theme-container" data-v-319dd33c><div data-v-319dd33c><div id="loader-wrapper" class="loading-wrapper" data-v-1c4f0192 data-v-319dd33c data-v-319dd33c><div class="loader-main" data-v-1c4f0192><div data-v-1c4f0192></div><div data-v-1c4f0192></div><div data-v-1c4f0192></div><div data-v-1c4f0192></div></div> <!----> <!----></div> <div class="password-shadow password-wrapper-out" style="display:none;" data-v-1e2a0cc0 data-v-319dd33c data-v-319dd33c><h3 class="title" style="display:none;" data-v-1e2a0cc0 data-v-1e2a0cc0> </h3> <!----> <label id="box" class="inputBox" style="display:none;" data-v-1e2a0cc0 data-v-1e2a0cc0><input type="password" value="" data-v-1e2a0cc0> <span data-v-1e2a0cc0>Konck! Knock!</span> <button data-v-1e2a0cc0>OK</button></label> <div class="footer" style="display:none;" data-v-1e2a0cc0 data-v-1e2a0cc0><span data-v-1e2a0cc0><i class="iconfont reco-theme" data-v-1e2a0cc0></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-1e2a0cc0>vuePress-theme-reco</a></span> <span data-v-1e2a0cc0><i class="iconfont reco-copyright" data-v-1e2a0cc0></i> <a data-v-1e2a0cc0><span data-v-1e2a0cc0>掘金安东尼</span>
+            
+          <span data-v-1e2a0cc0>2019 - </span>
+          2021
+        </a></span></div></div> <div class="hide" data-v-319dd33c><header class="navbar" data-v-319dd33c><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/logo.png" alt=" " class="logo"> <span class="site-name"> </span></a> <div class="links"><div class="color-picker"><a class="color-button"><i class="iconfont reco-color"></i></a> <div class="color-picker-menu" style="display:none;"><div class="mode-options"><h4 class="title">Choose mode</h4> <ul class="color-mode-options"><li class="dark">dark</li><li class="auto active">auto</li><li class="light">light</li></ul></div></div></div> <div class="search-box"><i class="iconfont reco-search"></i> <input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link"><i class="iconfont reco-home"></i>
+  主页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-category"></i>
+      年复一年
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/2019/" class="nav-link"><i class="iconfont undefined"></i>
+  2019
+</a></li><li class="dropdown-item"><!----> <a href="/categories/2020/" class="nav-link"><i class="iconfont undefined"></i>
+  2020
+</a></li><li class="dropdown-item"><!----> <a href="/categories/2021/" class="nav-link"><i class="iconfont undefined"></i>
+  2021
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-other"></i>
+      以面代练
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/series/fe-weekly/index.html" class="nav-link"><i class="iconfont undefined"></i>
+  前端周记
+</a></li><li class="dropdown-item"><!----> <a href="/interview/vue/core.html" class="nav-link"><i class="iconfont undefined"></i>
+  源码生啃
+</a></li><li class="dropdown-item"><!----> <a href="/interview/read/index.html" class="nav-link"><i class="iconfont undefined"></i>
+  读书笔记
+</a></li><li class="dropdown-item"><!----> <a href="/interview/cacl/index.html" class="nav-link"><i class="iconfont undefined"></i>
+  算法
+</a></li><li class="dropdown-item"><!----> <a href="/interview/log/index.html" class="nav-link"><i class="iconfont undefined"></i>
+  面经
+</a></li></ul></div></div><div class="nav-item"><a href="/tag/" class="nav-link"><i class="iconfont reco-tag"></i>
+  标签
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-three"></i>
+      创作写作
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>创作</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/create/multimedia/poems.html" class="nav-link"><i class="iconfont undefined"></i>
+  诗与歌
+</a></li><li class="dropdown-subitem"><a href="/create/multimedia/movie.html" class="nav-link"><i class="iconfont undefined"></i>
+  电影解说
+</a></li></ul></li><li class="dropdown-item"><h4>写作</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/create/neverforget/mostsoft.html" class="nav-link"><i class="iconfont undefined"></i>
+  最柔软处
+</a></li><li class="dropdown-subitem"><a href="/create/neverforget/iamedog.html" class="nav-link"><i class="iconfont undefined"></i>
+  瘸腿的狗
+</a></li><li class="dropdown-subitem"><a href="/create/neverforget/allformoney.html" class="nav-link"><i class="iconfont undefined"></i>
+  赏金猎人
+</a></li></ul></li></ul></div></div><div class="nav-item"><a href="/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  时间线
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-message"></i>
+      关于我
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/about/starthere.html" class="nav-link"><i class="iconfont undefined"></i>
+  不忘初心
+</a></li><li class="dropdown-item"><!----> <a href="https://github.com/tuaran" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont undefined"></i>
+  GitHub
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://tuaran.github.io" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont undefined"></i>
+  GitHubPage
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask" data-v-319dd33c></div> <aside class="sidebar" data-v-319dd33c><div class="personal-info-wrapper" data-v-6c8ffc9c><img src="/avatar.png" alt="author-avatar" class="personal-img" data-v-6c8ffc9c> <h3 class="name" data-v-6c8ffc9c>
+    掘金安东尼
+  </h3> <div class="num" data-v-6c8ffc9c><div data-v-6c8ffc9c><h3 data-v-6c8ffc9c>83</h3> <h6 data-v-6c8ffc9c>文章</h6></div> <div data-v-6c8ffc9c><h3 data-v-6c8ffc9c>46</h3> <h6 data-v-6c8ffc9c>标签</h6></div></div> <hr data-v-6c8ffc9c></div> <nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link"><i class="iconfont reco-home"></i>
+  主页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-category"></i>
+      年复一年
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/2019/" class="nav-link"><i class="iconfont undefined"></i>
+  2019
+</a></li><li class="dropdown-item"><!----> <a href="/categories/2020/" class="nav-link"><i class="iconfont undefined"></i>
+  2020
+</a></li><li class="dropdown-item"><!----> <a href="/categories/2021/" class="nav-link"><i class="iconfont undefined"></i>
+  2021
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-other"></i>
+      以面代练
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/series/fe-weekly/index.html" class="nav-link"><i class="iconfont undefined"></i>
+  前端周记
+</a></li><li class="dropdown-item"><!----> <a href="/interview/vue/core.html" class="nav-link"><i class="iconfont undefined"></i>
+  源码生啃
+</a></li><li class="dropdown-item"><!----> <a href="/interview/read/index.html" class="nav-link"><i class="iconfont undefined"></i>
+  读书笔记
+</a></li><li class="dropdown-item"><!----> <a href="/interview/cacl/index.html" class="nav-link"><i class="iconfont undefined"></i>
+  算法
+</a></li><li class="dropdown-item"><!----> <a href="/interview/log/index.html" class="nav-link"><i class="iconfont undefined"></i>
+  面经
+</a></li></ul></div></div><div class="nav-item"><a href="/tag/" class="nav-link"><i class="iconfont reco-tag"></i>
+  标签
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-three"></i>
+      创作写作
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>创作</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/create/multimedia/poems.html" class="nav-link"><i class="iconfont undefined"></i>
+  诗与歌
+</a></li><li class="dropdown-subitem"><a href="/create/multimedia/movie.html" class="nav-link"><i class="iconfont undefined"></i>
+  电影解说
+</a></li></ul></li><li class="dropdown-item"><h4>写作</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/create/neverforget/mostsoft.html" class="nav-link"><i class="iconfont undefined"></i>
+  最柔软处
+</a></li><li class="dropdown-subitem"><a href="/create/neverforget/iamedog.html" class="nav-link"><i class="iconfont undefined"></i>
+  瘸腿的狗
+</a></li><li class="dropdown-subitem"><a href="/create/neverforget/allformoney.html" class="nav-link"><i class="iconfont undefined"></i>
+  赏金猎人
+</a></li></ul></li></ul></div></div><div class="nav-item"><a href="/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  时间线
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-message"></i>
+      关于我
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/about/starthere.html" class="nav-link"><i class="iconfont undefined"></i>
+  不忘初心
+</a></li><li class="dropdown-item"><!----> <a href="https://github.com/tuaran" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont undefined"></i>
+  GitHub
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://tuaran.github.io" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont undefined"></i>
+  GitHubPage
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>感谢 compose 函数，让我的代码屎山💩逐渐美丽了起来~</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/views/2021/compose-promise.html#场景说明" class="sidebar-link">场景说明</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/views/2021/compose-promise.html#需求更新" class="sidebar-link">需求更新</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/views/2021/compose-promise.html#需求再更新" class="sidebar-link">需求再更新</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/views/2021/compose-promise.html#需求再再更新" class="sidebar-link">需求再再更新</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/views/2021/compose-promise.html#compose-函数" class="sidebar-link">compose 函数</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/views/2021/compose-promise.html#composepromise" class="sidebar-link">composePromise</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/views/2021/compose-promise.html#逐渐美丽起来" class="sidebar-link">逐渐美丽起来</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/views/2021/compose-promise.html#阶段总结" class="sidebar-link">阶段总结</a><ul class="sidebar-sub-headers"></ul></li></ul></section></li></ul> </aside> <div class="password-shadow password-wrapper-in" style="display:none;" data-v-1e2a0cc0 data-v-319dd33c><h3 class="title" style="display:none;" data-v-1e2a0cc0 data-v-1e2a0cc0>感谢 compose 函数，让我的代码屎山💩逐渐美丽了起来~</h3> <!----> <label id="box" class="inputBox" style="display:none;" data-v-1e2a0cc0 data-v-1e2a0cc0><input type="password" value="" data-v-1e2a0cc0> <span data-v-1e2a0cc0>Konck! Knock!</span> <button data-v-1e2a0cc0>OK</button></label> <div class="footer" style="display:none;" data-v-1e2a0cc0 data-v-1e2a0cc0><span data-v-1e2a0cc0><i class="iconfont reco-theme" data-v-1e2a0cc0></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-1e2a0cc0>vuePress-theme-reco</a></span> <span data-v-1e2a0cc0><i class="iconfont reco-copyright" data-v-1e2a0cc0></i> <a data-v-1e2a0cc0><span data-v-1e2a0cc0>掘金安东尼</span>
+            
+          <span data-v-1e2a0cc0>2019 - </span>
+          2021
+        </a></span></div></div> <div data-v-319dd33c><main class="page"><div class="page-title" style="display:none;"><h1>感谢 compose 函数，让我的代码屎山💩逐渐美丽了起来~</h1> <hr> <div data-v-484a899e><i class="iconfont reco-account" data-v-484a899e><span data-v-484a899e>掘金安东尼</span></i> <i class="iconfont reco-date" data-v-484a899e><span data-v-484a899e>2021-07-25</span></i> <!----> <i class="iconfont reco-tag tags" data-v-484a899e><span class="tag-item" data-v-484a899e>
+      JS
+    </span></i></div></div> <div class="theme-reco-content content__default" style="display:none;"><p>本瓜知道前不久写的《JS 如何函数式编程》系列各位可能并不感冒，因为一切理论的东西如果脱离实战的话，那就将毫无意义。</p> <p><img src="https://s3.jpg.cm/2021/07/24/I6cDpC.th.png" alt="I6cDpC.th.png"></p> <p>于是乎，本瓜着手于实际工作开发，尝试应用函数式编程的一些思想。</p> <p>最终惊人的发现：<strong>这个实现过程并不难，但是效果却不小！</strong></p> <p>实现思路：借助 compose 函数对连续的异步过程进行组装，不同的组合方式实现不同的业务流程。</p> <p>这样不仅提高了代码的<strong>可读性</strong>，还提高了代码的<strong>扩展性</strong>。我想：这也许就是<strong>高内聚、低耦合</strong>吧~</p> <p>撰此篇记之，并与各位分享。</p> <h2 id="场景说明"><a href="#场景说明" class="header-anchor">#</a> 场景说明</h2> <p>在和产品第一次沟通了需求后，我理解需要实现一个应用 <strong>新建流程</strong>，具体是这样的：</p> <p>第 1 步：调用 sso 接口，拿到返回结果 res_token；</p> <p>第 2 步：调用 create 接口，拿到返回结果 res_id；</p> <p>第 3 步：处理字符串，拼接 Url；</p> <p>第 4 步：建立 websocket 链接；</p> <p>第 5 步：拿到 websocket 后端推送关键字，渲染页面；</p> <ul><li>注：接口、参数有做一定简化</li></ul> <p>上面除了第 3 步、第 5 步，剩下的都是要调接口的，并且前后步骤都有传参的需要，可以理解为一个连续且有序的异步调用过程。</p> <p>为了快速响应产品需求，于是本瓜迅速写出了以下代码：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>/**
+ * 新建流程
+ * @param {*} appId
+ * @param {*} tag
+ */
+
+export const handleGetIframeSrc = function(appId, tag) {
+  let h5Id
+// 第 1 步: 调用 sso 接口，获取token
+  getsingleSignOnToken({ formSource: tag }).then(data =&gt; { 
+    return new Promise((resolve, reject) =&gt; {
+      resolve(data.result)
+    })
+  }).then(token =&gt; { 
+    const para = { appId: appId }
+    return new Promise((resolve, reject) =&gt; {
+// 第 2 步: 调用 create 接口，新建应用
+      appH5create(para).then(res =&gt; {
+// 第 3 步: 处理字符串，拼接 Url
+        this.handleInsIframeUrl(res, token, appId)
+        this.setH5Id(res.result.h5Id)
+        h5Id = res.result.h5Id
+        resolve(h5Id)
+      }).catch(err =&gt; {
+        this.$message({
+          message: err.message || '出现错误',
+          type: 'error'
+        })
+      })
+    })
+  }).then(h5Id =&gt; { 
+// 第 4 步：建立 websocket 链接；
+    return new Promise((resolve, reject) =&gt; {
+      webSocketInit(resolve, reject, h5Id)
+    })
+  }).then(doclose =&gt; {
+// 第 5 步：拿到 websocket 后端推送关键字，渲染页面；
+    if (doclose) { this.setShowEditLink({ appId: appId, h5Id: h5Id, state: true }) }
+  }).catch(err =&gt; {
+    this.$message({
+      message: err.message || '出现错误',
+      type: 'error'
+    })
+  })
+}
+
+const handleInsIframeUrl = function(res, token, appId) { 
+// url 拼接
+  const secretId = this.$store.state.userinfo.enterpriseList[0].secretId
+  let editUrl = res.result.editUrl
+  const infoId = editUrl.substr(editUrl.indexOf('?') + 1, editUrl.length - editUrl.indexOf('?'))
+  editUrl = res.result.editUrl.replace(infoId, `from=a2p&amp;${infoId}`)
+  const headList = JSON.parse(JSON.stringify(this.headList))
+  headList.forEach(i =&gt; {
+    if (i.appId === appId) { i.srcUrl = `${editUrl}&amp;token=${token}&amp;secretId=${secretId}` }
+  })
+  this.setHeadList(headList)
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br></div></div><p>这段代码是非常自然地根据产品所提需求，然后自己理解所编写。</p> <p>其实还可以，是吧？🐶</p> <h2 id="需求更新"><a href="#需求更新" class="header-anchor">#</a> 需求更新</h2> <p>但你不得不承认，程序员和产品之间有一条无法逾越的<strong>沟通鸿沟</strong>。</p> <p>它大部分是由所站角度不同而产生，只能说：李姐李姐！</p> <p>所以，基于前一个场景，需求发生了点 <strong>更新</strong> ~</p> <p><img src="https://s3.jpg.cm/2021/07/24/I6UGrz.th.png" alt="I6UGrz.th.png"></p> <p>除了上节所提的 <strong>【新建流程】</strong> ，还要加一个 <strong>【编辑流程】</strong> ╮(╯▽╰)╭</p> <p>编辑流程简单来说就是：砍掉新建流程的第 2 步调接口，再稍微调整传参即可。</p> <p>于是本瓜直接 copy 一下再作简单删改，不到 1 分钟，编辑流程的代码就诞生了~</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>/**
+ * 编辑流程
+ */
+ 
+const handleToIframeEdit = function() { // 编辑 iframe
+  const { editUrl, appId, h5Id } = this.ruleForm
+// 第 1 步: 调用 sso 接口，获取token
+  getsingleSignOnToken({ formSource: 'ins' }).then(data =&gt; {
+    return new Promise((resolve, reject) =&gt; {
+      resolve(data.result)
+    })
+  }).then(token =&gt; { 
+// 第 2 步：处理字符串，拼接 Url
+    return new Promise((resolve, reject) =&gt; {
+      const secretId = this.$store.state.userinfo.enterpriseList[0].secretId
+      const infoId = editUrl.substr(editUrl.indexOf('?') + 1, editUrl.length - editUrl.indexOf('?'))
+      const URL = editUrl.replace(infoId, `from=a2p&amp;${infoId}`)
+      const headList = JSON.parse(JSON.stringify(this.headList))
+      headList.forEach(i =&gt; {
+        if (i.appId === appId) { i.srcUrl = `${URL}&amp;token=${token}&amp;secretId=${secretId}` }
+      })
+      this.setHeadList(headList)
+      this.setShowEditLink({ appId: appId, h5Id: h5Id, state: false })
+      this.setShowNavIframe({ appId: appId, state: true })
+      this.setNavLabel(this.headList.find(i =&gt; i.appId === appId).name)
+      resolve(h5Id)
+    })
+  }).then(h5Id =&gt; {
+// 第 3 步：建立 websocket 链接；
+    return new Promise((resolve, reject) =&gt; {
+      webSocketInit(resolve, reject, h5Id)
+    })
+  }).then(doclose =&gt; {
+// 第 4 步：拿到 websocket 后端推送关键字，渲染页面；
+    if (doclose) { this.setShowEditLink({ appId: appId, h5Id: h5Id, state: true }) }
+  }).catch(err =&gt; {
+    this.$message({
+      message: err.message || '出现错误',
+      type: 'error'
+    })
+  })
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br></div></div><h2 id="需求再更新"><a href="#需求再更新" class="header-anchor">#</a> 需求再更新</h2> <p>老实讲，不怪产品，咱做需求的过程也是逐步理解需求的过程。理解有变化，再正常不过！(#^.^#) 李姐李姐......</p> <p><img src="https://s3.jpg.cm/2021/07/24/I6UIKu.th.png" alt="I6UIKu.th.png"></p> <p>上面已有两个流程：<strong>新建流程、编辑流程</strong>。</p> <p>这次，要再加一个 <strong>重新创建流程</strong> ~</p> <p>重新创建流程可简单理解为：在新建流程之前调一个 delDraft 删除草稿接口；</p> <p>至此，我们产生了三个流程：</p> <ol><li>新建流程；</li> <li>编辑流程；</li> <li>重新创建流程；</li></ol> <p>本瓜这里作个简单的脑图示意逻辑：</p> <p><img src="https://s3.jpg.cm/2021/07/24/I6Xi9Q.png" alt="I6Xi9Q.png"></p> <p>我的直觉告诉我：不能再 copy 一份新建流程作修改了，因为这样就太拉了。。。没错，它没有耦合，但是它也没有内聚，这不是我想要的。于是，我开始封装了......</p> <p>实现上述脑图的代码：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>/**
+ * 判断是否存在草稿记录？
+ */
+judgeIfDraftExist(item) {
+  const para = { appId: item.appId }
+  return appH5ifDraftExist(para).then(res =&gt; {
+    const { editUrl, h5Id, version } = res.result
+    if (h5Id === -1) { // 不存在草稿
+      this.handleGetIframeSrc(item)
+    } else { // 存在草稿
+      this.handleExitDraft(item, h5Id, version, editUrl)
+    }
+  }).catch(err =&gt; {
+    console.log(err)
+  })
+},
+/**
+ * 选择继续编辑？
+ */
+handleExitDraft(item, h5Id, version, editUrl) {
+  this.$confirm('有未完成的信息收集链接，是否继续编辑?', '提示', {
+    confirmButtonText: '继续编辑',
+    cancelButtonText: '重新创建',
+    type: 'warning'
+  }).then(() =&gt; {
+    const editUrlH5Id = h5Id
+    this.handleGetIframeSrc(item, editUrl, editUrlH5Id)
+  }).catch(() =&gt; {
+    this.handleGetIframeSrc(item)
+    appH5delete({ h5Id: h5Id, version: version })
+  })
+},
+/**
+ * 新建流程、编辑流程、重新创建流程；
+ */
+handleGetIframeSrc(item, editUrl, editUrlH5Id) {
+  let ws_h5Id
+  getsingleSignOnToken({ formSource: item.tag }).then(data =&gt; { 
+// 调用 sso 接口，拿到返回结果 res_token；
+    return new Promise((resolve, reject) =&gt; {
+      resolve(data.result)
+    })
+  }).then(token =&gt; {
+    const para = { appId: item.appId }
+    return new Promise((resolve, reject) =&gt; {
+      if (!editUrl) { // 新建流程、重新创建流程
+// 调用 create 接口，拿到返回结果 res_id；
+        appH5create(para).then(res =&gt; {
+// 处理字符串，拼接 Url；
+          this.handleInsIframeUrl(res.result.editUrl, token, item.appId)
+          this.setH5Id(res.result.h5Id)
+          ws_h5Id = res.result.h5Id
+          this.setShowNavIframe({ appId: item.appId, state: true })
+          this.setNavLabel(item.name)
+          resolve(true)
+        }).catch(err =&gt; {
+          this.$message({
+            message: err.message || '出现错误',
+            type: 'error'
+          })
+        })
+      } else { // 编辑流程
+        this.handleInsIframeUrl(editUrl, token, item.appId)
+        this.setH5Id(editUrlH5Id)
+        ws_h5Id = editUrlH5Id
+        this.setShowNavIframe({ appId: item.appId, state: true })
+        this.setNavLabel(item.name)
+        resolve(true)
+      }
+    })
+  }).then(() =&gt; { 
+// 建立 websocket 链接；
+    return new Promise((resolve, reject) =&gt; {
+      webSocketInit(resolve, reject, ws_h5Id)
+    })
+  }).then(doclose =&gt; {
+// 拿到 websocket 后端推送关键字，渲染页面；
+    if (doclose) { this.setShowEditLink({ appId: item.appId, h5Id: ws_h5Id, state: true }) }
+  }).catch(err =&gt; {
+    this.$message({
+      message: err.message || '出现错误',
+      type: 'error'
+    })
+  })
+},
+
+handleInsIframeUrl(editUrl, token, appId) {
+// url 拼接
+  const secretId = this.$store.state.userinfo.enterpriseList[0].secretId
+  const infoId = editUrl.substr(editUrl.indexOf('?') + 1, editUrl.length - editUrl.indexOf('?'))
+  const url = editUrl.replace(infoId, `from=a2p&amp;${infoId}`)
+  const headList = JSON.parse(JSON.stringify(this.headList))
+  headList.forEach(i =&gt; {
+    if (i.appId === appId) { i.srcUrl = `${url}&amp;token=${token}&amp;secretId=${secretId}` }
+  })
+  this.setHeadList(headList)
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br><span class="line-number">59</span><br><span class="line-number">60</span><br><span class="line-number">61</span><br><span class="line-number">62</span><br><span class="line-number">63</span><br><span class="line-number">64</span><br><span class="line-number">65</span><br><span class="line-number">66</span><br><span class="line-number">67</span><br><span class="line-number">68</span><br><span class="line-number">69</span><br><span class="line-number">70</span><br><span class="line-number">71</span><br><span class="line-number">72</span><br><span class="line-number">73</span><br><span class="line-number">74</span><br><span class="line-number">75</span><br><span class="line-number">76</span><br><span class="line-number">77</span><br><span class="line-number">78</span><br><span class="line-number">79</span><br><span class="line-number">80</span><br><span class="line-number">81</span><br><span class="line-number">82</span><br><span class="line-number">83</span><br><span class="line-number">84</span><br><span class="line-number">85</span><br><span class="line-number">86</span><br><span class="line-number">87</span><br><span class="line-number">88</span><br><span class="line-number">89</span><br><span class="line-number">90</span><br><span class="line-number">91</span><br><span class="line-number">92</span><br><span class="line-number">93</span><br><span class="line-number">94</span><br><span class="line-number">95</span><br><span class="line-number">96</span><br><span class="line-number">97</span><br></div></div><p>如此，我们便将 <strong>新建流程、编辑流程、重新创建流程</strong> 全部整合到了上述代码；</p> <h2 id="需求再再更新"><a href="#需求再再更新" class="header-anchor">#</a> 需求再再更新</h2> <p>上面的封装看起来似乎还不错，但是这时我害怕了！想到：如果这个时候，<strong>还要加流程或者改流程呢？？？</strong> 我是打算继续用 if...else 叠加在那个主函数里面吗？还是打算直接 copy 一份再作删改？</p> <p>我都能遇见它会充斥着各种判断，变量赋值、引用飞来飞去，最终成为一坨💩，没错，代码屎山的💩</p> <p>我摸了摸左胸的左心房，它告诉我：<strong>“饶了接盘侠吧~”</strong></p> <p>于是乎，本瓜尝试引进了之前吹那么 nb 的函数式编程！它的能力就是<strong>让代码更可读</strong>，这是我所需要的！来吧！！展示！！</p> <p><img src="https://s3.jpg.cm/2021/07/24/I6cPMf.png" alt="I6cPMf.png"></p> <h2 id="compose-函数"><a href="#compose-函数" class="header-anchor">#</a> compose 函数</h2> <p>我们在 <a href="https://juejin.cn/post/6971260867300032525" target="_blank" rel="noopener noreferrer">《XDM，JS如何函数式编程？看这就够了！（三）》<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> 这篇讲过函数组合 compose！没错，我们这次就要用到这个家伙！</p> <p>还记得那句话吗?</p> <blockquote><p><strong>组合 ———— 声明式数据流 ———— 是支撑函数式编程最重要的工具之一！</strong></p></blockquote> <p>最基础的 compose 函数是这样的：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>function compose(...fns) {
+    return function composed(result){
+        // 拷贝一份保存函数的数组
+        var list = fns.slice();
+        while (list.length &gt; 0) {
+            // 将最后一个函数从列表尾部拿出
+            // 并执行它
+            result = list.pop()( result );
+        }
+        return result;
+    };
+}
+
+// ES6 箭头函数形式写法
+var compose =
+    (...fns) =&gt;
+        result =&gt; {
+            var list = fns.slice();
+            while (list.length &gt; 0) {
+                // 将最后一个函数从列表尾部拿出
+                // 并执行它
+                result = list.pop()( result );
+            }
+            return result;
+        };
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br></div></div><p>它能将一个函数调用的输出路由跳转到另一个函数的调用上，然后一直进行下去。</p> <p><img src="https://s3.jpg.cm/2021/07/24/I6c6uy.png" alt="I6c6uy.png"></p> <p>我们不需关注黑盒子里面做了什么，只需关注：这个东西（函数）是什么！它需要我输入什么！它的输出又是什么！</p> <h2 id="composepromise"><a href="#composepromise" class="header-anchor">#</a> composePromise</h2> <p>但上面提到的 compose 函数是组合同步操作，而在本篇的实战中，我们需要组合是异步函数！</p> <p>于是它被改造成这样：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>/**
+ * @param  {...any} args
+ * @returns
+ */
+
+export const composePromise = function(...args) {
+  const init = args.pop()
+  return function(...arg) {
+    return args.reverse().reduce(function(sequence, func) {
+      return sequence.then(function(result) {
+        // eslint-disable-next-line no-useless-call
+        return func.call(null, result)
+      })
+    }, Promise.resolve(init.apply(null, arg)))
+  }
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br></div></div><p>原理：<strong>Promise 可以指定一个 sequence，来规定一个执行 then 的过程，then 函数会等到执行完成后，再执行下一个 then 的处理。启动sequence 可以使用 Promise.resolve() 这个函数。构建 sequence 可以使用 reduce 。</strong></p> <p>我们再写一个小测试在控制台跑一下！</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>let compose = function(...args) {
+  const init = args.pop()
+  return function(...arg) {
+    return args.reverse().reduce(function(sequence, func) {
+      return sequence.then(function(result) {
+        return func.call(null, result)
+      })
+    }, Promise.resolve(init.apply(null, arg)))
+  }
+}
+
+let a = async() =&gt; {
+  return new Promise((resolve, reject) =&gt; {
+    setTimeout(() =&gt; {
+      console.log('xhr1')
+      resolve('xhr1')
+    }, 5000)
+  })
+}
+
+let b = async() =&gt; {
+  return new Promise((resolve, reject) =&gt; {
+    setTimeout(() =&gt; {
+      console.log('xhr2')
+      resolve('xhr2')
+    }, 3000)
+  })
+}
+let steps = [a, b] // 从右向左执行
+let composeFn = compose(...steps)
+
+composeFn().then(res =&gt; { console.log(666) })
+
+// xhr2
+// xhr1
+// 666
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br></div></div><p>它会先执行 b ，3 秒后输出 &quot;xhr2&quot;，再执行 a，5 秒后输出 &quot;xhr1&quot;，最后输出 666</p> <p>你也可以在控制台带参 debugger 试试，很有意思：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>composeFn(1, 2).then(res =&gt; { console.log(66) })
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><h2 id="逐渐美丽起来"><a href="#逐渐美丽起来" class="header-anchor">#</a> 逐渐美丽起来</h2> <p>测试通过！借助上面 composePromise 函数，我们更加有信心用函数式编程 composePromise <strong>重构</strong> 我们的代码了。</p> <ul><li>实际上，这个过程一点不费力~</li></ul> <p>实现如下：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>/**
+ * 判断是否存在草稿记录？
+ */
+handleJudgeIfDraftExist(item) {
+    return appH5ifDraftExist({ appId: item.appId }).then(res =&gt; {
+      const { editUrl, h5Id, version } = res.result
+      h5Id === -1 ? this.compose_newAppIframe(item) : this.hasDraftConfirm(item, h5Id, editUrl, version)
+    }).catch(err =&gt; {
+      console.log(err)
+    })
+},
+/**
+ * 选择继续编辑？
+ */
+hasDraftConfirm(item, h5Id, editUrl, version) {
+    this.$confirm('有未完成的信息收集链接，是否继续编辑?', '提示', {
+      confirmButtonText: '继续编辑',
+      cancelButtonText: '重新创建',
+      type: 'warning'
+    }).then(() =&gt; {
+      this.compose_editAppIframe(item, h5Id, editUrl)
+    }).catch(() =&gt; {
+      this.compose_reNewAppIframe(item, h5Id, version)
+    })
+},
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br></div></div><p><strong>敲黑板啦！画重点啦!</strong></p> <div class="language- line-numbers-mode"><pre class="language-text"><code>/**
+* 新建应用流程
+* 入参: item
+* 输出：item
+*/
+compose_newAppIframe(...args) {
+    const steps = [this.step_getDoclose, this.step_createWs, this.step_splitUrl, this.step_appH5create, this.step_getsingleSignOnToken]
+    const handleCompose = composePromise(...steps)
+    handleCompose(...args)
+},
+/**
+* 编辑应用流程
+* 入参: item, draftH5Id, editUrl
+* 输出：item
+*/
+compose_editAppIframe(...args) {
+    const steps = [this.step_getDoclose, this.step_createWs, this.step_splitUrl, this.step_getsingleSignOnToken]
+    const handleCompose = composePromise(...steps)
+    handleCompose(...args)
+},
+/**
+* 重新创建流程
+* 入参: item，draftH5Id，version
+* 输出：item
+*/
+compose_reNewAppIframe(...args) {
+    const steps = [this.step_getDoclose, this.step_createWs, this.step_splitUrl, this.step_appH5create, this.step_getsingleSignOnToken, this.step_delDraftH5Id]
+    const handleCompose = composePromise(...steps)
+    handleCompose(...args)
+},
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br></div></div><p><strong>我们通过 composePromise 执行不同的 steps，来依次执行（从右至左）里面的功能函数；你可以任意组合、增删或修改 steps 的子项，也可以任意组合出新的流程来应付产品。并且，它们都被封装在 compose_xxx 里面，相互独立，不会干扰外界其它流程。同时，传参也是非常清晰的，输入是什么！输出又是什么！一目了然！</strong></p> <p>对照脑图再看此段代码，不正是对我们需求实现的最好诠释吗？</p> <p><strong>对于一个阅读陌生代码的人来说，你得先告诉他逻辑是怎样的，然后再告诉他每个步骤的内部具体实现。这样才是合理的！</strong></p> <p><img src="https://s3.jpg.cm/2021/07/24/I6Xi9Q.png" alt="I6Xi9Q.png"></p> <p>功能函数（具体步骤内部实现）：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>/**
+* 调用 sso 接口，拿到返回结果 res_token；
+*/
+step_getsingleSignOnToken(...args) {
+    const [item] = args.flat(Infinity)
+    return new Promise((resolve, reject) =&gt; {
+      getsingleSignOnToken({ formSource: item.tag }).then(data =&gt; {
+        resolve([...args, data.result]) // data.result 即 token
+      })
+    })
+},
+/**
+*  调用 create 接口，拿到返回结果 res_id；
+*/
+step_appH5create(...args) {
+    const [item, token] = args.flat(Infinity)
+    return new Promise((resolve, reject) =&gt; {
+      appH5create({ appId: item.appId }).then(data =&gt; {
+        resolve([item, data.result.h5Id, data.result.editUrl, token])
+      }).catch(err =&gt; {
+        this.$message({
+          message: err.message || '出现错误',
+          type: 'error'
+        })
+      })
+    })
+},
+/**
+* 调 delDraft 删除接口；
+*/
+step_delDraftH5Id(...args) {
+    const [item, h5Id, version] = args.flat(Infinity)
+    return new Promise((resolve, reject) =&gt; {
+      appH5delete({ h5Id: h5Id, version: version }).then(data =&gt; {
+        resolve(...args)
+      })
+    })
+},
+/**
+*  处理字符串，拼接 Url；
+*/
+step_splitUrl(...args) {
+    const [item, h5Id, editUrl, token] = args.flat(Infinity)
+    const infoId = editUrl.substr(editUrl.indexOf('?') + 1, editUrl.length - editUrl.indexOf('?'))
+    const url = editUrl.replace(infoId, `from=a2p&amp;${infoId}`)
+    const headList = JSON.parse(JSON.stringify(this.headList))
+    headList.forEach(i =&gt; {
+      if (i.appId === item.appId) { i.srcUrl = `${url}&amp;token=${token}` }
+    })
+    this.setHeadList(headList)
+    this.setH5Id(h5Id)
+    this.setShowNavIframe({ appId: item.appId, state: true })
+    this.setNavLabel(item.name)
+    return [...args]
+},
+/**
+*  建立 websocket 链接；
+*/
+step_createWs(...args) {
+    return new Promise((resolve, reject) =&gt; {
+      webSocketInit(resolve, reject, ...args) 
+})
+  },
+/**
+*  拿到 websocket 后端推送关键字，渲染页面；
+*/
+step_getDoclose(...args) {
+    const [item, h5Id, editUrl, token, doclose] = args.flat(Infinity)
+    if (doclose) { this.setShowEditLink({ appId: item.appId, h5Id: h5Id, state: true }) }
+    return new Promise((resolve, reject) =&gt; {
+      resolve(true)
+    })
+},
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br><span class="line-number">59</span><br><span class="line-number">60</span><br><span class="line-number">61</span><br><span class="line-number">62</span><br><span class="line-number">63</span><br><span class="line-number">64</span><br><span class="line-number">65</span><br><span class="line-number">66</span><br><span class="line-number">67</span><br><span class="line-number">68</span><br><span class="line-number">69</span><br><span class="line-number">70</span><br><span class="line-number">71</span><br><span class="line-number">72</span><br><span class="line-number">73</span><br></div></div><p>功能函数的输入、输出也是清晰可见的。</p> <p>至此，我们可以认为：借助 compose 函数，借助函数式编程，咱把业务需求流程进行了封装，明确了输入输出，让我们的代码更加可读了！可扩展性也更高了！这不就是高内聚、低耦合？！</p> <p><img src="https://s3.jpg.cm/2021/07/24/I6UWZD.th.png" alt="I6UWZD.th.png"></p> <h2 id="阶段总结"><a href="#阶段总结" class="header-anchor">#</a> 阶段总结</h2> <p><strong>你问我什么是 JS 函数式编程实战？我只能说本篇完全就是出自工作中的实战！！！</strong></p> <p><strong>这样导致本篇代码量可能有点多，但是这就是实打实的需求变化，代码迭代、改造的过程。（建议通篇把握、理解）</strong></p> <p>当然，这不是终点，代码重构这个过程应该是每时每刻都在进行着。</p> <p>对于函数式编程，简单应用 compose 函数，这也只是一个起点！</p> <p>已经讲过，偏函数、函数柯里化、函数组合、数组操作、时间状态、函数式编程库等等概念......我们将再接再厉得使用它们，把代码屎山进行分类、打包、清理！让它不断美丽起来！💩 =&gt; 👩‍🦰</p> <p>以上，便是本次分享~ 都看到这里，不如点个赞吧👍👍👍</p> <p>谢谢支持~</p> <blockquote><p>我是掘金安东尼，输出暴露输入，技术洞见生活！下次再会~</p></blockquote></div> <footer class="page-edit" style="display:none;"><!----> <div class="last-updated"><span class="prefix">Last Updated: </span> <span class="time">8/2/2021, 5:04:49 PM</span></div></footer> <!----></main> <!----> <div style="display:none;" data-v-319dd33c data-v-319dd33c><div class="comments-wrapper" data-v-319dd33c><!----></div></div></div></div></div></div></div><div class="global-ui"><div class="back-to-ceiling" style="right:1rem;bottom:6rem;width:2.5rem;height:2.5rem;border-radius:.25rem;line-height:2.5rem;display:none;" data-v-c6073ba8 data-v-c6073ba8><svg t="1574745035067" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5404" class="icon" data-v-c6073ba8><path d="M526.60727968 10.90185116a27.675 27.675 0 0 0-29.21455937 0c-131.36607665 82.28402758-218.69155461 228.01873535-218.69155402 394.07834331a462.20625001 462.20625001 0 0 0 5.36959153 69.94390903c1.00431239 6.55289093-0.34802892 13.13561351-3.76865779 18.80351572-32.63518765 54.11355614-51.75690182 118.55860487-51.7569018 187.94566865a371.06718723 371.06718723 0 0 0 11.50484808 91.98906777c6.53300375 25.50556257 41.68394495 28.14064038 52.69160883 4.22606766 17.37162448-37.73630017 42.14135425-72.50938081 72.80769204-103.21549295 2.18761121 3.04276886 4.15646224 6.24463696 6.40373557 9.22774369a1871.4375 1871.4375 0 0 0 140.04691725 5.34970492 1866.36093723 1866.36093723 0 0 0 140.04691723-5.34970492c2.24727335-2.98310674 4.21612437-6.18497483 6.3937923-9.2178004 30.66633723 30.70611158 55.4360664 65.4791928 72.80769147 103.21549355 11.00766384 23.91457269 46.15860503 21.27949489 52.69160879-4.22606768a371.15156223 371.15156223 0 0 0 11.514792-91.99901164c0-69.36717486-19.13165746-133.82216804-51.75690182-187.92578088-3.42062944-5.66790279-4.76302748-12.26056868-3.76865837-18.80351632a462.20625001 462.20625001 0 0 0 5.36959269-69.943909c-0.00994388-166.08943902-87.32547796-311.81420293-218.6915546-394.09823051zM605.93803103 357.87693858a93.93749974 93.93749974 0 1 1-187.89594924 6.1e-7 93.93749974 93.93749974 0 0 1 187.89594924-6.1e-7z" p-id="5405" data-v-c6073ba8></path><path d="M429.50777625 765.63860547C429.50777625 803.39355007 466.44236686 1000.39046097 512.00932183 1000.39046097c45.56695499 0 82.4922232-197.00623328 82.5015456-234.7518555 0-37.75494459-36.9345906-68.35043303-82.4922232-68.34111062-45.57627738-0.00932239-82.52019037 30.59548842-82.51086798 68.34111062z" p-id="5406" data-v-c6073ba8></path></svg></div><div class="reco-bgm-panel" data-v-39f9e6e0><audio id="bgm" src="/bgm/comebacktome.mp3" data-v-39f9e6e0></audio> <div class="reco-float-box" style="bottom:200px;z-index:999999;display:none;" data-v-39f9e6e0 data-v-41bcba48 data-v-39f9e6e0><img src="/bgm/comebacktome.jpg" data-v-39f9e6e0></div> <div class="reco-bgm-box" style="left:10px;bottom:10px;z-index:999999;" data-v-39f9e6e0 data-v-41bcba48 data-v-39f9e6e0><div class="reco-bgm-cover" style="background-image:url(/bgm/comebacktome.jpg);" data-v-39f9e6e0><div class="mini-operation" style="display:none;" data-v-39f9e6e0><i class="reco-bgm reco-bgm-pause" style="display:none;" data-v-39f9e6e0></i> <i class="reco-bgm reco-bgm-play" style="display:none;" data-v-39f9e6e0></i></div> <div class="falut-message" style="display:none;" data-v-39f9e6e0>
+          播放失败
+        </div></div> <div class="reco-bgm-info" data-v-39f9e6e0 data-v-41bcba48 data-v-39f9e6e0><div class="info-box" data-v-39f9e6e0><i class="reco-bgm reco-bgm-music music" data-v-39f9e6e0></i>Come Back To Me</div> <div class="info-box" data-v-39f9e6e0><i class="reco-bgm reco-bgm-artist" data-v-39f9e6e0></i>宇多田ヒカル</div> <div class="reco-bgm-progress" data-v-39f9e6e0><div class="progress-bar" data-v-39f9e6e0><div class="bar" data-v-39f9e6e0></div></div></div> <div class="reco-bgm-operation" data-v-39f9e6e0><i class="reco-bgm reco-bgm-last last" data-v-39f9e6e0></i> <i class="reco-bgm reco-bgm-pause pause" style="display:none;" data-v-39f9e6e0></i> <i class="reco-bgm reco-bgm-play play" data-v-39f9e6e0></i> <i class="reco-bgm reco-bgm-next next" data-v-39f9e6e0></i> <i class="reco-bgm reco-bgm-volume1 volume" data-v-39f9e6e0></i> <i class="reco-bgm reco-bgm-mute mute" style="display:none;" data-v-39f9e6e0></i> <div class="volume-bar" data-v-39f9e6e0><div class="bar" data-v-39f9e6e0></div></div></div></div> <div class="reco-bgm-left-box" data-v-39f9e6e0 data-v-41bcba48 data-v-39f9e6e0><i class="reco-bgm reco-bgm-left" data-v-39f9e6e0></i></div></div></div><div class="kanbanniang" data-v-5775ee02><div class="banniang-container" style="display:;" data-v-5775ee02><div class="messageBox" style="right:68px;bottom:190px;display:none;" data-v-5775ee02>
+      欢迎来到  
+    </div> <div class="operation" style="right:90px;bottom:40px;display:none;" data-v-5775ee02><i class="kbnfont kbn-ban-home ban-home" data-v-5775ee02></i> <i class="kbnfont kbn-ban-message message" data-v-5775ee02></i> <i class="kbnfont kbn-ban-close close" data-v-5775ee02></i> <a target="_blank" href="https://vuepress-theme-reco.recoluan.com/views/plugins/kanbanniang.html" data-v-5775ee02><i class="kbnfont kbn-ban-info info" data-v-5775ee02></i></a> <i class="kbnfont kbn-ban-theme skin" style="display:none;" data-v-5775ee02></i></div> <canvas id="banniang" width="150" height="220" class="live2d" style="right:90px;bottom:-20px;opacity:0.9;" data-v-5775ee02></canvas></div> <div class="showBanNiang" style="display:none;" data-v-5775ee02>
+    看板娘
+  </div></div></div></div>
+    <script src="/assets/js/app.fab4b134.js" defer></script><script src="/assets/js/3.92bb3b86.js" defer></script><script src="/assets/js/1.60a6a467.js" defer></script><script src="/assets/js/131.02bf6804.js" defer></script>
+  </body>
+</html>
