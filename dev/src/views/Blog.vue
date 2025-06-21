@@ -4,32 +4,32 @@
       <!-- Header -->
       <div class="text-center mb-16">
         <h1 class="text-5xl md:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 mb-6">
-          Code Mining Log
+          代码挖矿日志
         </h1>
         <p class="text-xl text-zinc-400 max-w-2xl mx-auto">
-          Thoughts, insights, and discoveries from the depths of the codebase. 
-          Every line tells a story, every commit builds the future.
+          来自代码库深处的思考、见解和发现。
+          每一行都讲述一个故事，每一次提交都在构建未来。
         </p>
       </div>
 
       <!-- Featured Post -->
       <div class="mb-16">
         <div class="featured-post">
-          <div class="featured-badge">Featured</div>
-          <h2 class="featured-title">The Art of Code Mining: How to Extract 10k Lines Daily</h2>
+          <div class="featured-badge">精选</div>
+          <h2 class="featured-title">代码挖矿的艺术：如何每天提取1万行代码</h2>
           <p class="featured-excerpt">
-            Deep dive into the techniques and tools that enable massive code generation. 
-            From AI-assisted development to automated testing, discover how to maintain 
-            the pace of a true code miner.
+            深入探讨实现大规模代码生成的技术和工具。
+            从AI辅助开发到自动化测试，发现如何保持
+            真正代码矿工的节奏。
           </p>
           <div class="featured-meta">
-            <span class="meta-item">📅 Dec 15, 2024</span>
-            <span class="meta-item">⏱️ 8 min read</span>
-            <span class="meta-item">🔥 1.2k views</span>
+            <span class="meta-item">📅 2024年12月15日</span>
+            <span class="meta-item">⏱️ 8分钟阅读</span>
+            <span class="meta-item">🔥 1.2k阅读</span>
           </div>
           <button class="btn-primary mt-6">
             <span class="mr-2">📖</span>
-            Read Full Article
+            阅读全文
           </button>
         </div>
       </div>
@@ -60,7 +60,7 @@
           
           <button class="btn-secondary mt-4">
             <span class="mr-2">📖</span>
-            Read More
+            阅读更多
           </button>
         </div>
       </div>
@@ -68,20 +68,20 @@
       <!-- Newsletter Signup -->
       <div class="newsletter-section">
         <div class="newsletter-content">
-          <h3 class="newsletter-title">Join the Mining Crew</h3>
+          <h3 class="newsletter-title">加入挖矿团队</h3>
           <p class="newsletter-description">
-            Get notified when new code mines are discovered. 
-            Stay updated with the latest in decentralization and open source.
+            当发现新的代码矿藏时获得通知。
+            及时了解去中心化和开源的最新动态。
           </p>
           <div class="newsletter-form">
             <input 
               type="email" 
-              placeholder="Enter your email address" 
+              placeholder="输入您的邮箱地址" 
               class="newsletter-input"
             >
             <button class="btn-primary">
               <span class="mr-2">⚡</span>
-              Subscribe
+              订阅
             </button>
           </div>
         </div>
@@ -96,10 +96,10 @@ import { ref } from 'vue'
 const blogPosts = ref([
   {
     id: 1,
-    title: "Building Decentralized Applications: A Complete Guide",
-    excerpt: "Step-by-step guide to creating DApps that truly decentralize the world. From smart contracts to frontend integration.",
-    category: "Blockchain",
-    date: "Dec 12, 2024",
+    title: "构建去中心化应用：完整指南",
+    excerpt: "创建真正去中心化世界的DApp的逐步指南。从智能合约到前端集成。",
+    category: "区块链",
+    date: "2024年12月12日",
     views: "2.3k",
     comments: "45",
     likes: "128",
@@ -107,58 +107,58 @@ const blogPosts = ref([
   },
   {
     id: 2,
-    title: "AI-Powered Code Generation: Beyond 10k Lines/Day",
-    excerpt: "Exploring advanced AI techniques for generating production-ready code at unprecedented speeds.",
+    title: "AI驱动的代码生成：超越每天1万行",
+    excerpt: "探索先进AI技术，以前所未有的速度生成生产就绪的代码。",
     category: "AI/ML",
-    date: "Dec 10, 2024",
+    date: "2024年12月10日",
     views: "1.8k",
     comments: "32",
     likes: "95",
-    tags: ["AI", "CodeGen", "Productivity"]
+    tags: ["AI", "代码生成", "生产力"]
   },
   {
     id: 3,
-    title: "The Future of Open Source: Why It's Do or Die",
-    excerpt: "Why open source is not just a choice but a necessity for the future of technology and society.",
-    category: "Philosophy",
-    date: "Dec 8, 2024",
+    title: "开源的未来：为什么是生死攸关的选择",
+    excerpt: "为什么开源不仅仅是选择，而是技术和未来社会的必需品。",
+    category: "哲学",
+    date: "2024年12月8日",
     views: "3.1k",
     comments: "67",
     likes: "156",
-    tags: ["OpenSource", "Philosophy", "Future"]
+    tags: ["开源", "哲学", "未来"]
   },
   {
     id: 4,
-    title: "Optimizing Your Development Workflow for Maximum Output",
-    excerpt: "Tools, techniques, and strategies to maximize your coding productivity and maintain the pace of a true miner.",
-    category: "Productivity",
-    date: "Dec 6, 2024",
+    title: "优化开发工作流程以实现最大产出",
+    excerpt: "工具、技术和策略，最大化您的编码生产力并保持真正矿工的节奏。",
+    category: "生产力",
+    date: "2024年12月6日",
     views: "1.5k",
     comments: "28",
     likes: "87",
-    tags: ["Productivity", "Tools", "Workflow"]
+    tags: ["生产力", "工具", "工作流程"]
   },
   {
     id: 5,
-    title: "Smart Contract Security: Mining Safely in DeFi",
-    excerpt: "Essential security practices for developing and deploying smart contracts in the DeFi ecosystem.",
-    category: "Security",
-    date: "Dec 4, 2024",
+    title: "智能合约安全：在DeFi中安全挖矿",
+    excerpt: "在DeFi生态系统中开发和部署智能合约的基本安全实践。",
+    category: "安全",
+    date: "2024年12月4日",
     views: "2.7k",
     comments: "53",
     likes: "142",
-    tags: ["Security", "SmartContracts", "DeFi"]
+    tags: ["安全", "智能合约", "DeFi"]
   },
   {
     id: 6,
-    title: "The Psychology of Code Mining: Staying Alive in Tech",
-    excerpt: "Mental frameworks and psychological strategies to maintain the relentless pace of modern development.",
-    category: "Mindset",
-    date: "Dec 2, 2024",
+    title: "代码挖矿心理学：在技术中保持活力",
+    excerpt: "保持现代开发无情节奏的心理框架和心理策略。",
+    category: "心态",
+    date: "2024年12月2日",
     views: "1.9k",
     comments: "41",
     likes: "103",
-    tags: ["Mindset", "Psychology", "Motivation"]
+    tags: ["心态", "心理学", "动机"]
   }
 ])
 </script>

@@ -12,7 +12,7 @@
         <!-- Logo/Title -->
         <div class="mb-8">
           <h1 class="text-6xl md:text-8xl font-black tracking-tighter text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 animate-pulse">
-            CodeMiner
+            代码矿工
           </h1>
           <div class="text-2xl md:text-3xl font-bold text-zinc-300 mt-2">
             TUARAN
@@ -22,12 +22,12 @@
         <!-- Philosophy statement -->
         <div class="mb-12">
           <p class="text-xl md:text-2xl text-zinc-400 leading-relaxed max-w-3xl mx-auto">
-            <span class="text-cyan-400 font-semibold">Code like hell</span>, 
-            <span class="text-blue-400 font-semibold">open source or die</span>, 
-            <span class="text-purple-400 font-semibold">decentralize the damn world</span>.
+            <span class="text-cyan-400 font-semibold">疯狂编码</span>， 
+            <span class="text-blue-400 font-semibold">开源或死亡</span>， 
+            <span class="text-purple-400 font-semibold">去中心化这个世界</span>。
           </p>
           <p class="text-lg md:text-xl text-zinc-500 mt-4 italic">
-            If my LLM ain't pumping out 10k lines a day, I'm not even alive.
+            如果我的AI每天不能产出1万行代码，我就没有活着。
           </p>
         </div>
 
@@ -35,15 +35,15 @@
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12 max-w-2xl mx-auto">
           <div class="stat-card">
             <div class="stat-number" id="linesCounter">0</div>
-            <div class="stat-label">Lines Today</div>
+            <div class="stat-label">今日代码行数</div>
           </div>
           <div class="stat-card">
             <div class="stat-number" id="projectsCounter">0</div>
-            <div class="stat-label">Open Source</div>
+            <div class="stat-label">开源项目</div>
           </div>
             <div class="stat-card">
             <div class="stat-number" id="decentralizedCounter">0</div>
-            <div class="stat-label">Decentralized</div>
+            <div class="stat-label">去中心化</div>
           </div>
         </div>
 
@@ -51,15 +51,15 @@
         <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
           <button class="btn-primary">
             <span class="mr-2">🚀</span>
-            Start Mining
+            开始挖矿
           </button>
           <button class="btn-secondary">
             <span class="mr-2">📚</span>
-            View Projects
+            查看项目
           </button>
           <button class="btn-secondary">
             <span class="mr-2">💻</span>
-            Join the Revolution
+            加入革命
           </button>
         </div>
       </div>
@@ -71,16 +71,16 @@
             <span class="code-dot bg-red-500"></span>
             <span class="code-dot bg-yellow-500"></span>
             <span class="code-dot bg-green-500"></span>
-            <span class="code-title">mining.js</span>
+            <span class="code-title">挖矿.js</span>
           </div>
-          <pre class="code-content"><code>const mineCode = async () => {
+          <pre class="code-content"><code>const 挖矿代码 = async () => {
   while (true) {
-    const lines = await generateCode();
-    if (lines.length < 10000) {
-      throw new Error("Not alive enough!");
+    const 代码行数 = await 生成代码();
+    if (代码行数.length < 10000) {
+      throw new Error("还不够活着！");
     }
-    await commitToGit();
-    await sleep(1000);
+    await 提交到Git();
+    await 睡眠(1000);
   }
 };</code></pre>
         </div>
@@ -90,14 +90,14 @@
             <span class="code-dot bg-red-500"></span>
             <span class="code-dot bg-yellow-500"></span>
             <span class="code-dot bg-green-500"></span>
-            <span class="code-title">decentralize.js</span>
+            <span class="code-title">去中心化.js</span>
           </div>
-          <pre class="code-content"><code>const decentralize = () => {
-  const world = getCurrentWorld();
-  world.removeCentralized();
-  world.addBlockchain();
-  world.addOpenSource();
-  return "World decentralized!";
+          <pre class="code-content"><code>const 去中心化 = () => {
+  const 世界 = 获取当前世界();
+  世界.移除中心化();
+  世界.添加区块链();
+  世界.添加开源();
+  return "世界已去中心化！";
 };</code></pre>
         </div>
       </div>

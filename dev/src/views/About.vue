@@ -4,11 +4,11 @@
       <!-- Header -->
       <div class="text-center mb-16">
         <h1 class="text-5xl md:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 mb-6">
-          About the Miner
+          关于矿工
         </h1>
         <p class="text-xl text-zinc-400 max-w-2xl mx-auto">
-          The story of a developer who mines code like there's no tomorrow, 
-          building the decentralized future one line at a time.
+          一个像没有明天一样疯狂挖矿代码的开发者的故事，
+          一次一行代码地构建去中心化的未来。
         </p>
       </div>
 
@@ -17,25 +17,24 @@
         <div class="hero-content">
           <div class="hero-text">
             <h2 class="hero-title">TUARAN</h2>
-            <p class="hero-subtitle">Code Miner & Decentralization Advocate</p>
+            <p class="hero-subtitle">代码矿工 & 去中心化倡导者</p>
             <p class="hero-description">
-              I'm not just a developer - I'm a code miner. Every day, I extract thousands of lines 
-              of production-ready code from the depths of my imagination and the vast resources 
-              of the open source community. My mission? To decentralize the damn world, one 
-              blockchain at a time.
+              我不只是一个开发者 - 我是一个代码矿工。每一天，我从想象力的深处
+              和开源社区的广阔资源中提取数千行生产就绪的代码。我的使命？
+              一次一个区块链地去中心化这个世界。
             </p>
             <div class="hero-stats">
               <div class="hero-stat">
                 <span class="hero-stat-number">10k+</span>
-                <span class="hero-stat-label">Lines/Day</span>
+                <span class="hero-stat-label">行/天</span>
               </div>
               <div class="hero-stat">
                 <span class="hero-stat-number">365</span>
-                <span class="hero-stat-label">Day Streak</span>
+                <span class="hero-stat-label">天连续</span>
               </div>
               <div class="hero-stat">
                 <span class="hero-stat-number">42</span>
-                <span class="hero-stat-label">Projects</span>
+                <span class="hero-stat-label">项目</span>
               </div>
             </div>
           </div>
@@ -50,33 +49,33 @@
 
       <!-- Philosophy Section -->
       <div class="philosophy-section mb-16">
-        <h2 class="section-title">The Code Mining Philosophy</h2>
+        <h2 class="section-title">代码挖矿哲学</h2>
         <div class="philosophy-grid">
           <div class="philosophy-card">
             <div class="philosophy-icon">⚡</div>
-            <h3 class="philosophy-title">Code Like Hell</h3>
+            <h3 class="philosophy-title">疯狂编码</h3>
             <p class="philosophy-description">
-              When you're mining code, there's no time for breaks. Every second counts, 
-              every line matters. Push your limits, break your boundaries, and never settle 
-              for less than your absolute best.
+              当你挖矿代码时，没有休息的时间。每一秒都很重要，
+              每一行都有意义。突破你的极限，打破你的边界，
+              永远不要满足于低于你绝对最好的水平。
             </p>
           </div>
           <div class="philosophy-card">
             <div class="philosophy-icon">🔓</div>
-            <h3 class="philosophy-title">Open Source or Die</h3>
+            <h3 class="philosophy-title">开源或死亡</h3>
             <p class="philosophy-description">
-              Proprietary software is the enemy of progress. True innovation happens in 
-              the open, where ideas can be shared, improved, and built upon by the entire 
-              community. Open source isn't just a choice - it's a way of life.
+              专有软件是进步的敌人。真正的创新发生在开放的环境中，
+              在那里想法可以被整个社区分享、改进和构建。
+              开源不仅仅是一个选择 - 它是一种生活方式。
             </p>
           </div>
           <div class="philosophy-card">
             <div class="philosophy-icon">🌐</div>
-            <h3 class="philosophy-title">Decentralize the World</h3>
+            <h3 class="philosophy-title">去中心化世界</h3>
             <p class="philosophy-description">
-              Centralization is the root of all evil in technology. Every application I build, 
-              every line I write, is aimed at creating a more decentralized, more equitable 
-              digital future for everyone.
+              中心化是技术中所有邪恶的根源。我构建的每个应用程序，
+              我写的每一行代码，都旨在为每个人创造一个更去中心化、
+              更公平的数字未来。
             </p>
           </div>
         </div>
@@ -84,10 +83,10 @@
 
       <!-- Skills Section -->
       <div class="skills-section mb-16">
-        <h2 class="section-title">Mining Tools & Technologies</h2>
+        <h2 class="section-title">挖矿工具与技术</h2>
         <div class="skills-grid">
           <div class="skill-category">
-            <h3 class="skill-category-title">Frontend Mining</h3>
+            <h3 class="skill-category-title">前端挖矿</h3>
             <div class="skill-tags">
               <span class="skill-tag">React</span>
               <span class="skill-tag">Vue.js</span>
@@ -97,7 +96,7 @@
             </div>
           </div>
           <div class="skill-category">
-            <h3 class="skill-category-title">Backend Extraction</h3>
+            <h3 class="skill-category-title">后端提取</h3>
             <div class="skill-tags">
               <span class="skill-tag">Node.js</span>
               <span class="skill-tag">Python</span>
@@ -107,7 +106,7 @@
             </div>
           </div>
           <div class="skill-category">
-            <h3 class="skill-category-title">Blockchain Mining</h3>
+            <h3 class="skill-category-title">区块链挖矿</h3>
             <div class="skill-tags">
               <span class="skill-tag">Solidity</span>
               <span class="skill-tag">Web3.js</span>
@@ -117,7 +116,7 @@
             </div>
           </div>
           <div class="skill-category">
-            <h3 class="skill-category-title">AI/ML Tools</h3>
+            <h3 class="skill-category-title">AI/ML工具</h3>
             <div class="skill-tags">
               <span class="skill-tag">TensorFlow</span>
               <span class="skill-tag">OpenAI API</span>
@@ -131,9 +130,9 @@
 
       <!-- Contact Section -->
       <div class="contact-section">
-        <h2 class="section-title">Join the Mining Revolution</h2>
+        <h2 class="section-title">加入挖矿革命</h2>
         <p class="contact-description">
-          Ready to start mining code? Let's connect and build the decentralized future together.
+          准备好开始挖矿代码了吗？让我们连接起来，一起构建去中心化的未来。
         </p>
         <div class="contact-grid">
           <a href="#" class="contact-card">
@@ -150,7 +149,7 @@
           </a>
           <a href="#" class="contact-card">
             <span class="contact-icon">📧</span>
-            <span class="contact-label">Email</span>
+            <span class="contact-label">邮箱</span>
           </a>
         </div>
       </div>

@@ -4,11 +4,11 @@
       <!-- Header -->
       <div class="text-center mb-16">
         <h1 class="text-5xl md:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 mb-6">
-          Mining Projects
+          挖矿项目
         </h1>
         <p class="text-xl text-zinc-400 max-w-3xl mx-auto">
-          Digging deep into the codebase, extracting value from every line. 
-          These are the projects that keep me alive and the world decentralized.
+          深入代码库，从每一行代码中提取价值。
+          这些是让我保持活力并让世界去中心化的项目。
         </p>
       </div>
 
@@ -51,11 +51,11 @@
           <div class="project-actions">
             <a :href="project.github" target="_blank" class="btn-primary">
               <span class="mr-2">🐙</span>
-              View Code
+              查看代码
             </a>
             <a v-if="project.demo" :href="project.demo" target="_blank" class="btn-secondary">
               <span class="mr-2">🚀</span>
-              Live Demo
+              在线演示
             </a>
           </div>
         </div>
@@ -63,27 +63,27 @@
 
       <!-- Mining Stats -->
       <div class="mt-20">
-        <h2 class="text-3xl font-bold text-white text-center mb-12">Mining Statistics</h2>
+        <h2 class="text-3xl font-bold text-white text-center mb-12">挖矿统计</h2>
         <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
           <div class="mining-stat">
             <div class="mining-stat-icon">⚡</div>
             <div class="mining-stat-number" id="totalLines">0</div>
-            <div class="mining-stat-label">Total Lines</div>
+            <div class="mining-stat-label">总代码行数</div>
           </div>
           <div class="mining-stat">
             <div class="mining-stat-icon">🔧</div>
             <div class="mining-stat-number" id="totalProjects">0</div>
-            <div class="mining-stat-label">Projects</div>
+            <div class="mining-stat-label">项目数量</div>
           </div>
           <div class="mining-stat">
             <div class="mining-stat-icon">🌐</div>
             <div class="mining-stat-number" id="totalCommits">0</div>
-            <div class="mining-stat-label">Commits</div>
+            <div class="mining-stat-label">提交次数</div>
           </div>
           <div class="mining-stat">
             <div class="mining-stat-icon">🔥</div>
             <div class="mining-stat-number" id="streakDays">0</div>
-            <div class="mining-stat-label">Day Streak</div>
+            <div class="mining-stat-label">连续天数</div>
           </div>
         </div>
       </div>
@@ -97,10 +97,10 @@ import { ref, onMounted } from 'vue'
 const projects = ref([
   {
     id: 1,
-    title: "DeFi Protocol",
-    description: "Decentralized finance protocol built on Ethereum. Enabling permissionless lending and borrowing.",
+    title: "DeFi协议",
+    description: "基于以太坊构建的去中心化金融协议。实现无需许可的借贷功能。",
     icon: "💰",
-    status: "active",
+    status: "活跃",
     stars: 1234,
     forks: 567,
     lines: 45000,
@@ -110,10 +110,10 @@ const projects = ref([
   },
   {
     id: 2,
-    title: "AI Trading Bot",
-    description: "Machine learning powered trading bot that mines market data for profitable opportunities.",
+    title: "AI交易机器人",
+    description: "基于机器学习的交易机器人，挖掘市场数据寻找盈利机会。",
     icon: "🤖",
-    status: "active",
+    status: "活跃",
     stars: 892,
     forks: 234,
     lines: 32000,
@@ -123,10 +123,10 @@ const projects = ref([
   },
   {
     id: 3,
-    title: "Blockchain Explorer",
-    description: "Real-time blockchain explorer with advanced analytics and visualization tools.",
+    title: "区块链浏览器",
+    description: "实时区块链浏览器，具有高级分析和可视化工具。",
     icon: "🔍",
-    status: "active",
+    status: "活跃",
     stars: 567,
     forks: 123,
     lines: 28000,
@@ -136,10 +136,10 @@ const projects = ref([
   },
   {
     id: 4,
-    title: "Code Generator",
-    description: "AI-powered code generator that pumps out 10k lines of production-ready code daily.",
+    title: "代码生成器",
+    description: "AI驱动的代码生成器，每天产出1万行生产就绪的代码。",
     icon: "⚙️",
-    status: "active",
+    status: "活跃",
     stars: 2345,
     forks: 789,
     lines: 15000,
@@ -149,10 +149,10 @@ const projects = ref([
   },
   {
     id: 5,
-    title: "Decentralized Social",
-    description: "Social media platform built on blockchain. No censorship, no centralization.",
+    title: "去中心化社交",
+    description: "基于区块链构建的社交媒体平台。无审查，无中心化。",
     icon: "🌐",
-    status: "active",
+    status: "活跃",
     stars: 678,
     forks: 345,
     lines: 52000,
@@ -162,10 +162,10 @@ const projects = ref([
   },
   {
     id: 6,
-    title: "Mining Dashboard",
-    description: "Real-time dashboard for monitoring code mining operations and productivity metrics.",
+    title: "挖矿仪表板",
+    description: "实时监控代码挖矿操作和生产力指标的仪表板。",
     icon: "📊",
-    status: "active",
+    status: "活跃",
     stars: 445,
     forks: 167,
     lines: 18000,
