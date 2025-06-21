@@ -4,10 +4,10 @@
       <!-- Header -->
       <div class="text-center mb-16">
         <h1 class="text-5xl md:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 mb-6">
-          关于矿工
+          关于开发者
         </h1>
         <p class="text-xl text-zinc-400 max-w-2xl mx-auto">
-          一个像没有明天一样疯狂挖矿代码的开发者的故事，
+          一个像没有明天一样疯狂编码的开发者的故事，
           一次一行代码地构建去中心化的未来。
         </p>
       </div>
@@ -17,9 +17,9 @@
         <div class="hero-content">
           <div class="hero-text">
             <h2 class="hero-title">TUARAN</h2>
-            <p class="hero-subtitle">代码矿工 & 去中心化倡导者</p>
+            <p class="hero-subtitle">代码开发者 & 去中心化倡导者</p>
             <p class="hero-description">
-              我不只是一个开发者 - 我是一个代码矿工。每一天，我从想象力的深处
+              我不只是一个开发者 - 我是一个代码创造者。每一天，我从想象力的深处
               和开源社区的广阔资源中提取数千行生产就绪的代码。我的使命？
               一次一个区块链地去中心化这个世界。
             </p>
@@ -49,13 +49,13 @@
 
       <!-- Philosophy Section -->
       <div class="philosophy-section mb-16">
-        <h2 class="section-title">代码挖矿哲学</h2>
+        <h2 class="section-title">代码开发哲学</h2>
         <div class="philosophy-grid">
           <div class="philosophy-card">
             <div class="philosophy-icon">⚡</div>
             <h3 class="philosophy-title">疯狂编码</h3>
             <p class="philosophy-description">
-              当你挖矿代码时，没有休息的时间。每一秒都很重要，
+              当你开发代码时，没有休息的时间。每一秒都很重要，
               每一行都有意义。突破你的极限，打破你的边界，
               永远不要满足于低于你绝对最好的水平。
             </p>
@@ -83,10 +83,10 @@
 
       <!-- Skills Section -->
       <div class="skills-section mb-16">
-        <h2 class="section-title">挖矿工具与技术</h2>
+        <h2 class="section-title">开发工具与技术</h2>
         <div class="skills-grid">
           <div class="skill-category">
-            <h3 class="skill-category-title">前端挖矿</h3>
+            <h3 class="skill-category-title">前端开发</h3>
             <div class="skill-tags">
               <span class="skill-tag">React</span>
               <span class="skill-tag">Vue.js</span>
@@ -96,7 +96,7 @@
             </div>
           </div>
           <div class="skill-category">
-            <h3 class="skill-category-title">后端提取</h3>
+            <h3 class="skill-category-title">后端开发</h3>
             <div class="skill-tags">
               <span class="skill-tag">Node.js</span>
               <span class="skill-tag">Python</span>
@@ -106,7 +106,7 @@
             </div>
           </div>
           <div class="skill-category">
-            <h3 class="skill-category-title">区块链挖矿</h3>
+            <h3 class="skill-category-title">区块链开发</h3>
             <div class="skill-tags">
               <span class="skill-tag">Solidity</span>
               <span class="skill-tag">Web3.js</span>
@@ -130,9 +130,9 @@
 
       <!-- Contact Section -->
       <div class="contact-section">
-        <h2 class="section-title">加入挖矿革命</h2>
+        <h2 class="section-title">加入开发革命</h2>
         <p class="contact-description">
-          准备好开始挖矿代码了吗？让我们连接起来，一起构建去中心化的未来。
+          准备好开始疯狂编码了吗？让我们连接起来，一起构建去中心化的未来。
         </p>
         <div class="contact-grid">
           <a href="#" class="contact-card">
@@ -175,7 +175,7 @@
 }
 
 .hero-subtitle {
-  @apply text-xl text-cyan-400 font-semibold mb-4;
+  @apply text-xl text-cyan-400 font-semibold mb-4 !important;
 }
 
 .hero-description {
@@ -191,7 +191,7 @@
 }
 
 .hero-stat-number {
-  @apply block text-2xl font-bold text-cyan-400;
+  @apply block text-2xl font-bold text-cyan-400 !important;
 }
 
 .hero-stat-label {
@@ -255,7 +255,7 @@
 }
 
 .skill-tag {
-  @apply bg-cyan-500/20 text-cyan-400 text-sm px-3 py-1 rounded-full border border-cyan-500/30;
+  @apply bg-cyan-500/20 text-cyan-400 text-sm px-3 py-1 rounded-full border border-cyan-500/30 !important;
 }
 
 .contact-description {

@@ -4,7 +4,7 @@
       <!-- Header -->
       <div class="text-center mb-16">
         <h1 class="text-5xl md:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 mb-6">
-          代码挖矿日志
+          代码日志
         </h1>
         <p class="text-xl text-zinc-400 max-w-2xl mx-auto">
           来自代码库深处的思考、见解和发现。
@@ -16,11 +16,11 @@
       <div class="mb-16">
         <div class="featured-post">
           <div class="featured-badge">精选</div>
-          <h2 class="featured-title">代码挖矿的艺术：如何每天提取1万行代码</h2>
+          <h2 class="featured-title">代码生成的艺术：如何每天产出1万行代码</h2>
           <p class="featured-excerpt">
             深入探讨实现大规模代码生成的技术和工具。
             从AI辅助开发到自动化测试，发现如何保持
-            真正代码矿工的节奏。
+            真正开发者的节奏。
           </p>
           <div class="featured-meta">
             <span class="meta-item">📅 2024年12月15日</span>
@@ -68,9 +68,9 @@
       <!-- Newsletter Signup -->
       <div class="newsletter-section">
         <div class="newsletter-content">
-          <h3 class="newsletter-title">加入挖矿团队</h3>
+          <h3 class="newsletter-title">加入开发团队</h3>
           <p class="newsletter-description">
-            当发现新的代码矿藏时获得通知。
+            当发现新的代码技术时获得通知。
             及时了解去中心化和开源的最新动态。
           </p>
           <div class="newsletter-form">
@@ -130,7 +130,7 @@ const blogPosts = ref([
   {
     id: 4,
     title: "优化开发工作流程以实现最大产出",
-    excerpt: "工具、技术和策略，最大化您的编码生产力并保持真正矿工的节奏。",
+    excerpt: "工具、技术和策略，最大化您的编码生产力并保持真正开发者的节奏。",
     category: "生产力",
     date: "2024年12月6日",
     views: "1.5k",
@@ -140,7 +140,7 @@ const blogPosts = ref([
   },
   {
     id: 5,
-    title: "智能合约安全：在DeFi中安全挖矿",
+    title: "智能合约安全：在DeFi中安全开发",
     excerpt: "在DeFi生态系统中开发和部署智能合约的基本安全实践。",
     category: "安全",
     date: "2024年12月4日",
@@ -151,7 +151,7 @@ const blogPosts = ref([
   },
   {
     id: 6,
-    title: "代码挖矿心理学：在技术中保持活力",
+    title: "代码开发心理学：在技术中保持活力",
     excerpt: "保持现代开发无情节奏的心理框架和心理策略。",
     category: "心态",
     date: "2024年12月2日",
@@ -202,7 +202,7 @@ const blogPosts = ref([
 }
 
 .blog-category {
-  @apply bg-cyan-500/20 text-cyan-400 text-xs font-bold px-2 py-1 rounded-full;
+  @apply bg-cyan-500/20 text-cyan-400 text-xs font-bold px-2 py-1 rounded-full !important;
 }
 
 .blog-date {

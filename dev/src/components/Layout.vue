@@ -22,7 +22,7 @@
           <div class="flex items-center space-x-4">
             <div class="hidden md:flex items-center space-x-2 text-sm text-zinc-400">
               <div class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-              <span>挖矿中...</span>
+              <span>编码中...</span>
             </div>
             <button class="btn-connect">
               <span class="mr-2">🔗</span>

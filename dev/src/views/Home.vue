@@ -6,9 +6,9 @@
     </div>
     
     <!-- Main content -->
-    <div class="relative z-10 flex flex-col items-center justify-center min-h-screen px-6">
+    <div class="relative z-10 min-h-screen px-6 py-8">
       <!-- Hero section -->
-      <div class="text-center max-w-4xl mx-auto">
+      <div class="text-center max-w-4xl mx-auto mb-12">
         <!-- Logo/Title -->
         <div class="mb-8">
           <h1 class="text-6xl md:text-8xl font-black tracking-tighter text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 animate-pulse">
@@ -20,9 +20,9 @@
         </div>
 
         <!-- Philosophy statement -->
-        <div class="mb-12">
+        <div class="mb-8">
           <p class="text-xl md:text-2xl text-zinc-400 leading-relaxed max-w-3xl mx-auto">
-            <span class="text-cyan-400 font-semibold">疯狂编码</span>， 
+            <span class="philosophy-highlight">疯狂编码</span>， 
             <span class="text-blue-400 font-semibold">开源或死亡</span>， 
             <span class="text-purple-400 font-semibold">去中心化这个世界</span>。
           </p>
@@ -31,27 +31,11 @@
           </p>
         </div>
 
-        <!-- Stats dashboard -->
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12 max-w-2xl mx-auto">
-          <div class="stat-card">
-            <div class="stat-number" id="linesCounter">0</div>
-            <div class="stat-label">今日代码行数</div>
-          </div>
-          <div class="stat-card">
-            <div class="stat-number" id="projectsCounter">0</div>
-            <div class="stat-label">开源项目</div>
-          </div>
-            <div class="stat-card">
-            <div class="stat-number" id="decentralizedCounter">0</div>
-            <div class="stat-label">去中心化</div>
-          </div>
-        </div>
-
         <!-- Action buttons -->
         <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
           <button class="btn-primary">
             <span class="mr-2">🚀</span>
-            开始挖矿
+            开始编码
           </button>
           <button class="btn-secondary">
             <span class="mr-2">📚</span>
@@ -64,16 +48,36 @@
         </div>
       </div>
 
+      <!-- Dashboard Grid -->
+      <div class="max-w-7xl mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          <!-- 数据看板 -->
+          <div class="lg:col-span-2">
+            <CodeAnalytics />
+          </div>
+          
+          <!-- 项目看板 -->
+          <div class="lg:col-span-1">
+            <ProjectDashboard />
+          </div>
+          
+          <!-- 博文日记看板 -->
+          <div class="lg:col-span-3">
+            <BlogDashboard />
+          </div>
+        </div>
+      </div>
+
       <!-- Animated code blocks -->
-      <div class="mt-16 grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl w-full">
+      <div class="mt-16 grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
         <div class="code-block">
           <div class="code-header">
             <span class="code-dot bg-red-500"></span>
             <span class="code-dot bg-yellow-500"></span>
             <span class="code-dot bg-green-500"></span>
-            <span class="code-title">挖矿.js</span>
+            <span class="code-title">编码.js</span>
           </div>
-          <pre class="code-content"><code>const 挖矿代码 = async () => {
+          <pre class="code-content"><code>const 疯狂编码 = async () => {
   while (true) {
     const 代码行数 = await 生成代码();
     if (代码行数.length < 10000) {
@@ -116,6 +120,9 @@
 
 <script setup>
 import { onMounted } from 'vue'
+import CodeAnalytics from '../components/CodeAnalytics.vue'
+import ProjectDashboard from '../components/ProjectDashboard.vue'
+import BlogDashboard from '../components/BlogDashboard.vue'
 
 onMounted(() => {
   // Animate counters
@@ -138,7 +145,6 @@ onMounted(() => {
 
   // Start animations after a delay
   setTimeout(() => {
-    animateCounter('linesCounter', 10000)
     animateCounter('projectsCounter', 42)
     animateCounter('decentralizedCounter', 1337)
   }, 1000)
@@ -167,7 +173,7 @@ onMounted(() => {
 }
 
 .stat-number {
-  @apply text-4xl font-bold text-cyan-400 mb-2;
+  @apply text-4xl font-bold text-cyan-400 mb-2 !important;
 }
 
 .stat-label {
@@ -213,19 +219,22 @@ onMounted(() => {
 .floating-element {
   @apply absolute text-2xl opacity-20 animate-bounce;
   animation-delay: var(--delay);
-  animation-duration: 3s;
 }
 
 .floating-element:nth-child(1) { top: 20%; left: 10%; }
-.floating-element:nth-child(2) { top: 60%; left: 85%; }
-.floating-element:nth-child(3) { top: 80%; left: 15%; }
-.floating-element:nth-child(4) { top: 30%; left: 80%; }
+.floating-element:nth-child(2) { top: 60%; left: 80%; }
+.floating-element:nth-child(3) { top: 80%; left: 20%; }
+.floating-element:nth-child(4) { top: 30%; left: 90%; }
 .floating-element:nth-child(5) { top: 70%; left: 5%; }
 
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  .floating-elements {
-    display: none;
+/* 响应式设计 */
+@media (max-width: 1024px) {
+  .grid {
+    @apply grid-cols-1;
   }
+}
+
+.philosophy-highlight {
+  @apply text-cyan-400 font-semibold !important;
 }
 </style> 

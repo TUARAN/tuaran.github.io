@@ -10,14 +10,16 @@
   },
   "dependencies": {
     "autoprefixer": "^10.4.21",
+    "chart.js": "^4.5.0",
     "lucide-vue-next": "^0.519.0",
     "postcss": "^8.5.6",
     "tailwindcss": "^3.4.17",
     "vue": "^3.5.13",
+    "vue-chartjs": "^5.3.2",
     "vue-router": "^4.5.1"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^5.2.3",
     "vite": "^6.3.5"
   }
-}
+} 

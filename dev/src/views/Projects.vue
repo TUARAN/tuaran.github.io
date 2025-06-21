@@ -4,7 +4,7 @@
       <!-- Header -->
       <div class="text-center mb-16">
         <h1 class="text-5xl md:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 mb-6">
-          挖矿项目
+          开发项目
         </h1>
         <p class="text-xl text-zinc-400 max-w-3xl mx-auto">
           深入代码库，从每一行代码中提取价值。
@@ -61,9 +61,9 @@
         </div>
       </div>
 
-      <!-- Mining Stats -->
+      <!-- Development Stats -->
       <div class="mt-20">
-        <h2 class="text-3xl font-bold text-white text-center mb-12">挖矿统计</h2>
+        <h2 class="text-3xl font-bold text-white text-center mb-12">开发统计</h2>
         <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
           <div class="mining-stat">
             <div class="mining-stat-icon">⚡</div>
@@ -162,8 +162,8 @@ const projects = ref([
   },
   {
     id: 6,
-    title: "挖矿仪表板",
-    description: "实时监控代码挖矿操作和生产力指标的仪表板。",
+    title: "开发仪表板",
+    description: "实时监控代码开发操作和生产力指标的仪表板。",
     icon: "📊",
     status: "活跃",
     stars: 445,
@@ -241,7 +241,7 @@ onMounted(() => {
 }
 
 .stat-number {
-  @apply text-sm font-bold text-cyan-400;
+  @apply text-sm font-bold text-cyan-400 !important;
 }
 
 .stat-label {
@@ -277,7 +277,7 @@ onMounted(() => {
 }
 
 .mining-stat-number {
-  @apply text-3xl font-bold text-cyan-400 mb-2;
+  @apply text-3xl font-bold text-cyan-400 mb-2 !important;
 }
 
 .mining-stat-label {
