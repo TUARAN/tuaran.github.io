@@ -32,6 +32,12 @@
       >
         <!-- Project Image -->
         <div class="project-image">
+          <ArtisticPlaceholder 
+            :text="project.title" 
+            :subtitle="project.category.toUpperCase()"
+            type="project"
+            size="medium"
+          />
           <div class="project-overlay">
             <div class="project-actions">
               <a 
@@ -121,6 +127,7 @@ import {
   Clock, 
   ArrowDown 
 } from 'lucide-vue-next';
+import ArtisticPlaceholder from '../components/ArtisticPlaceholder.vue';
 import projectsData from '../data/projects.json';
 
 const selectedCategory = ref('全部');

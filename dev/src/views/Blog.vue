@@ -60,9 +60,12 @@
             </button>
           </div>
           <div class="featured-image">
-            <div class="image-placeholder">
-              <FileText class="w-16 h-16 text-gray-400" />
-            </div>
+            <ArtisticPlaceholder 
+              :text="featuredPost.title" 
+              :subtitle="featuredPost.category.toUpperCase()"
+              type="featured"
+              size="large"
+            />
           </div>
         </div>
       </div>
@@ -80,6 +83,16 @@
         <div class="post-header">
           <div class="post-category">{{ post.category }}</div>
           <div class="post-date">{{ formatDate(post.id) }}</div>
+        </div>
+
+        <!-- Post Image Placeholder -->
+        <div class="post-image-placeholder">
+          <ArtisticPlaceholder 
+            :text="post.title" 
+            :subtitle="post.category.toUpperCase()"
+            type="blog"
+            size="small"
+          />
         </div>
 
         <!-- Post Content -->
@@ -154,6 +167,7 @@ import {
   Bookmark, 
   FileText 
 } from 'lucide-vue-next';
+import ArtisticPlaceholder from '../components/ArtisticPlaceholder.vue';
 import blogsData from '../data/blogs.json';
 
 const selectedCategory = ref('全部');
@@ -260,8 +274,8 @@ const formatDate = (id) => {
   @apply lg:w-1/3 lg:flex-shrink-0;
 }
 
-.image-placeholder {
-  @apply h-48 lg:h-full bg-gradient-to-br from-slate-800 to-slate-900 flex items-center justify-center;
+.post-image-placeholder {
+  @apply h-32 bg-gradient-to-br from-slate-800 to-slate-900 flex items-center justify-center;
 }
 
 .blog-card {
