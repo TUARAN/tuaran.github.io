@@ -6,7 +6,7 @@
         博客与见解
       </h1>
       <p class="text-xl text-gray-300 max-w-2xl mx-auto">
-        关于技术、交易策略和开发者生活的思考
+        关于编程技术、交易策略和日常生活的思考
       </p>
     </div>
 

@@ -2,6 +2,18 @@
 
 一个现代化的开发者主页，采用 Vue 3 + Tailwind CSS + Glassmorphism 设计风格。
 
+## 🌐 在线预览
+
+**🌍 网站地址：** [https://tuaran-github-io.pages.dev/](https://tuaran-github-io.pages.dev/)
+
+## 📸 网站截图
+
+![网站首页截图](screenshot.png)
+
+*现代化的玻璃质感设计，支持暗色/亮色主题切换*
+
+> 💡 **获取最新截图：** 访问 [https://tuaran-github-io.pages.dev/](https://tuaran-github-io.pages.dev/) 并截图保存为 `screenshot.png`
+
 ## 🚀 项目结构
 
 ```

@@ -6,7 +6,7 @@
         精选项目
       </h1>
       <p class="text-xl text-gray-300 max-w-2xl mx-auto">
-        展示前沿技术和创新解决方案的项目集合
+        念念不忘、必有回响，这些年一直想做的项目
       </p>
     </div>
 

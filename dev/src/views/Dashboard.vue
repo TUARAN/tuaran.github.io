@@ -6,7 +6,7 @@
         AI 编程仪表板
       </h1>
       <p class="text-xl text-gray-300 max-w-2xl mx-auto">
-        实时洞察 AI 驱动的代码生成和开发生产力
+        如果每天不让大模型生成万行代码，我都会觉得难受
       </p>
     </div>
 

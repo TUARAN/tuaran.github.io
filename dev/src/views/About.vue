@@ -17,7 +17,6 @@
       
       <!-- Personal Belief -->
       <div class="bg-gradient-to-r from-cyan-500/20 to-purple-600/20 backdrop-blur-lg rounded-2xl p-6 border border-cyan-500/30 max-w-4xl mx-auto">
-        <h2 class="text-2xl font-bold text-white mb-4">技术理念</h2>
         <p class="text-lg text-cyan-300 font-medium leading-relaxed">
           "技术驱动创新，代码改变世界。在技术与人文的交叉路口，用优雅的代码构建有温度的数字体验。"
         </p>
