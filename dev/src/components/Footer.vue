@@ -76,7 +76,7 @@
       <!-- Bottom Bar -->
       <div class="flex flex-col md:flex-row items-center justify-between pt-8 border-t border-white/10">
         <p class="text-gray-400 text-sm">
-          © 2024 tuaran. 保留所有权利。
+          © 2025 tuaran. 保留所有权利。
         </p>
         <div class="flex items-center space-x-6 mt-4 md:mt-0">
           <a href="#" class="text-gray-400 hover:text-white text-sm transition-colors duration-300">

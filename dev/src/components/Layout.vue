@@ -37,42 +37,10 @@
       <router-view />
     </main>
     
-    <footer class="bg-zinc-900 border-t border-zinc-800">
-      <div class="mx-auto max-w-7xl overflow-hidden px-6 py-12 lg:px-8">
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div>
-            <h3 class="text-lg font-bold text-white mb-4">代码矿工</h3>
-            <p class="text-zinc-400 text-sm">
-              疯狂编码，开源或死亡，去中心化这个世界。
-            </p>
-          </div>
-          <div>
-            <h4 class="text-sm font-semibold text-white mb-4 uppercase tracking-wider">快速链接</h4>
-            <ul class="space-y-2 text-sm">
-              <li><router-link to="/projects" class="text-zinc-400 hover:text-cyan-400 transition-colors">项目</router-link></li>
-              <li><router-link to="/blog" class="text-zinc-400 hover:text-cyan-400 transition-colors">博客</router-link></li>
-              <li><router-link to="/about" class="text-zinc-400 hover:text-cyan-400 transition-colors">关于</router-link></li>
-            </ul>
-          </div>
-          <div>
-            <h4 class="text-sm font-semibold text-white mb-4 uppercase tracking-wider">联系</h4>
-            <div class="flex space-x-4">
-              <a href="#" class="text-zinc-400 hover:text-cyan-400 transition-colors">
-                <span class="text-xl">🐙</span>
-              </a>
-              <a href="#" class="text-zinc-400 hover:text-cyan-400 transition-colors">
-                <span class="text-xl">🐦</span>
-              </a>
-              <a href="#" class="text-zinc-400 hover:text-cyan-400 transition-colors">
-                <span class="text-xl">💼</span>
-              </a>
-            </div>
-          </div>
-        </div>
-        <div class="mt-8 pt-8 border-t border-zinc-800">
-          <p class="text-center text-xs text-zinc-500">
-            &copy; 2024 代码矿工 by TUARAN. 用 ❤️ 和大量 ☕ 构建
-          </p>
+    <footer class="bg-zinc-900/80 backdrop-blur-sm border-t border-zinc-800 py-8">
+      <div class="mx-auto max-w-7xl px-6 lg:px-8">
+        <div class="text-center text-zinc-400 text-sm">
+          &copy; 2025 代码矿工 by TUARAN. 用 ❤️ 和大量 ☕ 构建
         </div>
       </div>
     </footer>

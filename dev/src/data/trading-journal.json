@@ -1,0 +1,56 @@
+{
+  "accessPassword": "trading2025",
+  "lastUpdated": "2025-01-15",
+  "summary": {
+    "totalTrades": 0,
+    "winRate": 0,
+    "totalProfit": 0,
+    "bestTrade": null,
+    "worstTrade": null,
+    "currentStreak": 0,
+    "monthlyStats": {
+      "january": { "trades": 0, "profit": 0, "winRate": 0 },
+      "february": { "trades": 0, "profit": 0, "winRate": 0 },
+      "march": { "trades": 0, "profit": 0, "winRate": 0 },
+      "april": { "trades": 0, "profit": 0, "winRate": 0 },
+      "may": { "trades": 0, "profit": 0, "winRate": 0 },
+      "june": { "trades": 0, "profit": 0, "winRate": 0 },
+      "july": { "trades": 0, "profit": 0, "winRate": 0 },
+      "august": { "trades": 0, "profit": 0, "winRate": 0 },
+      "september": { "trades": 0, "profit": 0, "winRate": 0 },
+      "october": { "trades": 0, "profit": 0, "winRate": 0 },
+      "november": { "trades": 0, "profit": 0, "winRate": 0 },
+      "december": { "trades": 0, "profit": 0, "winRate": 0 }
+    }
+  },
+  "insights": [
+    {
+      "id": 1,
+      "date": "2025-01-15",
+      "title": "交易心得总结",
+      "content": "这里是你的交易心得和总结，可以记录重要的学习点和策略改进。",
+      "tags": ["心得", "策略", "总结"],
+      "type": "insight"
+    }
+  ],
+  "trades": [
+    {
+      "id": 1,
+      "date": "2025-01-15",
+      "time": "14:30",
+      "type": "long",
+      "entryPrice": 0,
+      "exitPrice": 0,
+      "quantity": 0,
+      "profit": 0,
+      "profitPercentage": 0,
+      "status": "open",
+      "notes": "交易记录和观察",
+      "emotions": "neutral",
+      "strategy": "趋势跟踪",
+      "tags": ["ETH", "趋势"],
+      "screenshots": [],
+      "lessons": "这次交易学到的经验"
+    }
+  ]
+} 

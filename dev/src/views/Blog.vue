@@ -73,6 +73,69 @@
 
     <!-- Blog Posts Grid -->
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <!-- Trading Journal Special Card -->
+      <div 
+        v-if="selectedCategory === '交易'"
+        class="blog-card group trading-journal-card"
+        @click="navigateToTradingJournal"
+      >
+        <!-- Post Header -->
+        <div class="post-header">
+          <div class="post-category">交易日志</div>
+          <div class="post-date">私密</div>
+        </div>
+
+        <!-- Post Image Placeholder -->
+        <div class="post-image-placeholder trading-journal-placeholder">
+          <div class="trading-journal-icon">
+            <TrendingUp class="w-12 h-12 text-cyan-400" />
+          </div>
+          <div class="trading-journal-overlay">
+            <Lock class="w-6 h-6 text-white" />
+          </div>
+        </div>
+
+        <!-- Post Content -->
+        <div class="post-content">
+          <h3 class="post-title">ETH 交易日志</h3>
+          <p class="post-excerpt">私密的交易记录和心得总结，需要密码访问</p>
+          
+          <!-- Post Tags -->
+          <div class="post-tags">
+            <span class="post-tag">ETH</span>
+            <span class="post-tag">私密</span>
+            <span class="post-tag">交易记录</span>
+          </div>
+
+          <!-- Post Stats -->
+          <div class="post-stats">
+            <div class="post-stat">
+              <Eye class="w-4 h-4" />
+              <span>仅限本人</span>
+            </div>
+            <div class="post-stat">
+              <Clock class="w-4 h-4" />
+              <span>实时更新</span>
+            </div>
+            <div class="post-stat">
+              <TrendingUp class="w-4 h-4" />
+              <span>交易统计</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Post Actions -->
+        <div class="post-actions">
+          <button class="read-btn">
+            <span>进入交易日志</span>
+            <ArrowRight class="w-4 h-4 ml-2" />
+          </button>
+          <button class="bookmark-btn">
+            <Lock class="w-4 h-4" />
+          </button>
+        </div>
+      </div>
+
       <div 
         v-for="post in filteredPosts" 
         :key="post.id"
@@ -156,6 +219,7 @@
 
 <script setup>
 import { ref, computed } from 'vue';
+import { useRouter } from 'vue-router';
 import { 
   Code, 
   TrendingUp, 
@@ -165,11 +229,13 @@ import {
   ArrowRight, 
   ArrowDown, 
   Bookmark, 
-  FileText 
+  FileText,
+  Lock
 } from 'lucide-vue-next';
 import ArtisticPlaceholder from '../components/ArtisticPlaceholder.vue';
 import blogsData from '../data/blogs.json';
 
+const router = useRouter();
 const selectedCategory = ref('全部');
 const posts = ref(blogsData);
 
@@ -183,6 +249,10 @@ const getCategoryIcon = (category) => {
     '全部': FileText
   };
   return icons[category] || FileText;
+};
+
+const navigateToTradingJournal = () => {
+  router.push('/trading-journal');
 };
 
 const filteredPosts = computed(() => {
@@ -355,5 +425,44 @@ const formatDate = (id) => {
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
+}
+
+/* Trading Journal Special Card Styles */
+.trading-journal-card {
+  @apply cursor-pointer border-2 border-cyan-500/30 hover:border-cyan-500/50;
+  background: linear-gradient(135deg, rgba(6, 182, 212, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%);
+}
+
+.trading-journal-card:hover {
+  @apply scale-105 shadow-2xl shadow-cyan-500/20;
+  background: linear-gradient(135deg, rgba(6, 182, 212, 0.15) 0%, rgba(139, 92, 246, 0.15) 100%);
+}
+
+.trading-journal-placeholder {
+  @apply relative bg-gradient-to-br from-cyan-900/50 to-purple-900/50;
+}
+
+.trading-journal-icon {
+  @apply absolute inset-0 flex items-center justify-center;
+}
+
+.trading-journal-overlay {
+  @apply absolute top-2 right-2 w-8 h-8 bg-red-500/80 rounded-full flex items-center justify-center;
+}
+
+.trading-journal-card .post-category {
+  @apply bg-gradient-to-r from-cyan-500 to-purple-600 text-white;
+}
+
+.trading-journal-card .post-title {
+  @apply text-cyan-300;
+}
+
+.trading-journal-card .read-btn {
+  @apply text-cyan-400 hover:text-cyan-300;
+}
+
+.trading-journal-card .bookmark-btn {
+  @apply text-red-400 hover:text-red-300;
 }
 </style> 

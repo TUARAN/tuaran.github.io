@@ -211,7 +211,7 @@ const experiences = [
     title: '前端开发工程师',
     company: '某电商',
     period: '2018.6 - 2019.9',
-    description: '负责B2B医药商城和优佳护小程序开发，使用velocity模板引擎、Uniapp框架等技术。'
+    description: '负责B2B商城web端和小程序开发，使用velocity模板引擎、Uniapp框架等技术。'
   },
   {
     title: '技术博主 & 签约作者',

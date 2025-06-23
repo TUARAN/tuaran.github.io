@@ -94,7 +94,8 @@ import {
   Sun, 
   Moon, 
   Menu, 
-  X 
+  X, 
+  TrendingUp 
 } from 'lucide-vue-next';
 
 const route = useRoute();
