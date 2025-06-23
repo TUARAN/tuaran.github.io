@@ -5,7 +5,10 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build && powershell -Command \"Copy-Item -Path 'dist/*' -Destination '../' -Recurse -Force\"",
+    "build": "vite build",
+    "build:cloudflare": "vite build",
+    "build:github": "vite build && powershell -Command \"Copy-Item -Path 'dist/*' -Destination '../' -Recurse -Force\"",
+    "build:all": "npm run build:cloudflare && npm run build:github",
     "preview": "vite preview"
   },
   "dependencies": {
