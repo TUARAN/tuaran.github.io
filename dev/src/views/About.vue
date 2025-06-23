@@ -1,280 +1,408 @@
 <template>
-  <div class="min-h-screen bg-gradient-to-br from-zinc-900 via-black to-zinc-900 py-16 px-6">
-    <div class="max-w-4xl mx-auto">
-      <!-- Header -->
-      <div class="text-center mb-16">
-        <h1 class="text-5xl md:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 mb-6">
-          关于开发者
-        </h1>
-        <p class="text-xl text-zinc-400 max-w-2xl mx-auto">
-          一个像没有明天一样疯狂编码的开发者的故事，
-          一次一行代码地构建去中心化的未来。
+  <div class="container mx-auto px-6">
+    <!-- Hero Section -->
+    <div class="text-center mb-16">
+      <div class="relative inline-block mb-8">
+        <div class="w-32 h-32 bg-gradient-to-br from-cyan-400 via-blue-500 to-purple-600 rounded-full flex items-center justify-center shadow-2xl shadow-cyan-500/25 animate-pulse">
+          <span class="text-white font-bold text-4xl">T</span>
+        </div>
+        <div class="absolute -bottom-2 -right-2 w-8 h-8 bg-green-400 rounded-full border-4 border-slate-900 animate-pulse"></div>
+      </div>
+      <h1 class="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-white via-cyan-300 to-purple-300 bg-clip-text text-transparent">
+        tuaran
+      </h1>
+      <p class="text-xl text-gray-300 max-w-2xl mx-auto leading-relaxed mb-8">
+        某211本科毕业 | 多媒体与网络技术专业 | 前端开发工程师
+      </p>
+      
+      <!-- Personal Belief -->
+      <div class="bg-gradient-to-r from-cyan-500/20 to-purple-600/20 backdrop-blur-lg rounded-2xl p-6 border border-cyan-500/30 max-w-4xl mx-auto">
+        <h2 class="text-2xl font-bold text-white mb-4">我的信念</h2>
+        <p class="text-lg text-cyan-300 font-medium leading-relaxed">
+          "Code like hell, open source or die, decentralize the damn world. If my LLM ain't pumping out 10k lines a day, I'm not even alive."
         </p>
+        <p class="text-sm text-gray-400 mt-3">—— 疯狂编码，开源至上，去中心化世界</p>
       </div>
+    </div>
 
-      <!-- Hero Section -->
-      <div class="hero-section mb-16">
-        <div class="hero-content">
-          <div class="hero-text">
-            <h2 class="hero-title">TUARAN</h2>
-            <p class="hero-subtitle">代码开发者 & 去中心化倡导者</p>
-            <p class="hero-description">
-              我不只是一个开发者 - 我是一个代码创造者。每一天，我从想象力的深处
-              和开源社区的广阔资源中提取数千行生产就绪的代码。我的使命？
-              一次一个区块链地去中心化这个世界。
+    <!-- Main Content Grid -->
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+      <!-- About Section -->
+      <div class="lg:col-span-2">
+        <div class="about-card">
+          <h2 class="section-title">我是谁</h2>
+          <div class="space-y-6 text-gray-300 leading-relaxed">
+            <p>
+              你好！我是tuaran，一位拥有5年编程经验、2年项目管理经验的技术博主和签约作者。
+              目前是某央企的一名技术工作者，同时也是一位30岁的奶爸。
             </p>
-            <div class="hero-stats">
-              <div class="hero-stat">
-                <span class="hero-stat-number">10k+</span>
-                <span class="hero-stat-label">行/天</span>
-              </div>
-              <div class="hero-stat">
-                <span class="hero-stat-number">365</span>
-                <span class="hero-stat-label">天连续</span>
-              </div>
-              <div class="hero-stat">
-                <span class="hero-stat-number">42</span>
-                <span class="hero-stat-label">项目</span>
-              </div>
+            <p>
+              我在技术写作领域有着丰富的经验，已发表文章400余篇，累计阅读量超过200万。
+              著有机械工业出版社《程序员成长手记》和小册《扣子通关指南》等技术书籍。
+              同时也是掘金翻译管理团队成员，掘金7级作者。
+            </p>
+            <p>
+              我专注于现代网络技术，在 Vue.js、React、Node.js 和云平台方面拥有专业知识。
+              我的工作涵盖从前端架构到后端系统，始终注重性能和用户体验。
+              擅长使用 Element-admin、Echarts、Uniapp 等框架进行项目开发。
+            </p>
+            <p>
+              2025年，我决定重新回归程序员岗位，继续在技术道路上深耕。
+              2025年3月获得PMP项目管理专业认证，具备敏捷管理能力。
+              我热爱探索新技术，向往自由，喜欢与志同道合的朋友交流。
+              当我不在编码时，你会发现我在为开源项目做贡献，
+              或者通过我的博客分享关于开发和设计的见解。
+            </p>
+          </div>
+        </div>
+
+        <!-- Juejin Achievements -->
+        <div class="about-card mt-8">
+          <h2 class="section-title">掘金成就</h2>
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div class="achievement-item">
+              <div class="achievement-number">社区共建者</div>
+              <div class="achievement-label">身份认证</div>
+            </div>
+            <div class="achievement-item">
+              <div class="achievement-number">优秀创作者</div>
+              <div class="achievement-label">创作认证</div>
+            </div>
+            <div class="achievement-item">
+              <div class="achievement-number">28,248</div>
+              <div class="achievement-label">文章点赞</div>
+            </div>
+            <div class="achievement-item">
+              <div class="achievement-number">2,083,632</div>
+              <div class="achievement-label">文章阅读</div>
             </div>
           </div>
-          <div class="hero-avatar">
-            <div class="avatar-container">
-              <div class="avatar">👨‍💻</div>
-              <div class="status-indicator"></div>
+          <div class="mt-4 p-4 bg-gradient-to-r from-yellow-500/20 to-orange-500/20 rounded-lg border border-yellow-500/30">
+            <div class="text-center">
+              <div class="text-yellow-400 font-bold text-lg">掘力值 99,473</div>
+              <div class="text-yellow-300 text-sm">社区影响力指数</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Experience Timeline -->
+        <div class="about-card mt-8">
+          <h2 class="section-title">工作经历</h2>
+          <div class="space-y-6">
+            <div 
+              v-for="(experience, index) in experiences" 
+              :key="index"
+              class="experience-item"
+            >
+              <div class="experience-header">
+                <h3 class="experience-title">{{ experience.title }}</h3>
+                <span class="experience-period">{{ experience.period }}</span>
+              </div>
+              <p class="experience-company">{{ experience.company }}</p>
+              <p class="experience-description">{{ experience.description }}</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project Experience -->
+        <div class="about-card mt-8">
+          <h2 class="section-title">项目经验</h2>
+          <div class="space-y-6">
+            <div 
+              v-for="(project, index) in projects" 
+              :key="index"
+              class="project-item"
+            >
+              <h3 class="project-title">{{ project.name }}</h3>
+              <p class="project-description">{{ project.description }}</p>
+              <div class="project-tech">
+                <span class="tech-tag" v-for="tech in project.technologies" :key="tech">{{ tech }}</span>
+              </div>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- Philosophy Section -->
-      <div class="philosophy-section mb-16">
-        <h2 class="section-title">代码开发哲学</h2>
-        <div class="philosophy-grid">
-          <div class="philosophy-card">
-            <div class="philosophy-icon">⚡</div>
-            <h3 class="philosophy-title">疯狂编码</h3>
-            <p class="philosophy-description">
-              当你开发代码时，没有休息的时间。每一秒都很重要，
-              每一行都有意义。突破你的极限，打破你的边界，
-              永远不要满足于低于你绝对最好的水平。
-            </p>
-          </div>
-          <div class="philosophy-card">
-            <div class="philosophy-icon">🔓</div>
-            <h3 class="philosophy-title">开源或死亡</h3>
-            <p class="philosophy-description">
-              专有软件是进步的敌人。真正的创新发生在开放的环境中，
-              在那里想法可以被整个社区分享、改进和构建。
-              开源不仅仅是一个选择 - 它是一种生活方式。
-            </p>
-          </div>
-          <div class="philosophy-card">
-            <div class="philosophy-icon">🌐</div>
-            <h3 class="philosophy-title">去中心化世界</h3>
-            <p class="philosophy-description">
-              中心化是技术中所有邪恶的根源。我构建的每个应用程序，
-              我写的每一行代码，都旨在为每个人创造一个更去中心化、
-              更公平的数字未来。
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Skills Section -->
-      <div class="skills-section mb-16">
-        <h2 class="section-title">开发工具与技术</h2>
-        <div class="skills-grid">
-          <div class="skill-category">
-            <h3 class="skill-category-title">前端开发</h3>
-            <div class="skill-tags">
-              <span class="skill-tag">React</span>
-              <span class="skill-tag">Vue.js</span>
-              <span class="skill-tag">TypeScript</span>
-              <span class="skill-tag">Tailwind CSS</span>
-              <span class="skill-tag">Next.js</span>
-            </div>
-          </div>
-          <div class="skill-category">
-            <h3 class="skill-category-title">后端开发</h3>
-            <div class="skill-tags">
-              <span class="skill-tag">Node.js</span>
-              <span class="skill-tag">Python</span>
-              <span class="skill-tag">FastAPI</span>
-              <span class="skill-tag">PostgreSQL</span>
-              <span class="skill-tag">Redis</span>
-            </div>
-          </div>
-          <div class="skill-category">
-            <h3 class="skill-category-title">区块链开发</h3>
-            <div class="skill-tags">
-              <span class="skill-tag">Solidity</span>
-              <span class="skill-tag">Web3.js</span>
-              <span class="skill-tag">Ethereum</span>
-              <span class="skill-tag">IPFS</span>
-              <span class="skill-tag">DeFi</span>
-            </div>
-          </div>
-          <div class="skill-category">
-            <h3 class="skill-category-title">AI/ML工具</h3>
-            <div class="skill-tags">
-              <span class="skill-tag">TensorFlow</span>
-              <span class="skill-tag">OpenAI API</span>
-              <span class="skill-tag">LangChain</span>
-              <span class="skill-tag">Pandas</span>
-              <span class="skill-tag">Scikit-learn</span>
+      <!-- Skills & Stats -->
+      <div class="space-y-8">
+        <!-- Skills -->
+        <div class="skills-card">
+          <h2 class="section-title">技能</h2>
+          <div class="space-y-4">
+            <div 
+              v-for="skill in skills" 
+              :key="skill.name"
+              class="skill-item"
+            >
+              <div class="skill-header">
+                <span class="skill-name">{{ skill.name }}</span>
+                <span class="skill-level">{{ skill.level }}%</span>
+              </div>
+              <div class="skill-bar">
+                <div 
+                  class="skill-progress"
+                  :style="{ width: `${skill.level}%` }"
+                ></div>
+              </div>
             </div>
           </div>
         </div>
-      </div>
 
-      <!-- Contact Section -->
-      <div class="contact-section">
-        <h2 class="section-title">加入开发革命</h2>
-        <p class="contact-description">
-          准备好开始疯狂编码了吗？让我们连接起来，一起构建去中心化的未来。
-        </p>
-        <div class="contact-grid">
-          <a href="#" class="contact-card">
-            <span class="contact-icon">🐙</span>
-            <span class="contact-label">GitHub</span>
-          </a>
-          <a href="#" class="contact-card">
-            <span class="contact-icon">🐦</span>
-            <span class="contact-label">Twitter</span>
-          </a>
-          <a href="#" class="contact-card">
-            <span class="contact-icon">💼</span>
-            <span class="contact-label">LinkedIn</span>
-          </a>
-          <a href="#" class="contact-card">
-            <span class="contact-icon">📧</span>
-            <span class="contact-label">邮箱</span>
-          </a>
+        <!-- Stats -->
+        <div class="stats-card">
+          <h2 class="section-title">快速统计</h2>
+          <div class="grid grid-cols-2 gap-4">
+            <div 
+              v-for="stat in stats" 
+              :key="stat.label"
+              class="stat-item"
+            >
+              <div class="stat-number">{{ stat.value }}</div>
+              <div class="stat-label">{{ stat.label }}</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contact -->
+        <div class="contact-card">
+          <h2 class="section-title">联系我</h2>
+          <p class="text-gray-300 text-sm mb-6">
+            我热爱探索新技术，向往自由，喜欢与志同道合的朋友交流。欢迎互关交友！
+          </p>
+          <div class="space-y-3">
+            <a 
+              v-for="contact in contacts" 
+              :key="contact.name"
+              :href="contact.url"
+              class="contact-link"
+            >
+              <component :is="contact.icon" class="w-4 h-4" />
+              <span>{{ contact.name }}</span>
+            </a>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </template>
 
+<script setup>
+import { 
+  Mail, 
+  Github, 
+  Linkedin, 
+  Twitter, 
+  Globe 
+} from 'lucide-vue-next';
+
+const experiences = [
+  {
+    title: '技术工作者',
+    company: '某央企',
+    period: '2020.10 - 至今',
+    description: '2020年10月加入某央企，2023年1月转岗至项目经理，2025年决定重新回归程序员岗位。'
+  },
+  {
+    title: '前端开发工程师',
+    company: '某游戏公司',
+    period: '2019.10 - 2020.10',
+    description: '负责日志文件平台、安全展示平台、梯控系统等项目的开发，使用Vue全家桶、Echarts、Uniapp等技术栈。'
+  },
+  {
+    title: '前端开发工程师',
+    company: '某电商',
+    period: '2018.6 - 2019.9',
+    description: '负责B2B医药商城和优佳护小程序开发，使用velocity模板引擎、Uniapp框架等技术。'
+  },
+  {
+    title: '技术博主 & 签约作者',
+    company: '自由职业',
+    period: '2018 - 至今',
+    description: '发表技术文章400余篇，累计阅读量200余万，掘金翻译管理团队成员，掘金7级作者。'
+  }
+];
+
+const projects = [
+  {
+    name: 'AI大模型落地项目',
+    description: '负责AI大模型在企业内部的落地应用，包括模型部署、接口开发、业务集成等。',
+    technologies: ['Python', 'AI/ML', 'API开发', '微服务']
+  },
+  {
+    name: '大型后台管理系统',
+    description: '央企核心业务后台管理系统，负责用户管理、权限控制、数据统计等功能模块开发。',
+    technologies: ['Vue3', 'Element Plus', 'TypeScript', 'Node.js']
+  },
+  {
+    name: '甄选项目管理',
+    description: '作为项目经理负责甄选项目的全流程管理，包括需求分析、团队协调、进度控制等。',
+    technologies: ['项目管理', '敏捷开发', '团队协作']
+  },
+  {
+    name: '科创项目管理',
+    description: '负责科创项目的管理平台开发，包括项目申报、评审、跟踪等功能。',
+    technologies: ['Vue', 'Element UI', '工作流', '数据可视化']
+  },
+  {
+    name: '日志文件平台',
+    description: '专注产品的Crash监控、崩溃分析等质量跟踪服务和运营统计平台。',
+    technologies: ['Vue', 'Element-admin', 'Echarts', 'Axios']
+  },
+  {
+    name: '安全展示平台',
+    description: '自研游戏安全加固、安全分析的展示平台与后台管理系统。',
+    technologies: ['Vue2', 'Echarts', '地图可视化']
+  },
+  {
+    name: '梯控系统',
+    description: '疫情下的物联网项目，手机扫码在H5页面操作电梯，无接触减少感染风险。',
+    technologies: ['Vue-cli4', 'Vant', 'WebSocket']
+  },
+  {
+    name: 'B2B医药商城',
+    description: '持证商铺在平台批量选购所需商品的商城平台。',
+    technologies: ['Velocity', 'ERP系统', '腾讯企点']
+  },
+  {
+    name: '电商小程序',
+    description: '护士上门服务的医疗到家小程序，分为患者端和护士端。',
+    technologies: ['Uniapp', '小程序开发', '定位服务']
+  }
+];
+
+const skills = [
+  { name: 'Vue.js', level: 95 },
+  { name: 'Element UI', level: 90 },
+  { name: 'Echarts', level: 85 },
+  { name: 'Uniapp', level: 80 },
+  { name: 'Node.js', level: 75 },
+  { name: 'SCSS', level: 85 },
+  { name: 'Git', level: 90 },
+  { name: 'Jenkins', level: 70 },
+  { name: 'PMP认证', level: 95 },
+  { name: '敏捷管理', level: 90 }
+];
+
+const stats = [
+  { value: '5+', label: '年编程经验' },
+  { value: '400+', label: '技术文章' },
+  { value: '208万+', label: '阅读量' },
+  { value: 'PMP认证', label: '项目管理' }
+];
+
+const contacts = [
+  { name: 'GitHub', icon: Github, url: 'https://github.com/tuaran' },
+  { name: '个人博客', icon: Globe, url: 'https://tuaran.github.io' },
+  { name: '掘金', icon: Linkedin, url: 'https://juejin.cn/user/5bcd67a8e51d457947022910' }
+];
+</script>
+
 <style scoped>
-.hero-section {
-  @apply bg-zinc-800/50 backdrop-blur-sm border border-zinc-700 rounded-xl p-8;
-}
-
-.hero-content {
-  @apply flex flex-col lg:flex-row items-center gap-8;
-}
-
-.hero-text {
-  @apply flex-1;
-}
-
-.hero-title {
-  @apply text-4xl font-black text-white mb-2;
-}
-
-.hero-subtitle {
-  @apply text-xl text-cyan-400 font-semibold mb-4 !important;
-}
-
-.hero-description {
-  @apply text-zinc-400 text-lg leading-relaxed mb-6;
-}
-
-.hero-stats {
-  @apply flex space-x-8;
-}
-
-.hero-stat {
-  @apply text-center;
-}
-
-.hero-stat-number {
-  @apply block text-2xl font-bold text-cyan-400 !important;
-}
-
-.hero-stat-label {
-  @apply text-sm text-zinc-500 uppercase tracking-wider;
-}
-
-.hero-avatar {
-  @apply flex-shrink-0;
-}
-
-.avatar-container {
-  @apply relative;
-}
-
-.avatar {
-  @apply text-8xl bg-gradient-to-r from-cyan-500 to-blue-600 rounded-full w-32 h-32 flex items-center justify-center;
-}
-
-.status-indicator {
-  @apply absolute bottom-2 right-2 w-4 h-4 bg-green-500 rounded-full border-2 border-zinc-900 animate-pulse;
+.about-card {
+  @apply bg-white/10 backdrop-blur-lg rounded-2xl p-8 border border-white/20;
 }
 
 .section-title {
-  @apply text-3xl font-bold text-white text-center mb-12;
+  @apply text-2xl font-bold text-white mb-6;
 }
 
-.philosophy-grid {
-  @apply grid grid-cols-1 md:grid-cols-3 gap-8;
+.experience-item {
+  @apply border-l-2 border-cyan-500 pl-6 pb-6 last:pb-0;
 }
 
-.philosophy-card {
-  @apply bg-zinc-800/50 backdrop-blur-sm border border-zinc-700 rounded-xl p-6 text-center transition-all duration-300 hover:bg-zinc-800/70 hover:border-cyan-500/50;
+.experience-header {
+  @apply flex items-center justify-between mb-2;
 }
 
-.philosophy-icon {
-  @apply text-4xl mb-4;
+.experience-title {
+  @apply text-lg font-semibold text-white;
 }
 
-.philosophy-title {
-  @apply text-xl font-bold text-white mb-3;
+.experience-period {
+  @apply text-sm text-gray-400;
 }
 
-.philosophy-description {
-  @apply text-zinc-400 text-sm leading-relaxed;
+.experience-company {
+  @apply text-cyan-400 font-medium mb-2;
 }
 
-.skills-grid {
-  @apply grid grid-cols-1 md:grid-cols-2 gap-8;
+.experience-description {
+  @apply text-gray-300 text-sm leading-relaxed;
 }
 
-.skill-category {
-  @apply bg-zinc-800/50 backdrop-blur-sm border border-zinc-700 rounded-xl p-6;
+.project-item {
+  @apply border-l-2 border-purple-500 pl-6 pb-6 last:pb-0;
 }
 
-.skill-category-title {
-  @apply text-lg font-bold text-white mb-4;
+.project-title {
+  @apply text-lg font-semibold text-white mb-2;
 }
 
-.skill-tags {
+.project-description {
+  @apply text-gray-300 text-sm leading-relaxed mb-3;
+}
+
+.project-tech {
   @apply flex flex-wrap gap-2;
 }
 
-.skill-tag {
-  @apply bg-cyan-500/20 text-cyan-400 text-sm px-3 py-1 rounded-full border border-cyan-500/30 !important;
+.tech-tag {
+  @apply px-3 py-1 bg-purple-500/20 text-purple-300 text-xs rounded-full border border-purple-500/30;
 }
 
-.contact-description {
-  @apply text-zinc-400 text-center mb-8 max-w-2xl mx-auto;
+.skills-card, .stats-card, .contact-card {
+  @apply bg-white/10 backdrop-blur-lg rounded-2xl p-6 border border-white/20;
 }
 
-.contact-grid {
-  @apply grid grid-cols-2 md:grid-cols-4 gap-4;
+.skill-item {
+  @apply space-y-2;
 }
 
-.contact-card {
-  @apply bg-zinc-800/50 backdrop-blur-sm border border-zinc-700 rounded-xl p-6 text-center transition-all duration-300 hover:bg-zinc-800/70 hover:border-cyan-500/50 hover:transform hover:scale-105 flex flex-col items-center;
+.skill-header {
+  @apply flex justify-between text-sm;
 }
 
-.contact-icon {
-  @apply text-3xl mb-2;
+.skill-name {
+  @apply text-white font-medium;
 }
 
-.contact-label {
-  @apply text-sm text-zinc-400;
+.skill-level {
+  @apply text-gray-400;
+}
+
+.skill-bar {
+  @apply h-2 bg-white/10 rounded-full overflow-hidden;
+}
+
+.skill-progress {
+  @apply h-full bg-gradient-to-r from-cyan-500 to-purple-600 rounded-full transition-all duration-1000;
+}
+
+.stat-item {
+  @apply text-center p-4 bg-white/5 rounded-xl;
+}
+
+.stat-number {
+  @apply text-2xl font-bold text-white mb-1;
+}
+
+.stat-label {
+  @apply text-xs text-gray-400;
+}
+
+.contact-link {
+  @apply flex items-center space-x-3 p-3 rounded-lg bg-white/5 hover:bg-white/10 text-gray-300 hover:text-white transition-all duration-300;
+}
+
+.achievement-item {
+  @apply text-center p-4 bg-white/5 rounded-xl border border-white/10;
+}
+
+.achievement-number {
+  @apply text-lg font-bold text-white mb-1;
+}
+
+.achievement-label {
+  @apply text-xs text-gray-400;
 }
 </style> 

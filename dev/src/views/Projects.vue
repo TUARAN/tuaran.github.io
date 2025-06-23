@@ -1,286 +1,250 @@
 <template>
-  <div class="min-h-screen bg-gradient-to-br from-zinc-900 via-black to-zinc-900 py-16 px-6">
-    <div class="max-w-7xl mx-auto">
-      <!-- Header -->
-      <div class="text-center mb-16">
-        <h1 class="text-5xl md:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 mb-6">
-          开发项目
-        </h1>
-        <p class="text-xl text-zinc-400 max-w-3xl mx-auto">
-          深入代码库，从每一行代码中提取价值。
-          这些是让我保持活力并让世界去中心化的项目。
-        </p>
-      </div>
+  <div class="container mx-auto px-6">
+    <!-- Hero Section -->
+    <div class="text-center mb-12">
+      <h1 class="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-white via-cyan-300 to-purple-300 bg-clip-text text-transparent">
+        精选项目
+      </h1>
+      <p class="text-xl text-gray-300 max-w-2xl mx-auto">
+        展示前沿技术和创新解决方案的项目集合
+      </p>
+    </div>
 
-      <!-- Project Grid -->
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <div v-for="project in projects" :key="project.id" class="project-card">
-          <div class="project-header">
-            <div class="project-icon">
-              {{ project.icon }}
-            </div>
-            <div class="project-status" :class="project.status">
-              {{ project.status }}
+    <!-- Filters -->
+    <div class="flex flex-wrap justify-center gap-4 mb-12">
+      <button 
+        v-for="category in categories" 
+        :key="category"
+        @click="selectedCategory = category"
+        class="filter-btn"
+        :class="{ 'filter-btn-active': selectedCategory === category }"
+      >
+        {{ category }}
+      </button>
+    </div>
+
+    <!-- Projects Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div 
+        v-for="project in filteredProjects" 
+        :key="project.id"
+        class="project-card group"
+      >
+        <!-- Project Image -->
+        <div class="project-image">
+          <div class="project-overlay">
+            <div class="project-actions">
+              <a 
+                :href="project.demo" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                class="action-btn"
+                title="查看演示"
+              >
+                <ExternalLink class="w-4 h-4" />
+              </a>
+              <a 
+                :href="project.github" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                class="action-btn"
+                title="查看源码"
+              >
+                <Github class="w-4 h-4" />
+              </a>
             </div>
           </div>
-          
+          <div class="project-category">{{ project.category }}</div>
+        </div>
+
+        <!-- Project Content -->
+        <div class="project-content">
           <h3 class="project-title">{{ project.title }}</h3>
           <p class="project-description">{{ project.description }}</p>
           
-          <div class="project-stats">
-            <div class="stat">
-              <span class="stat-number">{{ project.stars }}</span>
-              <span class="stat-label">⭐</span>
-            </div>
-            <div class="stat">
-              <span class="stat-number">{{ project.forks }}</span>
-              <span class="stat-label">🔀</span>
-            </div>
-            <div class="stat">
-              <span class="stat-number">{{ project.lines }}</span>
-              <span class="stat-label">📝</span>
-            </div>
-          </div>
-          
-          <div class="tech-stack">
-            <span v-for="tech in project.tech" :key="tech" class="tech-tag">
-              {{ tech }}
+          <!-- Project Tags -->
+          <div class="project-tags">
+            <span 
+              v-for="tag in project.tags.slice(0, 3)" 
+              :key="tag"
+              class="project-tag"
+            >
+              {{ tag }}
+            </span>
+            <span v-if="project.tags.length > 3" class="project-tag-more">
+              +{{ project.tags.length - 3 }}
             </span>
           </div>
-          
-          <div class="project-actions">
-            <a :href="project.github" target="_blank" class="btn-primary">
-              <span class="mr-2">🐙</span>
-              查看代码
-            </a>
-            <a v-if="project.demo" :href="project.demo" target="_blank" class="btn-secondary">
-              <span class="mr-2">🚀</span>
-              在线演示
-            </a>
-          </div>
-        </div>
-      </div>
 
-      <!-- Development Stats -->
-      <div class="mt-20">
-        <h2 class="text-3xl font-bold text-white text-center mb-12">开发统计</h2>
-        <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
-          <div class="mining-stat">
-            <div class="mining-stat-icon">⚡</div>
-            <div class="mining-stat-number" id="totalLines">0</div>
-            <div class="mining-stat-label">总代码行数</div>
+          <!-- Project Stats -->
+          <div class="project-stats">
+            <div class="stat-item">
+              <Star class="w-4 h-4 text-yellow-400" />
+              <span>{{ formatNumber(project.stars) }}</span>
+            </div>
+            <div class="stat-item">
+              <GitBranch class="w-4 h-4 text-blue-400" />
+              <span>{{ formatNumber(project.forks) }}</span>
+            </div>
+            <div class="stat-item">
+              <Clock class="w-4 h-4 text-gray-400" />
+              <span>{{ formatDate(project.updated) }}</span>
+            </div>
           </div>
-          <div class="mining-stat">
-            <div class="mining-stat-icon">🔧</div>
-            <div class="mining-stat-number" id="totalProjects">0</div>
-            <div class="mining-stat-label">项目数量</div>
-          </div>
-          <div class="mining-stat">
-            <div class="mining-stat-icon">🌐</div>
-            <div class="mining-stat-number" id="totalCommits">0</div>
-            <div class="mining-stat-label">提交次数</div>
-          </div>
-          <div class="mining-stat">
-            <div class="mining-stat-icon">🔥</div>
-            <div class="mining-stat-number" id="streakDays">0</div>
-            <div class="mining-stat-label">连续天数</div>
+
+          <!-- Project Status -->
+          <div class="project-status">
+            <div class="status-indicator active"></div>
+            <span class="status-text">活跃</span>
           </div>
         </div>
       </div>
+    </div>
+
+    <!-- Load More Button -->
+    <div class="text-center mt-12">
+      <button class="load-more-btn">
+        <span>加载更多项目</span>
+        <ArrowDown class="w-4 h-4 ml-2" />
+      </button>
     </div>
   </div>
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue'
+import { ref, computed } from 'vue';
+import { 
+  ExternalLink, 
+  Github, 
+  Star, 
+  GitBranch, 
+  Clock, 
+  ArrowDown 
+} from 'lucide-vue-next';
+import projectsData from '../data/projects.json';
 
-const projects = ref([
-  {
-    id: 1,
-    title: "DeFi协议",
-    description: "基于以太坊构建的去中心化金融协议。实现无需许可的借贷功能。",
-    icon: "💰",
-    status: "活跃",
-    stars: 1234,
-    forks: 567,
-    lines: 45000,
-    tech: ["Solidity", "React", "Web3.js"],
-    github: "#",
-    demo: "#"
-  },
-  {
-    id: 2,
-    title: "AI交易机器人",
-    description: "基于机器学习的交易机器人，挖掘市场数据寻找盈利机会。",
-    icon: "🤖",
-    status: "活跃",
-    stars: 892,
-    forks: 234,
-    lines: 32000,
-    tech: ["Python", "TensorFlow", "FastAPI"],
-    github: "#",
-    demo: null
-  },
-  {
-    id: 3,
-    title: "区块链浏览器",
-    description: "实时区块链浏览器，具有高级分析和可视化工具。",
-    icon: "🔍",
-    status: "活跃",
-    stars: 567,
-    forks: 123,
-    lines: 28000,
-    tech: ["Vue.js", "Node.js", "PostgreSQL"],
-    github: "#",
-    demo: "#"
-  },
-  {
-    id: 4,
-    title: "代码生成器",
-    description: "AI驱动的代码生成器，每天产出1万行生产就绪的代码。",
-    icon: "⚙️",
-    status: "活跃",
-    stars: 2345,
-    forks: 789,
-    lines: 15000,
-    tech: ["TypeScript", "OpenAI", "Vite"],
-    github: "#",
-    demo: "#"
-  },
-  {
-    id: 5,
-    title: "去中心化社交",
-    description: "基于区块链构建的社交媒体平台。无审查，无中心化。",
-    icon: "🌐",
-    status: "活跃",
-    stars: 678,
-    forks: 345,
-    lines: 52000,
-    tech: ["IPFS", "React", "Solidity"],
-    github: "#",
-    demo: "#"
-  },
-  {
-    id: 6,
-    title: "开发仪表板",
-    description: "实时监控代码开发操作和生产力指标的仪表板。",
-    icon: "📊",
-    status: "活跃",
-    stars: 445,
-    forks: 167,
-    lines: 18000,
-    tech: ["Vue.js", "D3.js", "WebSocket"],
-    github: "#",
-    demo: "#"
+const selectedCategory = ref('全部');
+const projects = ref(projectsData);
+
+const categories = ['全部', 'AI/ML', 'UI/UX', 'Web3', 'Web'];
+
+const filteredProjects = computed(() => {
+  if (selectedCategory.value === '全部') {
+    return projects.value;
   }
-])
+  return projects.value.filter(project => project.category === selectedCategory.value);
+});
 
-onMounted(() => {
-  // Animate mining stats
-  const animateStat = (elementId, target, duration = 2000) => {
-    const element = document.getElementById(elementId)
-    if (!element) return
-    
-    let start = 0
-    const increment = target / (duration / 16)
-    
-    const timer = setInterval(() => {
-      start += increment
-      if (start >= target) {
-        start = target
-        clearInterval(timer)
-      }
-      element.textContent = Math.floor(start).toLocaleString()
-    }, 16)
+const formatNumber = (num) => {
+  if (num >= 1000) {
+    return (num / 1000).toFixed(1) + 'k';
   }
+  return num.toString();
+};
 
-  setTimeout(() => {
-    animateStat('totalLines', 180000)
-    animateStat('totalProjects', 42)
-    animateStat('totalCommits', 1337)
-    animateStat('streakDays', 365)
-  }, 1000)
-})
+const formatDate = (dateString) => {
+  const date = new Date(dateString);
+  const now = new Date();
+  const diffTime = Math.abs(now - date);
+  const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+  
+  if (diffDays === 1) return '1 天前';
+  if (diffDays < 7) return `${diffDays} 天前`;
+  if (diffDays < 30) return `${Math.floor(diffDays / 7)} 周前`;
+  return `${Math.floor(diffDays / 30)} 个月前`;
+};
 </script>
 
 <style scoped>
+.filter-btn {
+  @apply px-6 py-3 rounded-xl text-sm font-medium text-gray-300 hover:text-white transition-all duration-300 bg-white/10 hover:bg-white/20 backdrop-blur-lg border border-white/20;
+}
+
+.filter-btn-active {
+  @apply bg-gradient-to-r from-cyan-500 to-purple-600 text-white shadow-lg border-transparent;
+}
+
 .project-card {
-  @apply bg-zinc-800/50 backdrop-blur-sm border border-zinc-700 rounded-xl p-6 transition-all duration-300 hover:bg-zinc-800/70 hover:border-cyan-500/50 hover:transform hover:scale-105;
+  @apply bg-white/10 backdrop-blur-lg rounded-2xl border border-white/20 overflow-hidden hover:bg-white/15 transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-cyan-500/20;
 }
 
-.project-header {
-  @apply flex items-center justify-between mb-4;
+.project-image {
+  @apply relative h-48 bg-gradient-to-br from-slate-800 to-slate-900 flex items-center justify-center overflow-hidden;
 }
 
-.project-icon {
-  @apply text-3xl;
-}
-
-.project-status {
-  @apply text-xs font-bold px-2 py-1 rounded-full;
-}
-
-.project-status.active {
-  @apply bg-green-500/20 text-green-400 border border-green-500/30;
-}
-
-.project-title {
-  @apply text-xl font-bold text-white mb-3;
-}
-
-.project-description {
-  @apply text-zinc-400 text-sm mb-4 leading-relaxed;
-}
-
-.project-stats {
-  @apply flex space-x-4 mb-4;
-}
-
-.stat {
-  @apply flex items-center space-x-1;
-}
-
-.stat-number {
-  @apply text-sm font-bold text-cyan-400 !important;
-}
-
-.stat-label {
-  @apply text-sm;
-}
-
-.tech-stack {
-  @apply flex flex-wrap gap-2 mb-4;
-}
-
-.tech-tag {
-  @apply bg-zinc-700 text-zinc-300 text-xs px-2 py-1 rounded-full;
+.project-overlay {
+  @apply absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center justify-center;
 }
 
 .project-actions {
-  @apply flex space-x-3;
+  @apply flex space-x-4;
 }
 
-.btn-primary {
-  @apply bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white font-medium py-2 px-4 rounded-lg transition-all duration-300 transform hover:scale-105 flex items-center text-sm;
+.action-btn {
+  @apply w-10 h-10 bg-white/20 backdrop-blur-lg rounded-lg flex items-center justify-center text-white hover:bg-white/30 transition-all duration-300 hover:scale-110;
 }
 
-.btn-secondary {
-  @apply bg-zinc-700 hover:bg-zinc-600 text-zinc-300 hover:text-white font-medium py-2 px-4 rounded-lg transition-all duration-300 transform hover:scale-105 flex items-center text-sm;
+.project-category {
+  @apply absolute top-4 left-4 px-3 py-1 bg-gradient-to-r from-cyan-500 to-purple-600 text-white text-xs font-medium rounded-full;
 }
 
-.mining-stat {
-  @apply bg-zinc-800/50 backdrop-blur-sm border border-zinc-700 rounded-xl p-6 text-center transition-all duration-300 hover:bg-zinc-800/70 hover:border-cyan-500/50;
+.project-content {
+  @apply p-6;
 }
 
-.mining-stat-icon {
-  @apply text-3xl mb-3;
+.project-title {
+  @apply text-xl font-bold text-white mb-3 group-hover:text-cyan-300 transition-colors duration-300;
 }
 
-.mining-stat-number {
-  @apply text-3xl font-bold text-cyan-400 mb-2 !important;
+.project-description {
+  @apply text-gray-300 text-sm leading-relaxed mb-4 line-clamp-2;
 }
 
-.mining-stat-label {
-  @apply text-sm text-zinc-400 uppercase tracking-wider;
+.project-tags {
+  @apply flex flex-wrap gap-2 mb-4;
+}
+
+.project-tag {
+  @apply px-3 py-1 bg-white/10 text-white text-xs rounded-full border border-white/20;
+}
+
+.project-tag-more {
+  @apply px-3 py-1 bg-white/5 text-gray-400 text-xs rounded-full;
+}
+
+.project-stats {
+  @apply flex items-center justify-between mb-4;
+}
+
+.stat-item {
+  @apply flex items-center space-x-1 text-sm text-gray-400;
+}
+
+.project-status {
+  @apply flex items-center space-x-2;
+}
+
+.status-indicator {
+  @apply w-2 h-2 rounded-full;
+}
+
+.status-indicator.active {
+  @apply bg-green-400 animate-pulse;
+}
+
+.status-text {
+  @apply text-xs text-gray-400;
+}
+
+.load-more-btn {
+  @apply px-8 py-4 bg-gradient-to-r from-cyan-500 to-purple-600 hover:from-cyan-600 hover:to-purple-700 text-white font-medium rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-cyan-500/25 flex items-center mx-auto;
+}
+
+/* Line clamp utility */
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 </style> 

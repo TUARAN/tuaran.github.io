@@ -1,0 +1,102 @@
+{
+  "codeVolumeTrend": {
+    "last7days": {
+      "labels": ["06-17", "06-18", "06-19", "06-20", "06-21", "06-22", "06-23"],
+      "datasets": [
+        {
+          "label": "生成代码",
+          "data": [6400, 3100, 12400, 16200, 2500, 300, 450],
+          "borderColor": "#06b6d4",
+          "backgroundColor": "rgba(6, 182, 212, 0.1)",
+          "fill": true,
+          "tension": 0.4
+        },
+        {
+          "label": "接受代码",
+          "data": [4800, 2400, 10000, 11800, 1800, 100, 350],
+          "borderColor": "#8b5cf6",
+          "backgroundColor": "rgba(139, 92, 246, 0.1)",
+          "fill": true,
+          "tension": 0.4
+        }
+      ]
+    },
+    "last30days": {
+      "labels": ["第1周", "第2周", "第3周", "第4周"],
+      "datasets": [
+        {
+          "label": "生成代码",
+          "data": [8500, 9200, 7800, 9600],
+          "borderColor": "#06b6d4",
+          "backgroundColor": "rgba(6, 182, 212, 0.1)",
+          "fill": true,
+          "tension": 0.4
+        },
+        {
+          "label": "接受代码",
+          "data": [7200, 7800, 6500, 8200],
+          "borderColor": "#8b5cf6",
+          "backgroundColor": "rgba(139, 92, 246, 0.1)",
+          "fill": true,
+          "tension": 0.4
+        }
+      ]
+    },
+    "today": {
+      "labels": ["00:00", "04:00", "08:00", "12:00", "16:00", "20:00", "24:00"],
+      "datasets": [
+        {
+          "label": "生成代码",
+          "data": [150, 280, 420, 380, 320, 180, 90],
+          "borderColor": "#06b6d4",
+          "backgroundColor": "rgba(6, 182, 212, 0.1)",
+          "fill": true,
+          "tension": 0.4
+        },
+        {
+          "label": "接受代码",
+          "data": [120, 220, 350, 320, 280, 150, 70],
+          "borderColor": "#8b5cf6",
+          "backgroundColor": "rgba(139, 92, 246, 0.1)",
+          "fill": true,
+          "tension": 0.4
+        }
+      ]
+    }
+  },
+  "languageDistribution": {
+    "last7days": {
+      "labels": ["TypeScript", "JavaScript", "Python", "Vue", "React", "其他"],
+      "datasets": [
+        {
+          "data": [35, 25, 20, 12, 6, 2],
+          "backgroundColor": [
+            "#3178c6",
+            "#f7df1e",
+            "#3776ab",
+            "#4fc08d",
+            "#61dafb",
+            "#6c757d"
+          ],
+          "borderWidth": 2,
+          "borderColor": "#1e293b"
+        }
+      ]
+    }
+  },
+  "productivityMetrics": {
+    "last7days": {
+      "labels": ["06-17", "06-18", "06-19", "06-20", "06-21", "06-22", "06-23"],
+      "datasets": [
+        {
+          "label": "代码质量评分",
+          "data": [85, 88, 92, 87, 90, 89, 91],
+          "borderColor": "#10b981",
+          "backgroundColor": "rgba(16, 185, 129, 0.1)",
+          "fill": true,
+          "tension": 0.4
+        }
+      ]
+    }
+  }
+} 

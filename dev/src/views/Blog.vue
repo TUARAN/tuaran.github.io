@@ -1,180 +1,231 @@
 <template>
-  <div class="min-h-screen bg-gradient-to-br from-zinc-900 via-black to-zinc-900 py-16 px-6">
-    <div class="max-w-4xl mx-auto">
-      <!-- Header -->
-      <div class="text-center mb-16">
-        <h1 class="text-5xl md:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 mb-6">
-          代码日志
-        </h1>
-        <p class="text-xl text-zinc-400 max-w-2xl mx-auto">
-          来自代码库深处的思考、见解和发现。
-          每一行都讲述一个故事，每一次提交都在构建未来。
-        </p>
-      </div>
+  <div class="container mx-auto px-6">
+    <!-- Hero Section -->
+    <div class="text-center mb-12">
+      <h1 class="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-white via-cyan-300 to-purple-300 bg-clip-text text-transparent">
+        博客与见解
+      </h1>
+      <p class="text-xl text-gray-300 max-w-2xl mx-auto">
+        关于技术、交易策略和开发者生活的思考
+      </p>
+    </div>
 
-      <!-- Featured Post -->
-      <div class="mb-16">
-        <div class="featured-post">
-          <div class="featured-badge">精选</div>
-          <h2 class="featured-title">代码生成的艺术：如何每天产出1万行代码</h2>
-          <p class="featured-excerpt">
-            深入探讨实现大规模代码生成的技术和工具。
-            从AI辅助开发到自动化测试，发现如何保持
-            真正开发者的节奏。
-          </p>
-          <div class="featured-meta">
-            <span class="meta-item">📅 2024年12月15日</span>
-            <span class="meta-item">⏱️ 8分钟阅读</span>
-            <span class="meta-item">🔥 1.2k阅读</span>
-          </div>
-          <button class="btn-primary mt-6">
-            <span class="mr-2">📖</span>
-            阅读全文
-          </button>
-        </div>
-      </div>
+    <!-- Category Filters -->
+    <div class="flex flex-wrap justify-center gap-4 mb-12">
+      <button 
+        v-for="category in categories" 
+        :key="category"
+        @click="selectedCategory = category"
+        class="category-btn"
+        :class="{ 'category-btn-active': selectedCategory === category }"
+      >
+        <component :is="getCategoryIcon(category)" class="w-4 h-4 mr-2" />
+        {{ category }}
+      </button>
+    </div>
 
-      <!-- Blog Posts Grid -->
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
-        <div v-for="post in blogPosts" :key="post.id" class="blog-card">
-          <div class="blog-card-header">
-            <div class="blog-category">{{ post.category }}</div>
-            <div class="blog-date">{{ post.date }}</div>
-          </div>
-          
-          <h3 class="blog-title">{{ post.title }}</h3>
-          <p class="blog-excerpt">{{ post.excerpt }}</p>
-          
-          <div class="blog-meta">
-            <div class="blog-stats">
-              <span class="stat">👁️ {{ post.views }}</span>
-              <span class="stat">💬 {{ post.comments }}</span>
-              <span class="stat">❤️ {{ post.likes }}</span>
+    <!-- Featured Post -->
+    <div v-if="featuredPost" class="mb-12">
+      <div class="featured-post">
+        <div class="featured-layout">
+          <div class="featured-content">
+            <div class="featured-meta">
+              <span class="featured-category">{{ featuredPost.category }}</span>
+              <span class="featured-date">{{ formatDate(featuredPost.id) }}</span>
             </div>
-            <div class="blog-tags">
-              <span v-for="tag in post.tags" :key="tag" class="blog-tag">
+            <h2 class="featured-title">{{ featuredPost.title }}</h2>
+            <p class="featured-excerpt">{{ featuredPost.summary }}</p>
+            <div class="featured-stats">
+              <div class="stat">
+                <Eye class="w-4 h-4" />
+                <span>{{ formatNumber(featuredPost.views) }} 阅读</span>
+              </div>
+              <div class="stat">
+                <Clock class="w-4 h-4" />
+                <span>{{ featuredPost.readTime }} 分钟阅读</span>
+              </div>
+            </div>
+            <div class="featured-tags">
+              <span 
+                v-for="tag in featuredPost.tags.slice(0, 3)" 
+                :key="tag"
+                class="featured-tag"
+              >
                 {{ tag }}
               </span>
             </div>
+            <button class="featured-btn">
+              <span>阅读全文</span>
+              <ArrowRight class="w-4 h-4 ml-2" />
+            </button>
           </div>
+          <div class="featured-image">
+            <div class="image-placeholder">
+              <FileText class="w-16 h-16 text-gray-400" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Blog Posts Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div 
+        v-for="post in filteredPosts" 
+        :key="post.id"
+        class="blog-card group"
+        v-show="post.id !== featuredPost?.id"
+      >
+        <!-- Post Header -->
+        <div class="post-header">
+          <div class="post-category">{{ post.category }}</div>
+          <div class="post-date">{{ formatDate(post.id) }}</div>
+        </div>
+
+        <!-- Post Content -->
+        <div class="post-content">
+          <h3 class="post-title">{{ post.title }}</h3>
+          <p class="post-excerpt">{{ post.summary }}</p>
           
-          <button class="btn-secondary mt-4">
-            <span class="mr-2">📖</span>
-            阅读更多
+          <!-- Post Tags -->
+          <div class="post-tags">
+            <span 
+              v-for="tag in post.tags.slice(0, 2)" 
+              :key="tag"
+              class="post-tag"
+            >
+              {{ tag }}
+            </span>
+            <span v-if="post.tags.length > 2" class="post-tag-more">
+              +{{ post.tags.length - 2 }}
+            </span>
+          </div>
+
+          <!-- Post Stats -->
+          <div class="post-stats">
+            <div class="post-stat">
+              <Eye class="w-4 h-4" />
+              <span>{{ formatNumber(post.views) }}</span>
+            </div>
+            <div class="post-stat">
+              <Clock class="w-4 h-4" />
+              <span>{{ post.readTime }}分钟</span>
+            </div>
+            <div class="post-stat">
+              <Heart class="w-4 h-4" />
+              <span>{{ Math.floor(post.views / 100) }}</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Post Actions -->
+        <div class="post-actions">
+          <button class="read-btn">
+            <span>阅读更多</span>
+            <ArrowRight class="w-4 h-4 ml-2" />
+          </button>
+          <button class="bookmark-btn">
+            <Bookmark class="w-4 h-4" />
           </button>
         </div>
       </div>
+    </div>
 
-      <!-- Newsletter Signup -->
-      <div class="newsletter-section">
-        <div class="newsletter-content">
-          <h3 class="newsletter-title">加入开发团队</h3>
-          <p class="newsletter-description">
-            当发现新的代码技术时获得通知。
-            及时了解去中心化和开源的最新动态。
-          </p>
-          <div class="newsletter-form">
-            <input 
-              type="email" 
-              placeholder="输入您的邮箱地址" 
-              class="newsletter-input"
-            >
-            <button class="btn-primary">
-              <span class="mr-2">⚡</span>
-              订阅
-            </button>
-          </div>
-        </div>
-      </div>
+    <!-- Load More -->
+    <div class="text-center mt-12">
+      <button class="load-more-btn">
+        <span>加载更多文章</span>
+        <ArrowDown class="w-4 h-4 ml-2" />
+      </button>
     </div>
   </div>
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref, computed } from 'vue';
+import { 
+  Code, 
+  TrendingUp, 
+  Heart, 
+  Eye, 
+  Clock, 
+  ArrowRight, 
+  ArrowDown, 
+  Bookmark, 
+  FileText 
+} from 'lucide-vue-next';
+import blogsData from '../data/blogs.json';
 
-const blogPosts = ref([
-  {
-    id: 1,
-    title: "构建去中心化应用：完整指南",
-    excerpt: "创建真正去中心化世界的DApp的逐步指南。从智能合约到前端集成。",
-    category: "区块链",
-    date: "2024年12月12日",
-    views: "2.3k",
-    comments: "45",
-    likes: "128",
-    tags: ["Solidity", "Web3", "DApp"]
-  },
-  {
-    id: 2,
-    title: "AI驱动的代码生成：超越每天1万行",
-    excerpt: "探索先进AI技术，以前所未有的速度生成生产就绪的代码。",
-    category: "AI/ML",
-    date: "2024年12月10日",
-    views: "1.8k",
-    comments: "32",
-    likes: "95",
-    tags: ["AI", "代码生成", "生产力"]
-  },
-  {
-    id: 3,
-    title: "开源的未来：为什么是生死攸关的选择",
-    excerpt: "为什么开源不仅仅是选择，而是技术和未来社会的必需品。",
-    category: "哲学",
-    date: "2024年12月8日",
-    views: "3.1k",
-    comments: "67",
-    likes: "156",
-    tags: ["开源", "哲学", "未来"]
-  },
-  {
-    id: 4,
-    title: "优化开发工作流程以实现最大产出",
-    excerpt: "工具、技术和策略，最大化您的编码生产力并保持真正开发者的节奏。",
-    category: "生产力",
-    date: "2024年12月6日",
-    views: "1.5k",
-    comments: "28",
-    likes: "87",
-    tags: ["生产力", "工具", "工作流程"]
-  },
-  {
-    id: 5,
-    title: "智能合约安全：在DeFi中安全开发",
-    excerpt: "在DeFi生态系统中开发和部署智能合约的基本安全实践。",
-    category: "安全",
-    date: "2024年12月4日",
-    views: "2.7k",
-    comments: "53",
-    likes: "142",
-    tags: ["安全", "智能合约", "DeFi"]
-  },
-  {
-    id: 6,
-    title: "代码开发心理学：在技术中保持活力",
-    excerpt: "保持现代开发无情节奏的心理框架和心理策略。",
-    category: "心态",
-    date: "2024年12月2日",
-    views: "1.9k",
-    comments: "41",
-    likes: "103",
-    tags: ["心态", "心理学", "动机"]
+const selectedCategory = ref('全部');
+const posts = ref(blogsData);
+
+const categories = ['全部', '技术', '交易', '生活'];
+
+const getCategoryIcon = (category) => {
+  const icons = {
+    '技术': Code,
+    '交易': TrendingUp,
+    '生活': Heart,
+    '全部': FileText
+  };
+  return icons[category] || FileText;
+};
+
+const filteredPosts = computed(() => {
+  if (selectedCategory.value === '全部') {
+    return posts.value;
   }
-])
+  return posts.value.filter(post => post.category === selectedCategory.value);
+});
+
+const featuredPost = computed(() => {
+  return filteredPosts.value[0];
+});
+
+const formatNumber = (num) => {
+  if (num >= 1000) {
+    return (num / 1000).toFixed(1) + 'k';
+  }
+  return num.toString();
+};
+
+const formatDate = (id) => {
+  const dates = ['2 天前', '1 周前', '2 周前', '1 个月前'];
+  return dates[id - 1] || '最近';
+};
 </script>
 
 <style scoped>
+.category-btn {
+  @apply flex items-center px-6 py-3 rounded-xl text-sm font-medium text-gray-300 hover:text-white transition-all duration-300 bg-white/10 hover:bg-white/20 backdrop-blur-lg border border-white/20;
+}
+
+.category-btn-active {
+  @apply bg-gradient-to-r from-cyan-500 to-purple-600 text-white shadow-lg border-transparent;
+}
+
 .featured-post {
-  @apply bg-zinc-800/50 backdrop-blur-sm border border-zinc-700 rounded-xl p-8 relative overflow-hidden;
+  @apply bg-white/10 backdrop-blur-lg rounded-2xl border border-white/20 overflow-hidden hover:bg-white/15 transition-all duration-500;
 }
 
-.featured-post::before {
-  content: '';
-  @apply absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-cyan-500 to-blue-600;
+.featured-layout {
+  @apply flex flex-col lg:flex-row;
 }
 
-.featured-badge {
-  @apply inline-block bg-gradient-to-r from-cyan-500 to-blue-600 text-white text-xs font-bold px-3 py-1 rounded-full mb-4;
+.featured-content {
+  @apply p-8 lg:p-12 lg:flex-1;
+}
+
+.featured-meta {
+  @apply flex items-center space-x-4 mb-4;
+}
+
+.featured-category {
+  @apply px-3 py-1 bg-gradient-to-r from-cyan-500 to-purple-600 text-white text-xs font-medium rounded-full;
+}
+
+.featured-date {
+  @apply text-gray-400 text-sm;
 }
 
 .featured-title {
@@ -182,90 +233,113 @@ const blogPosts = ref([
 }
 
 .featured-excerpt {
-  @apply text-zinc-400 text-lg leading-relaxed mb-6;
+  @apply text-gray-300 text-lg leading-relaxed mb-6;
 }
 
-.featured-meta {
-  @apply flex flex-wrap gap-4 text-sm text-zinc-500;
-}
-
-.meta-item {
-  @apply flex items-center;
-}
-
-.blog-card {
-  @apply bg-zinc-800/50 backdrop-blur-sm border border-zinc-700 rounded-xl p-6 transition-all duration-300 hover:bg-zinc-800/70 hover:border-cyan-500/50 hover:transform hover:scale-105;
-}
-
-.blog-card-header {
-  @apply flex items-center justify-between mb-4;
-}
-
-.blog-category {
-  @apply bg-cyan-500/20 text-cyan-400 text-xs font-bold px-2 py-1 rounded-full !important;
-}
-
-.blog-date {
-  @apply text-zinc-500 text-sm;
-}
-
-.blog-title {
-  @apply text-xl font-bold text-white mb-3 leading-tight;
-}
-
-.blog-excerpt {
-  @apply text-zinc-400 text-sm mb-4 leading-relaxed;
-}
-
-.blog-meta {
-  @apply flex flex-col space-y-3;
-}
-
-.blog-stats {
-  @apply flex space-x-4 text-sm text-zinc-500;
+.featured-stats {
+  @apply flex space-x-6 mb-6;
 }
 
 .stat {
-  @apply flex items-center;
+  @apply flex items-center space-x-2 text-gray-400 text-sm;
 }
 
-.blog-tags {
-  @apply flex flex-wrap gap-2;
+.featured-tags {
+  @apply flex flex-wrap gap-2 mb-6;
 }
 
-.blog-tag {
-  @apply bg-zinc-700 text-zinc-300 text-xs px-2 py-1 rounded-full;
+.featured-tag {
+  @apply px-3 py-1 bg-white/10 text-white text-xs rounded-full border border-white/20;
 }
 
-.btn-primary {
-  @apply bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white font-medium py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 flex items-center;
+.featured-btn {
+  @apply px-6 py-3 bg-gradient-to-r from-cyan-500 to-purple-600 hover:from-cyan-600 hover:to-purple-700 text-white font-medium rounded-xl transition-all duration-300 hover:scale-105 flex items-center;
 }
 
-.btn-secondary {
-  @apply bg-zinc-700 hover:bg-zinc-600 text-zinc-300 hover:text-white font-medium py-2 px-4 rounded-lg transition-all duration-300 transform hover:scale-105 flex items-center text-sm;
+.featured-image {
+  @apply lg:w-1/3 lg:flex-shrink-0;
 }
 
-.newsletter-section {
-  @apply bg-gradient-to-r from-cyan-500/10 to-blue-600/10 border border-cyan-500/20 rounded-xl p-8;
+.image-placeholder {
+  @apply h-48 lg:h-full bg-gradient-to-br from-slate-800 to-slate-900 flex items-center justify-center;
 }
 
-.newsletter-content {
-  @apply text-center;
+.blog-card {
+  @apply bg-white/10 backdrop-blur-lg rounded-2xl border border-white/20 overflow-hidden hover:bg-white/15 transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-cyan-500/20;
 }
 
-.newsletter-title {
-  @apply text-2xl font-bold text-white mb-4;
+.post-header {
+  @apply flex items-center justify-between p-6 pb-4;
 }
 
-.newsletter-description {
-  @apply text-zinc-400 mb-6 max-w-md mx-auto;
+.post-category {
+  @apply px-3 py-1 bg-gradient-to-r from-cyan-500 to-purple-600 text-white text-xs font-medium rounded-full;
 }
 
-.newsletter-form {
-  @apply flex flex-col sm:flex-row gap-4 max-w-md mx-auto;
+.post-date {
+  @apply text-gray-400 text-xs;
 }
 
-.newsletter-input {
-  @apply flex-1 bg-zinc-800 border border-zinc-600 text-white placeholder-zinc-400 px-4 py-3 rounded-lg focus:outline-none focus:border-cyan-500 transition-colors;
+.post-content {
+  @apply px-6 pb-4;
+}
+
+.post-title {
+  @apply text-xl font-bold text-white mb-3 group-hover:text-cyan-300 transition-colors duration-300 line-clamp-2;
+}
+
+.post-excerpt {
+  @apply text-gray-300 text-sm leading-relaxed mb-4 line-clamp-3;
+}
+
+.post-tags {
+  @apply flex flex-wrap gap-2 mb-4;
+}
+
+.post-tag {
+  @apply px-2 py-1 bg-white/10 text-white text-xs rounded-full border border-white/20;
+}
+
+.post-tag-more {
+  @apply px-2 py-1 bg-white/5 text-gray-400 text-xs rounded-full;
+}
+
+.post-stats {
+  @apply flex items-center space-x-4;
+}
+
+.post-stat {
+  @apply flex items-center space-x-1 text-gray-400 text-xs;
+}
+
+.post-actions {
+  @apply flex items-center justify-between p-6 pt-4 border-t border-white/10;
+}
+
+.read-btn {
+  @apply flex items-center text-sm text-cyan-400 hover:text-cyan-300 transition-colors duration-300;
+}
+
+.bookmark-btn {
+  @apply p-2 text-gray-400 hover:text-white transition-colors duration-300;
+}
+
+.load-more-btn {
+  @apply px-8 py-4 bg-gradient-to-r from-cyan-500 to-purple-600 hover:from-cyan-600 hover:to-purple-700 text-white font-medium rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-cyan-500/25 flex items-center mx-auto;
+}
+
+/* Line clamp utilities */
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 </style> 

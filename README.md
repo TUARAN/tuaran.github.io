@@ -1,114 +1,144 @@
-# TUARAN - 开发者主页
+# tuaran.github.io
 
-一个现代化的个人开发者主页，展示代码分析、项目管理和博客内容。
+一个现代化的开发者主页，采用 Vue 3 + Tailwind CSS + Glassmorphism 设计风格。
 
-## ✨ 功能特性
-
-### 📊 数据仪表板
-- **代码分析图表**: 展示AI生成代码和接受代码的统计
-- **时间周期选择**: 支持今天、7天、30天的数据查看
-- **实时数据更新**: 动态加载和显示代码生成趋势
-
-### 🚀 项目管理
-- **GitHub项目展示**: 展示个人开源项目
-- **项目分类**: 按技术栈和功能分类
-- **项目统计**: 显示star、fork等关键指标
-
-### 📝 博客系统
-- **文章列表**: 展示技术博客和开发心得
-- **分类标签**: 按主题和技术分类
-- **阅读统计**: 显示文章阅读量和发布时间
-
-## 🛠️ 技术栈
-
-- **前端框架**: Vue 3 + Composition API
-- **构建工具**: Vite
-- **样式框架**: Tailwind CSS
-- **图表库**: Chart.js + vue-chartjs
-- **路由**: Vue Router
-- **部署**: GitHub Pages
-
-## 📁 项目结构
+## 🚀 项目结构
 
 ```
 tuaran.github.io/
-├── index.html              # 生产环境主页
-├── assets/                 # 构建资源文件
-├── dev/                    # 开发源码
+├── index.html              # Vite 构建输出
+├── dev/
 │   ├── src/
-│   │   ├── components/     # Vue组件
-│   │   ├── views/          # 页面视图
-│   │   ├── router/         # 路由配置
-│   │   └── data/           # 数据文件
-│   ├── public/             # 静态资源
-│   └── vite.config.js      # Vite配置
+│   │   ├── views/          # Dashboard.vue / Projects.vue / Blog.vue / About.vue
+│   │   ├── components/     # Navbar, Footer, ChartPanel, Card, TimeSelector 等
+│   │   ├── data/           # analytics.json, projects.json, blogs.json
+│   │   └── router/         # 路由配置
+│   ├── package.json        # 项目依赖
+│   ├── vite.config.js      # Vite 配置
+│   ├── tailwind.config.js  # Tailwind CSS 配置
+│   └── index.html          # 开发入口文件
 └── README.md
 ```
+
+## 🛠 技术栈
+
+- **Vue 3** - 渐进式 JavaScript 框架
+- **Vue Router** - 官方路由管理器
+- **Tailwind CSS** - 实用优先的 CSS 框架
+- **Vite** - 下一代前端构建工具
+- **Chart.js** - 图表库
+- **Glassmorphism** - 玻璃质感设计风格
+
+## 📦 功能模块
+
+### ⚡ AI 编程仪表板（Dashboard）
+- 统计 AI 生成 vs 接受的代码量
+- 支持"今日 / 7天 / 30天"视图切换
+- 可视化采用卡片 + 渐变玻璃材质
+- 暗黑和亮色主题自动切换
+
+### 🚀 GitHub 项目看板（Projects）
+- 项目卡片网格，卡片悬浮抬起
+- 显示 Star/Fork/更新日期
+- 支持按语言或类型分类筛选
+- 骨架屏+懒加载动画
+
+### 📝 博文板块（Blog）
+- 博文分为 技术 / 交易 / 生活 三类
+- 卡片式排版，鼠标 hover 展示摘要
+- 支持分页或无限滚动
+- 点击后可弹出详情侧边栏
+
+### 🎨 通用组件
+- **Navbar** - 半透明玻璃质感背景 + 悬浮动效
+- **Card** - 多用途卡片，支持光影及微交互
+- **ChartPanel** - 整合 vue-chartjs，卡片中 hover 展示 tooltip
+- **TimeSelector** - 切换周期时带有条形高亮滑动动画
+- **Footer** - 暗/亮模式自适应
 
 ## 🚀 快速开始
 
 ### 开发环境
 
+1. 进入开发目录：
 ```bash
-# 进入开发目录
 cd dev
+```
 
-# 安装依赖
+2. 安装依赖：
+```bash
 npm install
+```
 
-# 启动开发服务器
+3. 启动开发服务器：
+```bash
 npm run dev
 ```
 
+4. 打开浏览器访问 `http://localhost:5173`
+
 ### 构建部署
 
+1. 构建生产版本：
 ```bash
-# 构建生产版本
 npm run build
-
-# 提交到GitHub
-git add .
-git commit -m "更新网站"
-git push
 ```
 
-## 📊 数据配置
+2. 构建产物将输出到项目根目录，可直接部署到 GitHub Pages
 
-项目数据存储在 `dev/src/data/` 目录下：
+## 🎨 设计特色
 
-- `analytics.json` - 代码分析数据
-- 其他数据文件可根据需要添加
+- **Glassmorphism 风格** - 半透明玻璃质感背景
+- **响应式设计** - 移动优先，完美适配各种设备
+- **暗色模式** - 支持系统主题自动切换
+- **流畅动画** - 页面切换和交互动效
+- **现代化 UI** - 参考 Asana、Geex、Liquid Glass 等界面趋势
 
-## 🎨 自定义
+## 📁 文件说明
 
-### 修改主题
-在 `dev/src/style.css` 中修改Tailwind CSS配置
+### 数据文件 (`dev/src/data/`)
+- `analytics.json` - AI 编程统计数据
+- `projects.json` - GitHub 项目信息
+- `blogs.json` - 博文内容数据
 
-### 更新数据
-编辑 `dev/src/data/` 目录下的JSON文件
+### 视图组件 (`dev/src/views/`)
+- `Dashboard.vue` - AI 编程仪表板
+- `Projects.vue` - 项目展示页面
+- `Blog.vue` - 博文列表页面
+- `About.vue` - 关于页面
 
-### 添加新页面
-1. 在 `dev/src/views/` 创建新组件
-2. 在 `dev/src/router/index.js` 添加路由
-3. 在导航组件中添加链接
+### 通用组件 (`dev/src/components/`)
+- `Navbar.vue` - 导航栏组件
+- `Footer.vue` - 页脚组件
+- `Card.vue` - 卡片组件（待实现）
+- `ChartPanel.vue` - 图表面板（待实现）
+- `TimeSelector.vue` - 时间选择器（待实现）
 
-## 🌐 部署
+## 🔧 配置说明
 
-本项目使用GitHub Pages自动部署：
+### Vite 配置
+- 构建输出目录设置为项目根目录
+- 支持 Vue 单文件组件
+- 自动清空输出目录
 
-1. 推送代码到GitHub仓库
-2. GitHub Pages会自动构建并部署
-3. 访问 `https://[username].github.io` 查看网站
+### Tailwind CSS 配置
+- 启用暗色模式
+- 集成 Glassmorphism 插件
+- 自定义主题扩展
 
-## 📱 响应式设计
+## 📝 开发计划
 
-- 支持桌面端、平板和移动端
-- 自适应布局和交互
-- 优化的移动端体验
+- [x] 项目基础架构搭建
+- [x] 路由配置和页面骨架
+- [x] 数据文件结构设计
+- [ ] 完善各个组件功能
+- [ ] 实现图表可视化
+- [ ] 添加交互动画
+- [ ] 优化性能和用户体验
 
 ## 🤝 贡献
 
-欢迎提交Issue和Pull Request来改进这个项目！
+欢迎提交 Issue 和 Pull Request！
 
 ## 📄 许可证
 

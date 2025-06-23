@@ -1,0 +1,67 @@
+[
+  {
+    "id": 1,
+    "title": "Frontend Weekly Digest CN",
+    "description": "《Frontend Weekly Digest》中文翻译项目，每周更新，精选全球前端开发趋势、工具与实战经验。",
+    "category": "Web",
+    "tags": ["Vue", "翻译", "前端", "周刊"],
+    "stars": 156,
+    "forks": 23,
+    "updated": "2025-06-23",
+    "image": "https://via.placeholder.com/400x250/1e293b/ffffff?text=Frontend+Weekly",
+    "github": "https://github.com/tuaran/frontend-weekly-digest-cn",
+    "demo": "https://tuaran.github.io/frontend-weekly-digest-cn"
+  },
+  {
+    "id": 2,
+    "title": "AI Trading Journal",
+    "description": "AI Trading Journal 是一个开源的交易记录与优化平台，专注于展示人与大模型（AI交易员）在股市、期货、加密市场三大领域的交互过程。项目支持记录每一次与 AI 的对话、交易决策、策略优化和收益分析，帮助用户复盘和提升交易能力。界面美观，数据可视化丰富，适合个人投资者、量化团队和 AI 交易爱好者学习与交流。",
+    "category": "AI/ML",
+    "tags": ["AI", "交易", "数据可视化", "React", "TypeScript"],
+    "stars": 89,
+    "forks": 15,
+    "updated": "2025-06-22",
+    "image": "https://via.placeholder.com/400x250/1e293b/ffffff?text=AI+Trading+Journal",
+    "github": "https://github.com/tuaran/ai-trading-journal",
+    "demo": "https://tuaran.github.io/ai-trading-journal"
+  },
+  {
+    "id": 3,
+    "title": "Blogger Alliance",
+    "description": "Vue 3 + Tailwind CSS project for blogger alliance platform",
+    "category": "UI/UX",
+    "tags": ["Vue 3", "Tailwind CSS", "博客", "联盟"],
+    "stars": 67,
+    "forks": 12,
+    "updated": "2025-06-21",
+    "image": "https://via.placeholder.com/400x250/1e293b/ffffff?text=Blogger+Alliance",
+    "github": "https://github.com/tuaran/blogger-alliance",
+    "demo": "https://tuaran.github.io/blogger-alliance"
+  },
+  {
+    "id": 4,
+    "title": "TreasureToolHub",
+    "description": "持续更新的开发工具推荐平台，精选最实用的开发工具、服务和资源。提供深度评测、使用技巧和最佳实践，帮助开发者提升工作效率，激发创新灵感。适合开发者、DevOps工程师和技术团队发现创新解决方案。",
+    "category": "Web",
+    "tags": ["工具推荐", "开发效率", "DevOps", "Vue"],
+    "stars": 234,
+    "forks": 45,
+    "updated": "2025-06-20",
+    "image": "https://via.placeholder.com/400x250/1e293b/ffffff?text=Treasure+Tool+Hub",
+    "github": "https://github.com/tuaran/TreasureToolHub",
+    "demo": "https://tuaran.github.io/TreasureToolHub"
+  },
+  {
+    "id": 5,
+    "title": "Auto Sync Blog",
+    "description": "自动化同步文章平台（auto-sync-blog）github actions + github pages 掘金文章都在：@https://tuaran.github.io/auto-sync-blog/",
+    "category": "Web3",
+    "tags": ["自动化", "GitHub Actions", "掘金", "同步"],
+    "stars": 123,
+    "forks": 28,
+    "updated": "2025-06-19",
+    "image": "https://via.placeholder.com/400x250/1e293b/ffffff?text=Auto+Sync+Blog",
+    "github": "https://github.com/tuaran/auto-sync-blog",
+    "demo": "https://tuaran.github.io/auto-sync-blog"
+  }
+] 

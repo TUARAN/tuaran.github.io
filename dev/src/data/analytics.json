@@ -1,41 +1,76 @@
 {
-  "periods": {
-    "1d": {
-      "labels": ["今天"],
-      "generated": [15000],
-      "accepted": [12000],
-      "dateRange": "今天"
-    },
-    "7d": {
-      "labels": ["6月16日", "6月17日", "6月18日", "6月19日", "6月20日", "6月21日", "6月22日"],
-      "generated": [2500, 7500, 2500, 13000, 15500, 1000, 8000],
-      "accepted": [1000, 5000, 2000, 11000, 9000, 0, 6000],
-      "dateRange": "6月16日 - 6月22日"
-    },
-    "30d": {
-      "labels": ["5月24日", "5月31日", "6月7日", "6月14日", "6月21日"],
-      "generated": [8000, 12000, 15000, 18000, 20000],
-      "accepted": [6000, 9000, 11000, 14000, 16000],
-      "dateRange": "5月24日 - 6月21日"
-    }
-  },
-  "defaultPeriod": "7d",
-  "chartColors": {
+  "today": {
     "generated": {
-      "backgroundColor": "#67e8f9",
-      "borderColor": "#67e8f9",
-      "pointBackgroundColor": "#67e8f9",
-      "pointBorderColor": "#fff",
-      "pointHoverBackgroundColor": "#fff",
-      "pointHoverBorderColor": "#67e8f9"
+      "lines": 450,
+      "files": 8,
+      "languages": {
+        "TypeScript": 180,
+        "JavaScript": 120,
+        "Python": 90,
+        "Vue": 60
+      }
     },
     "accepted": {
-      "backgroundColor": "#a78bfa",
-      "borderColor": "#a78bfa",
-      "pointBackgroundColor": "#a78bfa",
-      "pointBorderColor": "#fff",
-      "pointHoverBackgroundColor": "#fff",
-      "pointHoverBorderColor": "#a78bfa"
+      "lines": 350,
+      "files": 6,
+      "languages": {
+        "TypeScript": 140,
+        "JavaScript": 90,
+        "Python": 70,
+        "Vue": 50
+      }
+    }
+  },
+  "last7days": {
+    "generated": {
+      "lines": 41550,
+      "files": 45,
+      "languages": {
+        "TypeScript": 14542,
+        "JavaScript": 10387,
+        "Python": 8309,
+        "Vue": 4985,
+        "React": 2492,
+        "其他": 830
+      }
+    },
+    "accepted": {
+      "lines": 31250,
+      "files": 38,
+      "languages": {
+        "TypeScript": 10938,
+        "JavaScript": 7810,
+        "Python": 6250,
+        "Vue": 3740,
+        "React": 1870,
+        "其他": 625
+      }
+    }
+  },
+  "last30days": {
+    "generated": {
+      "lines": 35100,
+      "files": 120,
+      "languages": {
+        "TypeScript": 12285,
+        "JavaScript": 8775,
+        "Python": 7020,
+        "Vue": 4212,
+        "React": 2106,
+        "其他": 702
+      }
+    },
+    "accepted": {
+      "lines": 29700,
+      "files": 95,
+      "languages": {
+        "TypeScript": 10395,
+        "JavaScript": 7425,
+        "Python": 5940,
+        "Vue": 3564,
+        "React": 1782,
+        "其他": 594
+      }
     }
   }
 } 

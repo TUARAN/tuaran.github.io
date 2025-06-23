@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "title": "The Art of Modern Frontend: Vue 3, Tailwind, and Glassmorphism",
+    "category": "技术",
+    "summary": "A deep dive into building next-generation user interfaces with the power of Vue 3's Composition API and the flexibility of Tailwind CSS...",
+    "tags": ["Vue", "Tailwind", "UI/UX", "Frontend"],
+    "readTime": 12,
+    "views": 4500
+  },
+  {
+    "id": 2,
+    "title": "Algorithmic Trading Strategies in Crypto Markets",
+    "category": "交易",
+    "summary": "Exploring quantitative strategies for automated trading, focusing on market making and statistical arbitrage in volatile crypto environments.",
+    "tags": ["Algo-Trading", "Crypto", "DeFi", "Quantitative Finance"],
+    "readTime": 20,
+    "views": 7800
+  },
+  {
+    "id": 3,
+    "title": "Remote Work & The Pursuit of Life Quality",
+    "category": "生活",
+    "summary": "Reflections on five years of remote work: balancing productivity, personal growth, and the freedom to live anywhere.",
+    "tags": ["Remote Work", "Lifestyle", "Productivity"],
+    "readTime": 8,
+    "views": 12000
+  },
+  {
+    "id": 4,
+    "title": "Advanced State Management with Pinia",
+    "category": "技术",
+    "summary": "Why Pinia is the new official state management library for Vue and how it simplifies your application's data flow with its intuitive API.",
+    "tags": ["Vue", "Pinia", "State Management"],
+    "readTime": 10,
+    "views": 3200
+  }
+] 
