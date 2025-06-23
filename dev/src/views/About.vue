@@ -12,16 +12,16 @@
         tuaran
       </h1>
       <p class="text-xl text-gray-300 max-w-2xl mx-auto leading-relaxed mb-8">
-        某211本科毕业 | 多媒体与网络技术专业 | 前端开发工程师
+        计算机科学与技术专业 | 前端架构师 | 技术博主
       </p>
       
       <!-- Personal Belief -->
       <div class="bg-gradient-to-r from-cyan-500/20 to-purple-600/20 backdrop-blur-lg rounded-2xl p-6 border border-cyan-500/30 max-w-4xl mx-auto">
-        <h2 class="text-2xl font-bold text-white mb-4">我的信念</h2>
+        <h2 class="text-2xl font-bold text-white mb-4">技术理念</h2>
         <p class="text-lg text-cyan-300 font-medium leading-relaxed">
-          "Code like hell, open source or die, decentralize the damn world. If my LLM ain't pumping out 10k lines a day, I'm not even alive."
+          "技术驱动创新，代码改变世界。在技术与人文的交叉路口，用优雅的代码构建有温度的数字体验。"
         </p>
-        <p class="text-sm text-gray-400 mt-3">—— 疯狂编码，开源至上，去中心化世界</p>
+        <p class="text-sm text-gray-400 mt-3">—— 追求技术卓越，创造用户价值</p>
       </div>
     </div>
 
