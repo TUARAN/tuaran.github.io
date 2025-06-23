@@ -15,6 +15,9 @@ import { RouterView } from 'vue-router';
       
       <!-- Grid Pattern -->
       <div class="absolute inset-0 opacity-30 bg-grid-pattern"></div>
+      
+      <!-- Particles Background -->
+      <div class="particles"></div>
     </div>
 
     <!-- Content -->
@@ -41,6 +44,48 @@ import { RouterView } from 'vue-router';
 .bg-grid-pattern {
   background-image: radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.02) 1px, transparent 0);
   background-size: 60px 60px;
+}
+
+/* Particles Background */
+.particles {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    radial-gradient(circle at 20% 80%, rgba(120, 119, 198, .4) 0%, transparent 50%), 
+    radial-gradient(circle at 80% 20%, rgba(255, 119, 198, .4) 0%, transparent 50%), 
+    radial-gradient(circle at 40% 40%, rgba(120, 219, 255, .4) 0%, transparent 50%),
+    radial-gradient(circle at 60% 60%, rgba(255, 182, 193, .3) 0%, transparent 50%),
+    radial-gradient(circle at 10% 50%, rgba(173, 216, 230, .3) 0%, transparent 50%);
+  animation: particleFloat 25s ease-in-out infinite;
+  z-index: 1;
+}
+
+@keyframes particleFloat {
+  0%, 100% {
+    transform: translateY(0px) scale(1) rotate(0deg);
+    opacity: 0.4;
+  }
+  16.66% {
+    transform: translateY(-15px) scale(1.1) rotate(60deg);
+    opacity: 0.6;
+  }
+  33.33% {
+    transform: translateY(-8px) scale(1.05) rotate(120deg);
+    opacity: 0.7;
+  }
+  50% {
+    transform: translateY(-20px) scale(1.15) rotate(180deg);
+    opacity: 0.5;
+  }
+  66.66% {
+    transform: translateY(-12px) scale(1.08) rotate(240deg);
+    opacity: 0.6;
+  }
+  83.33% {
+    transform: translateY(-18px) scale(1.12) rotate(300deg);
+    opacity: 0.4;
+  }
 }
 
 /* Page Transitions */

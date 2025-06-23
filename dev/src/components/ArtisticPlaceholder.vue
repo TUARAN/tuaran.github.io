@@ -4,17 +4,9 @@
       <div class="artistic-text">{{ text }}</div>
       <div class="artistic-subtitle">{{ subtitle }}</div>
     </div>
-    <div class="placeholder-overlay"></div>
-    <div class="floating-elements">
-      <div class="floating-element" v-for="i in 5" :key="i" :style="{ animationDelay: `${i * 0.3}s` }"></div>
-    </div>
-    <div class="geometric-shapes">
-      <div class="shape shape-1"></div>
-      <div class="shape shape-2"></div>
-      <div class="shape shape-3"></div>
-    </div>
-    <div class="particle-system">
-      <div class="particle" v-for="i in 8" :key="i" :style="{ animationDelay: `${i * 0.2}s` }"></div>
+    <div class="subtle-overlay"></div>
+    <div class="minimal-elements">
+      <div class="element" v-for="i in 3" :key="i"></div>
     </div>
   </div>
 </template>
@@ -45,19 +37,19 @@ defineProps({
 <style scoped>
 .artistic-placeholder {
   @apply relative w-full h-full flex items-center justify-center overflow-hidden rounded-lg;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
 }
 
 .placeholder-project {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
 }
 
 .placeholder-blog {
-  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  background: linear-gradient(135deg, #1e1b4b 0%, #312e81 100%);
 }
 
 .placeholder-featured {
-  background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
 }
 
 .placeholder-content {
@@ -66,19 +58,17 @@ defineProps({
 
 .artistic-text {
   @apply text-white font-bold tracking-wider;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-  font-family: 'Arial Black', sans-serif;
-  background: linear-gradient(45deg, #ffffff, #f0f0f0, #ffffff);
-  background-size: 200% 200%;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  font-family: 'Inter', 'Arial', sans-serif;
+  background: linear-gradient(45deg, #ffffff, #e2e8f0);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  animation: textShimmer 3s ease-in-out infinite;
 }
 
 .artistic-subtitle {
-  @apply text-white/80 text-xs font-medium tracking-widest mt-1;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+  @apply text-gray-300 text-xs font-medium tracking-widest mt-2;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
 }
 
 /* Size variants */
@@ -106,184 +96,67 @@ defineProps({
   @apply text-base;
 }
 
-.placeholder-overlay {
+.subtle-overlay {
   @apply absolute inset-0 z-10;
-  background: linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.1) 50%, transparent 70%);
-  animation: shimmer 3s ease-in-out infinite;
+  background: linear-gradient(45deg, transparent 40%, rgba(255, 255, 255, 0.05) 50%, transparent 60%);
+  opacity: 0.3;
 }
 
-.floating-elements {
-  @apply absolute inset-0 pointer-events-none z-10;
-}
-
-.floating-element {
-  @apply absolute w-2 h-2 bg-white/20 rounded-full;
-  animation: float 4s ease-in-out infinite;
-}
-
-.floating-element:nth-child(1) {
-  top: 15%;
-  left: 15%;
-}
-
-.floating-element:nth-child(2) {
-  top: 25%;
-  right: 20%;
-}
-
-.floating-element:nth-child(3) {
-  top: 60%;
-  left: 10%;
-}
-
-.floating-element:nth-child(4) {
-  bottom: 25%;
-  right: 15%;
-}
-
-.floating-element:nth-child(5) {
-  bottom: 15%;
-  left: 50%;
-}
-
-.geometric-shapes {
+.minimal-elements {
   @apply absolute inset-0 pointer-events-none z-0;
 }
 
-.shape {
-  @apply absolute;
-  animation: rotate 8s linear infinite;
+.element {
+  @apply absolute w-1 h-1 bg-white/20 rounded-full;
+  animation: gentleFloat 8s ease-in-out infinite;
 }
 
-.shape-1 {
-  @apply w-8 h-8 border-2 border-white/10 rounded-full;
-  top: 20%;
-  right: 10%;
+.element:nth-child(1) {
+  top: 25%;
+  left: 20%;
   animation-delay: 0s;
 }
 
-.shape-2 {
-  @apply w-6 h-6 bg-white/5 rotate-45;
-  bottom: 30%;
-  left: 15%;
+.element:nth-child(2) {
+  top: 60%;
+  right: 25%;
   animation-delay: 2s;
 }
 
-.shape-3 {
-  @apply w-4 h-4 border border-white/10 rounded;
-  top: 70%;
-  right: 25%;
+.element:nth-child(3) {
+  bottom: 30%;
+  left: 60%;
   animation-delay: 4s;
 }
 
-.particle-system {
-  @apply absolute inset-0 pointer-events-none z-0;
-}
-
-.particle {
-  @apply absolute w-1 h-1 bg-white/30 rounded-full;
-  animation: particleFloat 6s ease-in-out infinite;
-}
-
-.particle:nth-child(1) { top: 10%; left: 20%; }
-.particle:nth-child(2) { top: 20%; right: 30%; }
-.particle:nth-child(3) { top: 40%; left: 10%; }
-.particle:nth-child(4) { top: 60%; right: 20%; }
-.particle:nth-child(5) { bottom: 20%; left: 30%; }
-.particle:nth-child(6) { bottom: 40%; right: 10%; }
-.particle:nth-child(7) { bottom: 60%; left: 40%; }
-.particle:nth-child(8) { bottom: 10%; right: 40%; }
-
-@keyframes shimmer {
+@keyframes gentleFloat {
   0%, 100% {
-    transform: translateX(-100%);
-  }
-  50% {
-    transform: translateX(100%);
-  }
-}
-
-@keyframes float {
-  0%, 100% {
-    transform: translateY(0px) scale(1);
+    transform: translateY(0px);
     opacity: 0.2;
   }
   50% {
-    transform: translateY(-15px) scale(1.3);
-    opacity: 0.8;
-  }
-}
-
-@keyframes rotate {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
-@keyframes particleFloat {
-  0%, 100% {
-    transform: translateY(0px) translateX(0px);
-    opacity: 0.3;
-  }
-  25% {
-    transform: translateY(-10px) translateX(5px);
-    opacity: 0.6;
-  }
-  50% {
-    transform: translateY(-5px) translateX(-5px);
-    opacity: 0.8;
-  }
-  75% {
-    transform: translateY(-15px) translateX(3px);
+    transform: translateY(-8px);
     opacity: 0.4;
-  }
-}
-
-@keyframes textShimmer {
-  0%, 100% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
   }
 }
 
 /* Hover effects */
 .artistic-placeholder:hover .artistic-text {
-  transform: scale(1.05);
+  transform: scale(1.02);
   transition: transform 0.3s ease;
 }
 
-.artistic-placeholder:hover .floating-element {
-  animation-duration: 2s;
-}
-
-.artistic-placeholder:hover .shape {
-  animation-duration: 4s;
-}
-
-.artistic-placeholder:hover .particle {
-  animation-duration: 3s;
+.artistic-placeholder:hover .element {
+  animation-duration: 6s;
 }
 
 /* Glassmorphism effect */
 .artistic-placeholder::before {
   content: '';
   @apply absolute inset-0 z-20;
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.02);
+  backdrop-filter: blur(1px);
   border-radius: inherit;
-}
-
-/* Additional decorative elements */
-.artistic-placeholder::after {
-  content: '';
-  @apply absolute top-0 left-0 w-full h-full z-0;
-  background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
-  pointer-events: none;
 }
 
 /* Responsive adjustments */
@@ -296,20 +169,8 @@ defineProps({
     @apply text-3xl;
   }
   
-  .floating-element {
-    @apply w-1 h-1;
-  }
-  
-  .shape-1 {
-    @apply w-6 h-6;
-  }
-  
-  .shape-2 {
-    @apply w-4 h-4;
-  }
-  
-  .shape-3 {
-    @apply w-3 h-3;
+  .element {
+    @apply w-0.5 h-0.5;
   }
 }
 </style> 
