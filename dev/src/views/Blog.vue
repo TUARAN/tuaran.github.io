@@ -431,6 +431,8 @@ const formatDate = (id) => {
 .trading-journal-card {
   @apply cursor-pointer border-2 border-cyan-500/30 hover:border-cyan-500/50;
   background: linear-gradient(135deg, rgba(6, 182, 212, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%);
+  will-change: transform, box-shadow;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .trading-journal-card:hover {
@@ -444,10 +446,12 @@ const formatDate = (id) => {
 
 .trading-journal-icon {
   @apply absolute inset-0 flex items-center justify-center;
+  will-change: transform;
 }
 
 .trading-journal-overlay {
   @apply absolute top-2 right-2 w-8 h-8 bg-red-500/80 rounded-full flex items-center justify-center;
+  will-change: transform;
 }
 
 .trading-journal-card .post-category {
@@ -459,10 +463,10 @@ const formatDate = (id) => {
 }
 
 .trading-journal-card .read-btn {
-  @apply text-cyan-400 hover:text-cyan-300;
+  @apply text-cyan-400 hover:text-cyan-300 transition-colors duration-200;
 }
 
 .trading-journal-card .bookmark-btn {
-  @apply text-red-400 hover:text-red-300;
+  @apply text-red-400 hover:text-red-300 transition-colors duration-200;
 }
 </style> 

@@ -264,12 +264,19 @@ const getStatusText = (status) => {
 </script>
 
 <style scoped>
+/* Performance optimizations */
 .stat-card {
-  @apply bg-white/10 backdrop-blur-lg rounded-2xl border border-white/20 p-6 hover:bg-white/15 transition-all duration-500;
+  @apply bg-white/10 backdrop-blur-lg rounded-2xl border border-white/20 p-6 hover:bg-white/15 transition-all duration-300;
+  will-change: transform, opacity;
+}
+
+.stat-card:hover {
+  @apply transform scale-105;
 }
 
 .stat-icon {
   @apply w-12 h-12 rounded-xl flex items-center justify-center text-white mb-4;
+  will-change: transform;
 }
 
 .stat-value {
@@ -281,7 +288,12 @@ const getStatusText = (status) => {
 }
 
 .insight-card {
-  @apply bg-white/10 backdrop-blur-lg rounded-2xl border border-white/20 p-6 hover:bg-white/15 transition-all duration-500;
+  @apply bg-white/10 backdrop-blur-lg rounded-2xl border border-white/20 p-6 hover:bg-white/15 transition-all duration-300;
+  will-change: transform, opacity;
+}
+
+.insight-card:hover {
+  @apply transform scale-105;
 }
 
 .insight-header {
@@ -306,6 +318,11 @@ const getStatusText = (status) => {
 
 .insight-tag {
   @apply px-3 py-1 bg-white/10 text-white text-xs rounded-full border border-white/20;
+  transition: all 0.2s ease;
+}
+
+.insight-tag:hover {
+  @apply bg-white/20 transform scale-105;
 }
 
 .timeline {
@@ -319,6 +336,7 @@ const getStatusText = (status) => {
 
 .timeline-item {
   @apply relative flex mb-8;
+  will-change: transform, opacity;
 }
 
 .timeline-marker {
@@ -327,6 +345,7 @@ const getStatusText = (status) => {
 
 .timeline-dot {
   @apply w-4 h-4 rounded-full bg-white/20 border-2 border-white/40;
+  will-change: background-color, border-color;
 }
 
 .status-open .timeline-dot {
@@ -346,7 +365,12 @@ const getStatusText = (status) => {
 }
 
 .trade-card {
-  @apply bg-white/10 backdrop-blur-lg rounded-2xl border border-white/20 p-6 hover:bg-white/15 transition-all duration-500;
+  @apply bg-white/10 backdrop-blur-lg rounded-2xl border border-white/20 p-6 hover:bg-white/15 transition-all duration-300;
+  will-change: transform, opacity;
+}
+
+.trade-card:hover {
+  @apply transform scale-105;
 }
 
 .trade-header {
@@ -355,6 +379,7 @@ const getStatusText = (status) => {
 
 .trade-type {
   @apply px-3 py-1 text-xs font-medium rounded-full;
+  will-change: background-color, color;
 }
 
 .type-long {
@@ -419,10 +444,16 @@ const getStatusText = (status) => {
 
 .trade-tag {
   @apply px-2 py-1 bg-white/10 text-white text-xs rounded-full border border-white/20;
+  transition: all 0.2s ease;
+}
+
+.trade-tag:hover {
+  @apply bg-white/20 transform scale-105;
 }
 
 .trade-status {
   @apply px-3 py-1 text-xs font-medium rounded-full;
+  will-change: background-color, color;
 }
 
 .status-open-text {

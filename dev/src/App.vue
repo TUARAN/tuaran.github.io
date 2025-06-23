@@ -40,6 +40,25 @@ import { RouterView } from 'vue-router';
 </template>
 
 <style>
+/* CSS Variables for theming */
+:root {
+  --bg-primary: #ffffff;
+  --bg-secondary: #f1f5f9;
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --accent-primary: #06b6d4;
+  --accent-secondary: #8b5cf6;
+}
+
+.dark {
+  --bg-primary: #0f172a;
+  --bg-secondary: #1e293b;
+  --text-primary: #f8fafc;
+  --text-secondary: #cbd5e1;
+  --accent-primary: #06b6d4;
+  --accent-secondary: #8b5cf6;
+}
+
 /* Grid Pattern Background */
 .bg-grid-pattern {
   background-image: radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.02) 1px, transparent 0);
@@ -59,6 +78,7 @@ import { RouterView } from 'vue-router';
     radial-gradient(circle at 10% 50%, rgba(173, 216, 230, .3) 0%, transparent 50%);
   animation: particleFloat 25s ease-in-out infinite;
   z-index: 1;
+  will-change: transform, opacity;
 }
 
 @keyframes particleFloat {
@@ -88,34 +108,35 @@ import { RouterView } from 'vue-router';
   }
 }
 
-/* Page Transitions */
+/* Optimized Page Transitions */
 .page-enter-active,
 .page-leave-active {
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform, opacity;
 }
 
 .page-enter-from {
   opacity: 0;
-  transform: translateY(20px) scale(0.98);
+  transform: translateY(10px) scale(0.99);
 }
 
 .page-leave-to {
   opacity: 0;
-  transform: translateY(-20px) scale(0.98);
+  transform: translateY(-10px) scale(0.99);
 }
 
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 6px;
 }
 
 ::-webkit-scrollbar-track {
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.05);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, #06b6d4, #8b5cf6);
-  border-radius: 4px;
+  background: linear-gradient(180deg, var(--accent-primary), var(--accent-secondary));
+  border-radius: 3px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
@@ -135,7 +156,33 @@ html {
 
 /* Focus styles */
 *:focus {
-  outline: 2px solid #06b6d4;
+  outline: 2px solid var(--accent-primary);
   outline-offset: 2px;
+}
+
+/* Performance optimizations */
+* {
+  backface-visibility: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  
+  .particles {
+    animation: none;
+  }
+  
+  .animate-pulse {
+    animation: none;
+  }
 }
 </style>

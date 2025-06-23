@@ -5,7 +5,7 @@
         <!-- Logo -->
         <RouterLink to="/" class="flex items-center space-x-3 group">
           <div class="relative">
-            <div class="w-10 h-10 bg-gradient-to-br from-cyan-400 to-blue-600 rounded-xl flex items-center justify-center shadow-lg shadow-cyan-500/25 group-hover:shadow-cyan-500/40 transition-all duration-300 group-hover:scale-110">
+            <div class="w-10 h-10 bg-gradient-to-br from-cyan-400 to-blue-600 rounded-xl flex items-center justify-center shadow-lg shadow-cyan-500/25 group-hover:shadow-cyan-500/40 transition-all duration-200 group-hover:scale-105">
               <span class="text-white font-bold text-lg">T</span>
             </div>
             <div class="absolute -top-1 -right-1 w-3 h-3 bg-green-400 rounded-full animate-pulse"></div>
@@ -37,16 +37,18 @@
           <!-- Theme Toggle -->
           <button 
             @click="toggleTheme"
-            class="p-2 rounded-lg bg-white/10 hover:bg-white/20 transition-all duration-300 group"
+            class="theme-toggle-btn"
+            :title="isDark ? '切换到浅色模式' : '切换到深色模式'"
           >
-            <Sun v-if="isDark" class="w-5 h-5 text-yellow-400 group-hover:rotate-90 transition-transform duration-300" />
-            <Moon v-else class="w-5 h-5 text-blue-400 group-hover:rotate-90 transition-transform duration-300" />
+            <Sun v-if="isDark" class="w-5 h-5 text-yellow-400" />
+            <Moon v-else class="w-5 h-5 text-blue-400" />
           </button>
 
           <!-- Mobile Menu Button -->
           <button 
-            @click="isMenuOpen = !isMenuOpen"
-            class="md:hidden p-2 rounded-lg bg-white/10 hover:bg-white/20 transition-all duration-300"
+            @click="toggleMobileMenu"
+            class="mobile-menu-btn md:hidden"
+            :title="isMenuOpen ? '关闭菜单' : '打开菜单'"
           >
             <Menu v-if="!isMenuOpen" class="w-5 h-5 text-white" />
             <X v-else class="w-5 h-5 text-white" />
@@ -56,22 +58,22 @@
 
       <!-- Mobile Menu -->
       <transition
-        enter-active-class="transition-all duration-300 ease-out"
-        enter-from-class="opacity-0 -translate-y-4"
+        enter-active-class="transition-all duration-200 ease-out"
+        enter-from-class="opacity-0 -translate-y-2"
         enter-to-class="opacity-100 translate-y-0"
-        leave-active-class="transition-all duration-200 ease-in"
+        leave-active-class="transition-all duration-150 ease-in"
         leave-from-class="opacity-100 translate-y-0"
-        leave-to-class="opacity-0 -translate-y-4"
+        leave-to-class="opacity-0 -translate-y-2"
       >
         <div v-if="isMenuOpen" class="md:hidden mt-4 pb-4 border-t border-white/10">
-          <div class="flex flex-col space-y-2 pt-4">
+          <div class="flex flex-col space-y-1 pt-4">
             <RouterLink 
               v-for="item in navItems" 
               :key="item.path"
               :to="item.path" 
               class="mobile-nav-link"
               :class="{ 'mobile-nav-link-active': $route.path === item.path }"
-              @click="isMenuOpen = false"
+              @click="closeMobileMenu"
             >
               <component :is="item.icon" class="w-4 h-4 mr-3" />
               {{ item.label }}
@@ -84,7 +86,7 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue';
+import { ref, onMounted, watch } from 'vue';
 import { RouterLink, useRoute } from 'vue-router';
 import { 
   BarChart3, 
@@ -94,8 +96,7 @@ import {
   Sun, 
   Moon, 
   Menu, 
-  X, 
-  TrendingUp 
+  X
 } from 'lucide-vue-next';
 
 const route = useRoute();
@@ -111,54 +112,123 @@ const navItems = [
 
 const toggleTheme = () => {
   isDark.value = !isDark.value;
-  document.documentElement.classList.toggle('dark');
-  // 保存主题偏好到本地存储
+  applyTheme();
   localStorage.setItem('theme', isDark.value ? 'dark' : 'light');
 };
+
+const applyTheme = () => {
+  const root = document.documentElement;
+  if (isDark.value) {
+    root.classList.add('dark');
+    root.style.setProperty('--bg-primary', '#0f172a');
+    root.style.setProperty('--bg-secondary', '#1e293b');
+    root.style.setProperty('--text-primary', '#f8fafc');
+    root.style.setProperty('--text-secondary', '#cbd5e1');
+  } else {
+    root.classList.remove('dark');
+    root.style.setProperty('--bg-primary', '#ffffff');
+    root.style.setProperty('--bg-secondary', '#f1f5f9');
+    root.style.setProperty('--text-primary', '#0f172a');
+    root.style.setProperty('--text-secondary', '#475569');
+  }
+};
+
+const toggleMobileMenu = () => {
+  isMenuOpen.value = !isMenuOpen.value;
+};
+
+const closeMobileMenu = () => {
+  isMenuOpen.value = false;
+};
+
+// 监听路由变化，自动关闭移动端菜单
+watch(() => route.path, () => {
+  if (isMenuOpen.value) {
+    closeMobileMenu();
+  }
+});
 
 onMounted(() => {
   // 检查本地存储的主题偏好
   const savedTheme = localStorage.getItem('theme');
   if (savedTheme) {
     isDark.value = savedTheme === 'dark';
-    if (isDark.value) {
-      document.documentElement.classList.add('dark');
-    } else {
-      document.documentElement.classList.remove('dark');
-    }
   } else {
     // 检查系统主题偏好
-    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-      isDark.value = true;
-      document.documentElement.classList.add('dark');
-    }
+    const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+    isDark.value = mediaQuery.matches;
+    
+    // 监听系统主题变化
+    mediaQuery.addEventListener('change', (e) => {
+      if (!localStorage.getItem('theme')) {
+        isDark.value = e.matches;
+        applyTheme();
+      }
+    });
   }
+  
+  applyTheme();
 });
 </script>
 
 <style scoped>
 .nav-link {
-  @apply flex items-center px-4 py-2 rounded-lg text-gray-300 hover:text-white hover:bg-white/10 transition-all duration-300 relative overflow-hidden;
+  @apply flex items-center px-4 py-2 rounded-lg text-gray-300 hover:text-white transition-all duration-200 relative overflow-hidden;
+  will-change: transform, opacity;
 }
 
 .nav-link::before {
   content: '';
-  @apply absolute inset-0 bg-gradient-to-r from-cyan-500/20 to-purple-500/20 opacity-0 transition-opacity duration-300;
+  @apply absolute inset-0 bg-gradient-to-r from-cyan-500/20 to-purple-500/20 opacity-0 transition-opacity duration-200;
 }
 
 .nav-link:hover::before {
   @apply opacity-100;
 }
 
+.nav-link:hover {
+  @apply transform scale-105;
+}
+
 .nav-link-active {
   @apply text-white bg-gradient-to-r from-cyan-500/20 to-purple-500/20 border border-cyan-500/30;
 }
 
+.theme-toggle-btn {
+  @apply p-2 rounded-lg bg-white/10 hover:bg-white/20 transition-all duration-200;
+  will-change: transform;
+}
+
+.theme-toggle-btn:hover {
+  @apply transform scale-110;
+}
+
+.mobile-menu-btn {
+  @apply p-2 rounded-lg bg-white/10 hover:bg-white/20 transition-all duration-200;
+  will-change: transform;
+}
+
+.mobile-menu-btn:hover {
+  @apply transform scale-110;
+}
+
 .mobile-nav-link {
-  @apply flex items-center px-4 py-3 rounded-lg text-gray-300 hover:text-white hover:bg-white/10 transition-all duration-300;
+  @apply flex items-center px-4 py-3 rounded-lg text-gray-300 hover:text-white hover:bg-white/10 transition-all duration-200;
+  will-change: transform, opacity;
+}
+
+.mobile-nav-link:hover {
+  @apply transform translate-x-1;
 }
 
 .mobile-nav-link-active {
   @apply text-white bg-gradient-to-r from-cyan-500/20 to-purple-500/20;
+}
+
+/* 优化动画性能 */
+* {
+  backface-visibility: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 </style> 
