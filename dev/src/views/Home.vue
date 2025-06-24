@@ -1,15 +1,8 @@
 <template>
-  <div class="min-h-screen bg-gradient-to-br from-zinc-900 via-black to-zinc-900 relative overflow-hidden">
-    <!-- Optimized background effects -->
-    <div class="absolute inset-0 overflow-hidden">
-      <!-- Simple gradient overlay -->
-      <div class="gradient-overlay"></div>
-      <!-- Subtle animated dots -->
-      <div class="animated-dots">
-        <div class="dot dot-1"></div>
-        <div class="dot dot-2"></div>
-        <div class="dot dot-3"></div>
-      </div>
+  <div class="min-h-screen bg-gradient-to-br from-zinc-900 via-black to-zinc-900 relative">
+    <!-- Simple static background -->
+    <div class="absolute inset-0">
+      <div class="simple-bg"></div>
     </div>
     
     <!-- Main content -->
@@ -18,7 +11,7 @@
       <div class="text-center max-w-4xl mx-auto mb-12">
         <!-- Logo/Title -->
         <div class="mb-8">
-          <h1 class="text-6xl md:text-8xl font-black tracking-tighter text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 animate-pulse">
+          <h1 class="text-6xl md:text-8xl font-black tracking-tighter text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600">
             代码矿工
           </h1>
           <div class="text-2xl md:text-3xl font-bold text-zinc-300 mt-2">
@@ -113,15 +106,6 @@
         </div>
       </div>
     </div>
-
-    <!-- Static decorative elements -->
-    <div class="decorative-elements">
-      <div class="decorative-element">⚡</div>
-      <div class="decorative-element">💎</div>
-      <div class="decorative-element">🔗</div>
-      <div class="decorative-element">🚀</div>
-      <div class="decorative-element">⚙️</div>
-    </div>
   </div>
 </template>
 
@@ -132,98 +116,48 @@ import ProjectDashboard from '../components/ProjectDashboard.vue'
 import BlogDashboard from '../components/BlogDashboard.vue'
 
 onMounted(() => {
-  // Animate counters
-  const animateCounter = (elementId, target, duration = 2000) => {
+  // Simple counter animation without complex calculations
+  const animateCounter = (elementId, target) => {
     const element = document.getElementById(elementId)
     if (!element) return
     
-    let start = 0
-    const increment = target / (duration / 16)
+    let current = 0
+    const step = target / 50 // 50 steps total
     
     const timer = setInterval(() => {
-      start += increment
-      if (start >= target) {
-        start = target
+      current += step
+      if (current >= target) {
+        current = target
         clearInterval(timer)
       }
-      element.textContent = Math.floor(start).toLocaleString()
-    }, 16)
+      element.textContent = Math.floor(current).toLocaleString()
+    }, 40) // Slower interval for better performance
   }
 
   // Start animations after a delay
   setTimeout(() => {
     animateCounter('projectsCounter', 42)
     animateCounter('decentralizedCounter', 1337)
-  }, 1000)
+  }, 500)
 })
 </script>
 
 <style scoped>
-/* Optimized background effects */
-.gradient-overlay {
+/* Ultra-simple background */
+.simple-bg {
   position: absolute;
   width: 100%;
   height: 100%;
   background: linear-gradient(
     135deg,
-    rgba(6, 182, 212, 0.1) 0%,
-    rgba(59, 130, 246, 0.05) 25%,
-    rgba(147, 51, 234, 0.1) 50%,
-    rgba(6, 182, 212, 0.05) 75%,
-    rgba(59, 130, 246, 0.1) 100%
+    rgba(6, 182, 212, 0.05) 0%,
+    rgba(59, 130, 246, 0.03) 50%,
+    rgba(147, 51, 234, 0.05) 100%
   );
-  opacity: 0.6;
-}
-
-.animated-dots {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-}
-
-.dot {
-  position: absolute;
-  width: 4px;
-  height: 4px;
-  background: rgba(6, 182, 212, 0.6);
-  border-radius: 50%;
-  animation: dotFloat 8s ease-in-out infinite;
-}
-
-.dot-1 {
-  top: 20%;
-  left: 15%;
-  animation-delay: 0s;
-}
-
-.dot-2 {
-  top: 60%;
-  left: 80%;
-  animation-delay: 2s;
-  background: rgba(147, 51, 234, 0.6);
-}
-
-.dot-3 {
-  top: 80%;
-  left: 25%;
-  animation-delay: 4s;
-  background: rgba(59, 130, 246, 0.6);
-}
-
-@keyframes dotFloat {
-  0%, 100% { 
-    transform: translateY(0px) scale(1);
-    opacity: 0.6;
-  }
-  50% { 
-    transform: translateY(-30px) scale(1.2);
-    opacity: 1;
-  }
 }
 
 .stat-card {
-  @apply bg-zinc-800/50 border border-zinc-700 rounded-xl p-6 text-center transition-all duration-300 hover:bg-zinc-800/70 hover:border-cyan-500/50;
+  @apply bg-zinc-800/50 border border-zinc-700 rounded-xl p-6 text-center hover:bg-zinc-800/70 hover:border-cyan-500/50;
 }
 
 .stat-number {
@@ -235,15 +169,15 @@ onMounted(() => {
 }
 
 .btn-primary {
-  @apply bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white font-bold py-3 px-8 rounded-lg transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-cyan-500/25 flex items-center;
+  @apply bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white font-bold py-3 px-8 rounded-lg hover:shadow-lg hover:shadow-cyan-500/25 flex items-center;
 }
 
 .btn-secondary {
-  @apply bg-zinc-800/50 border border-zinc-600 hover:border-cyan-500/50 text-zinc-300 hover:text-white font-bold py-3 px-8 rounded-lg transition-all duration-300 transform hover:scale-105 flex items-center;
+  @apply bg-zinc-800/50 border border-zinc-600 hover:border-cyan-500/50 text-zinc-300 hover:text-white font-bold py-3 px-8 rounded-lg flex items-center;
 }
 
 .code-block {
-  @apply bg-zinc-900/80 border border-zinc-700 rounded-lg overflow-hidden transition-all duration-300 hover:border-cyan-500/50;
+  @apply bg-zinc-900/80 border border-zinc-700 rounded-lg overflow-hidden hover:border-cyan-500/50;
 }
 
 .code-header {
@@ -266,20 +200,6 @@ onMounted(() => {
   @apply text-green-400;
 }
 
-.decorative-elements {
-  @apply fixed inset-0 pointer-events-none;
-}
-
-.decorative-element {
-  @apply absolute text-2xl opacity-10;
-}
-
-.decorative-element:nth-child(1) { top: 20%; left: 10%; }
-.decorative-element:nth-child(2) { top: 60%; left: 80%; }
-.decorative-element:nth-child(3) { top: 80%; left: 20%; }
-.decorative-element:nth-child(4) { top: 30%; left: 90%; }
-.decorative-element:nth-child(5) { top: 70%; left: 5%; }
-
 /* 响应式设计 */
 @media (max-width: 1024px) {
   .grid {
@@ -296,26 +216,12 @@ onMounted(() => {
   will-change: auto;
 }
 
-.gradient-overlay,
-.animated-dots,
-.decorative-elements {
-  will-change: transform;
-}
-
-/* Reduce motion for users who prefer it */
+/* Disable all animations for better performance */
 @media (prefers-reduced-motion: reduce) {
-  .dot {
-    animation: none;
-  }
-  
-  .btn-primary,
-  .btn-secondary,
-  .code-block {
-    transition: none;
-  }
-  
-  .animate-pulse {
-    animation: none;
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }
 </style> 
