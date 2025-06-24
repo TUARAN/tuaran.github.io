@@ -1,8 +1,15 @@
 <template>
   <div class="min-h-screen bg-gradient-to-br from-zinc-900 via-black to-zinc-900 relative overflow-hidden">
-    <!-- Animated background particles -->
+    <!-- Optimized background effects -->
     <div class="absolute inset-0 overflow-hidden">
-      <div class="particles"></div>
+      <!-- Simple gradient overlay -->
+      <div class="gradient-overlay"></div>
+      <!-- Subtle animated dots -->
+      <div class="animated-dots">
+        <div class="dot dot-1"></div>
+        <div class="dot dot-2"></div>
+        <div class="dot dot-3"></div>
+      </div>
     </div>
     
     <!-- Main content -->
@@ -107,13 +114,13 @@
       </div>
     </div>
 
-    <!-- Floating elements -->
-    <div class="floating-elements">
-      <div class="floating-element" style="--delay: 0s">⚡</div>
-      <div class="floating-element" style="--delay: 2s">💎</div>
-      <div class="floating-element" style="--delay: 4s">🔗</div>
-      <div class="floating-element" style="--delay: 6s">🚀</div>
-      <div class="floating-element" style="--delay: 8s">⚙️</div>
+    <!-- Static decorative elements -->
+    <div class="decorative-elements">
+      <div class="decorative-element">⚡</div>
+      <div class="decorative-element">💎</div>
+      <div class="decorative-element">🔗</div>
+      <div class="decorative-element">🚀</div>
+      <div class="decorative-element">⚙️</div>
     </div>
   </div>
 </template>
@@ -152,24 +159,71 @@ onMounted(() => {
 </script>
 
 <style scoped>
-.particles {
+/* Optimized background effects */
+.gradient-overlay {
   position: absolute;
   width: 100%;
   height: 100%;
-  background-image: 
-    radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.3) 0%, transparent 50%),
-    radial-gradient(circle at 80% 20%, rgba(255, 119, 198, 0.3) 0%, transparent 50%),
-    radial-gradient(circle at 40% 40%, rgba(120, 219, 255, 0.3) 0%, transparent 50%);
-  animation: particleFloat 20s ease-in-out infinite;
+  background: linear-gradient(
+    135deg,
+    rgba(6, 182, 212, 0.1) 0%,
+    rgba(59, 130, 246, 0.05) 25%,
+    rgba(147, 51, 234, 0.1) 50%,
+    rgba(6, 182, 212, 0.05) 75%,
+    rgba(59, 130, 246, 0.1) 100%
+  );
+  opacity: 0.6;
 }
 
-@keyframes particleFloat {
-  0%, 100% { transform: translateY(0px) rotate(0deg); }
-  50% { transform: translateY(-20px) rotate(180deg); }
+.animated-dots {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.dot {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: rgba(6, 182, 212, 0.6);
+  border-radius: 50%;
+  animation: dotFloat 8s ease-in-out infinite;
+}
+
+.dot-1 {
+  top: 20%;
+  left: 15%;
+  animation-delay: 0s;
+}
+
+.dot-2 {
+  top: 60%;
+  left: 80%;
+  animation-delay: 2s;
+  background: rgba(147, 51, 234, 0.6);
+}
+
+.dot-3 {
+  top: 80%;
+  left: 25%;
+  animation-delay: 4s;
+  background: rgba(59, 130, 246, 0.6);
+}
+
+@keyframes dotFloat {
+  0%, 100% { 
+    transform: translateY(0px) scale(1);
+    opacity: 0.6;
+  }
+  50% { 
+    transform: translateY(-30px) scale(1.2);
+    opacity: 1;
+  }
 }
 
 .stat-card {
-  @apply bg-zinc-800/50 backdrop-blur-sm border border-zinc-700 rounded-xl p-6 text-center transition-all duration-300 hover:bg-zinc-800/70 hover:border-cyan-500/50;
+  @apply bg-zinc-800/50 border border-zinc-700 rounded-xl p-6 text-center transition-all duration-300 hover:bg-zinc-800/70 hover:border-cyan-500/50;
 }
 
 .stat-number {
@@ -189,7 +243,7 @@ onMounted(() => {
 }
 
 .code-block {
-  @apply bg-zinc-900/80 backdrop-blur-sm border border-zinc-700 rounded-lg overflow-hidden transition-all duration-300 hover:border-cyan-500/50;
+  @apply bg-zinc-900/80 border border-zinc-700 rounded-lg overflow-hidden transition-all duration-300 hover:border-cyan-500/50;
 }
 
 .code-header {
@@ -212,20 +266,19 @@ onMounted(() => {
   @apply text-green-400;
 }
 
-.floating-elements {
+.decorative-elements {
   @apply fixed inset-0 pointer-events-none;
 }
 
-.floating-element {
-  @apply absolute text-2xl opacity-20 animate-bounce;
-  animation-delay: var(--delay);
+.decorative-element {
+  @apply absolute text-2xl opacity-10;
 }
 
-.floating-element:nth-child(1) { top: 20%; left: 10%; }
-.floating-element:nth-child(2) { top: 60%; left: 80%; }
-.floating-element:nth-child(3) { top: 80%; left: 20%; }
-.floating-element:nth-child(4) { top: 30%; left: 90%; }
-.floating-element:nth-child(5) { top: 70%; left: 5%; }
+.decorative-element:nth-child(1) { top: 20%; left: 10%; }
+.decorative-element:nth-child(2) { top: 60%; left: 80%; }
+.decorative-element:nth-child(3) { top: 80%; left: 20%; }
+.decorative-element:nth-child(4) { top: 30%; left: 90%; }
+.decorative-element:nth-child(5) { top: 70%; left: 5%; }
 
 /* 响应式设计 */
 @media (max-width: 1024px) {
@@ -236,5 +289,33 @@ onMounted(() => {
 
 .philosophy-highlight {
   @apply text-cyan-400 font-semibold !important;
+}
+
+/* Performance optimizations */
+* {
+  will-change: auto;
+}
+
+.gradient-overlay,
+.animated-dots,
+.decorative-elements {
+  will-change: transform;
+}
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  .dot {
+    animation: none;
+  }
+  
+  .btn-primary,
+  .btn-secondary,
+  .code-block {
+    transition: none;
+  }
+  
+  .animate-pulse {
+    animation: none;
+  }
 }
 </style> 

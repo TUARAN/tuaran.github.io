@@ -26,7 +26,7 @@
             </div>
             <button class="btn-connect">
               <span class="mr-2">🔗</span>
-              连接钱包
+              连接
             </button>
           </div>
         </div>
