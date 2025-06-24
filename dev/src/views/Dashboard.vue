@@ -165,7 +165,7 @@ import {
   Zap
 } from 'lucide-vue-next';
 import analyticsData from '../data/analytics.json';
-import chartDataJson from '../data/chartData.json';
+import { processAnalyticsData, generateChartData } from '../utils/analyticsProcessor.js';
 import CodeVolumeChart from '../components/CodeVolumeChart.vue';
 import LanguagePieChart from '../components/LanguagePieChart.vue';
 
@@ -177,9 +177,12 @@ const timePeriods = [
   { key: 'last30days', label: '30天' }
 ];
 
-const currentData = computed(() => analyticsData[selectedPeriod.value]);
+// 使用工具函数处理数据
+const processedData = computed(() => processAnalyticsData(analyticsData.agent_edits));
 
-const chartData = computed(() => chartDataJson.codeVolumeTrend[selectedPeriod.value]);
+const currentData = computed(() => processedData.value[selectedPeriod.value]);
+
+const chartData = computed(() => generateChartData(analyticsData.agent_edits, selectedPeriod.value));
 
 const languageChartData = computed(() => {
   const languages = currentData.value.generated.languages;

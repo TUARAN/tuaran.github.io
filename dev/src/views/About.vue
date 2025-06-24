@@ -2,21 +2,21 @@
   <div class="container mx-auto px-6">
     <!-- Hero Section -->
     <div class="text-center mb-16">
-      <div class="relative inline-block mb-8">
+      <div class="relative inline-block mb-8 fade-in">
         <div class="w-32 h-32 bg-gradient-to-br from-cyan-400 via-blue-500 to-purple-600 rounded-full flex items-center justify-center shadow-2xl shadow-cyan-500/25 animate-pulse">
           <span class="text-white font-bold text-4xl">T</span>
         </div>
         <div class="absolute -bottom-2 -right-2 w-8 h-8 bg-green-400 rounded-full border-4 border-slate-900 animate-pulse"></div>
       </div>
-      <h1 class="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-white via-cyan-300 to-purple-300 bg-clip-text text-transparent">
+      <h1 class="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-white via-cyan-300 to-purple-300 bg-clip-text text-transparent text-glow slide-up">
         tuaran
       </h1>
-      <p class="text-xl text-gray-300 max-w-2xl mx-auto leading-relaxed mb-8">
+      <p class="text-xl text-gray-300 max-w-2xl mx-auto leading-relaxed mb-8 slide-up">
         计算机科学与技术专业 | 前端架构师 | 技术博主
       </p>
       
       <!-- Personal Belief -->
-      <div class="bg-gradient-to-r from-cyan-500/20 to-purple-600/20 backdrop-blur-lg rounded-2xl p-6 border border-cyan-500/30 max-w-4xl mx-auto">
+      <div class="bg-gradient-to-r from-cyan-500/20 to-purple-600/20 backdrop-blur-lg rounded-2xl p-6 border border-cyan-500/30 max-w-4xl mx-auto card-animated scale-in">
         <p class="text-lg text-cyan-300 font-medium leading-relaxed">
           "技术驱动创新，代码改变世界。在技术与人文的交叉路口，用优雅的代码构建有温度的数字体验。"
         </p>
@@ -28,7 +28,7 @@
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
       <!-- About Section -->
       <div class="lg:col-span-2">
-        <div class="about-card">
+        <div class="about-card card-animated slide-up">
           <h2 class="section-title">我是谁</h2>
           <div class="space-y-6 text-gray-300 leading-relaxed">
             <p>
@@ -56,27 +56,27 @@
         </div>
 
         <!-- Juejin Achievements -->
-        <div class="about-card mt-8">
+        <div class="about-card mt-8 card-animated slide-up">
           <h2 class="section-title">掘金成就</h2>
           <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-            <div class="achievement-item">
+            <div class="achievement-item hover-lift">
               <div class="achievement-number">社区共建者</div>
               <div class="achievement-label">身份认证</div>
             </div>
-            <div class="achievement-item">
+            <div class="achievement-item hover-lift">
               <div class="achievement-number">优秀创作者</div>
               <div class="achievement-label">创作认证</div>
             </div>
-            <div class="achievement-item">
+            <div class="achievement-item hover-lift">
               <div class="achievement-number">28,248</div>
               <div class="achievement-label">文章点赞</div>
             </div>
-            <div class="achievement-item">
+            <div class="achievement-item hover-lift">
               <div class="achievement-number">2,083,632</div>
               <div class="achievement-label">文章阅读</div>
             </div>
           </div>
-          <div class="mt-4 p-4 bg-gradient-to-r from-yellow-500/20 to-orange-500/20 rounded-lg border border-yellow-500/30">
+          <div class="mt-4 p-4 bg-gradient-to-r from-yellow-500/20 to-orange-500/20 rounded-lg border border-yellow-500/30 hover-glow">
             <div class="text-center">
               <div class="text-yellow-400 font-bold text-lg">掘力值 99,473</div>
               <div class="text-yellow-300 text-sm">社区影响力指数</div>
@@ -85,13 +85,13 @@
         </div>
 
         <!-- Experience Timeline -->
-        <div class="about-card mt-8">
+        <div class="about-card mt-8 card-animated slide-up">
           <h2 class="section-title">工作经历</h2>
           <div class="space-y-6">
             <div 
               v-for="(experience, index) in experiences" 
               :key="index"
-              class="experience-item"
+              class="experience-item hover-lift"
             >
               <div class="experience-header">
                 <h3 class="experience-title">{{ experience.title }}</h3>
@@ -104,13 +104,13 @@
         </div>
 
         <!-- Project Experience -->
-        <div class="about-card mt-8">
+        <div class="about-card mt-8 card-animated slide-up">
           <h2 class="section-title">项目经验</h2>
           <div class="space-y-6">
             <div 
               v-for="(project, index) in projects" 
               :key="index"
-              class="project-item"
+              class="project-item hover-lift"
             >
               <h3 class="project-title">{{ project.name }}</h3>
               <p class="project-description">{{ project.description }}</p>
@@ -125,7 +125,7 @@
       <!-- Skills & Stats -->
       <div class="space-y-8">
         <!-- Skills -->
-        <div class="skills-card">
+        <div class="skills-card card-animated slide-up">
           <h2 class="section-title">技能</h2>
           <div class="space-y-4">
             <div 
@@ -148,13 +148,13 @@
         </div>
 
         <!-- Stats -->
-        <div class="stats-card">
+        <div class="stats-card card-animated slide-up">
           <h2 class="section-title">快速统计</h2>
           <div class="grid grid-cols-2 gap-4">
             <div 
               v-for="stat in stats" 
               :key="stat.label"
-              class="stat-item"
+              class="stat-item hover-lift"
             >
               <div class="stat-number">{{ stat.value }}</div>
               <div class="stat-label">{{ stat.label }}</div>
@@ -163,7 +163,7 @@
         </div>
 
         <!-- Contact -->
-        <div class="contact-card">
+        <div class="contact-card card-animated slide-up">
           <h2 class="section-title">联系我</h2>
           <p class="text-gray-300 text-sm mb-6">
             我热爱探索新技术，向往自由，喜欢与志同道合的朋友交流。欢迎互关交友！
@@ -173,7 +173,7 @@
               v-for="contact in contacts" 
               :key="contact.name"
               :href="contact.url"
-              class="contact-link"
+              class="contact-link hover-lift"
             >
               <component :is="contact.icon" class="w-4 h-4" />
               <span>{{ contact.name }}</span>

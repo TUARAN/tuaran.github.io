@@ -1,8 +1,14 @@
 <template>
   <div class="min-h-screen bg-gradient-to-br from-zinc-900 via-black to-zinc-900 relative">
-    <!-- Simple static background -->
+    <!-- Enhanced background with subtle animations -->
     <div class="absolute inset-0">
       <div class="simple-bg"></div>
+      <!-- Subtle animated dots -->
+      <div class="animated-dots">
+        <div class="dot dot-1"></div>
+        <div class="dot dot-2"></div>
+        <div class="dot dot-3"></div>
+      </div>
     </div>
     
     <!-- Main content -->
@@ -10,17 +16,17 @@
       <!-- Hero section -->
       <div class="text-center max-w-4xl mx-auto mb-12">
         <!-- Logo/Title -->
-        <div class="mb-8">
-          <h1 class="text-6xl md:text-8xl font-black tracking-tighter text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600">
+        <div class="mb-8 fade-in">
+          <h1 class="text-6xl md:text-8xl font-black tracking-tighter text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 text-glow">
             代码矿工
           </h1>
-          <div class="text-2xl md:text-3xl font-bold text-zinc-300 mt-2">
+          <div class="text-2xl md:text-3xl font-bold text-zinc-300 mt-2 slide-up">
             TUARAN
           </div>
         </div>
 
         <!-- Philosophy statement -->
-        <div class="mb-8">
+        <div class="mb-8 slide-up">
           <p class="text-xl md:text-2xl text-zinc-400 leading-relaxed max-w-3xl mx-auto">
             <span class="philosophy-highlight">疯狂编码</span>， 
             <span class="text-blue-400 font-semibold">开源或死亡</span>， 
@@ -32,16 +38,16 @@
         </div>
 
         <!-- Action buttons -->
-        <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-          <button class="btn-primary">
+        <div class="flex flex-col sm:flex-row gap-4 justify-center items-center scale-in">
+          <button class="btn-primary btn-animated">
             <span class="mr-2">🚀</span>
             开始编码
           </button>
-          <button class="btn-secondary">
+          <button class="btn-secondary btn-animated">
             <span class="mr-2">📚</span>
             查看项目
           </button>
-          <button class="btn-secondary">
+          <button class="btn-secondary btn-animated">
             <span class="mr-2">💻</span>
             加入革命
           </button>
@@ -52,17 +58,17 @@
       <div class="max-w-7xl mx-auto">
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
           <!-- 数据看板 -->
-          <div class="lg:col-span-2">
+          <div class="lg:col-span-2 slide-up">
             <CodeAnalytics />
           </div>
           
           <!-- 项目看板 -->
-          <div class="lg:col-span-1">
+          <div class="lg:col-span-1 slide-up">
             <ProjectDashboard />
           </div>
           
           <!-- 博文日记看板 -->
-          <div class="lg:col-span-3">
+          <div class="lg:col-span-3 slide-up">
             <BlogDashboard />
           </div>
         </div>
@@ -70,7 +76,7 @@
 
       <!-- Animated code blocks -->
       <div class="mt-16 grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-        <div class="code-block">
+        <div class="code-block card-animated">
           <div class="code-header">
             <span class="code-dot bg-red-500"></span>
             <span class="code-dot bg-yellow-500"></span>
@@ -89,7 +95,7 @@
 };</code></pre>
         </div>
 
-        <div class="code-block">
+        <div class="code-block card-animated">
           <div class="code-header">
             <span class="code-dot bg-red-500"></span>
             <span class="code-dot bg-yellow-500"></span>
@@ -116,6 +122,26 @@ import ProjectDashboard from '../components/ProjectDashboard.vue'
 import BlogDashboard from '../components/BlogDashboard.vue'
 
 onMounted(() => {
+  // 添加滚动动画
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+  }
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('fade-in')
+        observer.unobserve(entry.target)
+      }
+    })
+  }, observerOptions)
+
+  // 观察所有需要动画的元素
+  document.querySelectorAll('.slide-up, .scale-in').forEach(el => {
+    observer.observe(el)
+  })
+
   // Simple counter animation without complex calculations
   const animateCounter = (elementId, target) => {
     const element = document.getElementById(elementId)
@@ -143,7 +169,7 @@ onMounted(() => {
 </script>
 
 <style scoped>
-/* Ultra-simple background */
+/* Enhanced background with subtle animations */
 .simple-bg {
   position: absolute;
   width: 100%;
@@ -156,8 +182,78 @@ onMounted(() => {
   );
 }
 
+.animated-dots {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.dot {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: rgba(6, 182, 212, 0.6);
+  border-radius: 50%;
+  transform: translateZ(0); /* GPU acceleration */
+  will-change: transform, opacity;
+}
+
+.dot-1 {
+  top: 20%;
+  left: 15%;
+  animation: dotFloat1 12s ease-in-out infinite;
+}
+
+.dot-2 {
+  top: 60%;
+  left: 80%;
+  animation: dotFloat2 15s ease-in-out infinite reverse;
+  background: rgba(147, 51, 234, 0.6);
+}
+
+.dot-3 {
+  top: 80%;
+  left: 25%;
+  animation: dotFloat3 18s ease-in-out infinite;
+  background: rgba(59, 130, 246, 0.6);
+}
+
+@keyframes dotFloat1 {
+  0%, 100% { 
+    transform: translate(0, 0) scale(1);
+    opacity: 0.6;
+  }
+  50% { 
+    transform: translate(20px, -15px) scale(1.2);
+    opacity: 1;
+  }
+}
+
+@keyframes dotFloat2 {
+  0%, 100% { 
+    transform: translate(0, 0) scale(1);
+    opacity: 0.6;
+  }
+  50% { 
+    transform: translate(-25px, 20px) scale(1.1);
+    opacity: 1;
+  }
+}
+
+@keyframes dotFloat3 {
+  0%, 100% { 
+    transform: translate(0, 0) scale(1);
+    opacity: 0.6;
+  }
+  50% { 
+    transform: translate(15px, -25px) scale(1.3);
+    opacity: 1;
+  }
+}
+
 .stat-card {
-  @apply bg-zinc-800/50 border border-zinc-700 rounded-xl p-6 text-center hover:bg-zinc-800/70 hover:border-cyan-500/50;
+  @apply bg-zinc-800/50 border border-zinc-700 rounded-xl p-6 text-center hover:bg-zinc-800/70 hover:border-cyan-500/50 card-animated;
 }
 
 .stat-number {
@@ -216,8 +312,16 @@ onMounted(() => {
   will-change: auto;
 }
 
-/* Disable all animations for better performance */
+/* Disable animations for users who prefer reduced motion */
 @media (prefers-reduced-motion: reduce) {
+  .fade-in,
+  .slide-up,
+  .scale-in,
+  .card-animated {
+    animation: none !important;
+    transition: none !important;
+  }
+  
   * {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;

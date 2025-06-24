@@ -21,53 +21,42 @@ dev/
 │   │   ├── Navbar.vue      # 导航栏
 │   │   ├── Footer.vue      # 页脚
 │   │   ├── CodeVolumeChart.vue    # 代码量趋势图表
-│   │   └── LanguagePieChart.vue   # 语言分布饼图
+│   │   ├── LanguagePieChart.vue   # 语言分布饼图
+│   │   └── CodeAnalytics.vue      # 代码分析组件
 │   ├── views/              # 页面组件
 │   │   ├── Dashboard.vue   # 仪表板
 │   │   ├── Projects.vue    # 项目页面
 │   │   ├── Blog.vue        # 博客页面
 │   │   └── About.vue       # 关于页面
 │   ├── data/               # 数据文件
-│   │   ├── analytics.json  # 分析数据
+│   │   ├── analytics.json  # 分析数据（基于 agent_edits）
 │   │   ├── projects.json   # 项目数据
-│   │   ├── blogs.json      # 博客数据
-│   │   └── chartData.json  # 图表数据
+│   │   └── blogs.json      # 博客数据
+│   ├── utils/              # 工具函数
+│   │   └── analyticsProcessor.js  # 数据分析处理工具
 │   ├── router/             # 路由配置
 │   └── style.css           # 全局样式
 ├── public/                 # 静态资源
 └── package.json           # 项目配置
 ```
 
-## 📊 图表数据说明
+## 📊 数据分析说明
 
-### 代码量趋势数据 (`chartData.json`)
+### 数据聚合处理
 
-```json
-{
-  "codeVolumeTrend": {
-    "last7days": {
-      "labels": ["周一", "周二", "周三", "周四", "周五", "周六", "周日"],
-      "datasets": [
-        {
-          "label": "生成代码",
-          "data": [1200, 1800, 1500, 2200, 1900, 1600, 1400],
-          "borderColor": "#06b6d4",
-          "backgroundColor": "rgba(6, 182, 212, 0.1)",
-          "fill": true,
-          "tension": 0.4
-        },
-        {
-          "label": "接受代码",
-          "data": [1000, 1500, 1200, 1800, 1600, 1300, 1100],
-          "borderColor": "#8b5cf6",
-          "backgroundColor": "rgba(139, 92, 246, 0.1)",
-          "fill": true,
-          "tension": 0.4
-        }
-      ]
-    }
-  }
-}
+项目使用 `analyticsProcessor.js` 工具函数基于 `agent_edits` 数据动态计算统计信息：
+
+- **today**: 基于当天数据计算
+- **last7days**: 聚合最近7天的数据
+- **last30days**: 聚合最近30天的数据
+
+### 图表数据生成
+
+图表数据由 `generateChartData()` 函数动态生成：
+
+```javascript
+// 基于 agent_edits 生成图表数据
+const chartData = generateChartData(agentEdits, 'last7days');
 ```
 
 ### 数据结构说明
@@ -88,32 +77,22 @@ dev/
    - `last7days`: 最近7天数据
    - `last30days`: 最近30天数据
 
-2. **添加新的数据系列**：
+2. **更新 agent_edits 数据**：
    ```json
    {
-     "label": "新指标",
-     "data": [100, 200, 300, 400, 500, 600, 700],
-     "borderColor": "#your-color",
-     "backgroundColor": "rgba(your-color, 0.1)",
-     "fill": true,
-     "tension": 0.4
+     "agent_edits": [
+       { "date": "2025-06-23", "generated": 9000, "accepted": 4500 },
+       { "date": "2025-06-24", "generated": 12000, "accepted": 8000 }
+     ]
    }
    ```
 
 3. **语言分布数据**：
-   ```json
-   {
-     "languageDistribution": {
-       "last7days": {
-         "labels": ["TypeScript", "JavaScript", "Python"],
-         "datasets": [{
-           "data": [35, 25, 20],
-           "backgroundColor": ["#3178c6", "#f7df1e", "#3776ab"]
-         }]
-       }
-     }
-   }
-   ```
+   语言分布基于生成代码量的比例自动计算：
+   - TypeScript: 40%
+   - JavaScript: 30%
+   - Python: 20%
+   - Vue: 10%
 
 ## 🛠️ 技术栈
 
@@ -181,12 +160,28 @@ dev/
 ### 添加新图表
 
 1. 在 `src/components/` 创建图表组件
-2. 在 `src/data/chartData.json` 添加数据
+2. 在 `src/utils/analyticsProcessor.js` 中添加数据处理逻辑
 3. 在页面中引入并使用
 
 ### 数据更新
 
-所有数据都存储在 `src/data/` 目录下的 JSON 文件中，可以直接编辑这些文件来更新内容。
+- **分析数据**: 编辑 `src/data/analytics.json` 中的 `agent_edits` 数组
+- **项目数据**: 编辑 `src/data/projects.json`
+- **博客数据**: 编辑 `src/data/blogs.json`
+
+### 自定义数据处理
+
+如需修改数据聚合逻辑，编辑 `src/utils/analyticsProcessor.js` 文件：
+
+```javascript
+// 修改语言分布比例
+const languageDistribution = {
+  TypeScript: 0.4, // 40%
+  JavaScript: 0.3, // 30%
+  Python: 0.2,     // 20%
+  Vue: 0.1         // 10%
+};
+```
 
 ## 📄 许可证
 

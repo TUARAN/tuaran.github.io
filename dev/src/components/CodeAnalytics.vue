@@ -55,6 +55,8 @@ import {
   Tooltip,
   Legend
 } from 'chart.js'
+import { generateChartData } from '../utils/analyticsProcessor.js'
+import analyticsData from '../data/analytics.json'
 
 ChartJS.register(
   CategoryScale,
@@ -72,46 +74,24 @@ export default {
   
   data() {
     return {
-      currentPeriod: '7d',
+      currentPeriod: 'last7days',
       tabs: [
-        { label: '今天', value: '1d' },
-        { label: '7天', value: '7d' },
-        { label: '30天', value: '30d' }
-      ],
-      
-      // 模拟数据
-      dataSets: {
-        '1d': {
-          labels: ['今天'],
-          generated: [15000],
-          accepted: [12000],
-          dateRange: '今天'
-        },
-        '7d': {
-          labels: ['周一', '周二', '周三', '周四', '周五', '周六', '周日'],
-          generated: [2500, 7500, 2500, 13000, 15500, 1000, 8000],
-          accepted: [1000, 5000, 2000, 11000, 9000, 0, 6000],
-          dateRange: '本周'
-        },
-        '30d': {
-          labels: ['第1周', '第2周', '第3周', '第4周'],
-          generated: [8000, 12000, 15000, 18000],
-          accepted: [6000, 9000, 11000, 14000],
-          dateRange: '本月'
-        }
-      }
+        { label: '今天', value: 'today' },
+        { label: '7天', value: 'last7days' },
+        { label: '30天', value: 'last30days' }
+      ]
     }
   },
 
   computed: {
     chartData() {
-      const data = this.dataSets[this.currentPeriod]
+      const data = generateChartData(analyticsData.agent_edits, this.currentPeriod)
       return {
         labels: data.labels,
         datasets: [
           {
             label: 'AI生成代码',
-            data: data.generated,
+            data: data.datasets[0].data,
             borderColor: '#67e8f9',
             backgroundColor: 'rgba(103, 232, 249, 0.1)',
             borderWidth: 3,
@@ -125,7 +105,7 @@ export default {
           },
           {
             label: '接受代码',
-            data: data.accepted,
+            data: data.datasets[1].data,
             borderColor: '#a78bfa',
             backgroundColor: 'rgba(167, 139, 250, 0.1)',
             borderWidth: 3,
@@ -201,17 +181,22 @@ export default {
     },
 
     totalGenerated() {
-      const data = this.dataSets[this.currentPeriod]
-      return data.generated.reduce((sum, val) => sum + val, 0).toLocaleString()
+      const data = this.chartData.datasets[0].data
+      return data.reduce((sum, val) => sum + val, 0).toLocaleString()
     },
 
     totalAccepted() {
-      const data = this.dataSets[this.currentPeriod]
-      return data.accepted.reduce((sum, val) => sum + val, 0).toLocaleString()
+      const data = this.chartData.datasets[1].data
+      return data.reduce((sum, val) => sum + val, 0).toLocaleString()
     },
 
     currentDateRange() {
-      return this.dataSets[this.currentPeriod].dateRange
+      const periodLabels = {
+        'today': '今天',
+        'last7days': '最近7天',
+        'last30days': '最近30天'
+      }
+      return periodLabels[this.currentPeriod] || '最近7天'
     }
   },
 

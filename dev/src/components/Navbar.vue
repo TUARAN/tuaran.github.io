@@ -32,19 +32,8 @@
           </RouterLink>
         </div>
 
-        <!-- Theme Toggle & Mobile Menu -->
-        <div class="flex items-center space-x-4">
-          <!-- Theme Toggle -->
-          <button 
-            @click="toggleTheme"
-            class="theme-toggle-btn"
-            :title="isDark ? '切换到浅色模式' : '切换到深色模式'"
-          >
-            <Sun v-if="isDark" class="w-5 h-5 text-yellow-400" />
-            <Moon v-else class="w-5 h-5 text-blue-400" />
-          </button>
-
-          <!-- Mobile Menu Button -->
+        <!-- Mobile Menu Button -->
+        <div class="flex items-center">
           <button 
             @click="toggleMobileMenu"
             class="mobile-menu-btn md:hidden"
@@ -77,22 +66,19 @@
 </template>
 
 <script setup>
-import { ref, onMounted, watch } from 'vue';
+import { ref, watch } from 'vue';
 import { RouterLink, useRoute } from 'vue-router';
 import { 
   BarChart3, 
   FolderOpen, 
   FileText, 
   User, 
-  Sun, 
-  Moon, 
   Menu, 
   X
 } from 'lucide-vue-next';
 
 const route = useRoute();
 const isMenuOpen = ref(false);
-const isDark = ref(false);
 
 const navItems = [
   { path: '/', label: '仪表板', icon: BarChart3 },
@@ -100,29 +86,6 @@ const navItems = [
   { path: '/blog', label: '博客', icon: FileText },
   { path: '/about', label: '关于', icon: User },
 ];
-
-const toggleTheme = () => {
-  isDark.value = !isDark.value;
-  applyTheme();
-  localStorage.setItem('theme', isDark.value ? 'dark' : 'light');
-};
-
-const applyTheme = () => {
-  const root = document.documentElement;
-  if (isDark.value) {
-    root.classList.add('dark');
-    root.style.setProperty('--bg-primary', '#0f172a');
-    root.style.setProperty('--bg-secondary', '#1e293b');
-    root.style.setProperty('--text-primary', '#f8fafc');
-    root.style.setProperty('--text-secondary', '#cbd5e1');
-  } else {
-    root.classList.remove('dark');
-    root.style.setProperty('--bg-primary', '#ffffff');
-    root.style.setProperty('--bg-secondary', '#f1f5f9');
-    root.style.setProperty('--text-primary', '#0f172a');
-    root.style.setProperty('--text-secondary', '#475569');
-  }
-};
 
 const toggleMobileMenu = () => {
   isMenuOpen.value = !isMenuOpen.value;
@@ -138,28 +101,6 @@ watch(() => route.path, () => {
     closeMobileMenu();
   }
 });
-
-onMounted(() => {
-  // 检查本地存储的主题偏好
-  const savedTheme = localStorage.getItem('theme');
-  if (savedTheme) {
-    isDark.value = savedTheme === 'dark';
-  } else {
-    // 检查系统主题偏好
-    const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
-    isDark.value = mediaQuery.matches;
-    
-    // 监听系统主题变化
-    mediaQuery.addEventListener('change', (e) => {
-      if (!localStorage.getItem('theme')) {
-        isDark.value = e.matches;
-        applyTheme();
-      }
-    });
-  }
-  
-  applyTheme();
-});
 </script>
 
 <style scoped>
@@ -169,10 +110,6 @@ onMounted(() => {
 
 .nav-link-active {
   @apply text-white bg-gradient-to-r from-cyan-500/20 to-purple-500/20 border border-cyan-500/30;
-}
-
-.theme-toggle-btn {
-  @apply p-2 rounded-lg bg-white/10 hover:bg-white/20;
 }
 
 .mobile-menu-btn {
