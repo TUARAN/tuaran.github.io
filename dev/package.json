@@ -7,7 +7,7 @@
     "dev": "vite",
     "build": "vite build",
     "build:cloudflare": "vite build",
-    "build:github": "vite build && powershell -Command \"Copy-Item -Path 'dist/*' -Destination '../' -Recurse -Force\"",
+    "build:github": "vite build && powershell -Command \"Copy-Item -Path 'dist/*' -Destination '../' -Recurse -Force -ErrorAction Stop\"",
     "build:all": "npm run build:cloudflare && npm run build:github",
     "preview": "vite preview"
   },
