@@ -1,76 +1,86 @@
 {
   "today": {
     "generated": {
-      "lines": 450,
-      "files": 8,
+      "lines": 9000,
+      "files": 12,
       "languages": {
-        "TypeScript": 180,
-        "JavaScript": 120,
-        "Python": 90,
-        "Vue": 60
+        "TypeScript": 3600,
+        "JavaScript": 2700,
+        "Python": 1800,
+        "Vue": 900
       }
     },
     "accepted": {
-      "lines": 350,
-      "files": 6,
+      "lines": 4500,
+      "files": 8,
       "languages": {
-        "TypeScript": 140,
-        "JavaScript": 90,
-        "Python": 70,
-        "Vue": 50
+        "TypeScript": 1800,
+        "JavaScript": 1350,
+        "Python": 900,
+        "Vue": 450
       }
     }
   },
   "last7days": {
     "generated": {
-      "lines": 41550,
-      "files": 45,
+      "lines": 56300,
+      "files": 52,
       "languages": {
-        "TypeScript": 14542,
-        "JavaScript": 10387,
-        "Python": 8309,
-        "Vue": 4985,
-        "React": 2492,
-        "其他": 830
+        "TypeScript": 22520,
+        "JavaScript": 16890,
+        "Python": 11260,
+        "Vue": 5630,
+        "React": 0,
+        "其他": 0
       }
     },
     "accepted": {
-      "lines": 31250,
-      "files": 38,
+      "lines": 43200,
+      "files": 42,
       "languages": {
-        "TypeScript": 10938,
-        "JavaScript": 7810,
-        "Python": 6250,
-        "Vue": 3740,
-        "React": 1870,
-        "其他": 625
+        "TypeScript": 17280,
+        "JavaScript": 12960,
+        "Python": 8640,
+        "Vue": 4320,
+        "React": 0,
+        "其他": 0
       }
     }
   },
   "last30days": {
     "generated": {
-      "lines": 35100,
-      "files": 120,
+      "lines": 56300,
+      "files": 52,
       "languages": {
-        "TypeScript": 12285,
-        "JavaScript": 8775,
-        "Python": 7020,
-        "Vue": 4212,
-        "React": 2106,
-        "其他": 702
+        "TypeScript": 22520,
+        "JavaScript": 16890,
+        "Python": 11260,
+        "Vue": 5630,
+        "React": 0,
+        "其他": 0
       }
     },
     "accepted": {
-      "lines": 29700,
-      "files": 95,
+      "lines": 43200,
+      "files": 42,
       "languages": {
-        "TypeScript": 10395,
-        "JavaScript": 7425,
-        "Python": 5940,
-        "Vue": 3564,
-        "React": 1782,
-        "其他": 594
+        "TypeScript": 17280,
+        "JavaScript": 12960,
+        "Python": 8640,
+        "Vue": 4320,
+        "React": 0,
+        "其他": 0
       }
     }
-  }
+  },
+  "agent_edits": [
+    { "date": "2025-06-16", "generated": 2500, "accepted": 1800 },
+    { "date": "2025-06-17", "generated": 7000, "accepted": 5000 },
+    { "date": "2025-06-18", "generated": 2800, "accepted": 2700 },
+    { "date": "2025-06-19", "generated": 13000, "accepted": 11000 },
+    { "date": "2025-06-20", "generated": 15500, "accepted": 8500 },
+    { "date": "2025-06-21", "generated": 2500, "accepted": 2200 },
+    { "date": "2025-06-22", "generated": 0, "accepted": 0 },
+    { "date": "2025-06-23", "generated": 9000, "accepted": 4500 }
+  ]
 } 
