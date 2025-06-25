@@ -258,13 +258,13 @@ const projects = [
     technologies: ['Vue-cli4', 'Vant', 'WebSocket']
   },
   {
-    name: 'B2B医药商城',
+    name: 'B2B商城',
     description: '持证商铺在平台批量选购所需商品的商城平台。',
     technologies: ['Velocity', 'ERP系统', '腾讯企点']
   },
   {
-    name: '电商小程序',
-    description: '护士上门服务的医疗到家小程序，分为患者端和护士端。',
+    name: '医疗到家小程序',
+    description: '分为B端和C端。',
     technologies: ['Uniapp', '小程序开发', '定位服务']
   }
 ];
