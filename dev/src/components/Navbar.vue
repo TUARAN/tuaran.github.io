@@ -74,7 +74,8 @@ import {
   FileText, 
   User, 
   Menu, 
-  X
+  X,
+  Globe
 } from 'lucide-vue-next';
 
 const route = useRoute();
@@ -83,6 +84,7 @@ const isMenuOpen = ref(false);
 const navItems = [
   { path: '/', label: '仪表板', icon: BarChart3 },
   { path: '/projects', label: '项目', icon: FolderOpen },
+  { path: '/websites', label: '网站', icon: Globe },
   { path: '/blog', label: '博客', icon: FileText },
   { path: '/about', label: '关于', icon: User },
 ];
