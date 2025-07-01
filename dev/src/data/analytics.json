@@ -1,12 +1,13 @@
 {
   "agent_edits": [
-    { "date": "2025-06-16", "generated": 2500, "accepted": 1800 },
-    { "date": "2025-06-17", "generated": 7000, "accepted": 5000 },
-    { "date": "2025-06-18", "generated": 2800, "accepted": 2700 },
-    { "date": "2025-06-19", "generated": 13000, "accepted": 11000 },
-    { "date": "2025-06-20", "generated": 15500, "accepted": 8500 },
-    { "date": "2025-06-21", "generated": 2500, "accepted": 2200 },
-    { "date": "2025-06-22", "generated": 0, "accepted": 0 },
-    { "date": "2025-06-23", "generated": 9000, "accepted": 4500 }
+    { "date": "2024-06-23", "generated": 9071, "accepted": 4493 },
+    { "date": "2024-06-24", "generated": 10000, "accepted": 6500 },
+    { "date": "2024-06-25", "generated": 2200, "accepted": 500 },
+    { "date": "2024-06-26", "generated": 7200, "accepted": 4500 },
+    { "date": "2024-06-27", "generated": 5000, "accepted": 1500 },
+    { "date": "2024-06-28", "generated": 200, "accepted": 0 },
+    { "date": "2024-06-29", "generated": 500, "accepted": 0 },
+    { "date": "2024-06-30", "generated": 2000, "accepted": 0 },
+    { "date": "2024-07-01", "generated": 1200, "accepted": 0 }
   ]
 } 

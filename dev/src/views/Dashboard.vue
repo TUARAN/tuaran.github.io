@@ -110,6 +110,9 @@
         <div class="chart-content">
           <CodeVolumeChart :data="chartData" />
         </div>
+        <div class="chart-tip">
+          <p class="tip-text">💡 数据来源: Cursor 等代码生成平台，不定期更新</p>
+        </div>
       </div>
 
       <!-- Language Distribution -->
@@ -124,30 +127,7 @@
       </div>
     </div>
 
-    <!-- Recent Activity -->
-    <div class="mt-12">
-      <div class="activity-card">
-        <div class="activity-header">
-          <h3 class="activity-title">最近活动</h3>
-          <button class="activity-btn">查看全部</button>
-        </div>
-        <div class="activity-list">
-          <div 
-            v-for="activity in recentActivities" 
-            :key="activity.id"
-            class="activity-item"
-          >
-            <div class="activity-icon" :class="activity.type">
-              <component :is="activity.icon" class="w-4 h-4" />
-            </div>
-            <div class="activity-content">
-              <p class="activity-text">{{ activity.text }}</p>
-              <p class="activity-time">{{ activity.time }}</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+
   </div>
 </template>
 
@@ -159,10 +139,7 @@ import {
   FileText, 
   Target, 
   TrendingUp, 
-  BarChart3,
-  GitCommit,
-  GitBranch,
-  Zap
+  BarChart3
 } from 'lucide-vue-next';
 import analyticsData from '../data/analytics.json';
 import { processAnalyticsData, generateChartData } from '../utils/analyticsProcessor.js';
@@ -215,36 +192,7 @@ const maxLanguageCount = computed(() => {
   return Math.max(...Object.values(currentData.value.generated.languages));
 });
 
-const recentActivities = [
-  {
-    id: 1,
-    type: 'generated',
-    icon: Code,
-    text: '生成了 150 行 TypeScript 代码',
-    time: '2 分钟前'
-  },
-  {
-    id: 2,
-    type: 'accepted',
-    icon: CheckCircle,
-    text: '接受了 120 行 Python 代码',
-    time: '5 分钟前'
-  },
-  {
-    id: 3,
-    type: 'commit',
-    icon: GitCommit,
-    text: '提交了更改到主分支',
-    time: '10 分钟前'
-  },
-  {
-    id: 4,
-    type: 'generated',
-    icon: Zap,
-    text: '生成了 80 行 Vue.js 代码',
-    time: '15 分钟前'
-  }
-];
+
 
 const formatNumber = (num) => {
   if (num >= 1000) {
@@ -327,55 +275,13 @@ onMounted(() => {
   @apply h-80;
 }
 
-.activity-card {
-  @apply bg-white/10 backdrop-blur-lg rounded-2xl p-6 border border-white/20;
+.chart-tip {
+  @apply mt-4 pt-4 border-t border-white/10;
 }
 
-.activity-header {
-  @apply flex items-center justify-between mb-6;
+.tip-text {
+  @apply text-xs text-gray-400 text-center;
 }
 
-.activity-title {
-  @apply text-xl font-semibold text-white;
-}
 
-.activity-btn {
-  @apply px-4 py-2 bg-white/10 hover:bg-white/20 rounded-lg text-sm text-white transition-all duration-300;
-}
-
-.activity-list {
-  @apply space-y-4;
-}
-
-.activity-item {
-  @apply flex items-center space-x-4 p-4 rounded-xl bg-white/5 hover:bg-white/10 transition-all duration-300;
-}
-
-.activity-icon {
-  @apply w-8 h-8 rounded-lg flex items-center justify-center text-white;
-}
-
-.activity-icon.generated {
-  @apply bg-gradient-to-br from-cyan-500 to-blue-600;
-}
-
-.activity-icon.accepted {
-  @apply bg-gradient-to-br from-green-500 to-emerald-600;
-}
-
-.activity-icon.commit {
-  @apply bg-gradient-to-br from-purple-500 to-pink-600;
-}
-
-.activity-content {
-  @apply flex-1;
-}
-
-.activity-text {
-  @apply text-white text-sm;
-}
-
-.activity-time {
-  @apply text-gray-400 text-xs mt-1;
-}
 </style> 

@@ -151,6 +151,47 @@
               </div>
             </div>
           </div>
+
+          <!-- 代码矿工-工具集 -->
+          <div class="website-card group">
+            <div class="card-header">
+              <div class="flex items-center space-x-3 mb-4">
+                <div class="w-12 h-12 bg-gradient-to-br from-orange-400 to-red-600 rounded-xl flex items-center justify-center">
+                  <Wrench class="w-6 h-6 text-white" />
+                </div>
+                <div>
+                  <h3 class="text-xl font-bold text-white">代码矿工-工具集</h3>
+                  <p class="text-sm text-gray-400">开发工具集合</p>
+                </div>
+              </div>
+              <p class="text-gray-300 mb-6">
+                一个实用的开发工具集合，包含 GIF 搜索下载、图片压缩、二维码生成、JSON 格式化、Base64 编解码等多种常用工具，提升开发效率。
+              </p>
+            </div>
+            
+            <div class="card-content">
+              <div class="tech-stack mb-6">
+                <div class="flex flex-wrap gap-2">
+                  <span class="tech-tag">Vue 3</span>
+                  <span class="tech-tag">Vite</span>
+                  <span class="tech-tag">TailwindCSS</span>
+                  <span class="tech-tag">Lucide</span>
+                </div>
+              </div>
+              
+              <div class="links-section">
+                <a 
+                  href="https://toolkit-hub.pages.dev/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  class="link-btn primary w-full"
+                >
+                  <Globe class="w-4 h-4" />
+                  访问网站
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
 
         <!-- Stats Section -->
@@ -160,7 +201,7 @@
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
               <div class="text-center">
                 <div class="text-3xl font-bold bg-gradient-to-r from-cyan-400 to-blue-600 bg-clip-text text-transparent mb-2">
-                  3
+                  4
                 </div>
                 <p class="text-gray-400">已发布网站</p>
               </div>
@@ -185,7 +226,7 @@
 </template>
 
 <script setup>
-import { Globe, Github, Users, Zap } from 'lucide-vue-next';
+import { Globe, Github, Users, Zap, Wrench } from 'lucide-vue-next';
 </script>
 
 <style scoped>

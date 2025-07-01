@@ -4,16 +4,18 @@
  * @returns {Object} 聚合后的统计数据
  */
 export function processAnalyticsData(agentEdits) {
-  const today = new Date().toISOString().split('T')[0];
-  const todayData = agentEdits.find(item => item.date === today) || { generated: 0, accepted: 0 };
+  // 找到数据中的最新日期
+  const sortedDates = agentEdits.map(item => item.date).sort();
+  const latestDate = sortedDates[sortedDates.length - 1];
   
-  // 计算最近7天的数据
-  const last7Days = getLastNDays(7);
-  const last7DaysData = aggregateDataByDateRange(agentEdits, last7Days);
+  // 获取最新日期的数据
+  const latestData = agentEdits.find(item => item.date === latestDate) || { generated: 0, accepted: 0 };
   
-  // 计算最近30天的数据
-  const last30Days = getLastNDays(30);
-  const last30DaysData = aggregateDataByDateRange(agentEdits, last30Days);
+  // 计算最近7天的数据（基于数据中的日期）
+  const last7DaysData = getLastNDaysFromData(agentEdits, 7, latestDate);
+  
+  // 计算最近30天的数据（基于数据中的日期）
+  const last30DaysData = getLastNDaysFromData(agentEdits, 30, latestDate);
   
   // 模拟语言分布数据（基于生成代码量的比例）
   const languageDistribution = {
@@ -26,14 +28,14 @@ export function processAnalyticsData(agentEdits) {
   return {
     today: {
       generated: {
-        lines: todayData.generated,
-        files: Math.ceil(todayData.generated / 750), // 假设平均每个文件750行
-        languages: calculateLanguageDistribution(todayData.generated, languageDistribution)
+        lines: latestData.generated,
+        files: Math.ceil(latestData.generated / 750), // 假设平均每个文件750行
+        languages: calculateLanguageDistribution(latestData.generated, languageDistribution)
       },
       accepted: {
-        lines: todayData.accepted,
-        files: Math.ceil(todayData.accepted / 750),
-        languages: calculateLanguageDistribution(todayData.accepted, languageDistribution)
+        lines: latestData.accepted,
+        files: Math.ceil(latestData.accepted / 750),
+        languages: calculateLanguageDistribution(latestData.accepted, languageDistribution)
       }
     },
     last7days: {
@@ -60,6 +62,36 @@ export function processAnalyticsData(agentEdits) {
         languages: calculateLanguageDistribution(last30DaysData.accepted, languageDistribution)
       }
     }
+  };
+}
+
+/**
+ * 从数据中获取最近N天的日期数组
+ * @param {Array} agentEdits - agent_edits 数组
+ * @param {number} days - 天数
+ * @param {string} latestDate - 最新日期
+ * @returns {Object} 聚合后的数据
+ */
+function getLastNDaysFromData(agentEdits, days, latestDate) {
+  const latest = new Date(latestDate);
+  let totalGenerated = 0;
+  let totalAccepted = 0;
+  
+  for (let i = 0; i < days; i++) {
+    const date = new Date(latest);
+    date.setDate(date.getDate() - i);
+    const dateStr = date.toISOString().split('T')[0];
+    
+    const dayData = agentEdits.find(item => item.date === dateStr);
+    if (dayData) {
+      totalGenerated += dayData.generated;
+      totalAccepted += dayData.accepted;
+    }
+  }
+  
+  return {
+    generated: totalGenerated,
+    accepted: totalAccepted
   };
 }
 
@@ -141,8 +173,10 @@ export function generateChartData(agentEdits, period) {
  * @returns {Object} 图表数据
  */
 function generateTodayChartData(agentEdits) {
-  const today = new Date().toISOString().split('T')[0];
-  const todayData = agentEdits.find(item => item.date === today);
+  // 找到数据中的最新日期
+  const sortedDates = agentEdits.map(item => item.date).sort();
+  const latestDate = sortedDates[sortedDates.length - 1];
+  const todayData = agentEdits.find(item => item.date === latestDate);
   
   // 模拟按小时分布的数据
   const hourlyDistribution = [0.1, 0.05, 0.15, 0.2, 0.25, 0.15, 0.1];
@@ -182,7 +216,19 @@ function generateTodayChartData(agentEdits) {
  * @returns {Object} 图表数据
  */
 function generateLast7DaysChartData(agentEdits) {
-  const last7Days = getLastNDays(7);
+  // 找到数据中的最新日期
+  const sortedDates = agentEdits.map(item => item.date).sort();
+  const latestDate = sortedDates[sortedDates.length - 1];
+  
+  // 获取最近7天的数据
+  const last7Days = [];
+  const latest = new Date(latestDate);
+  for (let i = 6; i >= 0; i--) {
+    const date = new Date(latest);
+    date.setDate(date.getDate() - i);
+    last7Days.push(date.toISOString().split('T')[0]);
+  }
+  
   const labels = last7Days.map(date => {
     const d = new Date(date);
     return `${(d.getMonth() + 1).toString().padStart(2, '0')}-${d.getDate().toString().padStart(2, '0')}`;
@@ -227,7 +273,18 @@ function generateLast7DaysChartData(agentEdits) {
  * @returns {Object} 图表数据
  */
 function generateLast30DaysChartData(agentEdits) {
-  const last30Days = getLastNDays(30);
+  // 找到数据中的最新日期
+  const sortedDates = agentEdits.map(item => item.date).sort();
+  const latestDate = sortedDates[sortedDates.length - 1];
+  
+  // 获取最近30天的数据
+  const last30Days = [];
+  const latest = new Date(latestDate);
+  for (let i = 29; i >= 0; i--) {
+    const date = new Date(latest);
+    date.setDate(date.getDate() - i);
+    last30Days.push(date.toISOString().split('T')[0]);
+  }
   
   // 按周聚合数据
   const weeklyData = [];
