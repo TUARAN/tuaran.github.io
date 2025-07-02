@@ -12,7 +12,7 @@
         tuaran
       </h1>
       <p class="text-xl text-gray-300 max-w-2xl mx-auto leading-relaxed mb-8 slide-up">
-        计算机科学与技术专业 | 前端架构师 | 技术博主
+        计算机科学与技术专业 | 前端架构师 | 技术博主 | aka 掘金安东尼
       </p>
       
       <!-- Personal Belief -->
@@ -32,7 +32,7 @@
           <h2 class="section-title">我是谁</h2>
           <div class="space-y-6 text-gray-300 leading-relaxed">
             <p>
-              你好！我是tuaran，一位拥有5年编程经验、2年项目管理经验的技术博主和签约作者。
+              你好！我是tuaran，也被大家称为掘金安东尼，一位拥有5年编程经验、2年项目管理经验的技术博主和签约作者。
               目前是某央企的一名技术工作者，同时也是一位30岁的奶爸。
             </p>
             <p>
