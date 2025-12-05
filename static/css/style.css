@@ -170,7 +170,7 @@ body {
 
 .zyyo-left {
     overflow-y: scroll;
-    width: 230px;
+    width: 280px;
     height: 100vh;
     display: flex;
     padding: 0 15px;
@@ -253,21 +253,33 @@ body {
 
 #line {
     width: 100%;
-    height: 200px;
+    height: auto;
     font-size: 13px;
-    padding-left: 8px;
-    scroll-snap-type: y mandatory;
-    overflow-y: scroll;
+    padding-left: 0;
+    padding-top: 20px;
+    scroll-snap-type: x mandatory;
+    overflow-x: auto;
+    overflow-y: hidden;
+    display: flex !important;
+    flex-direction: row !important;
+    padding-bottom: 10px;
 }
 
 #line li {
     list-style: none;
     position: relative;
-    padding: 15px 0px 0px 15px;
-    border-left: 2px solid #d5d5d5;
+    padding: 20px 10px 0px 10px;
+    border-left: none !important;
+    border-top: 2px solid #d5d5d5;
     border-radius: 0;
-    scroll-snap-align: end;
+    scroll-snap-align: start;
     color: var(--main_text_color);
+    min-width: 180px;
+    flex-shrink: 0;
+    text-align: center;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center;
 }
 
 
@@ -275,12 +287,13 @@ body {
 .focus {
     width: 8px;
     height: 8px;
-    border-radius: 22px;
+    border-radius: 50%;
     background-color: rgb(255 255 255);
     border: 2px solid #fff;
     position: absolute;
-    left: -5px;
-    top: 50%;
+    left: 50%;
+    top: -5px;
+    transform: translateX(-50%);
 }
 
 #line li:first-child .focus:first-child {
@@ -295,7 +308,7 @@ body {
 
 
 .zyyo-right {
-    width: calc(100% - 230px);
+    width: calc(100% - 280px);
     display: flex;
     padding: 20px;
   position: relative;
